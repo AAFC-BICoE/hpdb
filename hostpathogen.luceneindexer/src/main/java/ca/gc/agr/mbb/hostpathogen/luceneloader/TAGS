@@ -1,0 +1,132 @@
+
+Anamorph.java,72
+public class Anamorph 7,149
+    public void init(Anamorph.init20,585
+
+AuthorBuilder.java,165
+public class AuthorBuilder 9,163
+    public static final String[] AUTHOR_FIELDS=AuthorBuilder.AUTHOR_FIELDS11,208
+    public void init(AuthorBuilder.init17,317
+
+Builder.java,351
+abstract public class Builder 17,384
+    protected List<String> fields;Builder.fields18,442
+    protected String[] objectFields;Builder.objectFields20,478
+    final public Document makeDocument(Builder.makeDocument24,531
+    private void initFields(Builder.initFields45,1085
+    private Set<String> findIdFields(Builder.findIdFields52,1238
+
+DocumentBuilder.java,4923
+public interface DocumentBuilder{DocumentBuilder7,149
+    public static final String ID_SUFFIX=DocumentBuilder.ID_SUFFIX11,246
+    public static final String BOOK_AUTHOR=DocumentBuilder.BOOK_AUTHOR13,296
+    public static final String BOOK_EDITOR=DocumentBuilder.BOOK_EDITOR14,354
+    public static final String BOOK_PAGES=DocumentBuilder.BOOK_PAGES15,412
+    public static final String BOOK_PUBLISHER=DocumentBuilder.BOOK_PUBLISHER16,468
+    public static final String BOOK_PUBLISHER_PLACE=DocumentBuilder.BOOK_PUBLISHER_PLACE17,532
+    public static final String BOOK_TITLE=DocumentBuilder.BOOK_TITLE18,608
+    public static final String BOOK_YEAR=DocumentBuilder.BOOK_YEAR19,664
+    public static final String CHAPTER_ARTICLE_TITLE DocumentBuilder.CHAPTER_ARTICLE_TITLE20,718
+    public static final String COUNTRY DocumentBuilder.COUNTRY21,798
+    public static final String CULTIVAR=DocumentBuilder.CULTIVAR22,850
+    public static final String DATA_SOURCE DocumentBuilder.DATA_SOURCE23,902
+    public static final String FK_ANAMORPH_ID DocumentBuilder.FK_ANAMORPH_ID24,962
+    public static final String FK_HIGHER_TAXA_ID DocumentBuilder.FK_HIGHER_TAXA_ID25,1028
+    public static final String FK_HOST_ID DocumentBuilder.FK_HOST_ID26,1100
+    public static final String FK_HOST_ID_ACCEPTED DocumentBuilder.FK_HOST_ID_ACCEPTED27,1158
+    public static final String FK_PATHOGEN_ID DocumentBuilder.FK_PATHOGEN_ID28,1234
+    public static final String FK_PATHOGEN_ID_ACCEPTED DocumentBuilder.FK_PATHOGEN_ID_ACCEPTED29,1300
+    public static final String FK_REFERENCE_ID=DocumentBuilder.FK_REFERENCE_ID30,1384
+    public static final String FK_REF_SOURCE_ID DocumentBuilder.FK_REF_SOURCE_ID31,1450
+    public static final String FUNGAL_STATE DocumentBuilder.FUNGAL_STATE32,1520
+    public static final String GEOGRAPHICAL_ABBREVIATION DocumentBuilder.GEOGRAPHICAL_ABBREVIATION33,1582
+    public static final String HOST_AUTHOR DocumentBuilder.HOST_AUTHOR34,1670
+    public static final String HOST_GENUS DocumentBuilder.HOST_GENUS35,1730
+    public static final String HOST_ID DocumentBuilder.HOST_ID36,1788
+    public static final String HOST_ID_ACCEPTED DocumentBuilder.HOST_ID_ACCEPTED37,1840
+    public static final String HOST_SPECIES DocumentBuilder.HOST_SPECIES38,1910
+    public static final String HOST_SUBSPECIFIC_TAXA DocumentBuilder.HOST_SUBSPECIFIC_TAXA39,1972
+    public static final String INTERPRETATION DocumentBuilder.INTERPRETATION40,2052
+    public static final String JOURNAL_ABBREVIATION=DocumentBuilder.JOURNAL_ABBREVIATION41,2118
+    public static final String JOURNAL_TITLE=DocumentBuilder.JOURNAL_TITLE42,2194
+    public static final String LOOKUP_AUTHOR=DocumentBuilder.LOOKUP_AUTHOR43,2256
+    public static final String NOTES=DocumentBuilder.NOTES44,2318
+    public static final String PAGES DocumentBuilder.PAGES45,2364
+    public static final String PATHOGEN_AUTHOR DocumentBuilder.PATHOGEN_AUTHOR46,2412
+    public static final String PATHOGEN_GENUS DocumentBuilder.PATHOGEN_GENUS47,2480
+    public static final String PATHOGEN_SPECIES DocumentBuilder.PATHOGEN_SPECIES48,2546
+    public static final String PATHOGEN_SUBSPECIFIC_TAXA DocumentBuilder.PATHOGEN_SUBSPECIFIC_TAXA49,2616
+    public static final String PK_AUTHOR_LOOKUP_ID=DocumentBuilder.PK_AUTHOR_LOOKUP_ID50,2704
+    public static final String PK_HOST_ID DocumentBuilder.PK_HOST_ID51,2778
+    public static final String PK_HOST_PATHOGEN_ID DocumentBuilder.PK_HOST_PATHOGEN_ID52,2836
+    public static final String PK_LOCATION_ID DocumentBuilder.PK_LOCATION_ID53,2912
+    public static final String PK_PATHOGEN_ID DocumentBuilder.PK_PATHOGEN_ID54,2978
+    public static final String PK_REFERENCE_ID DocumentBuilder.PK_REFERENCE_ID55,3044
+    public static final String PK_REF_SOURCE_ID DocumentBuilder.PK_REF_SOURCE_ID56,3112
+    public static final String PLANT_PART=DocumentBuilder.PLANT_PART57,3182
+    public static final String REFERENCE_AUTHORS DocumentBuilder.REFERENCE_AUTHORS58,3238
+    public static final String REFERENCE_YEAR DocumentBuilder.REFERENCE_YEAR59,3310
+    public static final String RUST_STATE=DocumentBuilder.RUST_STATE60,3376
+    public static final String SYMPTOM=DocumentBuilder.SYMPTOM61,3432
+    public static final String VIRUS_MPLO_NAMES DocumentBuilder.VIRUS_MPLO_NAMES62,3482
+    public static final String VOLUME DocumentBuilder.VOLUME63,3552
+    public static final String PK_HIGHER_TAXA_ID DocumentBuilder.PK_HIGHER_TAXA_ID65,3607
+    public static final String KINGDOM DocumentBuilder.KINGDOM66,3679
+    public static final String DIVISION DocumentBuilder.DIVISION67,3731
+    public static final String CLASS DocumentBuilder.CLASS68,3785
+    public static final String ORDER DocumentBuilder.ORDER69,3833
+    public static final String FAMILY DocumentBuilder.FAMILY70,3881
+
+HigherTaxaBuilder.java,185
+public class HigherTaxaBuilder 5,91
+    public static final String[] HIGHER_TAXA_FIELDS=HigherTaxaBuilder.HIGHER_TAXA_FIELDS7,140
+    public void init(HigherTaxaBuilder.init17,282
+
+HostBuilder.java,154
+public class HostBuilder 5,91
+    public static final String[] HOST_FIELDS=HostBuilder.HOST_FIELDS12,307
+    public void init(HostBuilder.init24,507
+
+HostPathogenBuilder.java,195
+public class HostPathogenBuilder 5,91
+    public static final String[] HOST_PATHOGEN_FIELDS=HostPathogenBuilder.HOST_PATHOGEN_FIELDS7,142
+    public void init(HostPathogenBuilder.init19,334
+
+IndexDumper.java,139
+public class IndexDumper{IndexDumper10,222
+    public void count(IndexDumper.count12,249
+    public void dump(IndexDumper.dump35,690
+
+Loader.java,78
+public class Loader{Loader24,792
+    public void index(Loader.index25,813
+
+LocalityBuilder.java,173
+public class LocalityBuilder 5,91
+    public static final String[] LOCALITY_FIELDS=LocalityBuilder.LOCALITY_FIELDS7,138
+    public void init(LocalityBuilder.init15,283
+
+Main.java,192
+public class Main{Main14,313
+    static String[] files Main.files16,333
+    public static final void main(Main.main33,696
+    public static CSVParser fileReader(Main.fileReader81,1833
+
+PathogenBuilder.java,175
+public class PathogenBuilder 9,163
+    public static final String[] PATHOGEN_FIELDS=PathogenBuilder.PATHOGEN_FIELDS11,210
+    public void init(PathogenBuilder.init25,478
+
+ReferenceBuilder.java,178
+public class ReferenceBuilder 5,91
+    public static final String[] REFERENCE_FIELDS=ReferenceBuilder.REFERENCE_FIELDS7,139
+    public void init(ReferenceBuilder.init17,305
+
+ReferenceSourceBuilder.java,198
+public class ReferenceSourceBuilder 5,91
+    public static final String[] REF_SOURCE_FIELDS=ReferenceSourceBuilder.REF_SOURCE_FIELDS7,145
+    public void init(ReferenceSourceBuilder.init21,384
+
+Util.java,105
+public final class Util{Util4,63
+    public static final String makeIndexName(Util.makeIndexName6,89
