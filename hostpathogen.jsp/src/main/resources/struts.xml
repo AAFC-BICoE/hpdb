@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="HostPathogenServlet" extends="struts-default">
+		<!-- action for the servlet -->
+		<action name="getsearch" class="ca.gc.agr.mbb.hostpathogen.jspservlet"
+			method="execute">
+			<result name="success">/formindex.jsp</result>
+			<result name="notfound">/404.jsp</result>
+			<result name="unauthorized">/403.jsp</result>
+			<result name="badrequest">/400.jsp</result>
+		</action>
+		
+		<action name="getpathlist" class="ca.gc.agr.mbb.hostpathogen.jspservlet"
+			method="execute">
+			<result name="success">/pathlist.jsp</result>
+			<result name="notfound">/404.jsp</result>
+			<result name="unauthorized">/403.jsp</result>
+			<result name="badrequest">/400.jsp</result>
+		</action>
+
+		<action name="gethostlist" class="ca.gc.agr.mbb.hostpathogen.jspservlet"
+			method="execute">
+			<result name="success">/hostlist.jsp</result>
+			<result name="notfound">/404.jsp</result>
+			<result name="unauthorized">/403.jsp</result>
+			<result name="badrequest">/400.jsp</result>
+		</action>
+
+		<action name="getdetailhostpath" class="ca.gc.agr.mbb.hostpathogen.jspservlet"
+			method="execute">
+			<result name="success">/detailhostpath.jsp</result>
+			<result name="notfound">/404.jsp</result>
+			<result name="unauthorized">/403.jsp</result>
+			<result name="badrequest">/400.jsp</result>
+		</action>
+
+		<action name="getdetailpathhost" class="ca.gc.agr.mbb.hostpathogen.jspservlet"
+			method="execute">
+			<result name="success">/detailpathhost.jsp</result>
+			<result name="notfound">/404.jsp</result>
+			<result name="unauthorized">/403.jsp</result>
+			<result name="badrequest">/400.jsp</result>
+		</action>
+
+		<action name="debug" class="ca.gc.agr.mbb.hostpathogen.jspservlet"
+			method="execute">
+			<result name="success">/formview.jsp</result>
+			<result name="notfound">/404.jsp</result>
+			<result name="unauthorized">/403.jsp</result>
+			<result name="badrequest">/400.jsp</result>
+		</action>
+	</package>
+</struts>
