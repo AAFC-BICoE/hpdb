@@ -63,7 +63,7 @@ public class HostPathogenServlet extends HttpServlet {
 		} finally {
 			out.close();  // Always close the output writer
 		}*/
-		request.getRequestDispatcher("formview.jsp").forward(request, response);
+		request.getRequestDispatcher("/JSP/formview.jsp").forward(request, response);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class HostPathogenServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("formindex.jsp").forward(request, response);
+		request.getRequestDispatcher("/JSP/MainPage.jsp").forward(request, response);
 	}
 	
 	@Override

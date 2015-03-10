@@ -1,15 +1,15 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
 <!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
 <!--[if gt IE 8]><!-->
+<%@ page import="java.io.*,java.util.*"%>
+<%@ page session="false"%>
 <html class="no-js" lang="en">
-<!--<![endif]-->
+<!--![endif]-->
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<!-- Web Experience Toolkit (WET) 3.0.6 / Boîte à outils de l'expérience Web (BOEW) 3.0.6wet-boew.github.com/wet-boew/License-eng.txt / wet-boew.github.com/wet-boew/Licence-fra.txt -->
+<!-- Web Experience Toolkit (WET) 3.0.6 / BoÃ®te Ã  outils de l'expÃ©rience Web (BOEW) 3.0.6wet-boew.github.com/wet-boew/License-eng.txt / wet-boew.github.com/wet-boew/Licence-fra.txt -->
 <title>Search Records</title>
 <link
 	href="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/favicon.ico"
@@ -58,18 +58,9 @@
 <!-- CustomScriptsCSSEnd -->
 <link href="/acp/styles/displaytag.css" rel="stylesheet">
 <link href="/acp/styles/sortPopup.css" rel="stylesheet">
-<script src="/acp/scripts/prototype.js">
-	
-</script>
-<script src="/acp/scripts/scriptaculous.js">
-	
-</script>
-<script src="/acp/scripts/stylesheetswitcher.js">
-	
-</script>
-<script src="/acp/scripts/global.js">
-	
-</script>
+<script src="/acp/scripts/prototype.js"> </script>
+<script src="/acp/scripts/scriptaculous.js"> </scri	pt><script src="/acp/scripts/stylesheetswitcher.js"> </script>
+<script src="/acp/scripts/global.js"> </script>
 </head>
 <body>
 	<div id="wb-body">
@@ -121,7 +112,8 @@
 							<div id="gcwu-wmms">
 								<div id="gcwu-wmms-in">
 									<div id="gcwu-wmms-fip"
-										title="Symbol of the Government of Canada">
+										titl
+										e="Symbol of the Government of Canada">
 										<img alt="Symbol of the Government of Canada" height="30"
 											src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/wmms.gif"
 											width="126">
@@ -252,8 +244,8 @@
 																	href="http://www.agr.gc.ca/eng/science-and-innovation/science-publications-and-resources/?id=1196363731573"
 																	target="_self">Science Publications and Resources</a></li>
 																<li><a
-																	href="http://www.agr.gc.ca/eng/science-and-innovation/technology-transfer-and-licensing/?id=1196968351190"
-																	target="_self">Technology Transfer and Licensing</a></li>
+																	href="http://www.agr.gc.ca/eng/science-and-innovation/technology-transfer-and-licensing/?id=119696;8351190" target="_self">Technology
+																		Transfer and Licensing</a></li>
 																<li><a
 																	href="http://www.agr.gc.ca/eng/science-and-innovation/international-scientific-cooperation/?id=1180125607102"
 																	target="_self">International Scientific Cooperation</a>
@@ -288,8 +280,10 @@
 																<li><a
 																	href="http://www.agr.gc.ca/eng/help/help-with-alternative-formats-and-plug-ins/?id=1168622342753"
 																	target="_self">Help with Alternative Formats and
-																		Plug-ins</a></li>
-															</ul>
+																		Plug-ins</a></li> 
+																
+                        </p></li>
+</ul>
 														</div>
 														<div class="clear"></div>
 														<div class="mb-main-link">
@@ -324,74 +318,98 @@
 				<div id="wb-main" role="main">
 					<div id="wb-main-in">
 						<div id="wb-cont"></div>
-						<!-- Body Start -->
-						<div>
-							<h1>Fungal Full Search Records for:</h1>
-							<p>
-							<h3>Trientalis</h3>
-							</p>
-						</div>
+<!--Body-->
+	<center>
+		<h1>Host-Pathogen Search View By Server</h1>
 
-						<div>
-							<table class="pagination">
-								<tr>
-									<td><a href="HostSearchShortForm.html">&laquo;
-											Previous</a></td>
-									<td><a href="">Next &raquo;</a></td>
-								</tr>
-							</table>
-						</div>
+		<p>
+			Gat timestamp date and hours:
+			<%=(new java.util.Date()).toLocaleString()%></p>
+	</center>
 
-						<div class="container">
-							<div id="pathogen">
-								<ul>
-									<dl>
-										<li><a href="FullRecords_CeratobasidiumAnceps.html">Ceratobasidium
-												anceps - Trientalis americana</a></li>
-										<li><a href="">Mycosphaerella tassiana var. arctica -
-												Trientalis americana</a></li>
-										<li><a href="">Puccinia caricina var. limosae -
-												Trientalis americana</a></li>
-										<li><a href="">Puccinia karelica - Trientalis sp.</a></li>
-										<li><a href="">Puccinia karelica subsp. karelica -
-												Trientalis europaea</a></li>
-										<li><a href="">Puccinia karelica subsp. laurentina -
-												Trientalis borealis</a></li>
-										<li><a href="">Puccinia limosae - Trientalis arctica</a></li>
-										<li><a href="">Ramularia magnusiana - Trientalis
-												americana</a></li>
-										<li><a href="">Septoria increscens - Trientalis
-												americana</a></li>
-										<li><a href="">Septoria trientalis - Trientalis
-												borealis</a></li>
-										<li><a href="">Tuburcinia trientalis - Trientalis
-												americana</a></li>
-										<li><a href="">Urocystis trientalis - Trientalis
-												latifolia</a></li>
-									</dl>
-								</ul>
-							</div>
-							<div>
-								<table class="pagination">
-									<tr>
-										<td><a href="HostSearchShortForm.html">&laquo;
-												Previous</a></td>
-										<td><a href="">Next &raquo;</a></td>
-									</tr>
-								</table>
-							</div>
+	<h1>Testing HTTP Request</h1>
 
-							<div>
-								<div>
-									<span class="left">Host-Pathogen Database Version 1 | <a
-										href="CVSLink"><span class="export csv">Export CSV</span></a>
-									</span> <span class="right">&copy; 2014-2015 <a
-										href="http://www.agr.gc.ca/">Agriculture & AgriFood Canada</a>
-									</span>
-								</div>
-							</div>
+	<table width="100%" border="1" align="center">
+		<tr bgcolor="#949494">
+			<th>Header Name</th>
+			<th>Header Value(s)</th>
+		</tr>
+		<%
+			Enumeration headerNames = request.getHeaderNames();
+			while (headerNames.hasMoreElements()) {
+				String paramName = (String) headerNames.nextElement();
+				out.print("<tr><td>" + paramName + "</td>\n");
+				String paramValue = request.getHeader(paramName);
+				out.println("<td> " + paramValue + "</td></tr>\n");
+			}
+		%>
+	</table>
 
-							<!-- END for the Body-->
+
+	<h1>Testing GET Data FORM</h1>
+	<ul><%-- Import the dsp tag library to access Oracle ATG Web Commerce
+     functionality. Import tag libraries for the output format you
+     will send to REST clients. --%>
+	
+		<li><p>
+				<b>Pathogen Genus:</b>
+				<%=request.getParameter("pathgenus")%>
+			</p></li>
+		<li><p>
+				<b>Pathogen Species:</b>
+				<%=request.getParameter("pathspecies")%>
+			</p></li>
+                <li><p>
+                                <b>Virus MPLO:</b>
+                                <%=request.getParameter("pathvirus")%>
+                        </p></li>
+                <li><p>
+                                <b>Pathogen Synonyms:</b>
+                                <%=request.getParameter("psynonym")%>
+                        </p></li>
+
+                <li><p>
+                                <b>Host Genus:</b>
+                                <%=request.getParameter("hostfamily")%>
+                        </p></li>
+		<li><p>
+				<b>Host Family:</b>
+				<%=request.getParameter("hostgenus")%>
+			</p></li>
+		<li><p>
+				<b>Host Species:</b>
+				<%=request.getParameter("hostspecies")%>
+			</p></li>
+		<li><p>
+				<b>Country:</b>
+				<%=request.getParameter("country")%>
+			</p></li>
+		<li><p>
+				<b>Province/State/Territory:</b>
+				<%=request.getParameter("provState")%>
+			</p></li>
+	</ul>
+
+
+	<h1>Testing GET Parameter</h1>
+
+	<table width="100%" border="1" align="center">
+		<tr bgcolor="#949494">
+			<th>Param Name</th>
+			<th>Param Value(s)</th>
+		</tr>
+		<%
+			Enumeration paramNames = request.getParameterNames();
+
+			while (paramNames.hasMoreElements()) {
+				String paramName = (String) paramNames.nextElement();
+				out.print("<tr><td>" + paramName + "</td>\n");
+				String paramValue = request.getHeader(paramName);
+				out.println("<td> " + paramValue + "</td></tr>\n");
+			}
+		%>
+	</table>
+	</center>
 
 							<dl id="gcwu-date-mod" role="contentinfo">
 								<dt>Version:</dt>
@@ -480,7 +498,8 @@
 			src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/js/settings.js"></script>
 		<script
 			src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/js/pe-ap-min.js"></script>
-		</script>
+		<script>
 		<!-- ScriptsEnd -->
 </body>
 </html>
+
