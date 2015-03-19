@@ -1,4 +1,4 @@
-package ca.gc.agr.mbb.hostpathogen.hostpathogenluceneloader;
+package ca.gc.agr.mbb.hostpathogen.luceneloader;
 
 import java.util.Set;
 import java.util.HashSet;

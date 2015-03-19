@@ -1,5 +1,5 @@
 
-package ca.gc.agr.mbb.hostpathogen.hostpathogenluceneloader;
+package ca.gc.agr.mbb.hostpathogen.luceneloader;
 
 import java.util.Map;
 import java.util.logging.Level;

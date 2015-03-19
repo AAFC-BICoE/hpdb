@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
 <!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
@@ -6,46 +9,50 @@
 <!--<![endif]-->
 <head>
 <meta charset="utf-8" />
-<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+<!-- Web Experience Toolkit (WET) / BoÃ®te Ã  outils de l'expÃ©rience Web (BOEW)
 wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
 
 <title>Search Records</title>
-<link href="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/favicon.ico" rel="shortcut icon">
-<meta content="" name="dcterms.issued" title="W3CDTF">
-<meta content="" name="dcterms.modified" title="W3CDTF">
-<meta content="" name="dcterms.format" title="gcformat">
-<meta content="Search Records" name="dcterms.title">
-<meta content="ecosystems;geomatics;biological diversity" name="dcterms.subject" title="gccore">
-<meta content="" name="dcterms.description">
-<meta content="eng" name="dcterms.language" title="ISO639-2">
-<meta content="" name="keywords">
-<meta content="" name="dcterms.audience" title="gcaudience">
-<meta content="educational material" name="dcterms.type" title="gctype">
-<meta content="Government of Canada;Agriculture and Agri-Food Canada" name="dcterms.creator">
+<link href="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/favicon.ico" rel="shortcut icon"/>
+<meta content="" name="dcterms.issued" title="W3CDTF"/>
+<meta content="" name="dcterms.modified" title="W3CDTF"/>
+<meta content="" name="dcterms.format" title="gcformat"/>
+<meta content="Search Records" name="dcterms.title"/>
+<meta content="ecosystems;geomatics;biological diversity" name="dcterms.subject" title="gccore"/>
+<meta content="" name="dcterms.description"/>
+<meta content="eng" name="dcterms.language" title="ISO639-2"/>
+<meta content="" name="keywords"/>
+<meta content="" name="dcterms.audience" title="gcaudience"/>
+<meta content="educational material" name="dcterms.type" title="gctype"/>
+<meta content="Government of Canada;Agriculture and Agri-Food Canada" name="dcterms.creator"/>
 <meta content="" name="dcterms.spatial" title="gcregions">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/js/jquery.min.js"></script>
 
 <!--[if lte IE 8]>
-<link rel="shortcut icon" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/theme-gcwu-fegc/images/favicon.ico" />
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/js/polyfills/html5shiv-min.js"></script>
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/grids/css/util-ie-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/js/css/pe-ap-ie-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/theme-gcwu-fegc/css/theme-ie-min.css" />
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/jquery-ie.min.js"></script>
+<link rel="shortcut icon" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/favicon.ico" />
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/polyfills/html5shiv-min.js"></script>
+<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/grids/css/util-ie-min.css" />
+<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/css/pe-ap-ie-min.css" />
+<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/css/theme-ie-min.css" />
 <![endif]-->
+
 <!--[if gt IE 8]><!-->
-<link rel="icon" type="image/x-icon" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/theme-gcwu-fegc/images/favicon.ico" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/grids/css/util-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/js/css/pe-ap-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/theme-gcwu-fegc/css/theme-min.css" />
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/jquery.min.js"></script>
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/settings.js"></script>
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/pe-ap-min.js"></script>
+<link rel="icon" type="image/x-icon" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/favicon.ico" />
+<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/grids/css/util-min.css" />
+<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/css/pe-ap-min.css" />
+<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/css/theme-min.css" />
 <!--<![endif]-->
-<noscript><link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.0/dist/theme-gcwu-fegc/css/theme-ns-min.css" /></noscript>
+
+<noscript><link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/css/theme-ns-min.css" /></noscript>
+
 
 <!-- CustomScriptsCSSStart -->
 <link href="http://www5.agr.gc.ca/res/cbif-scib3.0.6/css/theme.css" rel="stylesheet">
 <link href="http://www5.agr.gc.ca/res/cbif-scib3.0.6/css/util.css" rel="stylesheet">
-<link href="hide.css" rel="stylesheet">
+<link href="styles/visibility.css" rel="stylesheet">
 <!--[if lte IE 8]>
 <link rel="stylesheet" href="http://www5.agr.gc.ca/res/cbif-scib3.0.6css/theme-ie.css" />
 <link rel="stylesheet" href="http://www5.agr.gc.ca/res/cbif-scib3.0.6/css/util-ie.css" />
@@ -72,13 +79,14 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <div id="gcwu-gcnb">						
 <h2>Government of Canada navigation bar</h2>						
 <div id="gcwu-gcnb-in">							
-<div id="gcwu-gcnb-fip">								
-<div id="gcwu-sig">									
-<div id="gcwu-sig-in">										
-<div id="gcwu-sig-eng" title="Government of Canada">
-<img alt="Government of Canada" height="20" src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/sig-eng.gif" width="214"></div>									
-</div>								
-</div>								
+<div id="gcwu-gcnb-fip">
+<div id="gcwu-sig">
+  <div id="gcwu-sig-in">
+    <object data="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/sig-eng.svg" role="img" tabindex="-1" aria-label="Government of Canada" type="image/svg+xml">
+      <img src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/sig-eng.png" alt="Government of Canada" />
+    </object>
+  </div>
+</div>															
 <ul>									 
 <li id="gcwu-gcnb1">
 <a href="http://www.canada.ca/en/index.html" rel="external">Canada.ca</a>
@@ -98,13 +106,14 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 </div>				
 </nav>				
 <div id="gcwu-bnr" role="banner">					
-<div id="gcwu-bnr-in">						
-<div id="gcwu-wmms">							
-<div id="gcwu-wmms-in">								
-<div id="gcwu-wmms-fip" title="Symbol of the Government of Canada">
-<img alt="Symbol of the Government of Canada" height="30" src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/wmms.gif" width="126"></div>							
-</div>						
-</div>						
+<div id="gcwu-bnr-in">
+<div id="gcwu-wmms">
+  <div id="gcwu-wmms-in">
+    <object data="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/wmms.svg" role="img" tabindex="-1" aria-label="Symbol of the Government of Canada" type="image/svg+xml">
+      <img src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/wmms.png" alt="Symbol of the Government of Canada" />
+    </object>
+  </div>
+</div>		
 <div id="gcwu-title">							
 <p id="gcwu-title-in">
 <a href="">Host-Pathogen Database</a>
@@ -266,7 +275,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <ol>
 <li><a href="">Home</a></li>
 <li><a href="">Host-Pathogen Database</a></li>
-<li><a href="">Search Records</a></li>
+<li><a href="MainPage.jsp">Search Records</a></li>
 </ol>						
 </div>					
 </div>									
@@ -284,7 +293,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<div class="container">
 							<h1>Search Records</h1>
 
-							<form id="searchHostForm" action="" method="GET">
+							<form id="searchHostForm" action="JSP/SearchResult.jsp" method="GET">
 
 								<details class="span-8" open="open">
 									<summary class="module-info module-simplify"
@@ -293,13 +302,13 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 									</summary>
 									<div style="width: 100%; margin-top: 20px" class="form-inline">
 										<label class="col-sm-2 control-label">Family: </label> <input
-											id="hostfamily" type="text" name="hfamily" size="18"
+											id="hostFamily" type="text" name="hfamily" size="18"
 											style="width: 20%" /> <label class="col-sm-2 control-label">Genus:
-										</label> <input id="hostgenus" type="text" name="hgenus" size="18"
+										</label> <input id="hostGenus" type="text" name="hgenus" size="18"
 											style="width: 20%" /> <label class="col-sm-2 control-label">Species:
-										</label> <input id="hostspecies" type="text" name="hspecies" size="18"
+										</label> <input id="hostSpecies" type="text" name="hspecies" size="18"
 											style="width: 20%" /> <label class="checkbox-inline"><input
-											type="checkbox" name="synonym" value="true"
+											type="checkbox" id="hostSynonym" name="hostSynonym" value="true"
 											style="margin-left: 15px; margin-right: 5px; margin-top: 10px" />
 											Synonyms</label>
 									</div>
@@ -321,16 +330,16 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 											class="chkbox viraldisplay" /> <label for="toggle2">&#160;&#160;Virus/MPLO</label>
 										<div id="fungaldisplay" class="box">
 											<label class="col-sm-2 control-label">Genus: </label> <input
-												id="pathgenus" type="text" name="pgenus" /> <label
+												id="pathogenGenus" type="text" name="pgenus" /> <label
 												class="col-sm-2 control-label">Species: </label> <input
-												id="pathspecies" type="text" name="pspecies" /> <label
+												id="pathogenSpecies" type="text" name="pspecies" /> <label
 												class="checkbox-inline">Synonyms</label> <input
-												type="checkbox" name="synonym" value="true"
+												type="checkbox" id="pathogenSynonym" name="pathogenSynonym" value="true"
 												style="margin-left: 15px; margin-right: 5px; margin-top: 10px" />
 										</div>
 										<div id="viraldisplay" class="box">
 											<label class="col-sm-2 control-label">Virus/MPLO
-												Name: </label><input id="pathvirus" type="text" name="pvirus" />
+												Name: </label><input id="pathogenVirus" type="text" name="pvirus" />
 										</div>
 									</div>
 
@@ -347,7 +356,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 									<div class="form-inline mrgn-tp-md" style="margin-top: 20px">
 										<span class="mrgn-tp-md"> <label
 											class="col-sm-2 control-label wb-inv" for="form-select-md">Country:
-										</label> <select class="form-control mrgn-bttm-md">
+										</label> <select id="country" name="country" class="form-control mrgn-bttm-md">
 												<option label="" value=""></option>
 												<option label="Canada" value="Canada">Canada</option>
 												<option label="USA" value="USA">USA</option>
@@ -378,7 +387,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 										</select>
 										</span> <span> <label class="col-sm-2 control-label"
 											for="form-select-md" class="wb-inv">Province/State: </label>
-											<select class="form-control mrgn-bttm-md">
+											<select id="provStateTerritory" name="provstate" class="form-control mrgn-bttm-md">
 												<option label="" value=""></option>
 												<option label="AB" value="AB">AB</option>
 												<option label="BC" value="BC">BC</option>
@@ -503,7 +512,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 								<div class="clear"></div>
 
 								<div class="span-3 row-end" style="margin-top: 2%">
-									<input id="SearchForm" name="SearchForm" type="submit"
+									<input id="SearchForm" name="SearchFormButton" type="submit"
 										value="Search"
 										style="display: inline-block; margin: 0 5px 0 5px"
 										class="button-accent" /> <input id="Reset" name="Reset"
@@ -515,13 +524,12 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 						</div>
 						<!-- End of the Body -->
-</div>	
-</div>	
+<div class="clear"></div>
 
 <div class="versionF" style="float:right; margin-right:10px; padding:0">
  <span class="left">Host-Pathogen Database Version 1 |</span>
  <span class="right">&copy; 2014-2015 <a href="http://www.agr.gc.ca/">Agriculture & AgriFood Canada</a></span>
-		
+</div>	
 </div>					
 </div>	
 </div>	
@@ -598,16 +606,23 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 </div>
 
 <!-- ScriptsStart --> 
-<script src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/js/theme-min.js"></script> 
-<script src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/js/settings.js"></script> 
-<script src="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/js/pe-ap-min.js"></script>
-
-<!--[if gte IE 9 | !IE ]><!-->
-<script src="http://wet-boew.github.io/wet-boew/js/wet-boew.min.js"></script>
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/settings.js"></script>
+<!--[if lte IE 8]>
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-wet-boew/js/theme-ie-min.js"></script>
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/pe-ap-ie-min.js"></script>
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-wet-boew/js/theme-min.js"></script>
+<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/pe-ap-min.js"></script>
 <!--<![endif]-->
-<!--[if lt IE 9]>
-<script src="http://wet-boew.github.io/wet-boew/js/ie8-wet-boew2.min.js"></script>
 <!-- ScriptsEnd -->
+
+<!-- CustomScriptsStart -->
+
+<!-- CustomScriptsEnd -->
+
+</body>
+</html>
 
 </body>
 </html>

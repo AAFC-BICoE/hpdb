@@ -21,7 +21,7 @@ public class Main {
 
 	public static HttpServer startServer() {
 		try {
-			BASE_URI = "http://" + getLocalHostLANAddress().getCanonicalHostName() + ":8090/";
+			BASE_URI = "http://" + getLocalHostLANAddress().getCanonicalHostName() + ":8080/";
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 			System.err.println("Unable to ascertain hostname");

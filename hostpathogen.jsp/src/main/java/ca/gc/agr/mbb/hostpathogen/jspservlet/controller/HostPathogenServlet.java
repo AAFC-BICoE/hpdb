@@ -9,61 +9,21 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ca.gc.agr.mbb.hostpathogen.jspservlet.dao.RequestFormData;
 import ca.gc.agr.mbb.hostpathogen.nouns.Pathogen;
 
 @SuppressWarnings("serial")
 @WebServlet(name = "HostPathogenServlet", urlPatterns = {"/search"})
 public class HostPathogenServlet extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		String action = request.getParameter("action");
-		String pgenus = request.getParameter("pathgenus");
-		String pspecies = request.getParameter("pathspecies");
-		String pvirus = request.getParameter("pathvirus");
-		String psyn = request.getParameter("pathsyn");
-		String hfamily = request.getParameter("hostfamily");
-		String hgenus = request.getParameter("hostgenus");
-		String hspecies = request.getParameter("hostspecies");
-		String country = request.getParameter("country");
-		String provstate = request.getParameter("provstate");
-
-		PrintWriter out = response.getWriter();
-
-		try {
-			out.println("<!DOCTYPE html>");
-			out.println("<html><head>");
-			out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
-			out.println("<title>Host-Pathogen JSP Servlet</title></head>");
-			out.println("<body>");
-			out.println("<h1>Hello, Welcome to Host-Pathogen Servlet</h1>");  // says Hello
-			// Echo client's request information
-			out.println("<p>Request URI: " + request.getRequestURI() + "</p>");
-			out.println("<p>Protocol: " + request.getProtocol() + "</p>");
-			out.println("<p>PathInfo: " + request.getPathInfo() + "</p>");
-			out.println("<p>You have request: " + "</br>"
-			+ action + "</br>"
-			+ pgenus + "</br>"
-			+ pspecies + "</br>"
-			+ pvirus + "</br>"
-			+ psyn + "</br>"
-			+ hfamily + "</br>"
-			+ hgenus + "</br>"
-			+ hspecies + "</br>"
-			+ country + "</br>"
-			+ provstate + "</br>" + "</p>");
-
-			out.println("</body>");
-			out.println("</html>");
-		} finally {
-			out.close();  // Always close the output writer
-		}*/
-		request.getRequestDispatcher("/JSP/formview.jsp").forward(request, response);
+		request.getRequestDispatcher("JSP/ViewFormParam.jsp").forward(request, response);
 	}
 
 	/**
@@ -77,12 +37,38 @@ public class HostPathogenServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/JSP/MainPage.jsp").forward(request, response);
+		request.getRequestDispatcher("JSP/MainPage.jsp").forward(request, response);
+		
+		RequestFormData data = new RequestFormData();
+		request.getSession().setAttribute("search", data);
+		
+		data.setPathogenGenus(request.getParameter("pathogenGenus"));
+		data.setPathogenSpecies(request.getParameter("pathogenSpecies"));
+		data.setPathogenVirus(request.getParameter("pathogenVirus"));
+		data.setPathogenSynonym(request.getParameter("pathogenSynonym"));
+		data.setCountry(request.getParameter("country"));
+		data.setProvinceStateTerritory(request.getParameter("provinceStateTerritory"));
+		data.setHostFamily(request.getParameter("hostFamily"));
+		data.setHostGenus(request.getParameter("hostGenus"));
+		data.setHostSpecies(request.getParameter("hostSpecies"));
+		data.setHostSynonym(request.getParameter("hostSynonym"));
+		
+		String address;
+		
+		if(request.getParameter("SearchFormButton") != null){
+			address = "SearchResult.jsp";
+		}
+		else if (request.getParameter("SerachForm") == null){
+			address = "Error.jsp";
+		}else {
+			address = "MainPage.jsp";
+		}
+		request.getRequestDispatcher(address).forward(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.getRequestDispatcher("JSP/Error.jsp").forward(request, response);
 	}
 
 	/**

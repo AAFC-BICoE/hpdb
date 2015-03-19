@@ -1,4 +1,4 @@
-package ca.gc.agr.mbb.hostpathogen.hostpathogenluceneloader;
+package ca.gc.agr.mbb.hostpathogen.luceneloader;
 
 import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.LuceneFields;
 import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.UtilLucene;
