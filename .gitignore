@@ -1,10 +1,10 @@
 # eclipse setting#
-/.settings/
-/.classpath
-/.project
-/.metadata/
-/RemoteSystemsTempFiles/
-/target/
+*/.settings/*
+*/.classpath
+*/.project
+*/.metadata/*
+*/RemoteSystemsTempFiles/*
+*/target/*
 transactions.log
 *.class
 
