@@ -28,9 +28,6 @@ public class TestGetPathogen{
 	//String speciesName = "12";
 	String familyName = "abc";
 	String orderName = "abc";
-	String countryName = "abc";
-	String provstateName = "abc";
-	int counter = 9;
 	String sortField = "genus";
 
 	private HttpServer server;
@@ -105,75 +102,18 @@ public class TestGetPathogen{
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
 	}
-	/*
-	@Test
-	public void shouldGetPathogenCount(){
-		String path = Nouns.PATHOGENS + "/" + Nouns.COUNTS + "/" + counter;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldFailByPathogenCountExceededTen(){
-		int InvalidCount = counter + 2;
-	 	String path = Nouns.PATHOGENS + "/" + Nouns.COUNTS + "/" + InvalidCount;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldFailByPathogenCountNotInt(){
-		String InvalidCount = counter + "a";
-	 	String path = Nouns.PATHOGENS + "/" + Nouns.COUNTS + "/" + InvalidCount;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}*/
 	
 	@Test
 	public void shouldGetPathogenSearchCount(){
-		target = target.queryParam("group", "1");
-		target = target.queryParam("order", "40");
 		target = target.queryParam("genus", "777");
 		target = target.queryParam("species", "1");
 		target = target.queryParam("virus", "40");
-		target = target.queryParam("countries", "777");
-		target = target.queryParam("provstateterritory", "1");
 		String path = Nouns.PATHOGENS + "/" + Nouns.COUNT;
 		System.out.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	/*
-	@Test
-	public void shouldFailByPathogenSearchCountExceededTen(){
-		int InvalidCount = counter + 2;
-	 	String path = Nouns.PATHOGENS + "/" + Nouns.COUNTS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldFailByPathogenSearchCountNotInt(){
-		String InvalidCount = counter + "a";
-	 	String path = Nouns.PATHOGENS + "/" + Nouns.COUNTS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}*/
 	
 	/////////////////////////SEARCH////////////////////////	
 	@Test
@@ -220,62 +160,6 @@ public class TestGetPathogen{
 	}
 	
 	@Test
-	public void shouldGetPathogenByGroupName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("group", "777");
-		//String path = "pathogens?group=" + groupName;
-		String path = Nouns.PATHOGENS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		System.out.println(response);
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void ShouldGetPathogenByOrderName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("order", "foo");
-		//String path = "pathogens?order=" + orderName;
-		String path = Nouns.PATHOGENS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		System.out.println(response);
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldGetPathogenByCountryName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("countries", "777");
-		//String path = "pathogens?country=" + countryName;
-		String path = Nouns.PATHOGENS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		System.out.println(response);
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void ShouldGetPathogenByProvinceStateName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("provstateterritory", "foo");
-		//String path = "pathogens?provstate=" + provstateName;
-		String path = Nouns.PATHOGENS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		System.out.println(response);
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
 	public void ShouldGetPathogenSearchBySortField(){
 		target = target.queryParam("offset", "1");
 		target = target.queryParam("limit", "40");
@@ -285,8 +169,6 @@ public class TestGetPathogen{
 		target = target.queryParam("sortField", "pathogen_genus");
 		target = target.queryParam("sortField", "pathogen_species");
 		target = target.queryParam("sortField", "pathogen_virus");
-		target = target.queryParam("sortField", "countries");
-		target = target.queryParam("sortField", "provstateterritory");
 		//String path = "pathogens?sortField=" + sortField;
 		String path = Nouns.PATHOGENS;
 		System.out.println("path=[" + path + "]");

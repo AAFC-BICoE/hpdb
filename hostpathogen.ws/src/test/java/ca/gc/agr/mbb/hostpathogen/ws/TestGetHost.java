@@ -88,76 +88,13 @@ public class TestGetHost{
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
 	}
-	/*
-	@Test
-	public void shouldGetHostCount(){
-		String path = Nouns.HOSTS + "/" + Nouns.COUNTS + "/" + counter;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
 	
 	@Test
-	public void shouldFailByHostCountExceededTen(){
-		int InvalidCount = counter + 2;
-	 	String path =  Nouns.HOSTS + "/" + Nouns.COUNTS + "/" + InvalidCount;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldFailByHostCountNotInt(){
-		String InvalidCount = counter + "a";
-	 	String path =  Nouns.HOSTS + "/" + Nouns.COUNTS + "/" + InvalidCount;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldGetHostSearchCount(){
-		String path = Nouns.HOSTS + "/" + Nouns.COUNTS + "/" + counter;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldFailByHostSearchCountExceededTen(){
-		int InvalidCount = counter + 2;
-	 	String path =  Nouns.HOSTS + "/" + Nouns.COUNTS + "/" + InvalidCount;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldFailByHostSearchCountNotInt(){
-		String InvalidCount = counter + "a";
-	 	String path =  Nouns.HOSTS + "/" + Nouns.COUNTS + "/" + InvalidCount;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(response);
-		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
-	}*/
-	
-	@Test
-	public void shouldGetHostSearchCount(){
+	public void shouldGetHostSearchCountQuery(){
 		target = target.queryParam("family", "host_family");
 		target = target.queryParam("genus", "host_species");
 		target = target.queryParam("species", "host_genus");
-		target = target.queryParam("countries", "pathogen_genus");
-		target = target.queryParam("provstateterritory", "pathogen_species");
+		target = target.queryParam("synonyms", "true");
 		String path = Nouns.HOSTS + "/" + Nouns.COUNT;
 		System.out.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
@@ -209,34 +146,6 @@ public class TestGetHost{
 	}
 	
 	@Test
-	public void shouldGetHostByCountryName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("countries", "777");
-		//String path = "host?country=" + countryName;
-		String path = Nouns.HOSTS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		System.out.println(response);
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldGetHostByProvStateName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("provstateterritory", "777");
-		//String path = "host?provstate=" + provstateName;
-		String path = Nouns.HOSTS;
-		System.out.println("path=[" + path + "]");
-		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-		System.out.println(response);
-		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
 	public void ShouldGetHostSearchBySortField(){
 		target = target.queryParam("offset", "1");
 		target = target.queryParam("limit", "40");
@@ -246,8 +155,6 @@ public class TestGetHost{
 		target = target.queryParam("sortField", "pathogen_genus");
 		target = target.queryParam("sortField", "pathogen_species");
 		target = target.queryParam("sortField", "pathogen_virus");
-		target = target.queryParam("sortField", "countries");
-		target = target.queryParam("sortField", "provstateterritory");
 		//String path = "host?sortField=" + sortField;
 		String path = Nouns.HOSTS;
 		System.out.println("path=[" + path + "]");

@@ -39,10 +39,6 @@ import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
 @Path(Nouns.HOSTS)
 @XmlRootElement
 public class HostWS implements Nouns, WSConstants{	
-	static LuceneConfig hostConfig;
-	static LuceneConfig pathogenConfig;
-	static LuceneConfig hostPathogenConfig;
-	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsInit(
@@ -55,11 +51,6 @@ public class HostWS implements Nouns, WSConstants{
 			@DefaultValue("true") @QueryParam("synonyms") String synonymString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldString) throws JSONException, IllegalArgumentException, IllegalOffsetLimitException, IndexFailureException, InitializationException {
 
-		Host host =  new Host();
-		host.getId();
-		host.setGenus(genusString);
-		host.setSpecies(speciesString);
-		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
 		jsonObject.put("limit", limit);
@@ -73,7 +64,6 @@ public class HostWS implements Nouns, WSConstants{
 		String pretJson = prettyGson.toJson(jsonObject);
 
 		System.out.println(pretJson);
-		System.out.println(host);
 
 		//Testing cache control for 1 day
 		CacheControl cc = new CacheControl();
@@ -89,7 +79,6 @@ public class HostWS implements Nouns, WSConstants{
 			return Response.status(200).entity(pretJson).cacheControl(cc).build();
 		}
 	}
-
 
 	public static String TimeStamp(){
 		return Calendar.getInstance().getTime().toString();
@@ -131,7 +120,7 @@ public class HostWS implements Nouns, WSConstants{
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsId(@PathParam(ID) final Long ID_VALID) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException {
 
-		
+
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("id", ID_VALID);  
 		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();

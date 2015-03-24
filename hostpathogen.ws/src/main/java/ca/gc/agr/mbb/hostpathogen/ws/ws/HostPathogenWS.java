@@ -46,7 +46,6 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@DefaultValue(DEFAULT_PAGING_LIMIT_STRING) @QueryParam(PAGING_LIMIT_PARAMETER) Integer limit,
 			@DefaultValue("") @QueryParam("locations") String locationsString, 
 			@DefaultValue("") @QueryParam("countries") String countriesString,
-			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException, IllegalOffsetLimitException {
 
 		System.out.println("GetALlHostPathogensWithOffsetLimit");
@@ -57,7 +56,6 @@ public class HostPathogenWS implements Nouns, WSConstants{
 		jsonObject.put("limit", limit);
 		jsonObject.put("locations", locationsString); 
 		jsonObject.put("countries", countriesString);
-		jsonObject.put("synonyms", synonymsString);
 		jsonObject.put("Sort Fields", sortFieldsString);
 
 		String result = "\n GET Host-Pathogens offset and limit: \n" + jsonObject;
@@ -81,6 +79,7 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString,
 			@DefaultValue("") @QueryParam("families") String familyString,
+			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException {
 
 		System.out.println("GetALlHostPathogensByHostSearch");
@@ -92,6 +91,7 @@ public class HostPathogenWS implements Nouns, WSConstants{
 		jsonObject.put("hosts Genus", genusString); 
 		jsonObject.put("hosts Species", speciesString);
 		jsonObject.put("hosts families", familyString);
+		jsonObject.put("synonyms", synonymsString);
 		jsonObject.put("Sort Fields", sortFieldsString);
 
 		String result = "\n GET Host-Pathogens by hosts search: \n" + jsonObject;
@@ -114,6 +114,7 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString,
 			@DefaultValue("") @QueryParam("virus") String virusString,
+			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException {
 
 		System.out.println("GetALlHostPathogensByHostSearch");
@@ -125,6 +126,7 @@ public class HostPathogenWS implements Nouns, WSConstants{
 		jsonObject.put("hosts Genus", genusString); 
 		jsonObject.put("hosts Species", speciesString);
 		jsonObject.put("hosts families", virusString);
+		jsonObject.put("synonyms", synonymsString);
 		jsonObject.put("Sort Fields", sortFieldsString);
 
 		String result = "\n GET Host-Pathogens by hosts search: \n" + jsonObject;
