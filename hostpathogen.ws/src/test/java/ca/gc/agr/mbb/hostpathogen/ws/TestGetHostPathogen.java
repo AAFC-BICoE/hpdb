@@ -61,7 +61,31 @@ public class TestGetHostPathogen{
 	
 	@Test
 	public void shouldGetHostPathogenByHostId(){
-		String path = Nouns.HOSTPATHOGENS + "/" + id + "/" + Nouns.HOSTS;
+		String path = Nouns.HOSTPATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(response);
+		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
+		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+	}
+	
+	@Test
+	public void shouldGetHostPathogenByCountryList(){
+		target = target.queryParam("countries", "canada");
+		target = target.queryParam("countries", "usa");
+		String path = Nouns.HOSTPATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(response);
+		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
+		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+	}
+	
+	@Test
+	public void shouldGetHostPathogenByLocationList(){
+		target = target.queryParam("locations", "ab");
+		target = target.queryParam("locations", "ny");
+		String path = Nouns.HOSTPATHOGENS;
 		System.out.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		System.out.println(response);

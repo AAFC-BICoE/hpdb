@@ -36,14 +36,14 @@ public class PathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("species") String speciesString, 
 			@DefaultValue("") @QueryParam("virus") String virusString, 
 			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
-			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString)throws JSONException {
+			@DefaultValue("") @QueryParam("sortFields") final List<String> sortFieldsString)throws JSONException {
 
 		CacheControl cc = new CacheControl();
 		cc.setMaxAge(86400); 
 		cc.setPrivate(true);
 
 		System.out.println("GetALlPathogensWithOffsetLimitANDQuery");
-		System.out.println( "[Offset=" + offset + ", limit=" + limit + "]" + "pathogen [genus=" + genusString + ", species=" + speciesString + " | virusMPLO=" + virusString + " | Synonyms=" + synonymsString + " | sortFields=" + sortFieldsString + "]");
+		System.out.println( "[Offset=" + offset + ", limit=" + limit + "]" + "pathogen [genus=" + genusString + ", species=" + speciesString + " | virusMPLO=" + virusString + " | Synonyms=" + synonymsString + " | sortFields=" + sortFieldsString.toString() + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
@@ -52,7 +52,7 @@ public class PathogenWS implements Nouns, WSConstants{
 		jsonObject.put("Pathogens Species", speciesString);
 		jsonObject.put("Pathogens VirusMPLO", virusString);
 		jsonObject.put("Synonyms", synonymsString);
-		jsonObject.put("Sort Fields", sortFieldsString);
+		jsonObject.put("Sort Fields", sortFieldsString.toString());
 
 		String result = "\n GET Pathogens offset and limit and fieldQuery: \n" + jsonObject;
 		System.out.println(result.toString());

@@ -32,20 +32,20 @@ public class TestGetPathogen{
 
 	private HttpServer server;
 	private WebTarget target;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		server = Main.startServer();
-	 
+
 		Client client = ClientBuilder.newClient();
-	        target = client.target(Main.BASE_URI);
+		target = client.target(Main.BASE_URI);
 	}
-	
+
 	@After
 	public void tearDown() throws Exception {
 		server.stop();
 	}
-	
+
 	//////////////////////////////////////////
 	@Test
 	public void shouldGetPathogenById(){
@@ -55,7 +55,7 @@ public class TestGetPathogen{
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailWithBadId(){
 		String BadId = id + "a";
@@ -64,7 +64,7 @@ public class TestGetPathogen{
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailWithOutOfRangeId(){
 		long outOfRangeId = id + 5;
@@ -74,7 +74,7 @@ public class TestGetPathogen{
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldGetPathogenByHostId(){
 		String path = Nouns.PATHOGENS + "/" + id + "/" + Nouns.HOSTS;
@@ -83,16 +83,16 @@ public class TestGetPathogen{
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailWithHostBadId(){
-		String BadId = id + "a";
+		String BadId = id + "a";	
 		String path = Nouns.PATHOGENS + "/" + BadId + "/" + Nouns.HOSTS;
 		System.err.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailWithOutOfRangeHostId(){
 		long outOfRangeId = id + 5;
@@ -102,7 +102,7 @@ public class TestGetPathogen{
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldGetPathogenSearchCount(){
 		target = target.queryParam("genus", "777");
@@ -114,7 +114,7 @@ public class TestGetPathogen{
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	/////////////////////////SEARCH////////////////////////	
 	@Test
 	public void shouldGetPathogenByGenusName(){
@@ -129,7 +129,7 @@ public class TestGetPathogen{
 		System.out.println(response);
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldGetPathogenByGenusSpeciesName(){
 		target = target.queryParam("offset", "1");
@@ -144,7 +144,7 @@ public class TestGetPathogen{
 		System.out.println(response);
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void ShouldGetPathogenByVirusMPLOName(){
 		target = target.queryParam("offset", "1");
@@ -158,40 +158,40 @@ public class TestGetPathogen{
 		System.out.println(response);
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void ShouldGetPathogenSearchBySortField(){
 		target = target.queryParam("offset", "1");
 		target = target.queryParam("limit", "40");
-		target = target.queryParam("sortField", "host_family");
-		target = target.queryParam("sortField", "host_species");
-		target = target.queryParam("sortField", "host_genus");
-		target = target.queryParam("sortField", "pathogen_genus");
-		target = target.queryParam("sortField", "pathogen_species");
-		target = target.queryParam("sortField", "pathogen_virus");
+		target = target.queryParam("sortFields", "host_family");
+		target = target.queryParam("sortFields", "host_species");
+		target = target.queryParam("sortFields", "host_genus");
+		target = target.queryParam("sortFields", "pathogen_genus");
+		target = target.queryParam("sortFields", "pathogen_species");
+		target = target.queryParam("sortFields", "pathogen_virus");
 		//String path = "pathogens?sortField=" + sortField;
+		String path = Nouns.PATHOGENS;
+		System.out.println("Get SortField path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
+		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+	}
+
+	@Test
+	public void shouldGetSpeciesName(){
+		target = target.queryParam("offset", "1");
+		target = target.queryParam("limit", "40");
+		target = target.queryParam("species", "12d");
+		//String path = "pathogens?virusMPLO=" + virusName + "&genus=" + genusName + "&species=" + speciesName;
 		String path = Nouns.PATHOGENS;
 		System.out.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
 		System.out.println(response);
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-	}
-	
-	@Test
-	public void shouldGetSpeciesName(){
-		target = target.queryParam("offset", "1");
-		target = target.queryParam("limit", "40");
-		target = target.queryParam("species", "12d");
-	 	//String path = "pathogens?virusMPLO=" + virusName + "&genus=" + genusName + "&species=" + speciesName;
-	 	String path = Nouns.PATHOGENS;
-	 	System.out.println("path=[" + path + "]");
-	 	Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-	 	System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-	 	System.out.println(response);
-	 	assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}   
-	
+
 	/////////////////////////////fail Search///////////////////////////////////
 	@Test
 	public void shouldFailByGetVirusAndSpeciesName(){
@@ -199,30 +199,30 @@ public class TestGetPathogen{
 		target = target.queryParam("limit", "40");
 		target = target.queryParam("virus", "foo");
 		target = target.queryParam("species", "777");
-	 	//String path = "pathogens?virusMPLO=" + virusName + "&genus=" + genusName;
-	 	String path = Nouns.PATHOGENS;
-	 	System.out.println("path=[" + path + "]");
-	 	Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-	 	System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-	 	System.out.println(response);
-	 	assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+		//String path = "pathogens?virusMPLO=" + virusName + "&genus=" + genusName;
+		String path = Nouns.PATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
+		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailByGetVirusAndGenusName(){
 		target = target.queryParam("offset", "1");
 		target = target.queryParam("limit", "40");
 		target = target.queryParam("virus", "foo");
 		target = target.queryParam("genus", "777");
-	 	//String path = "pathogens?virus=" + virusName + "&genus=" + genusName;
-	 	String path = Nouns.PATHOGENS;
-	 	System.out.println("path=[" + path + "]");
-	 	Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-	 	System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-	 	System.out.println(response);
-	 	assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+		//String path = "pathogens?virus=" + virusName + "&genus=" + genusName;
+		String path = Nouns.PATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
+		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailByGetVirusGenusAndSpeciesName(){
 		target = target.queryParam("offset", "1");
@@ -230,38 +230,38 @@ public class TestGetPathogen{
 		target = target.queryParam("virus", "foo");
 		target = target.queryParam("genus", "777");
 		target = target.queryParam("species", "12d");
-	 	//String path = "pathogens?virusMPLO=" + virusName + "&genus=" + genusName;
-	 	String path = Nouns.PATHOGENS;
-	 	System.out.println("path=[" + path + "]");
-	 	Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-	 	System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-	 	System.out.println(response);
-	 	assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+		//String path = "pathogens?virusMPLO=" + virusName + "&genus=" + genusName;
+		String path = Nouns.PATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
+		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	} 
-	
+
 	@Test
 	public void shouldGetPathogenOffsetAndLimit(){
 		target = target.queryParam("offset", "1");
 		target = target.queryParam("limit", "50");
-	 	//String path = "location?offset=" + offsetValue + "&limit=" + limitValue;
-	 	String path =  Nouns.PATHOGENS;
-	 	System.out.println("path=[" + path + "]");
-	 	Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-	 	System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
-	 	System.out.println(response);
-	 	assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+		//String path = "location?offset=" + offsetValue + "&limit=" + limitValue;
+		String path =  Nouns.PATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
+		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
-	
+
 	@Test
 	public void shouldFailByOutOfRangeOffsetAndLimit(){
 		target = target.queryParam("offset", "12");
 		target = target.queryParam("limit", "90");
-	 	//String path = "host?offset=" + offsetValue + "&limit=" + limitValue;
-	 	String path =  Nouns.PATHOGENS;
-	 	System.out.println("path=[" + path + "]");
-	 	Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
-	 	System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
-	 	System.out.println(response);
-	 	assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+		//String path = "host?offset=" + offsetValue + "&limit=" + limitValue;
+		String path =  Nouns.PATHOGENS;
+		System.out.println("path=[" + path + "]");
+		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(Response.Status.BAD_REQUEST.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
+		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
 }

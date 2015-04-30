@@ -20,7 +20,6 @@ import ca.gc.agr.mbb.hostpathogen.ws.Nouns;
 public class TestGetHost{
 	//Mock value to test the WS//
 	long id = 1;
-	int counter = 9;
 	int offsetValue = 12;
 	int limitValue = 90;
 	
@@ -68,6 +67,7 @@ public class TestGetHost{
 		String path = Nouns.HOSTS + "/" + BadId;
 		System.err.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(response);
 		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
 	
@@ -77,6 +77,7 @@ public class TestGetHost{
 		String path = Nouns.HOSTS + "/" + BadId + "/" + Nouns.PATHOGENS;
 		System.err.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(response);
 		assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
 	}
 	@Test
@@ -86,6 +87,7 @@ public class TestGetHost{
 		String path = Main.BASE_URI +Nouns.HOSTS + "/" + outOfRangeId;
 		System.err.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
+		System.out.println(response);
 		assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
 	}
 	
@@ -99,6 +101,7 @@ public class TestGetHost{
 		System.out.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
 	
@@ -142,6 +145,7 @@ public class TestGetHost{
 		System.out.println("path=[" + path + "]");
 		Response response = target.path(path).request().accept(MediaType.APPLICATION_JSON).get();
 		System.out.println(Response.Status.OK.getStatusCode() + " " + response.getStatus());
+		System.out.println(response);
 		assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
 	}
 	

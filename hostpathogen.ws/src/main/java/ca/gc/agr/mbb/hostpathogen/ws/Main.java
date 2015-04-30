@@ -15,17 +15,11 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.InitializationException;
-import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.LuceneConfig;
-import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.LuceneFields;
-import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.SearcherDao;
-import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.UtilLucene;
 import ca.gc.agr.mbb.hostpathogen.nouns.Host;
 import ca.gc.agr.mbb.hostpathogen.nouns.HostPathogen;
 import ca.gc.agr.mbb.hostpathogen.nouns.Pathogen;
 
 public class Main implements WSConstants {
-	private final Logger logger=Logger.getLogger(this.getClass().getPackage().getName());
 	// Base URI the Grizzly HTTP server will listen on
 	public static String BASE_URI = null;
 	

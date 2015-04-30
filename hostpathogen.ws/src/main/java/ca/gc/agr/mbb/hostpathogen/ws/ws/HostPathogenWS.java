@@ -44,8 +44,8 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@Context UriInfo uri,
 			@DefaultValue(DEFAULT_PAGING_OFFSET_STRING) @QueryParam(PAGING_OFFSET_PARAMETER) Integer offset, 
 			@DefaultValue(DEFAULT_PAGING_LIMIT_STRING) @QueryParam(PAGING_LIMIT_PARAMETER) Integer limit,
-			@DefaultValue("") @QueryParam("locations") String locationsString, 
-			@DefaultValue("") @QueryParam("countries") String countriesString,
+			@DefaultValue("") @QueryParam("locations") List<String> locationsString, 
+			@DefaultValue("") @QueryParam("countries") List<String> countriesString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException, IllegalOffsetLimitException {
 
 		System.out.println("GetALlHostPathogensWithOffsetLimit");
@@ -54,9 +54,9 @@ public class HostPathogenWS implements Nouns, WSConstants{
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
 		jsonObject.put("limit", limit);
-		jsonObject.put("locations", locationsString); 
-		jsonObject.put("countries", countriesString);
-		jsonObject.put("Sort Fields", sortFieldsString);
+		jsonObject.put("locations", locationsString.toString()); 
+		jsonObject.put("countries", countriesString.toString());
+		jsonObject.put("Sort Fields", sortFieldsString.toString());
 
 		String result = "\n GET Host-Pathogens offset and limit: \n" + jsonObject;
 		System.out.println(result);
