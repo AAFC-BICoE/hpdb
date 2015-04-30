@@ -25,8 +25,6 @@ public class ReferenceWS implements Nouns, WSConstants{
 	public Response GetReferenceInit(
 			@DefaultValue(DEFAULT_PAGING_OFFSET_STRING) @QueryParam(PAGING_OFFSET_PARAMETER) Integer offset, 
 			@DefaultValue(DEFAULT_PAGING_LIMIT_STRING) @QueryParam(PAGING_LIMIT_PARAMETER) Integer limit) throws JSONException {
-		System.out.println("GetALlReferenceWithOffsetLimit");
-		System.out.println("[Offset=" + offset + ", limit=" + limit + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
@@ -47,9 +45,7 @@ public class ReferenceWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetReferenceId(@PathParam(ID) String ID_VALID) throws JSONException {
-		System.out.println("GetReferenceId");
-		System.out.println("id=[" + ID_VALID + "]");
-
+		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Reference ID", ID_VALID); 
 
@@ -63,8 +59,6 @@ public class ReferenceWS implements Nouns, WSConstants{
 	@GET
 	@Produces("application/json")
 	public Response GetReferenceNOTId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetReferenceNOTId");
-		System.out.println("id=[" + ID_INVALID + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("notId", ID_INVALID); 

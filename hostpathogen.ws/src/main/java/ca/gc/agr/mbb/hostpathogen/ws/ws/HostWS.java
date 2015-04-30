@@ -48,6 +48,7 @@ public class HostWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("families") String familyString,
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString,
+			@DefaultValue("") @QueryParam("countries") String countryString,
 			@DefaultValue("true") @QueryParam("synonyms") String synonymString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldString) throws JSONException, IllegalArgumentException, IllegalOffsetLimitException, IndexFailureException, InitializationException {
 
@@ -57,6 +58,7 @@ public class HostWS implements Nouns, WSConstants{
 		jsonObject.put("genus", genusString); 
 		jsonObject.put("species", speciesString);
 		jsonObject.put("families", familyString);
+		jsonObject.put("countries", countryString);
 		jsonObject.put("synonyms", synonymString);
 		jsonObject.put("SortFields", sortFieldString);
 
@@ -96,10 +98,7 @@ public class HostWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldString) throws JSONException {
-
-		System.out.println("GetCountHostsSearchQuery");
-		System.out.println("CountSearchHosts=[family=" + familyString + "| genus=" + genusString + "| species=" + speciesString + "]");
-
+		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
 		jsonObject.put("limit", limit);
@@ -119,7 +118,6 @@ public class HostWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsId(@PathParam(ID) final Long ID_VALID) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException {
-
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("id", ID_VALID);  
@@ -141,13 +139,11 @@ public class HostWS implements Nouns, WSConstants{
 	@GET
 	@Produces("application/json")
 	public Response GetHostsNOTId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetHostsNOTId");
-		System.out.println("id=[" + ID_INVALID + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Hosts Bad ID", ID_INVALID); 
 
-		System.out.println("\n GET Not Hosts Bad ID: \n" + jsonObject);
+		System.out.println("\n GET Not HostsID: \n" + jsonObject);
 		return Response.status(400).build();
 	}
 
@@ -156,12 +152,10 @@ public class HostWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsByPathogenId(@PathParam(ID) final String ID_VALID) throws JSONException {
-		System.out.println("GetHostsByPathogenId");
-		System.out.println("id=[" + ID_VALID + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("PathogenID", ID_VALID);  
-		String result = "\n GET Hosts by Pathogen ID: \n" + jsonObject;
+		String result = "\n GET Hosts by PathogenID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(200).entity(result).build();
 	}
@@ -171,12 +165,9 @@ public class HostWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsByPathogenBadId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetHostsByPathogenBadId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Hosts Invalid ID", ID_INVALID); 
-		String result = "\n GET Hosts where Pathogen Bad ID: \n" + jsonObject;
+		String result = "\n GET Hosts Not PathogenID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(400).entity(result).build();
 	}

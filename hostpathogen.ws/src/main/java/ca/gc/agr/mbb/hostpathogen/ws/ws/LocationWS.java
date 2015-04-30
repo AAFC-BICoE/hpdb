@@ -53,11 +53,9 @@ public class LocationWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetLocationId(@PathParam(ID) final String ID_VALID) throws JSONException {
-		System.out.println("GetLocationId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Location ID", ID_VALID); 
+		
 		String result = "\n GET Location ID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(200).entity(result).build();
@@ -68,9 +66,6 @@ public class LocationWS implements Nouns, WSConstants{
 	@GET
 	@Produces("application/json")
 	public Response GetLocationNOTId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetLocationNOTId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Location Bad ID", ID_INVALID); 
 

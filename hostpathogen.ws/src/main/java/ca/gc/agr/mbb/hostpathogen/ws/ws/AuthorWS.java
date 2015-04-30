@@ -36,9 +36,7 @@ public class AuthorWS implements Nouns, WSConstants{
 	public Response GetAuthorInit(@Context final UriInfo uri,
 			@DefaultValue(DEFAULT_PAGING_OFFSET_STRING) @QueryParam(PAGING_OFFSET_PARAMETER) Integer offset, 
 			@DefaultValue(DEFAULT_PAGING_LIMIT_STRING) @QueryParam(PAGING_LIMIT_PARAMETER) Integer limit, Date getdate) throws JSONException {
-
-		System.out.println("[Offset=" + offset + ", limit=" + limit + "]");
-
+		
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset);
 		jsonObject.put("limit", limit);
@@ -64,9 +62,6 @@ public class AuthorWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetAuthorId(@PathParam(ID) final String ID_VALID) throws JSONException {
-		System.out.println("GetAuthorId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Author ID", ID_VALID); 
 
@@ -80,9 +75,6 @@ public class AuthorWS implements Nouns, WSConstants{
 	@GET
 	@Produces("application/json")
 	public Response GetAuthorNOTId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetAuthorNOTId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Author Bad ID", ID_INVALID); 
 
@@ -95,9 +87,6 @@ public class AuthorWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetAuthorByReferenceId(@PathParam(ID) final String ID_VALID) throws JSONException {
-		System.out.println("GetAuthorByReferenceId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Author By Reference ID", ID_VALID); 
 
@@ -110,10 +99,7 @@ public class AuthorWS implements Nouns, WSConstants{
 	@Path(WSConstants.ID_INVALID + Nouns.REFERENCES)
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response GetAuthorByBadReferenceId(@PathParam(ID) final String ID_INVALID) throws JSONException {
-		System.out.println("GetAuthorByBadReferenceId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
+	public Response GetAuthorByBadReferenceId(@PathParam(ID) String ID_INVALID) throws JSONException {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Author By Bad Reference ID", ID_VALID); 
 

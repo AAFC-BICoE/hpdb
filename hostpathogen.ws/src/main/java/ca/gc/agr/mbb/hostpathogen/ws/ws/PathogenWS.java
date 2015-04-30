@@ -35,6 +35,7 @@ public class PathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString, 
 			@DefaultValue("") @QueryParam("virus") String virusString, 
+			@DefaultValue("") @QueryParam("countries") String countryString, 
 			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
 			@DefaultValue("") @QueryParam("sortFields") final List<String> sortFieldsString)throws JSONException {
 
@@ -42,15 +43,13 @@ public class PathogenWS implements Nouns, WSConstants{
 		cc.setMaxAge(86400); 
 		cc.setPrivate(true);
 
-		System.out.println("GetALlPathogensWithOffsetLimitANDQuery");
-		System.out.println( "[Offset=" + offset + ", limit=" + limit + "]" + "pathogen [genus=" + genusString + ", species=" + speciesString + " | virusMPLO=" + virusString + " | Synonyms=" + synonymsString + " | sortFields=" + sortFieldsString.toString() + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
 		jsonObject.put("limit", limit);
 		jsonObject.put("Pathogens Genus", genusString); 
 		jsonObject.put("Pathogens Species", speciesString);
 		jsonObject.put("Pathogens VirusMPLO", virusString);
+		jsonObject.put("countries", countryString);
 		jsonObject.put("Synonyms", synonymsString);
 		jsonObject.put("Sort Fields", sortFieldsString.toString());
 
@@ -88,9 +87,6 @@ public class PathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("species") String speciesString, 
 			@DefaultValue("") @QueryParam("virus") String virusString)throws JSONException { 
 
-		System.out.println("GetCountPathogensSearchQuery");
-		System.out.println( "[genus=" + genusString + ", species=" + speciesString + " | virusMPLO=" + virusString + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Pathogens Genus", genusString); 
 		jsonObject.put("Pathogens Species", speciesString);
@@ -105,10 +101,6 @@ public class PathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetPathogensId(@PathParam(ID) String ID_VALID) throws JSONException {
-		System.out.println("GetPathogensId");
-		System.out.println("id=[" + ID_VALID + "]");
-
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Pathogens ID", ID_VALID); 
 		String result = "\n GET Pathogens ID: \n" + jsonObject;
@@ -121,12 +113,9 @@ public class PathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetPathogensByHostId(@PathParam(ID) String ID_VALID) throws JSONException {
-		System.out.println("GetPathogensByHostId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Host ID", ID_VALID); 
-		String result = "\n GET Pathogens where Host ID: \n" + jsonObject;
+		String result = "\n GET Pathogens by HostID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(200).entity(result).build();
 	}
@@ -136,13 +125,10 @@ public class PathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces("application/json")
 	public Response GetPathogensNOTId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetPathogensNOTId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Pathogens Bad ID", ID_INVALID); 
 
-		System.out.println("\n\n GET Not Pathogens ID: \n" + jsonObject);
+		System.out.println("\n\n GET Not PathogensID: \n" + jsonObject);
 		return Response.status(400).build();
 	}
 
@@ -151,12 +137,9 @@ public class PathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetPathogensByHostBadId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetPathogensByHostBadId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Host Invalid ID", ID_INVALID); 
-		String result = "\n GET Not Pathogens where Host ID: \n" + jsonObject;
+		String result = "\n GET Pathogens Not HostID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(400).entity(result).build();
 	}

@@ -34,7 +34,6 @@ import ca.gc.agr.mbb.hostpathogen.nouns.HostPathogen;
 import ca.gc.agr.mbb.hostpathogen.ws.Nouns;
 import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
 
-
 @Path(Nouns.HOSTPATHOGENS)
 @XmlRootElement
 public class HostPathogenWS implements Nouns, WSConstants{
@@ -47,9 +46,6 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("locations") List<String> locationsString, 
 			@DefaultValue("") @QueryParam("countries") List<String> countriesString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException, IllegalOffsetLimitException {
-
-		System.out.println("GetALlHostPathogensWithOffsetLimit");
-		System.out.println("[Offset=" + offset + ", limit=" + limit + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
@@ -79,11 +75,9 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString,
 			@DefaultValue("") @QueryParam("families") String familyString,
+			@DefaultValue("") @QueryParam("countries") String countryString,
 			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException {
-
-		System.out.println("GetALlHostPathogensByHostSearch");
-		System.out.println("[Offset=" + offset + ", limit=" + limit + "host [genus=" + genusString + ", species=" + speciesString + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
@@ -91,10 +85,11 @@ public class HostPathogenWS implements Nouns, WSConstants{
 		jsonObject.put("hosts Genus", genusString); 
 		jsonObject.put("hosts Species", speciesString);
 		jsonObject.put("hosts families", familyString);
+		jsonObject.put("countries", countryString);
 		jsonObject.put("synonyms", synonymsString);
 		jsonObject.put("Sort Fields", sortFieldsString);
 
-		String result = "\n GET Host-Pathogens by hosts search: \n" + jsonObject;
+		String result = "\n GET Host-Pathogens by hosts: \n" + jsonObject;
 		System.out.println(result);
 		if (limit - offset > DEFAULT_PAGING_LIMIT){
 			System.out.println("Your request exceded the limit of 50!");
@@ -114,22 +109,21 @@ public class HostPathogenWS implements Nouns, WSConstants{
 			@DefaultValue("") @QueryParam("genus") String genusString, 
 			@DefaultValue("") @QueryParam("species") String speciesString,
 			@DefaultValue("") @QueryParam("virus") String virusString,
+			@DefaultValue("") @QueryParam("countries") String countryString,
 			@DefaultValue("true") @QueryParam("synonyms") String synonymsString,
 			@DefaultValue("") @QueryParam("sortFields") List<String> sortFieldsString) throws JSONException {
-
-		System.out.println("GetALlHostPathogensByHostSearch");
-		System.out.println("[Offset=" + offset + ", limit=" + limit + "host [genus=" + genusString + ", species=" + speciesString + "]");
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("offset", offset); 
 		jsonObject.put("limit", limit);
-		jsonObject.put("hosts Genus", genusString); 
-		jsonObject.put("hosts Species", speciesString);
-		jsonObject.put("hosts families", virusString);
+		jsonObject.put("pathogen genus", genusString); 
+		jsonObject.put("pathogen species", speciesString);
+		jsonObject.put("pathogen virus", virusString);
+		jsonObject.put("countries", countryString);
 		jsonObject.put("synonyms", synonymsString);
 		jsonObject.put("Sort Fields", sortFieldsString);
 
-		String result = "\n GET Host-Pathogens by hosts search: \n" + jsonObject;
+		String result = "\n GET Host-Pathogens by pathogen: \n" + jsonObject;
 		System.out.println(result);
 		if (limit - offset > DEFAULT_PAGING_LIMIT){
 			System.out.println("Your request exceded the limit of 50!");
@@ -144,9 +138,6 @@ public class HostPathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostPathId(@PathParam(ID) String ID_VALID) throws JSONException {
-		System.out.println("GetHostPathId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Host-Pathogens ID", ID_VALID);  
 		String result = "\n GET Host-Pathogens ID: \n" + jsonObject;
@@ -159,11 +150,8 @@ public class HostPathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostPathByPathogensId(@PathParam(ID) String ID_VALID) throws JSONException {
-		System.out.println("GetHostPathogensByPathogensId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("Host ID", ID_VALID);  
+		jsonObject.put("Pathogen ID", ID_VALID);  
 		String result = "\n GET Host-Pathogens by Pathogens ID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(200).entity(result).build();
@@ -174,9 +162,6 @@ public class HostPathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostPathByHostId(@PathParam(ID) String ID_VALID) throws JSONException {
-		System.out.println("GetHostPathogensByPathogensId");
-		System.out.println("id=[" + ID_VALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Host ID", ID_VALID);  
 		String result = "\n GET Host-Pathogens by Host ID: \n" + jsonObject;
@@ -189,9 +174,6 @@ public class HostPathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces("application/json")
 	public Response GetHostNOTId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetHostPathogensNOTId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("HostPathogens Bad ID", ID_INVALID); 
 
@@ -204,12 +186,9 @@ public class HostPathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostPathByPathogensBadId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetHostPathogensByPathogensBadId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("HostPathogens Invalid ID", ID_INVALID); 
-		String result = "\n GET Host-Pathogens where Pathogens Bad ID: \n" + jsonObject;
+		String result = "\n GET Host-Pathogens Not Pathogens ID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(400).entity(result).build();
 	}
@@ -219,12 +198,9 @@ public class HostPathogenWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostPathByHostBadId(@PathParam(ID) String ID_INVALID) throws JSONException {
-		System.out.println("GetHostPathogensByPathogensBadId");
-		System.out.println("id=[" + ID_INVALID + "]");
-
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Host Invalid ID", ID_INVALID); 
-		String result = "\n GET Host-Pathogens where Host Bad ID: \n" + jsonObject;
+		String result = "\n GET Host-Pathogens Not HostID: \n" + jsonObject;
 		System.out.println(result);
 		return Response.status(400).entity(result).build();
 	}
