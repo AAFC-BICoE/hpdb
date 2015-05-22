@@ -32,13 +32,13 @@ Starts web server on port 8080
 5-References
 6-Authors
 ```
-return meta data header
+##return meta data header
 =====
 ```
 http://localhost:8080/v1/
 ```
 
-return list of records
+##return list of records
 =====
 ```
 http://localhost:8080/v1/hosts/
@@ -49,7 +49,7 @@ http://localhost:8080/v1/references
 http://localhost:8080/v1/locations/
 ```
 
-Get a single container record by primary key:
+##Get a single container record by primary key:
 =====
 ```
 http://localhost:8080/v1/hosts/1/
