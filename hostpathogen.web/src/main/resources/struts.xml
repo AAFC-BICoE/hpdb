@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+    <constant name="struts.convention.action.suffix" value="Controller"/>
+    <constant name="struts.convention.action.mapAllMatches" value="true"/>
+    <constant name="struts.convention.default.parent.package" value="rest-default"/>
+    <constant name="struts.convention.package.locators" value="rest"/>
+
+	<package name="HostPathogenServlet" extends="struts-default">
+	<global-results>
+		<result name="success" type="json">
+			<param name="excludeNullProperties">true</param>
+		</result>
+		<result name="failure" type="json">
+			<param name="excludeNullProperties">true</param>
+		</result>
+	</global-results>
+
+	<global-results>
+		<result name="mainMenu" type="redirect">mainMenu.html</result>
+		<result name="dataAccessFailure">/JSP/dataAccessFailure.jsp</result>
+	</global-results>
+		
+<!-- action for the servlet -->
+	<action name="">
+		<result type="redirect">/JSP/MainPage.jsp</result>
+	</action>
+	
+	<action name="reload" class="org.appfuse.webapp.action.ReloadAction">
+		<interceptor-ref name="adminCheck" />
+		<!-- this should never be used, it's here to prevent warnings -->
+		<result name="success">/JSP/MainPage.jsp</result>
+	</action>
+	
+	<!-- loadsearchform actions -->
+	<action name="loanForms" class="loanFormAction" method="search"> <!-- list -->
+		<result name="search">/WEB-INF/pages/loanform/loanSearch.jsp</result>
+	</action>
+	
+	<action name="DoSearch"
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet,action.SearchAction"
+		method="searchResult">
+		<result name="success">/JSP/ViewFormParam.jsp</result>
+		<result name="notfound">/JSP/404.jsp</result>
+		<result name="unauthorized">/JSP/403.jsp</result>
+		<result name="badrequest">/JSP/400.jsp</result>
+		<result name="reset">/JSP/MainPage.jsp</result>
+	</action>
+	</package>
+</struts>
