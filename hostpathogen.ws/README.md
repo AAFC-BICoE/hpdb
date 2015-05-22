@@ -33,13 +33,11 @@ Starts web server on port 8080
 6-Authors
 ```
 ##return meta data header
-=====
 ```
 http://localhost:8080/v1/
 ```
 
 ##return list of records
-=====
 ```
 http://localhost:8080/v1/hosts/
 http://localhost:8080/v1/pathogens/
@@ -50,7 +48,6 @@ http://localhost:8080/v1/locations/
 ```
 
 ##Get a single container record by primary key:
-=====
 ```
 http://localhost:8080/v1/hosts/1/
 http://localhost:8080/v1/pathogens/1/
