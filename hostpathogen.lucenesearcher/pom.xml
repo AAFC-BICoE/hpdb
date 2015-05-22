@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher</groupId>
-  <artifactId>hostpathogenlucenesearcher</artifactId>
+  <artifactId>hostPathogenLuceneSearcher</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>hostpathogenlucenesearcher</name>
+  <name>hostPathogenLuceneSearcher</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -62,7 +62,7 @@
 
     <dependency>
       <groupId>ca.gc.agr.mbb.hostpathogen.nouns</groupId>
-      <artifactId>nouns</artifactId>
+      <artifactId>hostPathogenNouns</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
 
