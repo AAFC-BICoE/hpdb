@@ -3,8 +3,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>ca.gc.agr.mbb.hostpathogen.ws</groupId>
-	<artifactId>HostPathWS</artifactId>
+	<groupId>ca.gc.agr.mbb.hostpathogen.webservice</groupId>
+	<artifactId>hostPathogenWebService</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>HostPathWS</name>
@@ -44,13 +44,13 @@
 
 		<dependency>
 			<groupId>ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher</groupId>
-			<artifactId>hostpathogenlucenesearcher</artifactId>
+			<artifactId>hostPathogenLuceneSearcher</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>ca.gc.agr.mbb.hostpathogen.nouns</groupId>
-			<artifactId>nouns</artifactId>
+			<artifactId>hostPathogenNouns</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 

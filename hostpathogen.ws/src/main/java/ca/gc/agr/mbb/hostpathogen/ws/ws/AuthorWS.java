@@ -53,7 +53,7 @@ public class AuthorWS implements Nouns, WSConstants{
 			System.out.println("Your request exceded the limit of 50!");
 			return Response.status(400).build();       
 		}else{
-			return Response.status(200).entity(result).build();
+			return Response.created(uri.getRequestUri()).status(200).entity(result).build();
 		}
 	}
 
