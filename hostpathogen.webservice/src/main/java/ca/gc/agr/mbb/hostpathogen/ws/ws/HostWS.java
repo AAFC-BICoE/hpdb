@@ -32,6 +32,7 @@ import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.IndexFailureExcepti
 import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.InitializationException;
 import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.LuceneConfig;
 import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.SearcherDao;
+import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.HPSearcher;
 import ca.gc.agr.mbb.hostpathogen.nouns.Host;
 import ca.gc.agr.mbb.hostpathogen.ws.Nouns;
 import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
@@ -117,7 +118,10 @@ public class HostWS implements Nouns, WSConstants{
 	@Path(WSConstants.ID_VALID)
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response GetHostsId(@PathParam(ID) final Long ID_VALID) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException {
+	public Response GetHostsId(@PathParam(ID) final Long ID_VALID) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException {	
+		/*@SuppressWarnings("rawtypes")
+		SearcherDao sdao = new SearcherDao.getId(long id);
+		HPSearcher<Host> host = new HPSearcher<Host>();*/
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("id", ID_VALID);  

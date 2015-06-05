@@ -2,57 +2,22 @@ package ca.gc.agr.mbb.hostpathogen.ws;
 
 import java.util.Calendar;
 
+import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
+import ca.gc.agr.mbb.hostpathogen.ws.Main;
+
 public class Meta {
 	public String version;
+	public Long ellapsedMillis;
 	public String thisUrl;
+	public String debugToggleUrl = Main.BASE_URI + WSConstants.BASEPATH + WSConstants.DEBUG_PATH;;
+	public boolean debug = BaseWS.ALL_DEBUG;
 	public String payloadType=null;
+	public String mode="real"; // real/mock
 	public String timestamp = Calendar.getInstance().getTime().toString();
 	public String errorString;
 	public int status;
+
 	public transient Long startMillis = System.currentTimeMillis();
 	
-	public final String getVersion() {
-		return version;
-	}
-	public final void setVersion(String version) {
-		this.version = version;
-	}
-	public final String getThisUrl() {
-		return thisUrl;
-	}
-	public final void setThisUrl(String thisUrl) {
-		this.thisUrl = thisUrl;
-	}
-	public final String getPayloadType() {
-		return payloadType;
-	}
-	public final void setPayloadType(String payloadType) {
-		this.payloadType = payloadType;
-	}
-	public final String getTimestamp() {
-		return timestamp;
-	}
-	public final void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
-	}
-	public final String getErrorString() {
-		return errorString;
-	}
-	public final void setErrorString(String errorString) {
-		this.errorString = errorString;
-	}
-	public final int getStatus() {
-		return status;
-	}
-	public final void setStatus(int status) {
-		this.status = status;
-	}
-	public final Long getStartMillis() {
-		return startMillis;
-	}
-	public final void setStartMillis(Long startMillis) {
-		this.startMillis = startMillis;
-	}	
-
 }
 
