@@ -1,5 +1,3 @@
-<%@ include file="/common/taglibs.jsp"%>
-
 <page:applyDecorator name="default">
 
 <head>

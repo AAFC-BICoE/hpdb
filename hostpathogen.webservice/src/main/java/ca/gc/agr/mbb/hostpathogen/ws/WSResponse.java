@@ -5,7 +5,7 @@ import ca.gc.agr.mbb.hostpathogen.nouns.Host;
 import ca.gc.agr.mbb.hostpathogen.nouns.Location;
 import ca.gc.agr.mbb.hostpathogen.nouns.Pathogen;
 import ca.gc.agr.mbb.hostpathogen.nouns.Reference;
-import ca.gc.agr.mbb.hostpathogen.ws.loader.HostPathogen;
+import ca.gc.agr.mbb.hostpathogen.nouns.HostPathogen;
 
 public class WSResponse {
 	private Meta meta;

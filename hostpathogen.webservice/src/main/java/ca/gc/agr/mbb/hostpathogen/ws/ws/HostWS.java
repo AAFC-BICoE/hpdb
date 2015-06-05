@@ -119,9 +119,9 @@ public class HostWS implements Nouns, WSConstants{
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsId(@PathParam(ID) final Long ID_VALID) throws JSONException, InitializationException, IllegalArgumentException, IndexFailureException {	
-		/*@SuppressWarnings("rawtypes")
+		@SuppressWarnings("rawtypes")
 		SearcherDao sdao = new SearcherDao.getId(long id);
-		HPSearcher<Host> host = new HPSearcher<Host>();*/
+		HPSearcher<Host> host = new HPSearcher<Host>();
 
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("id", ID_VALID);  

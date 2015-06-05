@@ -10,7 +10,7 @@
     <constant name="struts.convention.default.parent.package" value="rest-default"/>
     <constant name="struts.convention.package.locators" value="rest"/>
 
-	<package name="HostPathogenServlet" extends="struts-default">
+	<package name="HostPathogenWeb" extends="struts-default">
 	<global-results>
 		<result name="success" type="json">
 			<param name="excludeNullProperties">true</param>
@@ -26,29 +26,25 @@
 	</global-results>
 		
 <!-- action for the servlet -->
-	<action name="">
-		<result type="redirect">/JSP/MainPage.jsp</result>
+	<action name="Search">
+		<result type="redirect">/JSP/HPDB_Form.jsp</result>
 	</action>
 	
 	<action name="reload" class="org.appfuse.webapp.action.ReloadAction">
 		<interceptor-ref name="adminCheck" />
 		<!-- this should never be used, it's here to prevent warnings -->
-		<result name="success">/JSP/MainPage.jsp</result>
+		<result name="success">/JSP/HPDB_Form.jsp</result>
 	</action>
-	
-	<!-- loadsearchform actions -->
-	<action name="loanForms" class="loanFormAction" method="search"> <!-- list -->
-		<result name="search">/WEB-INF/pages/loanform/loanSearch.jsp</result>
-	</action>
+
 	
 	<action name="DoSearch"
-		class="ca.gc.agr.mbb.hostpathogen.jspservlet,action.SearchAction"
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
 		method="searchResult">
-		<result name="success">/JSP/ViewFormParam.jsp</result>
+		<result name="success">/JSP/HPDB_Form.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 		<result name="unauthorized">/JSP/403.jsp</result>
 		<result name="badrequest">/JSP/400.jsp</result>
-		<result name="reset">/JSP/MainPage.jsp</result>
+		<result name="reset">/JSP/HPDB_Form.jsp</result>
 	</action>
 	</package>
 </struts>

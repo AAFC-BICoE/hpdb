@@ -20,29 +20,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 
 import ca.gc.agr.mbb.hostpathogen.ws.Nouns;
 import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
 import ca.gc.agr.mbb.hostpathogen.nouns.Pathogen;
 
-@Path(WSConstants.BASEPATH)
+@Path(Nouns.PATHOGENS)
 @XmlRootElement
-@Produces({MediaType.APPLICATION_JSON})
-@JsonInclude(Include.NON_DEFAULT)
 public class PathogenWS implements Nouns, WSConstants{
-	public PathogenWS()
-	{
-		super();
-	}
-
-
-	@GET @Path(Nouns.PATHOGENS)
-	public Response GetListPathogens(@Context UriInfo uri,
+	@GET @Produces(MediaType.APPLICATION_JSON)
+	public Response GetPathogensInit(
+			@Context UriInfo uri,
 			@DefaultValue(DEFAULT_PAGING_OFFSET_STRING) @QueryParam(PAGING_OFFSET_PARAMETER) Integer offset, 
 			@DefaultValue(DEFAULT_PAGING_LIMIT_STRING) @QueryParam(PAGING_LIMIT_PARAMETER) Integer limit,
 			@DefaultValue("") @QueryParam("genus") String genusString, 
@@ -86,6 +76,19 @@ public class PathogenWS implements Nouns, WSConstants{
 		}else{
 			return Response.status(200).entity(result).cacheControl(cc).build();
 		}
+	/*	
+	public List<Pathogen> getPathogens() throws Execption{
+		List<Pathogen> pathogens = new ArrayList<>();
+		Pathogen path = new Pathogen();Google
+
+		path.setId(id);
+		path.setGenus(genusString);
+		path.setSpecies(speciesString);
+		path.setAnamorphId(anamorphId);
+		path.setVirusMPLO(virusString);
+		
+		return path;
+	}*/
 	}
 
 	//======================Count for Search=============//

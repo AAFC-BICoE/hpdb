@@ -12,7 +12,7 @@ public class Meta {
 	public String debugToggleUrl = Main.BASE_URI + WSConstants.BASEPATH + WSConstants.DEBUG_PATH;;
 	public boolean debug = BaseWS.ALL_DEBUG;
 	public String payloadType=null;
-	public String mode="real"; // real/mock
+	public String mode="mock"; // real/mock
 	public String timestamp = Calendar.getInstance().getTime().toString();
 	public String errorString;
 	public int status;

@@ -1,6 +1,6 @@
-package ca.gc.agr.mbb.hostpathogen.jspservlet.action;
+package ca.gc.agr.mbb.hostpathogen.jspservlet.beans;
 
-public class SubmitAction {
+public class RequestField {
 	protected String pathogenGenus;
 	protected String pathogenSpecies;
 	protected String pathogenSynonym;
@@ -13,6 +13,8 @@ public class SubmitAction {
 	protected String provinceStateTerritory;
 	protected String search;
 	protected String reset;
+	
+	public RequestField(){}
 	
 	public final String getPathogenGenus() {
 		return pathogenGenus;
@@ -86,5 +88,10 @@ public class SubmitAction {
 	public final void setReset(String reset) {
 		this.reset = reset;
 	}
-	
+	public String execute() {  
+		return "SUCCESS";  
+	}  
+	public String getDetail(){  
+		return "SUCCESS";  
+	}  
 }
