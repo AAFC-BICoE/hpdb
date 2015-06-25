@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+   pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 <!--<![endif]-->
 <head>
 <meta charset="utf-8" />
-<!-- Web Experience Toolkit (WET) / BoÃ®te Ã  outils de l'expÃ©rience Web (BOEW)
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
 <title>Search Records</title>
 <link href="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/favicon.ico" rel="shortcut icon"/>
@@ -91,7 +92,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <a href="http://www.canada.ca/en/gov/dept/index.html" rel="external">Departments</a>
 </li>
 <li id="gcwu-gcnb-lang">
-<a href="/acp/fra/siti/rechercher" lang="fr">Fran&ccedil;ais</a>
+<a href="%{lang}" lang="fr">Fran&ccedil;ais</a>
 </li>
 </ul>
 </div>
@@ -266,9 +267,9 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <h2>Breadcrumb trail</h2>
 <div id="gcwu-bc-in">
 <ol>
-<li><a href="">Home</a></li>
-<li><a href="">Host-Pathogen Database</a></li>
-<li><a href="MainPage.jsp">Search Records</a></li>
+<li><a href="/cbif/">Home</a></li>
+<li><a href="/hpdb/">Host-Pathogen Database</a></li>
+<li><a href="/hpdb/eng/MainPage.jsp">Search Records</a></li>
 </ol>
 </div>
 </div>
@@ -284,13 +285,13 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						
 						<!--Body Start-->
 						<div class="container">
-							<h1>Search Records</h1>
+							<h1><s:text name="language.hpdb.searchForm.title"/>Search Records</h1>
 
 							<form id="searchHostForm" action="JSP/SearchResult.jsp" method="GET">
 
 								<details class="span-8" open="open">
 									<summary class="module-info module-simplify" style="margin-right: 15px">
-										<b>Host Search</b>
+										<b><s:text name="language.hpdb.searchForm.searchByHost"/>Host Search</b>
 									</summary>
 									<div style="width: 100%; margin-top: 20px" class="form-inline">
 										<label class="col-sm-2 control-label">Family: </label> 

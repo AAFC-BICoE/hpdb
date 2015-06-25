@@ -35,7 +35,7 @@
 	
 	<servlet-mapping>
 		<servlet-name>HostPathogenServlet</servlet-name>
-		<url-pattern>/search</url-pattern>
+		<url-pattern>/hpdb/*</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

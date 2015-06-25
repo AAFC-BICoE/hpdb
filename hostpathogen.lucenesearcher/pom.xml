@@ -62,7 +62,7 @@
 
     <dependency>
       <groupId>ca.gc.agr.mbb.hostpathogen.nouns</groupId>
-      <artifactId>hostPathogenNouns</artifactId>
+      <artifactId>nouns</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
 
