@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ca.gc.agr.mbb.hostpathogen.web</groupId>
-  <artifactId>hpdb-web</artifactId>
+  <artifactId>hpdb</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
@@ -118,6 +118,7 @@
 				</excludes>
 			</resource>
 		</resources>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -154,14 +155,21 @@
 					<mainClass>ca.gc.agr.mbb.hostpathogen.jspservlet.http.Main</mainClass>
 				</configuration>
 			</plugin>
-
+			
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>7.6.8.v20121106</version>
-			</plugin>
+				<version>8.1.9.v20130131</version>
+				<configuration>
+					<webAppConfig>
+						<contextPath>/${project.artifactId}</contextPath>
+					</webAppConfig>
+						<stopKey>STOP</stopKey>
+						<stopPort>9999</stopPort>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+				</configuration>
+		   </plugin>
 		</plugins>
-		<finalName>hpdb-web</finalName>
 	</build>
 
 	<properties>
