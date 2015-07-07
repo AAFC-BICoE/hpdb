@@ -23,7 +23,7 @@
 	</global-results>
 		
 <!-- action for the servlet -->
-	<action name="getSearch" namespace="/hpdb/eng/recherche"
+	<action name="getSearch" namespace="/eng/recherche"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
 		method="search">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
@@ -33,7 +33,7 @@
 	</action>
 	
 		
-	<action name="getReset" namespace="/hpdb/eng/recherche/reset"
+	<action name="getReset" namespace="/eng/recherche/reset"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.ResetAction"
 		method="reset">
 		<result name="notfound">/JSP/404.jsp</result>

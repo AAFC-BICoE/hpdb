@@ -9,7 +9,7 @@
 
 <p>
     <fmt:message key="404.message">
-        <fmt:param><c:url value="/mainMenu.html"/></fmt:param>
+        <fmt:param><c:url value="/mainPage.jsp"/></fmt:param>
     </fmt:message>
 </p>
 <p style="text-align: center; margin-top: 20px">
