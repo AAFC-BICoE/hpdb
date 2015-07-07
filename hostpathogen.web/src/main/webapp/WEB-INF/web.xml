@@ -28,6 +28,25 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
+	<servlet>
+        <servlet-name>Lucene Index</servlet-name>
+        <servlet-class>br.bireme.mlts.MoreLikeThatServlet</servlet-class>
+        <init-param>
+            <description>Lucene index directory</description>
+            <param-name>HPLuceneIndex</param-name>
+            <param-value>/home/HostPathogenDB</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Lucene Index</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+	
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/sayhello</url-pattern>
