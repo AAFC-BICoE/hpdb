@@ -1,279 +1,22 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-
-<!DOCTYPE html>
-<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
-<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en">
-<!--<![endif]-->
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
-wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<title>Search Records</title>
-<link href="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/favicon.ico" rel="shortcut icon"/>
-<meta content="" name="dcterms.issued" title="W3CDTF"/>
-<meta content="" name="dcterms.modified" title="W3CDTF"/>
-<meta content="" name="dcterms.format" title="gcformat"/>
-<meta content="Search Records" name="dcterms.title"/>
-<meta content="ecosystems;geomatics;biological diversity" name="dcterms.subject" title="gccore"/>
-<meta content="" name="dcterms.description"/>
-<meta content="eng" name="dcterms.language" title="ISO639-2"/>
-<meta content="" name="keywords"/>
-<meta content="" name="dcterms.audience" title="gcaudience"/>
-<meta content="educational material" name="dcterms.type" title="gctype"/>
-<meta content="Government of Canada;Agriculture and Agri-Food Canada" name="dcterms.creator"/>
-<meta content="" name="dcterms.spatial" title="gcregions">
-<!--[if lte IE 8]>
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/jquery-ie.min.js"></script>
-<link rel="shortcut icon" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/favicon.ico" />
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/polyfills/html5shiv-min.js"></script>
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/grids/css/util-ie-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/css/pe-ap-ie-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/css/theme-ie-min.css" />
-<![endif]-->
-<!--[if gt IE 8]><!-->
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/jquery.min.js"></script>
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/settings.js"></script>
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/pe-ap-min.js"></script>
-<link rel="icon" type="image/x-icon" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/favicon.ico" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/grids/css/util-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/css/pe-ap-min.css" />
-<link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/css/theme-min.css" />
-<!--<![endif]-->
-<noscript><link rel="stylesheet" href="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/css/theme-ns-min.css" /></noscript>
-<!-- CustomScriptsCSSStart -->
-<link href="http://www5.agr.gc.ca/res/cbif-scib3.0.6/css/theme.css" rel="stylesheet">
-<link href="http://www5.agr.gc.ca/res/cbif-scib3.0.6/css/util.css" rel="stylesheet">
-<link href="styles/visibility.css" rel="stylesheet">
-<!--[if lte IE 8]>
-<link rel="stylesheet" href="http://www5.agr.gc.ca/res/cbif-scib3.0.6css/theme-ie.css" />
-<link rel="stylesheet" href="http://www5.agr.gc.ca/res/cbif-scib3.0.6/css/util-ie.css" />
-<![endif]-->
-<!-- CustomScriptsCSSEnd -->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Register</title>
 </head>
 <body>
-<div id="wb-body">
-<div id="wb-skip">
-<ul id="cn-tphp">
-<li id="wb-skip1">
-<a href="#wb-cont">Skip to main content</a>
-</li>
-<li id="wb-skip2">
-<a href="#wb-nav">Skip to footer</a>
-</li>
-</ul>
-</div> <!-- PL-XSLT-ID:PREVIEW_MENU -->	
-<div id="wb-head">
-<div id="wb-head-in">
-<header> <!-- HeaderStart -->	
-<nav role="navigation">
-<div id="gcwu-gcnb">
-<h2>Government of Canada navigation bar</h2>
-<div id="gcwu-gcnb-in">
-<div id="gcwu-gcnb-fip">
-<div id="gcwu-sig">
-<div id="gcwu-sig-in">
-<object data="http://www5.agr.gc.ca/res/wet-boew3.0.6/dist/theme-gcwu-fegc/images/sig-eng.svg" role="img" tabindex="-1" aria-label="Government of Canada" type="image/svg+xml">
-<img src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/sig-eng.png" alt="Government of Canada" />
-</object>
-</div>
-</div>
-<ul>
-<li id="gcwu-gcnb1">
-<a href="http://www.canada.ca/en/index.html" rel="external">Canada.ca</a>
-</li>
-<li id="gcwu-gcnb2">
-<a href="http://www.servicecanada.gc.ca/eng/home.shtml" rel="external">Services</a>
-</li>
-<li id="gcwu-gcnb3">
-<a href="http://www.canada.ca/en/gov/dept/index.html" rel="external">Departments</a>
-</li>
-<li id="gcwu-gcnb-lang">
-<a href="/acp/fra/siti/rechercher" lang="fr">Fran&ccedil;ais</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</nav>
-<div id="gcwu-bnr" role="banner">
-<div id="gcwu-bnr-in">
-<div id="gcwu-wmms">
-<div id="gcwu-wmms-in">
-<object data="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/wmms.svg" role="img" tabindex="-1" aria-label="Symbol of the Government of Canada" type="image/svg+xml">
-<img src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-gcwu-fegc/images/wmms.png" alt="Symbol of the Government of Canada" />
-</object>
-</div>
-</div>
-<div id="gcwu-title">
-<p id="gcwu-title-in">
-<a href="">Host-Pathogen Database</a>
-</p>
-</div>
-</div>
-</div>
-<nav role="navigation">
-<div id="gcwu-psnb">
-<h2>
-<span>Site </span>menu</h2>
-<div id="gcwu-psnb-in">
-<div class="wet-boew-menubar mb-mega">
-<div>
-<ul class="mb-menu" data-ajax-replace="/eng/megamenu.inc?deliveryDestination=cbif">
-<li>
-<section>
-<h3>
-<a href="http://www.agr.gc.ca/eng/programs-and-services/?id=1362675650980" target="_self">Programs and Services</a>
-</h3>
-<div class="mb-sm">
-<div class="span-2">
-<ul>
-<li>
-<a href="http://www.agr.gc.ca/eng/programs-and-services/agpal-program-and-service-finder/?id=1364218497997" target="_self">AgPal - Program and Service Finder</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/programs-and-services
-/list-of-programs-and-services/?id=1362151577626" target="_self">List of Programs and Services</a>
-</li>
-</ul>
-</div>
-<div class="clear"></div>
-<div class="mb-main-link">
-<a href="http://www.agr.gc.ca/eng/programs-and-services/?id=1362675650980" target="_self">Programs and Services &ndash; Main page</a>
-</div>
-</div>
-</section>
-</li>
-<li>
-<section>
-<h3>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/?id=1360881916382" target="_self">Industry, Markets and Trade</a>
-</h3>
-<div class="mb-sm">
-<div class="span-2">
-<ul>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/statistics-and-market-information/?id=1361289956531" target="_self">Statistics and Market Information</a>
-</li>new member starter kit.
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/market-access/?id=1373384342105" target="_self">Market Access</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/trade-events/?id=1410072148325" target="_self">Trade Events</a>
-</li>
-<li>
-<a href="http://www.marquecanadabrand.agr.gc.ca/intro/index-eng.htm " target="_self">Branding (Canada Brand)</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/canadian-food-eatcanadian/?id=1392216500650" target="_self">Canadian Food (eatCanadian)</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/exporting-importing-and-buying-assistance/?id=1410072148276" target="_self">Exporting, Importing and Buying Assistance</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/food-regulations/?id=1361289832568" target="_self">Food Regulations</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/traceability/?id=1382971713721" target="_self">Traceability</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/agri-food-trade-policy/?id=1383918945146" target="_self">Agri-Food Trade Policy</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/value-chain-roundtables/?id=1385758087741" target="_self">Value Chain Roundtables</a>
-</li>
-</ul>
-</div>
-<div class="clear"></div>
-<div class="mb-main-link">
-<a href="http://www.agr.gc.ca/eng/industry-markets-and-trade/?id=1360881916382" target="_self">Industry, Markets and Trade &ndash; Main page</a>
-</div>
-</div>
-</section>
-</li>
-<li>
-<section>
-<h3>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/?id=1360882179814" target="_self">Science and Innovation</a>
-</h3>
-<div class="mb-sm">
-<div class="span-2">
-<ul>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/research-centres/?id=1181591790641" target="_self">Research Centres</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/scientific-staff-and-expertise/?id=1181931122989" target="_self">Scientific Staff and Expertise</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/research-projects/?id=1208366237788" target="_self">Research Projects</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/agricultural-practices/?id=1360876327795" target="_self">Agricultural Practices</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/science-publications-and-resources/?id=1196363731573" target="_self">Science Publications and Resources</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/technology-transfer-and-licensing/?id=1196968351190" target="_self">Technology Transfer and Licensing</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/international-scientific-cooperation/?id=1180125607102" target="_self">International Scientific Cooperation</a>
-</li>
-</ul>
-</div>
-<div class="clear"></div>
-<div class="mb-main-link">
-<a href="http://www.agr.gc.ca/eng/science-and-innovation/?id=1360882179814" target="_self">Science and Innovation &ndash; Main page</a>
-</div>
-</div>
-</section>
-</li>
-<li>
-<section>
-<h3>
-<a href="http://www.agr.gc.ca/eng/help/?id=1364493798980" target="_self">Help</a>
-</h3>
-<div class="mb-sm">
-<div class="span-2">
-<ul>
-<li>
-<a href="http://www.agr.gc.ca/eng/help/site-map/?id=1370269370649" target="_self">Site Map</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/help/a-to-z-subject-index/?id=1204931113132" target="_self">A to Z Subject Index</a>
-</li>
-<li>
-<a href="http://www.agr.gc.ca/eng/help/help-with-alternative-formats-and-plug-ins/?id=1168622342753" target="_self">Help with Alternative Formats and Plug-ins</a>
-</li>
-</ul>
-</div>
-<div class="clear"></div>
-<div class="mb-main-link">
-<a href="http://www.agr.gc.ca/eng/help/?id=1364493798980" target="_self">Help &ndash; Main page</a>
-</div>
-</div>new member starter kit.
-</section>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 <div id="gcwu-bc">
 <h2>Breadcrumb trail</h2>
 <div id="gcwu-bc-in">
 <ol>
-<li><a href="">Home</a></li>
-<li><a href="">Host-Pathogen Database</a></li>
-<li><a href="MainPage.jsp">Search Records</a></li>
+<li><a href="http://www.cbif.gc.ca/eng/home/?id=1370403266262">Home</a></li>
+<li><a href="../index.jsp">Host-Pathogen Database</a></li>
+<li><a href="MainTest.jsp">Search Records</a></li>
 </ol>
-</div>
-</div>
-</nav> <!-- HeaderEnd -->
-</header>
 </div>
 </div>
 <div id="wb-core">
@@ -286,7 +29,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<div class="container">
 							<h1>Search Records</h1>
 
-							<form id="searchHostForm" action="Submit.jsp" method="GET">
+							<s:form id="searchHostForm" action="Submit.jsp" method="GET">
 
 								<details class="span-8" open="open">
 									<summary class="module-info module-simplify" style="margin-right: 15px">
@@ -491,100 +234,17 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 							style="float: right; margin-right: 10px; padding: 0">
 							<span class="left">Host-Pathogen Database Version 1 |</span> <span
 								class="right">&copy; 2014-2015 <a
-								href="http://www.agr.gc.ca/">Agriculture & AgriFood Canada</a></span>
+								href="http://www.agr.gc.ca/">Agriculture &amp; AgriFood Canada</a></span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div id="wb-foot">
 				<div id="wb-foot-in">
-					<footer>
-						<h2 id="wb-nav">Footer</h2>
-						<!-- FooterStart -->
-						<nav role="navigation">
-							<div id="gcwu-sft">
-								<h3>Site footer</h3>
-								<div id="gcwu-sft-in">
-									<div id="gcwu-tctr">
-										<ul>
-											<li class="gcwu-tc"><a
-												href="http://www-tmp.cbif.gc.ca/eng/?id=1370403266258"
-												rel="license">Terms and Conditions</a></li>
-											<li class="gcwu-tr"><a
-												href="http://www.tbs-sct.gc.ca/pd-dp/gr-rg/index-eng.asp">Transparency</a>
-											</li>
-										</ul>
-									</div>
-									<div class="clear"></div>
-									<section>
-										<div class="span-2">
-											<h4 class="gcwu-col-head">
-												<a href="">About Us</a>
-											</h4>
-										</div>
-									</section>
-									<section>
-										<div class="span-2">
-											<h4 class="gcwu-col-head">
-												<a href="">Contact Us</a>
-											</h4>
-										</div>
-									</section>
-								</div>
-							</div>
-						</nav>
-						<nav role="navigation">
-							<div id="gcwu-gcft">
-								<h3>Government of Canada footer</h3>
-								<div id="gcwu-gcft-in">
-									<div id="gcwu-gcft-fip">
-										<ul>
-											<li><a
-												href="http://healthycanadians.gc.ca/index-eng.php"
-												rel="external"><span>Health</span></a></li>
-											<li><a href="http://www.travel.gc.ca/index-eng.asp"
-												rel="external"><span>Travel</span></a></li>
-											<li><a
-												href="http://www.servicecanada.gc.ca/eng/home.shtml"
-												rel="external"><span>Service Canada</span></a></li>
-											<li><a href="http://www.jobbank.gc.ca/intro-eng.aspx"
-												rel="external"><span>Jobs</span></a></li>
-											<li><a href="http://actionplan.gc.ca/en" rel="external"><span>Economy</span></a>
-											</li>
-											<li id="gcwu-gcft-ca">
-												<div>
-													<a href="http://www.canada.ca/en/index.html">Canada.ca</a>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</nav>
-						<!-- FooterEnd -->
-					</footer>
 				</div>
 			</div>
 		</div>
 
-<!-- ScriptsStart --> 
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/settings.js"></script>
-<!--[if lte IE 8]>
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-wet-boew/js/theme-ie-min.js"></script>
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/pe-ap-ie-min.js"></script>
-<![endif]-->
-<!--[if gt IE 8]><!-->
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/theme-wet-boew/js/theme-min.js"></script>
-<script src="http://wet-boew.github.io/wet-boew-legacy/v3.1/dist/js/pe-ap-min.js"></script>
-<!--<![endif]-->
-<!-- ScriptsEnd -->
-
-<!-- CustomScriptsStart -->
-
-<!-- CustomScriptsEnd -->
-
-</body>
-</html>
 
 </body>
 </html>
