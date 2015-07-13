@@ -24,22 +24,17 @@
 	</global-results>
 		
 <!-- action for the servlet -->
-	<action name="search" namespace="/eng/recherche"
-		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
-		method="search">
-		<result name="success">/JSP/MainPage.jsp</result>
+
+	<action name="loadForm" namespace="/eng/search"
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.LoadForm">
+		<result name="success" type="redirect">/JSP/MainTest.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
-		<result name="unauthorized">/JSP/403.jsp</result>
-		<result name="badrequest">/JSP/400.jsp</result>
-	</action>
-	
+	</action> 
 		
 	<action name="reset" namespace="/eng/reset"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.ResetAction"
 		method="reset">
 		<result name="notfound">/JSP/404.jsp</result>
-		<result name="unauthorized">/JSP/403.jsp</result>
-		<result name="badrequest">/JSP/400.jsp</result>
 		<result name="success">/JSP/MainPage.jsp</result>
 	</action>
 	
@@ -48,17 +43,13 @@
 		method="browse">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
-		<result name="unauthorized">/JSP/403.jsp</result>
-		<result name="badrequest">/JSP/400.jsp</result>
 	</action>
 	
-	<action name="view" namespace="/eng/view"
+	<action name="viewRef" namespace="/eng/view"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
 		method="view">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
-		<result name="unauthorized">/JSP/403.jsp</result>
-		<result name="badrequest">/JSP/400.jsp</result>
 	</action>
 	
 	</package>

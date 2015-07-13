@@ -4,6 +4,34 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<script>
+function ajaxReplace(req_url, targetId){
+            
+            // generate form data to submit
+            var formData = jQuery("form").serialize();
+            
+            jQuery.ajax({
+                type: "POST",
+                url: req_url,
+                data: formData,
+                dataType: "html",
+                beforeSend: function(){
+                    // insert loading gif
+                    jQuery("#" + targetId).html('<img border="0" src="/images/ajax-loader.gif" />');
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown){
+                    //alert('Error ' + textStatus);
+                    //alert(errorThrown);
+                    //alert(XMLHttpRequest.responseText);
+                    alert("Ajax Request Failed - Server Error");
+                },
+                success: function(response){
+                    // replace div contents
+                    jQuery("#" + targetId).html( jQuery("#" + targetId, response).html() );
+                }
+            });        
+        }
+</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Register</title>
