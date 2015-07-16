@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ca.gc.agr.mbb.hostpathogen.jspservlet.dao.RequestFormData;
 import ca.gc.agr.mbb.hostpathogen.nouns.Pathogen;
@@ -38,6 +39,7 @@ public class HostPathogenServlet extends HttpServlet {
 		RequestFormData data = new RequestFormData();
 		request.getSession().setAttribute("search", data);
 		
+		
 		data.setPathogenGenus(request.getParameter("pathogenGenus"));
 		data.setPathogenSpecies(request.getParameter("pathogenSpecies"));
 		data.setPathogenVirus(request.getParameter("pathogenVirus"));
@@ -48,18 +50,8 @@ public class HostPathogenServlet extends HttpServlet {
 		data.setHostGenus(request.getParameter("hostGenus"));
 		data.setHostSpecies(request.getParameter("hostSpecies"));
 		data.setHostSynonym(request.getParameter("hostSynonym"));
-		
-		String address;
-		
-		if(request.getParameter("SearchFormButton") != null){
-			address = "SearchResult.jsp";
-		}
-		else if (request.getParameter("SerachForm") == null){
-			address = "Error.jsp";
-		}else {
-			address = "MainPage.jsp";
-		}
-		request.getRequestDispatcher(address).forward(request, response);
+
+		request.getRequestDispatcher(data).forward(request, response);
 	}
 	
 	@Override

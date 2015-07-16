@@ -5,52 +5,49 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
-    <constant name="struts.convention.action.suffix" value="Controller"/>
+	<constant name="struts.action.extension" value=","/> 
     <constant name="struts.convention.action.mapAllMatches" value="true"/>
     <constant name="struts.convention.default.parent.package" value="rest-default"/>
     <constant name="struts.convention.package.locators" value="rest"/>
     <constant name="struts.custom.i18n.resources" value="global" />
-    <constant name="struts.action.extension" value=","/> 
 
 	<package name="HPDBServlet" extends="struts-default">
 	
-	<global-results>
-		<result name="success" type="json">
-			<param name="excludeNullProperties">true</param>
-		</result>
-		<result name="failure" type="json">
-			<param name="excludeNullProperties">true</param>
-		</result>
-	</global-results>
+
 		
 <!-- action for the servlet -->
-
-	<action name="loadForm" namespace="/eng/search"
-		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.LoadForm">
+	<!-- Loading Form -->
+	<action name="loadForm" class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.LoadForm" method="execute">
 		<result name="success" type="redirect">/JSP/MainTest.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 	</action> 
-		
+	<!-- Press reset -->
 	<action name="reset" namespace="/eng/reset"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.ResetAction"
 		method="reset">
 		<result name="notfound">/JSP/404.jsp</result>
-		<result name="success">/JSP/MainPage.jsp</result>
+		<result name="success">/JSP/MainTest.jsp</result>
 	</action>
-	
+	<!-- Press submit -->
 	<action name="browse" namespace="/eng/browse"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
 		method="browse">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 	</action>
-	
+	<!-- Redirect to View Result Page1 -->
 	<action name="viewRef" namespace="/eng/view"
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
 		method="view">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 	</action>
-	
+	<!-- Redirect to View Result Page2 -->
+	<action name="viewRef" namespace="/eng/view"
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
+		method="view">
+		<result name="success">/JSP/ViewFormParam.jsp</result>
+		<result name="notfound">/JSP/404.jsp</result>
+	</action>
 	</package>
 </struts>

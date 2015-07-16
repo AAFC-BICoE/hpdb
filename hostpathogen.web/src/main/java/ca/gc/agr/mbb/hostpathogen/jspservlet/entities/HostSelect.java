@@ -1,10 +1,13 @@
 package ca.gc.agr.mbb.hostpathogen.jspservlet.entities;
 
-public class Host {
+import java.io.Serializable;
+
+public class HostSelect implements Serializable{
 	private Long id;
 	private String hgenus;
 	private String hspecies;
 	private String hfamily;
+	private boolean hsynonym=false;
 	
 	public Long getId() {
 		return id;
@@ -29,6 +32,12 @@ public class Host {
 	}
 	public void setHfamily(String hfamily) {
 		this.hfamily = hfamily;
+	}
+	public boolean isHsynonym() {
+		return hsynonym;
+	}
+	public void setHsynonym(boolean hsynonym) {
+		this.hsynonym = hsynonym;
 	}
 
 }

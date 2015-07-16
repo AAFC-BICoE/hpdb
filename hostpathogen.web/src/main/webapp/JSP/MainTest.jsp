@@ -4,34 +4,6 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<script>
-function ajaxReplace(req_url, targetId){
-            
-            // generate form data to submit
-            var formData = jQuery("form").serialize();
-            
-            jQuery.ajax({
-                type: "POST",
-                url: req_url,
-                data: formData,
-                dataType: "html",
-                beforeSend: function(){
-                    // insert loading gif
-                    jQuery("#" + targetId).html('<img border="0" src="/images/ajax-loader.gif" />');
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown){
-                    //alert('Error ' + textStatus);
-                    //alert(errorThrown);
-                    //alert(XMLHttpRequest.responseText);
-                    alert("Ajax Request Failed - Server Error");
-                },
-                success: function(response){
-                    // replace div contents
-                    jQuery("#" + targetId).html( jQuery("#" + targetId, response).html() );
-                }
-            });        
-        }
-</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Register</title>
@@ -57,7 +29,7 @@ function ajaxReplace(req_url, targetId){
 						<div class="container">
 							<h1>Search Records</h1>
 
-							<s:form id="searchHostForm" action="Submit.jsp" method="GET">
+							<s:form action="searchHP" method="POST">
 
 								<details class="span-8" open="open">
 									<summary class="module-info module-simplify" style="margin-right: 15px">
@@ -65,13 +37,13 @@ function ajaxReplace(req_url, targetId){
 									</summary>
 									<div style="width: 100%; margin-top: 20px" class="form-inline">
 										<label class="col-sm-2 control-label">Family: </label> 
-											<input id="hostFamily" type="text" name="hfamily" size="18" style="width: 20%" /> 
+											<s:textfield id="hostFamily" type="text" name="hfamily" size="18" style="width: 20%" /> 
 										<label class="col-sm-2 control-label">Genus: </label> 
-											<input id="hostGenus" type="text" name="hgenus" size="18" style="width: 20%" /> 
+											<s:textfield id="hostGenus" type="text" name="hgenus" size="18" style="width: 20%" /> 
 										<label class="col-sm-2 control-label">Species: </label> 
-											<input id="hostSpecies" type="text" name="hspecies" size="18" style="width: 20%" /> 
+											<s:textfield id="hostSpecies" type="text" name="hspecies" size="18" style="width: 20%" /> 
 										<label class="checkbox-inline">Synonyms 
-											<input type="checkbox" id="hostSynonym" name="hostSynonym" value="true" style="margin-left: 15px; margin-right: 5px; margin-top: 10px" />
+											<s:textfield type="checkbox" id="hostSynonym" name="hostSynonym" value="true" style="margin-left: 15px; margin-right: 5px; margin-top: 10px" />
 										</label>
 									</div>
 								</details>
@@ -84,21 +56,21 @@ function ajaxReplace(req_url, targetId){
 										<b>Pathogen Search</b>
 									</summary>
 									<div class="form-inline" id="pathsearch" style="margin-top: 20px">
-											<input id="toggle1" type="radio" name="pathogen" class="chkbox fungaldisplay" checked="checked" /> 
+											<s:textfield id="toggle1" type="radio" name="pathogen" class="chkbox fungaldisplay" checked="checked" /> 
 										<label for="toggle1">&#160;&#160;Fungus/Bacteria/Nematode</label> 
-											<input id="toggle2" type="radio" name="pathogen" class="chkbox viraldisplay" /> 
+											<s:textfield id="toggle2" type="radio" name="pathogen" class="chkbox viraldisplay" /> 
 										<label for="toggle2">&#160;&#160;Virus/MPLO</label>
 										<div id="fungaldisplay" class="box">
 											<label class="col-sm-2 control-label">Genus: </label> 
-												<input id="pathogenGenus" type="text" name="pgenus" /> 
+												<s:textfield id="pathogenGenus" type="text" name="pgenus" /> 
 											<label class="col-sm-2 control-label">Species: </label> 
-												<input id="pathogenSpecies" type="text" name="pspecies" /> 
+												<s:textfield id="pathogenSpecies" type="text" name="pspecies" /> 
 											<label class="checkbox-inline">Synonyms</label> 
-												<input type="checkbox" id="pathogenSynonym" name="pathogenSynonym" value="true" style="margin-left: 15px; margin-right: 5px; margin-top: 10px" />
+												<s:textfield type="checkbox" id="pathogenSynonym" name="pathogenSynonym" value="true" style="margin-left: 15px; margin-right: 5px; margin-top: 10px" />
 										</div>
 										<div id="viraldisplay" class="box">
 											<label class="col-sm-2 control-label">Virus/MPLO Name: </label>
-												<input id="pathogenVirus" type="text" name="pvirus" />
+												<s:textfield id="pathogenVirus" type="text" name="pvirus" />
 										</div>
 									</div>
 								</details>
@@ -113,7 +85,7 @@ function ajaxReplace(req_url, targetId){
 									<div class="form-inline mrgn-tp-md" style="margin-top: 20px">
 										<span class="mrgn-tp-md"> 
 										<label class="col-sm-2 control-label wb-inv" for="form-select-md">Country: </label> 
-											<select id="country" name="country" class="form-control mrgn-bttm-md">
+											<s:select id="country" name="country" key="searchBean.country" list="country" class="form-control mrgn-bttm-md">
 												<option label="" value=""></option>
 												<option label="Canada" value="Canada">Canada</option>
 												<option label="USA" value="USA">USA</option>
@@ -141,11 +113,11 @@ function ajaxReplace(req_url, targetId){
 													Conditions</option>
 												<option label="Greenland" value="Greenland">Greenland</option>
 												<option label="Mexico" value="Mexico">Mexico</option>
-										</select>
+										</s:select>
 										</span> 
 										<span> 
 										<label class="col-sm-2 control-label" for="form-select-md" class="wb-inv">Province/State: </label>
-											<select id="provStateTerritory" name="provstate" class="form-control mrgn-bttm-md">
+											<s:select id="provStateTerritory" name="provstate" class="form-control mrgn-bttm-md">
 												<option label="" value=""></option>
 												<option label="AB" value="AB">AB</option>
 												<option label="BC" value="BC">BC</option>
@@ -237,18 +209,19 @@ function ajaxReplace(req_url, targetId){
 												<option label="MR" value="MR">MR</option>
 												<option label="PC" value="PC">PC</option>
 												<option label="YT" value="YT">YT</option>
-										</select>
+										</s:select>
+										</span>
 									</div>
 								</details>
 								<div class="clear"></div>
 
 								<div class="span-3 row-end" style="margin-top: 2%">
 									<input id="SearchForm" name="SearchFormButton" type="submit"
-										value="Search" method="execute"
+										value="Search" method="execute" onClick="submitSearch()""
 										style="display: inline-block; margin: 0 5px 0 5px"
 										class="button-accent" /> 
 									<input id="Reset" name="Reset"
-										type="submit" value="Reset" method="reset"
+										type="submit" value="Reset" method="reset()"
 										style="display: inline-block; margin: 0 5px 0 5px;"
 										class="button-accent" />
 								</div>
