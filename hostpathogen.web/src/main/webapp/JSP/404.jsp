@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
 <page:applyDecorator name="default">
 
 <head>

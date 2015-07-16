@@ -1,5 +1,6 @@
 package ca.gc.agr.mbb.hostpathogen.ws;
 
+import java.util.Calendar;
 import java.util.Properties;
 
 import ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher.InitializationException;
@@ -26,9 +27,10 @@ public class Load {
 	static LuceneConfig hostConfig;
 	static LuceneConfig pathogenConfig;
 	static LuceneConfig hostPathogenConfig;
-
+	
 	static Properties goodProperties = new Properties();
 
+	
 	static{
 		goodProperties.put(SearcherDao.LUCENE_INDICES_BASE_DIR, GOOD_LUCENE_DIR);
 	}
@@ -42,4 +44,9 @@ public class Load {
 			e.printStackTrace();
 		}
 	}
+	
+    public static String timeStamp(){
+	return Calendar.getInstance().getTime().toString();
+    }
+	
 }

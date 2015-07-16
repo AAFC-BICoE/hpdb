@@ -1,5 +1,6 @@
 package ca.gc.agr.mbb.hostpathogen.ws.ws;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -18,11 +19,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import ca.gc.agr.mbb.hostpathogen.ws.Nouns;
 import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
-
+import ca.gc.agr.mbb.hostpathogen.nouns.Pathogen;
 
 @Path(Nouns.PATHOGENS)
 @XmlRootElement
@@ -73,6 +76,19 @@ public class PathogenWS implements Nouns, WSConstants{
 		}else{
 			return Response.status(200).entity(result).cacheControl(cc).build();
 		}
+	/*	
+	public List<Pathogen> getPathogens() throws Execption{
+		List<Pathogen> pathogens = new ArrayList<>();
+		Pathogen path = new Pathogen();Google
+
+		path.setId(id);
+		path.setGenus(genusString);
+		path.setSpecies(speciesString);
+		path.setAnamorphId(anamorphId);
+		path.setVirusMPLO(virusString);
+		
+		return path;
+	}*/
 	}
 
 	//======================Count for Search=============//
@@ -107,7 +123,15 @@ public class PathogenWS implements Nouns, WSConstants{
 		System.out.println(result);
 		return Response.status(200).entity(result).cacheControl(null).build();
 	}
-
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Pathogen GetPathohenID(@PathParam(ID) long ID_VALID) throws JSONException{
+		Pathogen pathogen = new Pathogen();
+		pathogen.getId();
+		pathogen.setId(ID_VALID);
+		System.out.println(pathogen);
+		return pathogen;
+	}
 	//===========GET Pathogens by host Id==============//
 	@Path(WSConstants.ID_VALID + Nouns.HOSTS)
 	@GET

@@ -23,6 +23,9 @@ public interface WSConstants{
 	// Parameter names
 	public static final String PAGING_OFFSET_PARAMETER = "offset";
 	public static final String PAGING_LIMIT_PARAMETER = "limit";
+    // http headers
+    public static String CONTENT_LOCATION = "Content-Location";
+    public static final String DEBUG_PATH = "DEBUG";
 
 	public enum METHOD {
 		GET, 

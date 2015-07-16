@@ -47,6 +47,32 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		
+<<<<<<< HEAD
+=======
+	    <dependency>
+	      <groupId>ca.gc.agr.mbb.hostpathogen.hostpathogenlucenesearcher</groupId>
+	      <artifactId>hostpathogenlucenesearcher</artifactId>
+	      <version>1.0-SNAPSHOT</version>
+	    </dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.examples</groupId>
+			<artifactId>json-with-padding</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.glassfish.jersey.media</groupId> -->
+		<!-- <artifactId>jersey-media-json</artifactId> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+
+>>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -128,7 +154,11 @@
 					<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
+<<<<<<< HEAD
 
+=======
+				
+>>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -170,10 +200,20 @@
 				</configuration>
 		   </plugin>
 		</plugins>
+<<<<<<< HEAD
+=======
+		<finalName>HPDB_Web</finalName>
+>>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
 	</build>
 
 	<properties>
 		<jersey.version>2.6</jersey.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+<<<<<<< HEAD
+=======
+	<name>hostPathogenWeb</name>
+	<artifactId>hostPathogenWeb</artifactId>
+	<packaging>war</packaging>
+>>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
 </project>
