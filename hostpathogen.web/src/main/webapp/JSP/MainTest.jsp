@@ -29,7 +29,7 @@
 						<div class="container">
 							<h1>Search Records</h1>
 
-							<s:form action="searchHP" method="POST">
+							<s:form name="searchHP" action="searchAction" method="POST">
 
 								<details class="span-8" open="open">
 									<summary class="module-info module-simplify" style="margin-right: 15px">
@@ -117,7 +117,7 @@
 										</span> 
 										<span> 
 										<label class="col-sm-2 control-label" for="form-select-md" class="wb-inv">Province/State: </label>
-											<s:select id="provStateTerritory" name="provstate" class="form-control mrgn-bttm-md">
+											<s:select id="provStateTerritory" name="provstate" list="location.provstate"class="form-control mrgn-bttm-md">
 												<option label="" value=""></option>
 												<option label="AB" value="AB">AB</option>
 												<option label="BC" value="BC">BC</option>
@@ -217,15 +217,15 @@
 
 								<div class="span-3 row-end" style="margin-top: 2%">
 									<input id="SearchForm" name="SearchFormButton" type="submit"
-										value="Search" method="execute" onClick="submitSearch()""
+										value="Search" method="doSearch" onClick="submitSearch()""
 										style="display: inline-block; margin: 0 5px 0 5px"
 										class="button-accent" /> 
 									<input id="Reset" name="Reset"
-										type="submit" value="Reset" method="reset()"
+										type="submit" value="Reset" method="doReset"
 										style="display: inline-block; margin: 0 5px 0 5px;"
 										class="button-accent" />
 								</div>
-							</form>
+							</s:form>
 
 						</div>
 						<!-- End of the Body -->

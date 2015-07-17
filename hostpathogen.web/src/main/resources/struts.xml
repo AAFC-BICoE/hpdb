@@ -11,77 +11,51 @@
     <constant name="struts.convention.package.locators" value="rest"/>
     <constant name="struts.custom.i18n.resources" value="global" />
 
-<<<<<<< HEAD
-	<package name="HPDBServlet" extends="struts-default">
-	
-=======
-	<package name="HostPathogenWeb" extends="struts-default">
-	<global-results>
-		<result name="success" type="json">
-			<param name="excludeNullProperties">true</param>
-		</result>
-		<result name="failure" type="json">
-			<param name="excludeNullProperties">true</param>
-		</result>
-	</global-results>
->>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
-
-		
+<package name="HPDBServlet" extends="struts-default">		
 <!-- action for the servlet -->
-<<<<<<< HEAD
+	
 	<!-- Loading Form -->
-	<action name="loadForm" class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.LoadForm" method="execute">
+	<action name="loadHPForm">
+		<interceptor-ref name="cookie"></interceptor-ref>
+		<interceptor-ref name="cookieProvider"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
 		<result name="success" type="redirect">/JSP/MainTest.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 	</action> 
 	<!-- Press reset -->
-	<action name="reset" namespace="/eng/reset"
+	<action name="reset" 
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.ResetAction"
-		method="reset">
+		method="doReset">
 		<result name="notfound">/JSP/404.jsp</result>
 		<result name="success">/JSP/MainTest.jsp</result>
 	</action>
 	<!-- Press submit -->
-	<action name="browse" namespace="/eng/browse"
+	<action name="browse" 
 		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
-		method="browse">
+		method="doSubmit">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 	</action>
 	<!-- Redirect to View Result Page1 -->
-	<action name="viewRef" namespace="/eng/view"
-		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
+	<action name="viewRef" 
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.ViewAction"
 		method="view">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
 	</action>
 	<!-- Redirect to View Result Page2 -->
-	<action name="viewRef" namespace="/eng/view"
-		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
+	<action name="viewRef" 
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.ViewAction"
 		method="view">
 		<result name="success">/JSP/ViewFormParam.jsp</result>
 		<result name="notfound">/JSP/404.jsp</result>
-=======
-	<action name="Search">
-		<result type="redirect">/JSP/HPDB_Form.jsp</result>
 	</action>
-	
-	<action name="reload" class="org.appfuse.webapp.action.ReloadAction">
-		<interceptor-ref name="adminCheck" />
-		<!-- this should never be used, it's here to prevent warnings -->
-		<result name="success">/JSP/HPDB_Form.jsp</result>
-	</action>
-
-	
-	<action name="DoSearch"
-		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.SearchAction"
-		method="searchResult">
-		<result name="success">/JSP/HPDB_Form.jsp</result>
+		<!-- Press on refId -->
+	<action name="getref" 
+		class="ca.gc.agr.mbb.hostpathogen.jspservlet.action.GetRefAction"
+		method="getRef">
 		<result name="notfound">/JSP/404.jsp</result>
-		<result name="unauthorized">/JSP/403.jsp</result>
-		<result name="badrequest">/JSP/400.jsp</result>
-		<result name="reset">/JSP/HPDB_Form.jsp</result>
->>>>>>> f90cb5809dbb32f3fe61e78d632de4b19737c2c1
+		<result name="success">/JSP/MainTest.jsp</result>
 	</action>
 	</package>
 </struts>

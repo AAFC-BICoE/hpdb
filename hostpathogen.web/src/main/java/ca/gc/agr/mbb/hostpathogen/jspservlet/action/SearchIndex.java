@@ -4,7 +4,7 @@ import javax.jws.WebService;
 
 @WebService()
 public class SearchIndex {
- 
+ /*
     @WebMethod(operationName = "searchLucene")
     public int[] searchLucene(
                             @WebParam(name="clientId")int clientId,
@@ -17,5 +17,5 @@ public class SearchIndex {
         int[] searchIds = su.search(clientId, keywordId, searchStr, startLimit, hitPerPage);
  
         return searchIds;
-    }
+    }*/
 }
