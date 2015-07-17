@@ -17,10 +17,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebInitParam;
 import javax.ws.rs.Path;
 
+import org.apache.log4j.Logger;
+
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/hpdb/eng/search")
 public class searchHP extends HttpServlet {
 	private static final long serialVersionUID=1L;
+	private static final Logger logger = Logger.getLogger(searchHP.class);
 	
 	public searchHP(){
 		super();

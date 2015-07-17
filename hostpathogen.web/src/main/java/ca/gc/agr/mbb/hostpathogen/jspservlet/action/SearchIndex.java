@@ -2,8 +2,11 @@ package ca.gc.agr.mbb.hostpathogen.jspservlet.action;
 
 import javax.jws.WebService;
 
+import org.apache.log4j.Logger;
+
 @WebService()
 public class SearchIndex {
+	private static final Logger logger = Logger.getLogger(SearchIndex.class);
  /*
     @WebMethod(operationName = "searchLucene")
     public int[] searchLucene(

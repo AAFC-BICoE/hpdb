@@ -7,14 +7,17 @@ import java.net.NetworkInterface;
 import java.net.URI;
 import java.net.UnknownHostException;
 import java.util.Enumeration;
+
 import javax.json.stream.JsonGenerator;
 
+import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
 
 public class Main {
+	private static final Logger logger = Logger.getLogger(Main.class);
 
 	// Base URI the Grizzly HTTP server will listen on
 	public static String BASE_URI = null;
