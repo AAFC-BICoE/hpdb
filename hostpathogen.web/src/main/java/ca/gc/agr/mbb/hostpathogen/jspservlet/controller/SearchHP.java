@@ -21,11 +21,12 @@ import org.apache.log4j.Logger;
 
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/hpdb/eng/search")
-public class searchHP extends HttpServlet {
+public class SearchHP extends HttpServlet {
 	private static final long serialVersionUID=1L;
-	private static final Logger logger = Logger.getLogger(searchHP.class);
 	
-	public searchHP(){
+	private static final Logger logger = Logger.getLogger(SearchHP.class);
+	
+	public SearchHP(){
 		super();
 	}
 	/*
@@ -64,7 +65,15 @@ public class searchHP extends HttpServlet {
 
 		request.getRequestDispatcher(data).forward(request, response);*/
 	}
-	
+	/**
+	 * Handles the HTTP
+	 * <code>POST</code> method.
+	 *
+	 * @param request servlet request
+	 * @param response servlet response
+	 * @throws ServletException if a servlet-specific error occurs
+	 * @throws IOException if an I/O error occurs
+	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pathogenvirus = request.getParameter("pathvirus");
@@ -106,4 +115,19 @@ public class searchHP extends HttpServlet {
 	public String getServletInfo() {
 		return "Short description";
 	}
+	/*
+	private void handleForm( HttpServletRequest req, HttpServletResponse res) { 
+		GuestbookEntry entry = new GuestbookEntry(); 
+		entry.name = req.getParameter(" name"); 
+		entry.email = req.getParameter(" email"); 
+		entry.comment = req.getParameter(" comment"); 
+		entries.addElement( entry); // Make note we have a new last modified time 
+		lastModified = System.currentTimeMillis();
+	}
+	
+	public long getLastModified( HttpServletRequest req) { 
+		return lastModified; 
+	}*/
+ 
+ 
 }

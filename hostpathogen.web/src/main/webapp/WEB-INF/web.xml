@@ -32,8 +32,8 @@
 	</servlet>
 	
 	<servlet>
-		<servlet-name>HostPathogenWeb</servlet-name>
-		<servlet-class>ca.gc.agr.mbb.hostpathogen.jspservlet.controller.HostPathogenServlet</servlet-class>
+		<servlet-name>SearchHP</servlet-name>
+		<servlet-class>ca.gc.agr.mbb.hostpathogen.jspservlet.controller.SearchHP</servlet-class>
 		<init-param>
 			<param-name>config</param-name>
         	<param-value>../resources/struts-config.xml</param-value>
@@ -63,11 +63,11 @@
 	-->
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
-		<url-pattern>/sayhello</url-pattern>
+		<url-pattern>/hello/*</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>
-		<servlet-name>HostPathogenWeb</servlet-name>
+		<servlet-name>SearchHP</servlet-name>
 		<url-pattern>/hpdb/*</url-pattern>
 	</servlet-mapping>
 </web-app>
