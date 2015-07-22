@@ -18,6 +18,8 @@ import javax.servlet.annotation.WebInitParam;
 import javax.ws.rs.Path;
 
 import org.apache.log4j.Logger;
+import ca.gc.agr.mbb.hostpathogen.jspservlet.beans.*;
+import ca.gc.agr.mbb.hostpathogen.jspservlet.dao.*;
 
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/hpdb/eng/search")
@@ -45,37 +47,6 @@ public class SearchHP extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-		
-		/*
-		searchHP data = new searchHP();
-		request.getSession().setAttribute("search", data);
-		
-		
-		data.setPathogenGenus(request.getParameter("pathogenGenus"));
-		data.setPathogenSpecies(request.getParameter("pathogenSpecies"));
-		data.setPathogenVirus(request.getParameter("pathogenVirus"));
-		data.setPathogenSynonym(request.getParameter("pathogenSynonym"));
-		data.setCountry(request.getParameter("country"));
-		data.setProvinceStateTerritory(request.getParameter("provinceStateTerritory"));
-		data.setHostFamily(request.getParameter("hostFamily"));
-		data.setHostGenus(request.getParameter("hostGenus"));
-		data.setHostSpecies(request.getParameter("hostSpecies"));
-		data.setHostSynonym(request.getParameter("hostSynonym"));
-
-		request.getRequestDispatcher(data).forward(request, response);*/
-	}
-	/**
-	 * Handles the HTTP
-	 * <code>POST</code> method.
-	 *
-	 * @param request servlet request
-	 * @param response servlet response
-	 * @throws ServletException if a servlet-specific error occurs
-	 * @throws IOException if an I/O error occurs
-	 */
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pathogenvirus = request.getParameter("pathvirus");
 		String pathogengenus = request.getParameter("pathgenus");
 		String pathogenspecies = request.getParameter("pathspecies");
@@ -104,6 +75,35 @@ public class SearchHP extends HttpServlet {
 		rd = request.getRequestDispatcher("/hpdb/eng/search");
 		rd.forward(request, response);
 		out.close();
+
+	}
+	/**
+	 * Handles the HTTP
+	 * <code>POST</code> method.
+	 *
+	 * @param request servlet request
+	 * @param response servlet response
+	 * @throws ServletException if a servlet-specific error occurs
+	 * @throws IOException if an I/O error occurs
+	 */
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		String pathogenvirus = request.getParameter("pathvirus");
+		String pathogengenus = request.getParameter("pathgenus");
+		String pathogenspecies = request.getParameter("pathspecies");
+		String pathogensyn = request.getParameter("pathsyn");
+		String hostfamily = request.getParameter("hfamily");
+		String hostgenus = request.getParameter("hgenus");
+		String hostspecies = request.getParameter("hspecies");
+		String hostsyn = request.getParameter("hsyn");
+		String country = request.getParameter("country");
+		String provstate = request.getParameter("provstate");
+		RequestDispatcher rd = null;
+		
+		RequestField requestfield = new RequestField();
+		
+		String result = requestfield.getSearch();
+		rd.forward(request, response);
 	}
 
 	/**

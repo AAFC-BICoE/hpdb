@@ -8,8 +8,10 @@ import javax.servlet.http.*;
 import org.apache.log4j.Logger;
 
 @SuppressWarnings("serial")
+@WLServlet(name="HelloServlet", mapping="/Hello")
 public class HelloServlet extends HttpServlet {
 	private static final Logger logger = Logger.getLogger(HelloServlet.class);
+	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
