@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+"http://struts.apache.org/dtds/struts-2.0.dtd">  
+  
+<struts>  
+ <constant name="struts.devMode" value="true" />  
+ <constant name="struts.action.extension" value=","/> 
+ 
+ <package name="user" namespace="/" extends="struts-default">  
+ 
+  <action name="form" class="ca.gc.agr.mbb.hostpathogen.web.actions.HomeAction">  
+   <result name="SUCCESS">WEB-INF/pages/form.jsp</result>  
+  </action>  
+  <action name="register" class="ca.gc.agr.mbb.hostpathogen.web.actions.HomeAction"  
+   method="getDetail">  
+   <result name="success">WEB-INF/pages/details.jsp</result>  
+  </action>  
+  
+ </package>  
+ 
+  <package name="hpdb" namespace="/" extends="struts-default"> 
+   
+   <!-- Loading homeMenu Page -->
+  <action name="eng" class="ca.gc.agr.mbb.hostpathogen.web.actions.HpdbAction">  
+   <result name="SUCCESS">WEB-INF/pages/homeMenu.jsp</result> 
+   <result name="ERROR">WEB-INF/pages/error.jsp</result>  
+  </action>  
+  <!-- Loading MainForm -->
+  <action name="search" class="ca.gc.agr.mbb.hostpathogen.web.actions.HpdbAction">
+   <result name="SUCCESS">WEB-INF/pages/hpdbForm.jsp</result>
+   <result name="ERROR">WEB-INF/pages/error.jsp</result>  
+   <result name="RESET">WEB-INF/pages/hpdbForm.jsp</result>    
+  </action>  
+  <!-- Loading View -->
+  <action name="hpdbview" class="ca.gc.agr.mbb.hostpathogen.web.actions.HomeAction"  
+   method="getDetail">  
+   <result name="success">WEB-INF/pages/hpdbView.jsp</result>  
+  </action> 
+   
+ </package>  
+  
+</struts> 

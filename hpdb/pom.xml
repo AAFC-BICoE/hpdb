@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ca.gc.agr.mbb.hostpathogen.web</groupId>
+  <artifactId>hpdb</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>hpdb-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+ 
+ <properties>  
+  <struts.version>2.3.16.3</struts.version>  
+  <jdk.version>1.7</jdk.version>  
+  <context.path>hpdb</context.path>  
+ </properties>  
+ 
+ <developers>   
+  <developer>  
+   <id>Thu Van Tran Thi</id>  
+   <email>thuvan.tranthi@agr.gc.ca</email>  
+   <organization>AAFC-MBB</organization>  
+   <roles>  
+    <role>Java Developer</role>  
+   </roles>  
+  </developer>  
+ </developers>  
+  
+ <build>  
+  <finalName>${pom.artifactId}</finalName>  
+  <plugins>  
+   <plugin>  
+    <artifactId>maven-compiler-plugin</artifactId>  
+    <configuration>  
+     <source>${jdk.version}</source>  
+     <target>${jdk.version}</target>  
+    </configuration>  
+   </plugin>  
+  </plugins>  
+ </build>  
+ 
+ <dependencies>
+	<dependency>
+		<groupId>javassist</groupId>
+		<artifactId>javassist</artifactId>
+		<version>3.11.0.GA</version>
+	</dependency>  
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.16</version>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.1.0</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>  
+   		<groupId>org.apache.struts</groupId>  
+  		<artifactId>struts2-core</artifactId>  
+  		<version>${struts.version}</version>  
+  	</dependency>  
+ </dependencies>  
+</project>  
