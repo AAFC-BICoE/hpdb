@@ -19,4 +19,8 @@ hs_err_pid*
 target
 \#*\#
 
+# Lucene index directory and folder
+a45/*
+luceneIndexes/*
+
 TAGS

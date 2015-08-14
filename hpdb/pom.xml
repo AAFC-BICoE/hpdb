@@ -37,8 +37,25 @@
    </plugin>  
   </plugins>  
  </build>  
- 
+ 	<repositories>
+		<!-- <repository> <id>repo</id> <url>file://${project.basedir}/repo</url> 
+			</repository> -->
+		<repository>
+			<id>aafc</id>
+			<url>http://biodiversity.agr.gc.ca:8080/archiva/repository/aafc</url>
+		</repository>
+	</repositories>
  <dependencies>
+	<dependency>
+		<groupId>ca.gc.agr.mbb.hostpathogen.nouns</groupId>
+		<artifactId>nouns</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>ca.gc.agr.mbb.hostpathogen.ws</groupId>
+		<artifactId>HostPathWS</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependency>
 	<dependency>
 		<groupId>javassist</groupId>
 		<artifactId>javassist</artifactId>

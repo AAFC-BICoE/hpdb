@@ -1,8 +1,9 @@
 package ca.gc.agr.mbb.hostpathogen.web.actions;
 
 import com.opensymphony.xwork2.Action;
+import java.io.Serializable;
 
-public class HpdbAction implements Action {  
+public class HpdbAction implements Serializable{  
 	private int id;  
 	private String hostfamily;  
 	private String hostgenus;  
@@ -53,7 +54,14 @@ public class HpdbAction implements Action {
 		return "SUCCESS";  
 	}  
 
-	public String getDetail(){  
-		return SUCCESS;  
+	public String getHost(){  
+		return "SUCCESS"; 
 	}
+	public String getDetails(){  
+		return "SUCCESS"; 
+	}
+	
+	public String getHosts(){
+		return "SUCCESS"; 
+	} 
 }

@@ -14,3 +14,7 @@ hs_err_pid*
 # emacs
 *~
 
+# Lucene index directory and folder
+a45/*
+luceneIndexes/*
+

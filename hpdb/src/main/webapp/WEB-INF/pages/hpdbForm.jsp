@@ -29,7 +29,7 @@
 						<div class="container">
 							<h1>Search Records</h1>
 
-							<s:form name="searchHP" action="ButtonAction" method="POST">
+							<s:form name="searchHP" action="getHpdbDetails" method="POST">
 
 								<details class="span-8" open="open">
 									<summary class="module-info module-simplify" style="margin-right: 15px">
@@ -219,11 +219,11 @@
 									<s:submit id="submit" name="Submit" type="submit"
 										value="Search" method="doSubmit" onClick="doSubmit()""
 										style="display: inline-block; margin: 0 5px 0 5px"
-										class="button-accent"> </submit>
+										class="button-accent"></s:submit>
 									<s:reset id="reset" name="Reset"
 										type="submit" value="Reset" method="doReset" onClick="doReset()
 										style="display: inline-block; margin: 0 5px 0 5px;"
-										class="button-accent"></reset>
+										class="button-accent"></s:reset>
 								</div>
 							</s:form>
 
