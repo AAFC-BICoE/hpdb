@@ -40,6 +40,18 @@ import ca.gc.agr.mbb.hostpathogen.ws.WSConstants;
 @Path(Nouns.HOSTS)
 @XmlRootElement
 public class HostWS implements Nouns, WSConstants{	
+	@Context
+	UriInfo uriInfo;
+	@Context
+	Request request;
+	String hosts;
+	
+	public HostWS(UriInfo uriInfo, Request request, String hosts) {
+		this.uriInfo = uriInfo;
+		this.request = request;
+		this.hosts = hosts;
+	}
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response GetHostsInit(
@@ -167,7 +179,7 @@ public class HostWS implements Nouns, WSConstants{
 	//===========GET host by pathogen Bad Id==============//
 	@Path(WSConstants.ID_INVALID + Nouns.PATHOGENS)
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON) 
 	public Response GetHostsByPathogenBadId(@PathParam(ID) String ID_INVALID) throws JSONException {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("Hosts Invalid ID", ID_INVALID); 

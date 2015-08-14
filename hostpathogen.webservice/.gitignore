@@ -5,3 +5,7 @@ target/
 .project
 .setting/
 .xml~
+
+# Lucene index directory and folder
+a45/*
+luceneIndexes/*
