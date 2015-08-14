@@ -10,8 +10,8 @@
 
   <properties>
     <!-- maven-compiler-plugin , aka JAVA Compiler 1.7 -->
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 
   
@@ -24,7 +24,7 @@
     -->
     <repository>
       <id>aafc</id>
-      <url>http://biodiversity.agr.gc.ca:8080/archiva/repository/aafc</url>
+      <url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
     </repository>
   </repositories>
 
