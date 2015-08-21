@@ -3,12 +3,13 @@ package ca.gc.agr.mbb.hostpathogen.jspservlet.controller;
 import java.io.*;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import org.apache.log4j.Logger;
 
 @SuppressWarnings("serial")
-@WLServlet(name="HelloServlet", mapping="/Hello")
+@WebServlet(name="HelloServlet", urlPatterns="/Hello")
 public class HelloServlet extends HttpServlet {
 	private static final Logger logger = Logger.getLogger(HelloServlet.class);
 	
