@@ -14,11 +14,11 @@ Agriculture and Agri-Food Canada’s posessing large database called Host-Pathog
 
 
 ##Technology stack
-Oracle Java 8
-Maven 3
-Tomcat 7, jetty or grizzly
-Eclipse 
-Lucene 4.10
+.Oracle Java 8
+.Maven 3
+.Tomcat 7, jetty or grizzly
+.Eclipse 
+.Lucene 4.10
 
 ##How to set up the environment
 1. Build Index from CSV
