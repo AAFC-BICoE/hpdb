@@ -15,25 +15,25 @@ Agriculture and Agri-Food Canada’s posessing large database called Host-Pathog
 
 
 ###Technology stack
-. Oracle Java 8
-. Maven 3
-. Tomcat 7, jetty or grizzly
-. Eclipse 
-. Lucene 4.10
+1. Oracle Java 8
+2. Maven 3
+3. Tomcat 7, jetty or grizzly
+4. Eclipse 
+5. Lucene 4.10
 
 ###How to set up the environment
 1. Build Index from CSV
 2. Call WS
 3. created WAR
 
-##How to build  and deploy the project
+###How to build  and deploy the project
 Lucene Index: creating LuceneIndex from CSV file
 1. Download the CSV file from redmine #4750
 2. build the Package  “mvn clean package”
 3. Export the PATH info using maven cache:
 <pre>
 export CLASSPATH=/home/tranthitv/.m2/repository/org/apache/lucene/lucene-queryparser/4.8.1/lucene-queryparser-4.8.1.jar:/home/tranthitv/.m2/repository/ca/gc/agr/mbb/hostpathogen/hostpathogenlucenesearcher/hostpathogenlucenesearcher/1.0-SNAPSHOT/hostpathogenlucenesearcher-1.0-SNAPSHOT.jar:/home/tranthitv/.m2/repository/org/apache/commons/commons-csv/1.0/commons-csv-1.0.jar:/home/tranthitv/work/HostPathogenLuceneIndexer/target/hostPathogenLuceneIndexer-1.0-SNAPSHOT.jar:/home/tranthitv/.m2/repository/org/apache/lucene/lucene-core/4.10.0/lucene-core-4.10.0.jar:/home/tranthitv/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.10.0/lucene-analyzers-common-4.10.0.jar
-<pre>
+</pre>
 4. Run the code and make sure the build JAR is in your PATH
 
 java ca.gc.agr.mbb.hostpathogen.hostpathogenluceneloader.Main PATH_TO_CSV_FILES_SAVE DESTINATION_LUCENE_INDEX_DIR
