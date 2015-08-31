@@ -14,11 +14,11 @@ Agriculture and Agri-Food Canada’s posessing large database called Host-Pathog
 
 
 ##Technology stack
-.Oracle Java 8
-.Maven 3
-.Tomcat 7, jetty or grizzly
-.Eclipse 
-.Lucene 4.10
+. Oracle Java 8
+. Maven 3
+. Tomcat 7, jetty or grizzly
+. Eclipse 
+. Lucene 4.10
 
 ##How to set up the environment
 1. Build Index from CSV
@@ -36,14 +36,14 @@ export CLASSPATH=/home/tranthitv/.m2/repository/org/apache/lucene/lucene-querypa
 java ca.gc.agr.mbb.hostpathogen.hostpathogenluceneloader.Main PATH_TO_CSV_FILES_SAVE DESTINATION_LUCENE_INDEX_DIR
 
 ##Lucene Searcher: Main Application to return the search object
-1- Make sur the lucene build index located in the project root directory
-2- Build the project JAR with “mvn clean package”
+1. Make sur the lucene build index located in the project root directory
+2. Build the project JAR with “mvn clean package”
 
 ##HPDB Rest-Jersey Web Service: Expose Lucene Data to the Web Application
-1- To build the project “mvn clear install ”
-2- To deploye the Web Service “run the main class with java ca.gc.agr.mbb.hostpathogen.ws.Main”
+1. To build the project “mvn clear install ”
+2. To deploye the Web Service “run the main class with java ca.gc.agr.mbb.hostpathogen.ws.Main”
 
 ##HPDB Web Service App: User Interface
-1- To build the project “mvn clear package ”
-2- To deploye the Web “mvn jetty:run-war”
-3- Try to View the query throw “http:localhost:8080/hpdb/”
+1. To build the project “mvn clear package ”
+2. To deploye the Web “mvn jetty:run-war”
+3. Try to View the query throw “http:localhost:8080/hpdb/”
