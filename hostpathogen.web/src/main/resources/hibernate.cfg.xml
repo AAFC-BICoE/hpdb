@@ -9,5 +9,6 @@
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.User"/>
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Role"/>
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Host"/>
+        <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Pathogen"/>
     </session-factory>
 </hibernate-configuration>

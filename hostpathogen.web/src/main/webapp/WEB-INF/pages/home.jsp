@@ -13,9 +13,9 @@
     <li>
         <a href="<c:url value='/hosts'/>"><fmt:message key="hostList.title"/></a>
     </li>
-<%--     <li>
-        <a href="<c:url value='/pathogens'/>"><fmt:message key="pathogens.title"/></a>
-    </li> --%>
+    <li>
+        <a href="<c:url value='/pathogens'/>"><fmt:message key="pathogenList.title"/></a>
+    </li>
  <%--    <li>
         <a href="<c:url value='/userform'/>"><fmt:message key="menu.user"/></a>
     </li>
