@@ -5,6 +5,7 @@
     </Displayers>
     <Menus>
         <Menu name="Home" title="home.title" page="/home" roles="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="HostPathogens" title="hostPathogenList.title" page="/hostPathogens" roles="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <Menu name="Hosts" title="hostList.title" page="/hosts" roles="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <Menu name="Pathogens" title="pathogenList.title" page="/pathogens" roles="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
         <Menu name="UserMenu" title="menu.user" description="User Menu" page="/userform" roles="ROLE_ADMIN,ROLE_USER"/>

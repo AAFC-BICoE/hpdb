@@ -1,0 +1,62 @@
+package ca.gc.agr.mbb.hostpathogen.web.dao.hibernate;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.springframework.stereotype.Repository;
+
+import ca.gc.agr.mbb.hostpathogen.web.dao.HostPathogenDao;
+import ca.gc.agr.mbb.hostpathogen.web.model.HostPathogen;
+
+/**
+ * This class interacts with Hibernate session to save/delete and
+ * retrieve HostPathogen objects.
+ *
+ * @author bilkhus
+ */
+@Repository("hostPathogenDao")
+public class HostPathogenDaoHibernate extends GenericDaoHibernate<HostPathogen, Long> implements HostPathogenDao {
+
+    /**
+     * Constructor that sets the entity to HostPathogen.class.
+     */
+    public HostPathogenDaoHibernate() {
+        super(HostPathogen.class);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings("unchecked")
+    public List<HostPathogen> getHostPathogens() {
+        Query qry = getSession().createQuery("from HostPathogen h order by upper(h.id)");
+        return qry.list();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public HostPathogen saveHostPathogen(HostPathogen hostPathogen) {
+        if (log.isDebugEnabled()) {
+            log.debug("hostPathogen's id: " + hostPathogen.getId());
+        }
+        getSession().saveOrUpdate(hostPathogen);
+        // necessary to throw a DataIntegrityViolation and catch it in HostPathogenManager
+        getSession().flush();
+        return hostPathogen;
+    }
+
+    /**
+     * Overridden simply to call the saveHostPathogen method. This is happening
+     * because saveHostPathogen flushes the session and saveObject of BaseDaoHibernate
+     * does not.
+     *
+     * @param hostPathogen the hostPathogen to save
+     * @return the modified hostPathogen (with a primary key set if they're new)
+     */
+    @Override
+    public HostPathogen save(HostPathogen hostPathogen) {
+        return this.saveHostPathogen(hostPathogen);
+    }
+
+}

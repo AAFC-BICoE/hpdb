@@ -11,6 +11,9 @@
 
 <ul class="glassList">
     <li>
+        <a href="<c:url value='/hostPathogens'/>"><fmt:message key="hostPathogenList.title"/></a>
+    </li>
+    <li>
         <a href="<c:url value='/hosts'/>"><fmt:message key="hostList.title"/></a>
     </li>
     <li>

@@ -63,6 +63,11 @@ public final class Constants {
     public static final String HOST_LIST = "hostList";
     
     /**
+     * The request scope attribute that holds the HOST_PATHOGEN_LIST
+     */
+    public static final String HOST_PATHOGEN_LIST = "hostPathogenList";
+    
+    /**
      * The request scope attribute that holds the PATHOGEN_LIST
      */
     

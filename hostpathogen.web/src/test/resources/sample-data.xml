@@ -175,7 +175,7 @@
 			<value description="subSpecificTaxa">var. mayriana</value>
 		</row>			
 	</table>    
-<table name='pathogen'>
+	<table name='pathogen'>
 		<column>id</column>
 		<column>genus</column>
 		<column>species</column>
@@ -230,5 +230,61 @@
 			<value description="author">Miyabe</value>
 			<value description="subSpecificTaxa">var. mayriana</value>
 		</row>			
-	</table>    	
+	</table>    
+	<table name='hostPathogen'>
+		<column>id</column>
+		<column>host</column>
+		<column>pathogen</column>
+		<column>symptom</column>
+		<column>plantPart</column>
+		<row>
+            <value description="id">-1</value>
+            <value description="host">-1</value>
+            <value description="pathogen">-1</value>
+			<value description="symptom">lichen</value>
+			<value description="plantPart">on roots</value>
+		</row>
+		<row>
+            <value description="id">-2</value>
+            <value description="host">-2</value>
+            <value description="pathogen">-2</value>            
+			<value description="symptom">lichen</value>
+			<value description="plantPart">on roots</value>
+		</row>
+		<row>
+            <value description="id">-3</value>
+            <value description="host">-3</value>
+            <value description="pathogen">-3</value>
+			<value description="symptom"></value>
+			<value description="plantPart">on roots</value>
+		</row>
+		<row>
+            <value description="id">-4</value>
+            <value description="host">-4</value>
+            <value description="pathogen">-4</value>            
+			<value description="author"></value>
+			<value description="plantPart"></value>
+		</row>
+		<row>
+            <value description="id">-5</value>
+            <value description="host">-5</value>
+            <value description="pathogen">-5</value>            
+			<value description="author">Mill.</value>
+			<value description="plantPart"></value>
+		</row>
+		<row>
+            <value description="id">-6</value>
+            <value description="host">-6</value>
+            <value description="pathogen">-6</value>
+			<value description="author"></value>
+			<value description="plantPart">var. douglasii</value>
+		</row>		
+		<row>
+            <value description="id">-7</value>
+            <value description="host">-7</value>
+            <value description="pathogen">-7</value>            
+			<value description="author">Miyabe</value>
+			<value description="plantPart">var. mayriana</value>
+		</row>			
+	</table>  		
 </dataset>
