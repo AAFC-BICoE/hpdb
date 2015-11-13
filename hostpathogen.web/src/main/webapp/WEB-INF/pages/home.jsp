@@ -11,10 +11,16 @@
 
 <ul class="glassList">
     <li>
+        <a href="<c:url value='/hosts'/>"><fmt:message key="hostList.title"/></a>
+    </li>
+<%--     <li>
+        <a href="<c:url value='/pathogens'/>"><fmt:message key="pathogens.title"/></a>
+    </li> --%>
+ <%--    <li>
         <a href="<c:url value='/userform'/>"><fmt:message key="menu.user"/></a>
     </li>
     <li>
         <a href="<c:url value='/fileupload'/>"><fmt:message key="menu.selectFile"/></a>
-    </li>
+    </li> --%>
 </ul>
 </body>

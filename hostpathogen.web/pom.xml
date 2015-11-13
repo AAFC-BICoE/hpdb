@@ -42,6 +42,58 @@
                 <artifactId>dbunit-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <pluginManagement>
+        	<plugins>
+        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        		<plugin>
+        			<groupId>org.eclipse.m2e</groupId>
+        			<artifactId>lifecycle-mapping</artifactId>
+        			<version>1.0.0</version>
+        			<configuration>
+        				<lifecycleMappingMetadata>
+        					<pluginExecutions>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>de.juplo</groupId>
+        								<artifactId>
+        									hibernate4-maven-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.0.5,)
+        								</versionRange>
+        								<goals>
+        									<goal>export</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.codehaus.mojo
+        								</groupId>
+        								<artifactId>
+        									native2ascii-maven-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.0-beta-1,)
+        								</versionRange>
+        								<goals>
+        									<goal>native2ascii</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        					</pluginExecutions>
+        				</lifecycleMappingMetadata>
+        			</configuration>
+        		</plugin>
+        	</plugins>
+        </pluginManagement>
     </build>
 
     <dependencies>
@@ -65,6 +117,7 @@
         <dao.framework>hibernate</dao.framework>
         <db.name>hpdbweb</db.name>
         <web.framework>spring</web.framework>
+        <copyright.year>2015</copyright.year>
 
         <!-- Framework/Plugin versions -->
         <appfuse.version>3.5.0</appfuse.version>

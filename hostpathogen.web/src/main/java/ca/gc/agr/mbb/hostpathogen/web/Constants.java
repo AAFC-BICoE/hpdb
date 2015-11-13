@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package ca.gc.agr.mbb.hostpathogen.web;
 
 
@@ -54,6 +57,10 @@ public final class Constants {
      */
     public static final String USER_LIST = "userList";
 
+    /**
+     * The request scope attribute that holds the HOST_LIST
+     */
+    public static final String HOST_LIST = "hostList";
     /**
      * The request scope attribute for indicating a newly-registered user
      */

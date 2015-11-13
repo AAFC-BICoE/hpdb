@@ -119,4 +119,60 @@
             <value description="role_id">-2</value>
         </row>
     </table>
+	<table name='host'>
+		<column>id</column>
+		<column>genus</column>
+		<column>species</column>
+		<column>author</column>
+		<column>subSpecificTaxa</column>
+		<row>
+            <value description="id">-1</value>
+			<value description="genus">Fusarium</value>
+			<value description="species">gram</value>
+			<value description="author"></value>
+			<value description="subSpecificTaxa"></value>
+		</row>
+		<row>
+            <value description="id">-2</value>
+			<value description="genus">Aspergillus</value>
+			<value description="species">oxy</value>
+			<value description="author"></value>
+			<value description="subSpecificTaxa"></value>
+		</row>
+		<row>
+            <value description="id">-3</value>
+			<value description="genus">Fusarium</value>
+			<value description="species">sp</value>
+			<value description="author"></value>
+			<value description="subSpecificTaxa"></value>
+		</row>
+		<row>
+            <value description="id">-4</value>
+			<value description="genus">Abies</value>
+			<value description="species">alba</value>
+			<value description="author"></value>
+			<value description="subSpecificTaxa"></value>
+		</row>
+		<row>
+            <value description="id">-5</value>
+			<value description="genus">Abies</value>
+			<value description="species">amabilis</value>
+			<value description="author">Mill.</value>
+			<value description="subSpecificTaxa"></value>
+		</row>
+		<row>
+            <value description="id">-6</value>
+			<value description="genus">Acer</value>
+			<value description="species">glabrum</value>
+			<value description="author"></value>
+			<value description="subSpecificTaxa">var. douglasii</value>
+		</row>		
+		<row>
+            <value description="id">-7</value>
+			<value description="genus">Abies</value>
+			<value description="species">sachalinensis</value>
+			<value description="author">Miyabe</value>
+			<value description="subSpecificTaxa">var. mayriana</value>
+		</row>			
+	</table>    
 </dataset>

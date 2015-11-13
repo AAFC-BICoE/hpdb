@@ -5,10 +5,15 @@
 <ul class="nav navbar-nav">
     <c:if test="${empty pageContext.request.remoteUser}">
         <li class="active">
-            <a href="<c:url value="/login"/>"><fmt:message key="login.title"/></a>
+            <a href="<c:url value="/hosts"/>"><fmt:message key="hostList.title"/></a>
         </li>
+<%--         <li class="active">
+            <a href="<c:url value="/login"/>"><fmt:message key="login.title"/></a>
+        </li>    --%>     
     </c:if>
-    <menu:displayMenu name="Home"/>
+	<menu:displayMenu name="Home"/>
+	<menu:displayMenu name="Hosts"/>        
+    <%-- <menu:displayMenu name="Pathogens"/> --%>
     <menu:displayMenu name="UserMenu"/>
     <menu:displayMenu name="AdminMenu"/>
     <menu:displayMenu name="Logout"/>
