@@ -119,7 +119,7 @@
             <value description="role_id">-2</value>
         </row>
     </table>
-	<table name='host'>
+	<table name="host">
 		<column>id</column>
 		<column>genus</column>
 		<column>species</column>
@@ -175,7 +175,7 @@
 			<value description="subSpecificTaxa">var. mayriana</value>
 		</row>			
 	</table>    
-	<table name='pathogen'>
+	<table name="pathogen">
 		<column>id</column>
 		<column>genus</column>
 		<column>species</column>
@@ -231,18 +231,35 @@
 			<value description="subSpecificTaxa">var. mayriana</value>
 		</row>			
 	</table>    
-	<table name='hostPathogen'>
+	<table name="reference">
+		<column>id</column>
+		<column>authors</column>
+		<column>year</column>
+		<row>
+            <value description="id">-1</value>
+            <value description="authors">Joe and Larry</value>
+            <value description="year">2000</value>
+		</row>
+		<row>
+            <value description="id">-2</value>
+            <value description="authors">Bob and Tom</value>
+            <value description="year">2001</value>            
+		</row>
+	</table>     
+	<table name="hostPathogen">
 		<column>id</column>
 		<column>host</column>
 		<column>pathogen</column>
 		<column>symptom</column>
 		<column>plantPart</column>
+		<column>reference</column>
 		<row>
             <value description="id">-1</value>
             <value description="host">-1</value>
             <value description="pathogen">-1</value>
 			<value description="symptom">lichen</value>
 			<value description="plantPart">on roots</value>
+			<value description="reference">-1</value>
 		</row>
 		<row>
             <value description="id">-2</value>
@@ -250,6 +267,7 @@
             <value description="pathogen">-2</value>            
 			<value description="symptom">lichen</value>
 			<value description="plantPart">on roots</value>
+			<value description="reference">-1</value>
 		</row>
 		<row>
             <value description="id">-3</value>
@@ -257,6 +275,7 @@
             <value description="pathogen">-3</value>
 			<value description="symptom"></value>
 			<value description="plantPart">on roots</value>
+			<value description="reference">-1</value>
 		</row>
 		<row>
             <value description="id">-4</value>
@@ -264,6 +283,7 @@
             <value description="pathogen">-4</value>            
 			<value description="author"></value>
 			<value description="plantPart"></value>
+			<value description="reference">-2</value>
 		</row>
 		<row>
             <value description="id">-5</value>
@@ -271,6 +291,7 @@
             <value description="pathogen">-5</value>            
 			<value description="author">Mill.</value>
 			<value description="plantPart"></value>
+			<value description="reference">-2</value>
 		</row>
 		<row>
             <value description="id">-6</value>
@@ -278,6 +299,7 @@
             <value description="pathogen">-6</value>
 			<value description="author"></value>
 			<value description="plantPart">var. douglasii</value>
+			<value description="reference">-2</value>
 		</row>		
 		<row>
             <value description="id">-7</value>
@@ -285,6 +307,7 @@
             <value description="pathogen">-7</value>            
 			<value description="author">Miyabe</value>
 			<value description="plantPart">var. mayriana</value>
+			<value description="reference">-2</value>
 		</row>			
-	</table>  		
+	</table>
 </dataset>

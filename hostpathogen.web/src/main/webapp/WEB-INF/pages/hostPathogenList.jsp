@@ -36,6 +36,8 @@
         <display:column property="pathogen.species" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.species" style="width: 20%"/>
         <display:column property="plantPart" escapeXml="true" sortable="true" titleKey="hostPathogen.plantPart"/>          
 		<display:column property="symptom" escapeXml="true" sortable="true" titleKey="hostPathogen.symptom"/>
+        <display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 20%"
+                        url="/referenceform?from=list" paramId="reference.id" paramProperty="reference.id"/>		
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>
 
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostPathogenList.hostPathogen"/></display:setProperty>

@@ -11,5 +11,6 @@
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Host"/>
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Pathogen"/>
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.HostPathogen"/>
+        <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Reference"/>
     </session-factory>
 </hibernate-configuration>

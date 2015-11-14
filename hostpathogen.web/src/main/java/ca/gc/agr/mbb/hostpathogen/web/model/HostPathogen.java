@@ -19,7 +19,6 @@ import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class hostPathogen.
  */
@@ -42,8 +41,8 @@ public class HostPathogen extends BaseObject implements Serializable {
 	/** The id. */
 	private Long id;
 	
-	/** The reference id. */
-	private Long referenceId;
+	/** The reference. */
+	private Reference reference;
 	
 	/** The host. */
 	private Host host;
@@ -97,21 +96,25 @@ public class HostPathogen extends BaseObject implements Serializable {
 	}
 
     /**
-     * Gets the reference id.
+     * Gets the reference.
      *
-     * @return the referenceId
+     * @return the reference
      */
-	public Long getReferenceId() {
-		return referenceId;
+    @Embedded
+    @IndexedEmbedded	
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="reference")
+	public Reference getReference() {
+		return reference;
 	}
 
 	/**
 	 * Sets the reference id.
 	 *
-	 * @param referenceId the referenceId to set
+	 * @param reference the reference to set
 	 */
-	public void setReferenceId(Long referenceId) {
-		this.referenceId = referenceId;
+	public void setReference(Reference reference) {
+		this.reference = reference;
 	}
 
 	/**
@@ -132,8 +135,8 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @param hostId the hostId to set
 	 */
-	public void setHost(Host hostId) {
-		this.host = hostId;
+	public void setHost(Host host) {
+		this.host = host;
 	}
 
 	/**
@@ -154,8 +157,8 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @param pathogenId the pathogenId to set
 	 */
-	public void setPathogen(Pathogen pathogenId) {
-		this.pathogen = pathogenId;
+	public void setPathogen(Pathogen pathogen) {
+		this.pathogen = pathogen;
 	}
 
 	/**

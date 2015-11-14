@@ -34,6 +34,7 @@
     <!-- Convenient way to map URLs to JSPs w/o having a Controller -->
     <mvc:view-controller path="/admin/activeUsers" view-name="admin/activeUsers"/>
     <mvc:view-controller path="/home" view-name="home"/>
+    <mvc:view-controller path="/referenceform" view-name="referenceform"/>
 
     <!-- View Resolver for JSPs -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
