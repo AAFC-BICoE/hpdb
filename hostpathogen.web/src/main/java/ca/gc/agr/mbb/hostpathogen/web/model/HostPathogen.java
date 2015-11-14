@@ -3,6 +3,7 @@ package ca.gc.agr.mbb.hostpathogen.web.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -117,6 +119,8 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the hostId
 	 */
+    @Embedded
+    @IndexedEmbedded	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="host")
 	public Host getHost() {
@@ -137,6 +141,8 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the pathogenId
 	 */
+    @Embedded
+    @IndexedEmbedded	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="pathogen")	
 	public Pathogen getPathogen() {

@@ -26,7 +26,12 @@ public class HostPathogenManagerImpl extends GenericManagerImpl<HostPathogen, Lo
 
 	@Override
 	public List<HostPathogen> findHostPathogenByGenus(String genus) {
-		// TODO Auto-generated method stub
+		try {
+			return hostPathogenDao.getHostPathogenByHostGenus(genus);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 	

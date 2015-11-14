@@ -2,7 +2,9 @@ package ca.gc.agr.mbb.hostpathogen.web.dao.hibernate;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import ca.gc.agr.mbb.hostpathogen.web.dao.HostPathogenDao;
@@ -57,6 +59,26 @@ public class HostPathogenDaoHibernate extends GenericDaoHibernate<HostPathogen, 
     @Override
     public HostPathogen save(HostPathogen hostPathogen) {
         return this.saveHostPathogen(hostPathogen);
+    }
+    
+    /**
+     * {@inheritDoc}
+     * @throws Exception 
+     */
+    @SuppressWarnings("unchecked")
+	public List<HostPathogen> getHostPathogenByHostGenus(String genus) throws Exception {
+        List <HostPathogen> hp = null;
+        
+        Criteria c = getSession().createCriteria(HostPathogen.class);
+        c.createAlias("host", "host")  ;     
+        c.add(Restrictions.eq("host.genus", genus));
+        hp = c.list();
+        
+        if (hp == null || hp.isEmpty()) {
+            throw new Exception("genus '" + genus + "' not found...");
+        } else {
+            return hp;
+        }
     }
 
 }

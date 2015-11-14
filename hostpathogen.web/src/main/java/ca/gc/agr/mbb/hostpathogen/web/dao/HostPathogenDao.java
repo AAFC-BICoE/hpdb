@@ -24,5 +24,14 @@ public interface HostPathogenDao extends GenericDao<HostPathogen, Long> {
      * @return the persisted HostPathogen object
      */
     HostPathogen saveHostPathogen(HostPathogen host);
+    
+    /**
+     * Gets the host pathogen by host genus.
+     *
+     * @param genus the genus
+     * @return the host pathogen by host genus
+     * @throws Exception the exception
+     */
+    public List<HostPathogen> getHostPathogenByHostGenus(String genus) throws Exception;
 
 }
