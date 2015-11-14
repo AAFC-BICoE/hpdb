@@ -29,15 +29,18 @@
 
     <display:table name="hostPathogenList" cellspacing="0" cellpadding="0" requestURI=""
                    defaultsort="1" id="hostPathogens" pagesize="25" class="table table-condensed table-striped table-hover" export="true">
-        <display:column property="host.genus" escapeXml="true" sortable="true" titleKey="hostPathogen.host.genus" style="width: 20%"
-                        url="/hostPathogenform?from=list" paramId="id" paramProperty="id"/>
-        <display:column property="host.species" escapeXml="true" sortable="true" titleKey="hostPathogen.host.species" style="width: 20%"/>
-        <display:column property="pathogen.genus" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.genus" style="width: 20%"/>
-        <display:column property="pathogen.species" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.species" style="width: 20%"/>
+                   
+<%--    <display:column property="host.fullName" escapeXml="true" sortable="true" titleKey="hostPathogen.host.fullName" style="width: 24%"
+                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+        <display:column property="pathogen.fullTaxonName" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.fullName" style="width: 24%"
+                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>    --%>
+		<display:column property="host.fullName" escapeXml="true" sortable="true" titleKey="hostPathogen.host.fullName" style="width: 24%"
+						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/> 
+		<display:column property="pathogen.fullTaxonName" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.fullName" style="width: 24%"/>                      
         <display:column property="plantPart" escapeXml="true" sortable="true" titleKey="hostPathogen.plantPart"/>          
 		<display:column property="symptom" escapeXml="true" sortable="true" titleKey="hostPathogen.symptom"/>
-        <display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 20%"
-                        url="/referenceform?from=list" paramId="reference.id" paramProperty="reference.id"/>		
+        <display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 24%"
+      					href="/referenceform?from=list" paramId="reference.id" paramProperty="reference.id" /> 	
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>
 
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostPathogenList.hostPathogen"/></display:setProperty>

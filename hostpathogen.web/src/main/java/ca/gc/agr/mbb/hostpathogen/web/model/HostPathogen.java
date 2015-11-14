@@ -36,7 +36,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 */
 	
 	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1876249761470217819L;
+	private static final long serialVersionUID = -2561031657343635571L;
 
 	/** The id. */
 	private Long id;

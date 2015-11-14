@@ -14,7 +14,6 @@ import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Reference.
  */
@@ -30,8 +29,8 @@ public class Reference extends BaseObject implements Serializable {
 	 */
 	
 	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -4712260638120605606L;
-	
+	private static final long serialVersionUID = 1328290516770469911L;
+
 	/** The id. */
 	private Long id;
 	

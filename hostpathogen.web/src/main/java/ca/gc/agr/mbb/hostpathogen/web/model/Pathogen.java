@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.search.annotations.DocumentId;
@@ -296,6 +297,16 @@ public class Pathogen extends BaseObject implements Serializable {
 	public void setFrName(String frName) {
 		this.frName = frName;
 	}
+    
+    /**
+     * Returns the full name.
+     *
+     * @return firstName + ' ' + lastName
+     */
+    @Transient
+    public String getFullTaxonName() {
+        return genus + ' ' + species + ' ' + subSpecificTaxa;
+    }
 
     /**
      * Gets the notes.
