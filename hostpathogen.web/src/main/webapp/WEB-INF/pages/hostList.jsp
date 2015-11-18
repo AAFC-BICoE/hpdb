@@ -28,7 +28,8 @@
     </form>
 
     <display:table name="hostList" cellspacing="0" cellpadding="0" requestURI=""
-                   defaultsort="1" id="hosts" pagesize="25" class="table table-condensed table-striped table-hover" export="true">
+                   defaultsort="1" id="hosts" pagesize="25" sort="list"
+                   class="table table-condensed table-striped table-hover" export="true">
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 20%"
                         url="/hostform?from=list" paramId="id" paramProperty="id"/>
         <display:column property="species" escapeXml="true" sortable="true" titleKey="host.species"

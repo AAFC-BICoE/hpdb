@@ -28,7 +28,8 @@
     </form>
 
     <display:table name="hostPathogenList" cellspacing="0" cellpadding="0" requestURI=""
-                   defaultsort="1" id="hostPathogens" pagesize="25" class="table table-condensed table-striped table-hover" export="true">
+                   defaultsort="1" id="hostPathogens" pagesize="25" sort="list" 
+                   class="table table-condensed table-striped table-hover" export="true">
                    
 <%--    <display:column property="host.fullName" escapeXml="true" sortable="true" titleKey="hostPathogen.host.fullName" style="width: 24%"
                         url="/hostform?from=list" paramId="id" paramProperty="id"/>

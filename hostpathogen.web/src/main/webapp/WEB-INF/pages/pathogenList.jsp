@@ -27,8 +27,8 @@
     </div>
     </form>
 
-    <display:table name="pathogenList" cellspacing="0" cellpadding="0" 
-    			   requestURI="" defaultsort="1" id="pathogens" pagesize="25" 
+    <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI=""
+    			   defaultsort="1" id="pathogens" pagesize="25" sort="list"
                    class="table table-condensed table-striped table-hover" export="true">
                    
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="pathogen.genus" style="width: 20%"
