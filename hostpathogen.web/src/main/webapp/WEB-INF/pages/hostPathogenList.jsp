@@ -42,8 +42,12 @@
 		<display:column property="symptom" escapeXml="true" sortable="true" titleKey="hostPathogen.symptom"/>
         <display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 24%"
       					href="/referenceform?from=list" paramId="reference.id" paramProperty="reference.id" /> 	
-		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>
-
+		<display:column escapeXml="true" sortable="true" titleKey="hostPathogen.locations"> 
+				<c:forEach var="location" items="${hostPathogens.locationList}" varStatus="status">
+					<c:out value=" ${location.interpretation}"/>[<c:out value="${location.country}] "/><c:if test="${!status.last}">,</c:if>  
+				</c:forEach>
+		</display:column>
+		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>		
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostPathogenList.hostPathogen"/></display:setProperty>
         <display:setProperty name="paging.banner.items_name"><fmt:message key="hostPathogenList.hostPathogens"/></display:setProperty>
 

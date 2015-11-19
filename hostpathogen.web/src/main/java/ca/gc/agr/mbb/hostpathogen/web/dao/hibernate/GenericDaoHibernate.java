@@ -6,8 +6,10 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.util.Version;
+
 import ca.gc.agr.mbb.hostpathogen.web.dao.GenericDao;
 import ca.gc.agr.mbb.hostpathogen.web.dao.SearchException;
+
 import org.hibernate.*;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
@@ -16,6 +18,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.orm.ObjectRetrievalFailureException;
 
 import javax.annotation.Resource;
+
 import java.io.Serializable;
 import java.util.*;
 
@@ -100,7 +103,6 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     /**
      * {@inheritDoc}
      */
-    @SuppressWarnings("unchecked")
     public List<T> getAllDistinct() {
         Collection<T> result = new LinkedHashSet<T>(getAll());
         return new ArrayList<T>(result);
@@ -109,7 +111,8 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     /**
      * {@inheritDoc}
      */
-    public List<T> search(String searchTerm) throws SearchException {
+    @SuppressWarnings("unchecked")
+	public List<T> search(String searchTerm) throws SearchException {
         Session sess = getSession();
         FullTextSession txtSession = Search.getFullTextSession(sess);
 
@@ -172,7 +175,8 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     /**
      * {@inheritDoc}
      */
-    public void remove(PK id) {
+    @SuppressWarnings("unchecked")
+	public void remove(PK id) {
         Session sess = getSession();
         IdentifierLoadAccess byId = sess.byId(persistentClass);
         T entity = (T) byId.load(id);
@@ -182,7 +186,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     /**
      * {@inheritDoc}
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public List<T> findByNamedQuery(String queryName, Map<String, Object> queryParams) {
         Session sess = getSession();
         Query namedQuery = sess.getNamedQuery(queryName);

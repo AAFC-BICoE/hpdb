@@ -231,6 +231,24 @@
 			<value description="subSpecificTaxa">var. mayriana</value>
 		</row>			
 	</table>    
+	<table name="location">
+		<column>id</column>
+		<column>country</column>
+		<column>interpretation</column>
+		<column>geographicalAbbreviation</column>
+		<row>
+            <value description="id">-1</value>
+            <value description="country">Canada</value>
+            <value description="interpretation">Alberta</value>
+            <value description="geographicalAbbreviation">AB</value>
+		</row>
+		<row>
+            <value description="id">-2</value>
+            <value description="country">USA</value>
+            <value description="interpretation">Alabama</value>
+            <value description="geographicalAbbreviation">AL</value>         
+		</row>
+	</table>  	
 	<table name="reference">
 		<column>id</column>
 		<column>authors</column>
@@ -310,4 +328,24 @@
 			<value description="reference">-2</value>
 		</row>			
 	</table>
+    <table name="hp_location_link">
+        <column>hp_id</column>
+        <column>location_id</column>
+        <row>
+            <value description="hp_id">-1</value>
+            <value description="location_id">-1</value>
+        </row>
+        <row>
+            <value description="hp_id">-2</value>
+            <value description="location_id">-1</value>
+        </row>
+        <row>
+            <value description="hp_id">-1</value>
+            <value description="location_id">-2</value>
+        </row>
+        <row>
+            <value description="hp_id">-3</value>
+            <value description="location_id">-2</value>
+        </row>
+    </table>		
 </dataset>

@@ -1,5 +1,8 @@
 package ca.gc.agr.mbb.hostpathogen.web.webapp.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ExtendedModelMap;
@@ -11,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ca.gc.agr.mbb.hostpathogen.web.Constants;
 import ca.gc.agr.mbb.hostpathogen.web.dao.SearchException;
+import ca.gc.agr.mbb.hostpathogen.web.model.HostPathogen;
 import ca.gc.agr.mbb.hostpathogen.web.service.HostPathogenManager;
 
 
@@ -36,8 +40,14 @@ public class HostPathogenController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView handleRequest(@RequestParam(required = false, value = "q") String query) throws Exception {
         Model model = new ExtendedModelMap();
+        List<HostPathogen> list = new ArrayList<HostPathogen>();
         try {
-            model.addAttribute(Constants.HOST_PATHOGEN_LIST, hostPathogenManager.search(query));
+        	if(query==null || query.length()==0){ //return empty list if search string is empty
+        		model.addAttribute(Constants.HOST_PATHOGEN_LIST, list);
+        	} else {
+        		model.addAttribute(Constants.HOST_PATHOGEN_LIST, hostPathogenManager.search(query));
+        	}
+            
         } catch (SearchException se) {
             model.addAttribute("searchError", se.getMessage());
             model.addAttribute(hostPathogenManager.getHostPathogens());

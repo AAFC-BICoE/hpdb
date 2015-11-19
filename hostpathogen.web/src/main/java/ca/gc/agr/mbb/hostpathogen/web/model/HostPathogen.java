@@ -1,6 +1,10 @@
 package ca.gc.agr.mbb.hostpathogen.web.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -10,10 +14,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
@@ -67,6 +76,9 @@ public class HostPathogen extends BaseObject implements Serializable {
 	
 	/** The credibility rating. */
 	private String credibilityRating;
+	
+	/** The locations. */
+	private Set<Location> locations = new HashSet<Location>();
 	
     /**
      * Default constructor - creates a new instance with no values set.
@@ -280,7 +292,59 @@ public class HostPathogen extends BaseObject implements Serializable {
 	public String getNotes() {
 		return notes;
 	}
+    
+	/**
+	 * @return the locations
+	 */
+    @Embedded
+    @IndexedEmbedded	
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(FetchMode.SELECT)
+    @JoinTable(
+            name = "hp_location_link",
+            joinColumns = { @JoinColumn(name = "hp_id") },
+            inverseJoinColumns = @JoinColumn(name = "location_id")
+    )    
+	public Set<Location> getLocations() {
+		return locations;
+	}
+    
+    /**
+     * Convert user roles to LabelValue objects for convenience.
+     *
+     * @return a list of LabelValue objects with role information
+     */
+    @Transient
+    public List<Location> getLocationList() {
+        List<Location> returnLocations = new ArrayList<Location>();
 
+        if (this.locations != null) {
+            for (Location location : locations) {
+                // convert the user's roles to LabelValue Objects
+                returnLocations.add(location);
+            }
+        }
+
+        return returnLocations;
+    }
+    
+    /**
+     * Adds a location for the user
+     *
+     * @param location the fully instantiated role
+     */
+    public void addLocation(Location location) {
+        getLocations().add(location);
+    }
+    
+    
+
+	/**
+	 * @param locations the locations to set
+	 */
+	public void setLocations(Set<Location> locations) {
+		this.locations = locations;
+	}
 
 	/* (non-Javadoc)
 	 * @see ca.gc.agr.mbb.hostPathogenpathogen.web.model.BaseObject#toString()
