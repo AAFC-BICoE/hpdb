@@ -30,14 +30,10 @@
     <display:table name="hostList" cellspacing="0" cellpadding="0" requestURI=""
                    defaultsort="1" id="hosts" pagesize="25" sort="list"
                    class="table table-condensed table-striped table-hover" export="true">
-        <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 20%"
+        <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 18%"
                         url="/hostform?from=list" paramId="id" paramProperty="id"/>
-        <display:column property="species" escapeXml="true" sortable="true" titleKey="host.species"
-                        style="width: 20%"/>
-        <display:column property="subSpecificTaxa" escapeXml="true" sortable="true" titleKey="host.subSpecificTaxa"
-                        />
-		<display:column property="author" escapeXml="true" sortable="true" titleKey="host.author"
-                        />
+        <display:column property="species" escapeXml="true" sortable="true" titleKey="host.species"  style="width: 23%"/>
+        <display:column property="subSpecificTaxa" escapeXml="true" sortable="true" titleKey="host.subSpecificTaxa" />
 		<display:column property="cultivar" escapeXml="true" sortable="true" titleKey="host.cultivar"/>
 		<display:column property="enName" escapeXml="true" sortable="true" titleKey="host.enName"/>
 		<display:column property="frName" escapeXml="true" sortable="true" titleKey="host.frName"/>                                                                        

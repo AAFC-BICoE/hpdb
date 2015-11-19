@@ -31,11 +31,10 @@
     			   defaultsort="1" id="pathogens" pagesize="25" sort="list"
                    class="table table-condensed table-striped table-hover" export="true">
                    
-        <display:column property="genus" escapeXml="true" sortable="true" titleKey="pathogen.genus" style="width: 20%"
+        <display:column property="genus" escapeXml="true" sortable="true" titleKey="pathogen.genus" style="width: 18%"
                         url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
-        <display:column property="species" escapeXml="true" sortable="true" titleKey="pathogen.species"  style="width: 20%"/>
+        <display:column property="species" escapeXml="true" sortable="true" titleKey="pathogen.species"  style="width: 23%"/>
         <display:column property="subSpecificTaxa" escapeXml="true" sortable="true" titleKey="pathogen.subSpecificTaxa"/>
-		<display:column property="author" escapeXml="true" sortable="true" titleKey="pathogen.author"/>
 		<display:column property="enName" escapeXml="true" sortable="true" titleKey="pathogen.enName"/>
 		<display:column property="frName" escapeXml="true" sortable="true" titleKey="pathogen.frName"/>
 		<display:column property="fungalState" escapeXml="true" sortable="true" titleKey="pathogen.fungalState"/>

@@ -1,7 +1,19 @@
 package ca.gc.agr.mbb.hostpathogen.web.webapp.controller;
 
-import ca.gc.agr.mbb.hostpathogen.web.model.User;
-import ca.gc.agr.mbb.hostpathogen.web.service.UserManager;
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
+import static org.junit.Assert.assertNotNull;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import javax.servlet.Filter;
+import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +24,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import javax.servlet.Filter;
-import javax.servlet.http.HttpSession;
-import javax.transaction.Transactional;
-
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertNotNull;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import ca.gc.agr.mbb.hostpathogen.web.model.User;
+import ca.gc.agr.mbb.hostpathogen.web.service.UserManager;
 
 @ContextConfiguration(locations = {
     "classpath:/applicationContext-resources.xml",
