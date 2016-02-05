@@ -61,10 +61,17 @@ CREATE TABLE `reference` (
 
 CREATE TABLE `hostPathogen` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `credibilityRating` varchar(200) DEFAULT NULL,
+  `country` varchar(200) DEFAULT NULL,
+  `hostFamily` varchar(200) DEFAULT NULL,
+  `hostGenus` varchar(200) DEFAULT NULL,
+  `hostSpecies` varchar(200) DEFAULT NULL,
+  `hostSubSpecificTaxa` varchar(200) DEFAULT NULL,
+  `locality` varchar(200) DEFAULT NULL,
   `notes` varchar(200) DEFAULT NULL,
+  `pathogenGenus` varchar(200) DEFAULT NULL,
+  `pathogenSpecies` varchar(200) DEFAULT NULL,
+  `pathogenSubSpecificTaxa` varchar(200) DEFAULT NULL,
   `plantPart` varchar(200) DEFAULT NULL,
-  `questionableData` varchar(200) DEFAULT NULL,
   `rustState` varchar(200) DEFAULT NULL,
   `symptom` varchar(200) DEFAULT NULL,
   `host` bigint(20) DEFAULT NULL,
@@ -117,11 +124,23 @@ set
 id=@col1,refSourceId=@col2,authors=@col3,year=@col4,chapterArticleTitle=@col5,volume=@col6,pages=@col7,data_source=@col8;
 
 
-LOAD DATA INFILE '/home/bilkhus/Downloads/hostPathogenCsv/host_pathogens.csv' INTO TABLE hostPathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' 
+LOAD DATA INFILE '/home/bilkhus/Downloads/hostPathogenCsv/host_pathogens_PHCit.csv' INTO TABLE hostPathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' 
 IGNORE 1 LINES 
-(@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11) 
+(@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11,@col12,@col13) 
 set 
-id=@col1,reference=@col2,host=@col3,pathogen=@col4,plantPart=@col6,symptom=@col7,notes=@col9;
+id=@col1,
+host=@col2,
+pathogen=@col3,
+reference=@col4,
+hostFamily=@col5,
+hostGenus=@col6,
+hostSpecies=@col7,
+hostSubSpecificTaxa=@col8,
+pathogenGenus=@col9,
+pathogenSpecies=@col10,
+pathogenSubSpecificTaxa=@col11,
+country=@col2,
+locality=@col13;
 
 LOAD DATA INFILE '/home/bilkhus/Downloads/hostPathogenCsv/localities.csv' INTO TABLE location character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' 
 IGNORE 1 LINES 

@@ -35,18 +35,15 @@
                         url="/hostform?from=list" paramId="id" paramProperty="id"/>
         <display:column property="pathogen.fullTaxonName" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.fullName" style="width: 24%"
                         url="/pathogenform?from=list" paramId="id" paramProperty="id"/>    --%>
+		<display:column property="hostFamily" escapeXml="true" sortable="true" titleKey="hostPathogen.hostFamily"/>                        
 		<display:column property="host.fullName" escapeXml="true" sortable="true" titleKey="hostPathogen.host.fullName" style="width: 24%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/> 
 		<display:column property="pathogen.fullTaxonName" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogen.fullName" style="width: 24%"/>                      
-        <display:column property="plantPart" escapeXml="true" sortable="true" titleKey="hostPathogen.plantPart"/>          
-		<display:column property="symptom" escapeXml="true" sortable="true" titleKey="hostPathogen.symptom"/>
         <display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 24%"
-      					href="/referenceform?from=list" paramId="reference.id" paramProperty="reference.id" /> 	
-		<display:column escapeXml="true" sortable="true" titleKey="hostPathogen.locations"> 
-				<c:forEach var="location" items="${hostPathogens.locationList}" varStatus="status">
-					<c:out value=" ${location.interpretation}"/>[<c:out value="${location.country}] "/><c:if test="${!status.last}">,</c:if>  
-				</c:forEach>
-		</display:column>
+      					href="/referenceform?from=list" paramId="reference.id" paramProperty="reference.id" />
+		<display:column property="locality" escapeXml="true" sortable="true" titleKey="hostPathogen.locality"/>
+		<display:column property="country" escapeXml="true" sortable="true" titleKey="hostPathogen.country"/>      					 	
+      					
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>		
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostPathogenList.hostPathogen"/></display:setProperty>
         <display:setProperty name="paging.banner.items_name"><fmt:message key="hostPathogenList.hostPathogens"/></display:setProperty>

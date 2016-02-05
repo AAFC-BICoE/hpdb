@@ -42,11 +42,11 @@ public class HostPathogenController {
         Model model = new ExtendedModelMap();
         List<HostPathogen> list = new ArrayList<HostPathogen>();
         try {
-        	if(query==null || query.length()==0){ //return empty list if search string is empty
+/*        	if(query==null || query.length()==0){ //return empty list if search string is empty
         		model.addAttribute(Constants.HOST_PATHOGEN_LIST, list);
-        	} else {
+        	} else {*/
         		model.addAttribute(Constants.HOST_PATHOGEN_LIST, hostPathogenManager.search(query));
-        	}
+//        	}
             
         } catch (SearchException se) {
             model.addAttribute("searchError", se.getMessage());
