@@ -2,6 +2,7 @@ package ca.gc.agr.mbb.hostpathogen.web.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -132,4 +133,19 @@ public class GenericManagerImpl<T, PK extends Serializable> implements GenericMa
     public void reindexAll(boolean async) {
         dao.reindexAll(async);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+	public List<T> getFilteredPagedData(int start, int page, String field, boolean ascending, Map<String, String> filters, boolean export) {
+		return dao.getFilteredPagedData(start, page, field, ascending, filters, export);
+	}
+
+    /**
+     * {@inheritDoc}
+     */
+	public int getDataCount(Map<String, String> filters) {
+		return dao.getDataCount(filters);
+	}
+
 }

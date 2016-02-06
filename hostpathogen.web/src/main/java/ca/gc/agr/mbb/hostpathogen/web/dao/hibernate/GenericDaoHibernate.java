@@ -1,26 +1,38 @@
 package ca.gc.agr.mbb.hostpathogen.web.dao.hibernate;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.util.Version;
-
-import ca.gc.agr.mbb.hostpathogen.web.dao.GenericDao;
-import ca.gc.agr.mbb.hostpathogen.web.dao.SearchException;
-
-import org.hibernate.*;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.IdentifierLoadAccess;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.orm.ObjectRetrievalFailureException;
 
-import javax.annotation.Resource;
-
-import java.io.Serializable;
-import java.util.*;
+import ca.gc.agr.mbb.hostpathogen.web.dao.GenericDao;
+import ca.gc.agr.mbb.hostpathogen.web.dao.SearchException;
 
 /**
  * This class serves as the Base class for all other DAOs - namely to hold
@@ -40,6 +52,7 @@ import java.util.*;
  *         Updated by jgarcia: update hibernate3 to hibernate4
  * @author jgarcia (update: added full text search + reindexing)
  */
+@SuppressWarnings("deprecation")
 public class GenericDaoHibernate<T, PK extends Serializable> implements GenericDao<T, PK> {
     /**
      * Log variable for all child classes. Uses LogFactory.getLog(getClass()) from Commons Logging
@@ -90,6 +103,125 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+    
+	protected void createSortCriteria(String sortColumn, boolean ascending,	Criteria criteria) {
+
+		if (sortColumn == null)
+			return;
+
+		String[] columnProperties = sortColumn.split("\\.");
+
+		String sortProperty = columnProperties.length > 0 ? 
+							 	columnProperties[columnProperties.length - 1] : 
+								sortColumn;
+
+		Criteria sortCriteria = criteria;
+		for (int i = 0; i < columnProperties.length - 1; i++) {
+			sortCriteria = sortCriteria.createCriteria(columnProperties[i]);
+		}
+
+		sortCriteria.addOrder(ascending ? Order.asc(sortProperty) : Order.desc(sortProperty));
+	}
+
+	private Criteria createFilterCriteria(String filterEntity, String filterAttribute, String value, Criteria criteria) {
+
+		Criteria filterCriteria = criteria;
+
+		if (value == null || value.length() == 0)
+			return criteria;
+
+		if (filterEntity != null && filterEntity.contains(".")) {
+
+			int splitPoint = filterEntity.indexOf(".");
+			
+			String entity = filterEntity.substring(0, splitPoint);
+			filterEntity = filterEntity.substring(splitPoint + 1, filterEntity.length());
+
+			return createFilterCriteria(filterEntity, filterAttribute, value, filterCriteria.createCriteria(entity));
+
+		} else {
+
+			if (filterEntity != null)
+				filterCriteria = filterCriteria.createCriteria(filterEntity);
+
+			System.out.print("Creating filter criteria: " + filterAttribute + " " + value);
+			
+			filterCriteria.add(Expression.like(filterAttribute, value));
+
+		}
+
+		return filterCriteria;
+	}
+
+	protected void createFilterCriteria(Map<String, String> filters, Criteria criteria) {
+		
+		Map<String, Criteria> criterias = new HashMap<String, Criteria>();
+		
+		for (String fullAttribute : filters.keySet()) {
+			
+			if (fullAttribute.contains(".")) {
+				
+				String entity = fullAttribute.substring(0, fullAttribute.lastIndexOf("."));
+				String attribute = fullAttribute.substring(fullAttribute.lastIndexOf(".") + 1);
+				
+				if (criterias.get(entity) == null) {
+					
+					criterias.put(entity, createFilterCriteria(entity, attribute, filters.get(fullAttribute), criteria));
+					
+				} else {
+					
+					createFilterCriteria(null, attribute, filters.get(fullAttribute), criterias.get(entity));
+					
+				}
+				
+			} else {
+				
+				createFilterCriteria(null, fullAttribute, filters.get(fullAttribute), criteria);
+				
+			}
+			
+		}
+		
+	}
+	
+    /**
+     * {@inheritDoc}
+     */
+	@SuppressWarnings("unchecked")
+	public List<T> getFilteredPagedData(int start, int page, String property, boolean ascending, Map<String, String> filters, boolean export) {
+		Session sess = getSession();
+		Criteria criteria = sess.createCriteria(this.persistentClass);
+		
+		criteria.setFirstResult(start);
+		if(!export){
+			criteria.setMaxResults(page);
+		}
+		createSortCriteria(property, ascending, criteria);
+		
+		if (filters.size() > 0) {
+			createFilterCriteria(filters, criteria);
+		}
+		
+		return criteria.list();
+	}
+	
+    /**
+     * {@inheritDoc}
+     */
+	public int getDataCount(Map<String, String> filters) {
+		Session sess = getSession();
+		Criteria criteria = sess.createCriteria(this.persistentClass);
+		
+		if (filters.size() > 0) {
+			createFilterCriteria(filters, criteria);
+		}
+		
+		criteria.setProjection(Projections.rowCount());
+		Number nuofRecords = ((Number) criteria.uniqueResult());
+		
+		return nuofRecords == null ? 0 : nuofRecords.intValue();
+	}
+    
 
     /**
      * {@inheritDoc}
@@ -215,4 +347,5 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     public void reindexAll(boolean async) {
         HibernateSearchTools.reindexAll(async, getSessionFactory().getCurrentSession());
     }
+
 }

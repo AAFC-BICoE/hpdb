@@ -19,6 +19,12 @@
     <form method="get" action="${ctx}/hostPathogens" id="searchForm" class="form-inline">
     <div id="search" class="text-right">
         <span class="col-sm-9">
+			<input type="text" size="20" name="genus" id="genus" value="${param.genus}" 
+                   placeholder="<fmt:message key="search.genus"/>" class="form-control input-sm">
+            <input type="text" size="20" name="species" id="species" value="${param.species}" 
+                   placeholder="<fmt:message key="search.species"/>" class="form-control input-sm">
+        </span>        
+        <span class="col-sm-9">
             <input type="text" size="20" name="q" id="query" value="${param.q}"
                    placeholder="<fmt:message key="search.enterTerms"/>" class="form-control input-sm">
         </span>
