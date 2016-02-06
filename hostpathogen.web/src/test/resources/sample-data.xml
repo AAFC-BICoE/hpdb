@@ -268,80 +268,133 @@
 		<column>id</column>
 		<column>host</column>
 		<column>pathogen</column>
+		<column>reference</column>
+		<column>hostGenus</column>
+		<column>hostSpecies</column>
+		<column>hostSubSpecificTaxa</column>
+		<column>pathogenGenus</column>
+		<column>pathogenSpecies</column>
+		<column>pathogenSubSpecificTaxa</column>		
 		<column>symptom</column>
 		<column>plantPart</column>
-		<column>country</column>
-		<column>locality</column>
-		<column>reference</column>
 		<row>
             <value description="id">-1</value>
             <value description="host">-1</value>
             <value description="pathogen">-1</value>
+			<value description="reference">-1</value>
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>			
 			<value description="symptom">lichen</value>
 			<value description="plantPart">on roots</value>
-			<value description="country">Canada</value>
-			<value description="locality">QC</value>
-			<value description="reference">-1</value>
 		</row>
 		<row>
             <value description="id">-2</value>
             <value description="host">-2</value>
+            <value description="pathogen">-2</value>
+			<value description="reference">-1</value>                        
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>			            
             <value description="pathogen">-2</value>            
 			<value description="symptom">lichen</value>
 			<value description="plantPart">on roots</value>
-			<value description="country">Canada</value>
-			<value description="locality">QC</value>
-			<value description="reference">-1</value>
 		</row>
 		<row>
             <value description="id">-3</value>
             <value description="host">-3</value>
             <value description="pathogen">-3</value>
+			<value description="reference">-1</value>
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>			            
 			<value description="symptom"></value>
 			<value description="plantPart">on roots</value>
-			<value description="country">Canada</value>
-			<value description="locality">QC</value>
-			<value description="reference">-1</value>
 		</row>
 		<row>
             <value description="id">-4</value>
             <value description="host">-4</value>
-            <value description="pathogen">-4</value>            
-			<value description="author"></value>
-			<value description="plantPart"></value>
-			<value description="country">Canada</value>
-			<value description="locality">QC</value>
+            <value description="pathogen">-4</value>    
 			<value description="reference">-2</value>
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>
+			<value description="symptom"></value>			                    
+			<value description="plantPart"></value>
 		</row>
 		<row>
             <value description="id">-5</value>
             <value description="host">-5</value>
-            <value description="pathogen">-5</value>            
-			<value description="author">Mill.</value>
-			<value description="plantPart"></value>
-			<value description="country">Canada</value>
-			<value description="locality">QC</value>
+            <value description="pathogen">-6</value>
 			<value description="reference">-2</value>
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>		
+			<value description="symptom"></value>	              
+			<value description="plantPart"></value>
 		</row>
 		<row>
             <value description="id">-6</value>
             <value description="host">-6</value>
             <value description="pathogen">-6</value>
-			<value description="author"></value>
-			<value description="plantPart">var. douglasii</value>
-			<value description="country">Canada</value>
-			<value description="locality">AB</value>
 			<value description="reference">-2</value>
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>
+			<value description="symptom"></value>			            
+			<value description="plantPart">var. douglasii</value>
 		</row>		
 		<row>
             <value description="id">-7</value>
             <value description="host">-7</value>
             <value description="pathogen">-7</value>            
-			<value description="author">Miyabe</value>
-			<value description="plantPart">var. mayriana</value>
-			<value description="country">Canada</value>
-			<value description="locality">ON</value>
 			<value description="reference">-2</value>
+			<value description="hostGenus">Fusarium</value>
+			<value description="hostSpecies">gram</value>
+			<value description="hostSubSpecificTaxa"></value>
+			<value description="pathogenGenus">Fusarium</value>
+			<value description="pathogenSpecies">gram</value>
+			<value description="pathogenSubSpecificTaxa"></value>			   
+			<value description="symptom"></value>         
+			<value description="plantPart">var. mayriana</value>
 		</row>			
 	</table>
+    <table name="hp_location_link">
+        <column>hp_id</column>
+        <column>location_id</column>
+        <row>
+            <value description="hp_id">-1</value>
+            <value description="location_id">-1</value>
+        </row>
+        <row>
+            <value description="hp_id">-2</value>
+            <value description="location_id">-1</value>
+        </row>
+        <row>
+            <value description="hp_id">-1</value>
+            <value description="location_id">-2</value>
+        </row>
+        <row>
+            <value description="hp_id">-3</value>
+            <value description="location_id">-2</value>
+        </row>
+    </table>		
 </dataset>

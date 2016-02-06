@@ -48,10 +48,10 @@ public class HostPathogenDaoTest extends BaseDaoTestCase {
         // reindex all the data
         dao.reindex();
 
-        List<HostPathogen> found = dao.search("on roots");
-        assertEquals(3, found.size());
+        List<HostPathogen> found = dao.search("Fusarium");
+        assertEquals(7, found.size());
         HostPathogen hostPathogen = found.get(0);
-        assertEquals("on roots", hostPathogen.getPlantPart());
+        assertEquals("Fusarium", hostPathogen.getHostGenus());
 
         // test mirroring
 //        hostPathogen = dao.get(-2L);
