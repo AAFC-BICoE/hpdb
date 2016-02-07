@@ -1,4 +1,8 @@
 language: java
+
+git:
+  depth: 3
+
 jdk:
   - oraclejdk8
 
@@ -7,6 +11,9 @@ services:
   
 before_script:
   - mysql -e 'create database hpdbweb;'
+ - "echo $JAVA_OPTS"
+ - "export JAVA_OPTS=-Xmx512m"
+ - "echo $JAVA_OPTS"
 
 sudo: false
 script: mvn clean install

@@ -1,6 +1,4 @@
-.. image:: https://travis-ci.org/AAFC-MBB/hpdb/hpdb.png
-    :target: https://travis-ci.org/AAFC-MBB/hpdb/hpdb
-    :alt: Build Status
+[![Build Status](https://travis-ci.org/AAFC-MBB/hpdb.svg?branch=dev)](https://travis-ci.org/AAFC-MBB/hpdb)
 
 # Host Pathogen Database Web Application 
 
