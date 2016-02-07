@@ -35,48 +35,94 @@ import ca.gc.agr.mbb.hostpathogen.web.service.HostPathogenManager;
 @Controller
 @RequestMapping("/hostPathogens*")
 public class HostPathogenController extends GenericController {
+    
+    /** The host pathogen manager. */
     private HostPathogenManager hostPathogenManager = null;
+    
+	/** The table id host pathogen list. */
+	private String tableIdHostPathogenList = "hostPathogenList";
+	
+	/** The list columns regions. */
+	String[] listColumnsHostPathogens = {"id", 
+									     "hostFamily", 
+									     "hostGenus", 
+									     "hostSpecies",
+									     "hostSubSpecificTaxa",
+									     "pathogenGenus", 
+									     "pathogenSpecies",
+									     "pathogenSubSpecificTaxa",
+									     "pathogenVirusNames",
+									     "reference.authors"
+									     };
 
+    /**
+     * Sets the host pathogen manager.
+     *
+     * @param hostPathogenManager the new host pathogen manager
+     */
     @Autowired
     public void setHostPathogenManager(HostPathogenManager hostPathogenManager) {
         this.hostPathogenManager = hostPathogenManager;
     }
 
+    /**
+     * Handle request.
+     *
+     * @param hostFamily the host family
+     * @param hostGenus the host genus
+     * @param hostSpecies the host species
+     * @param hostSubSpecificTaxa the host sub specific taxa
+     * @param pathogenGenus the pathogen genus
+     * @param pathogenSpecies the pathogen species
+     * @param pathogenSubSpecificTaxa the pathogen sub specific taxa
+     * @param pathogenVirusNames the pathogen virus names
+     * @param request the request
+     * @param response the response
+     * @return the model and view
+     * @throws Exception the exception
+     */
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView handleRequest(@RequestParam(required = false, value = "q") String query,
-    								  @RequestParam(required = false, value = "genus") String genus,
-    								  @RequestParam(required = false, value = "species") String species,    		
+    public ModelAndView handleRequest(@RequestParam(required = false, value = "hostFamily") String hostFamily,
+    								  @RequestParam(required = false, value = "hostGenus") String hostGenus,
+    								  @RequestParam(required = false, value = "hostSpecies") String hostSpecies,    		
+    								  @RequestParam(required = false, value = "hostSubSpecificTaxa") String hostSubSpecificTaxa,
+    								  @RequestParam(required = false, value = "pathogenGenus") String pathogenGenus,
+    								  @RequestParam(required = false, value = "pathogenSpecies") String pathogenSpecies,    		
+    								  @RequestParam(required = false, value = "pathogenSubSpecificTaxa") String pathogenSubSpecificTaxa,
+    								  @RequestParam(required = false, value = "pathogenVirusNames") String pathogenVirusNames,	
     								  HttpServletRequest request,
     								  HttpServletResponse response
     								  ) throws Exception {
         Model model = new ExtendedModelMap();
         
-        boolean export = request.getParameter(TableTagParameters.PARAMETER_EXPORTING) != null;
         Map<String, String> filters = createFilters(); 
         
-        filters.put("hostGenus", genus);
-        filters.put("hostSpecies", species);
-        boolean ascending = true;
-        int startRow = 0;
+        filters.put("hostFamily", hostFamily);
+        filters.put("hostGenus", hostGenus);
+        filters.put("hostSpecies", hostSpecies);
+        filters.put("hostSubSpecificTaxa", hostSubSpecificTaxa);
+        filters.put("pathogenGenus", pathogenGenus);
+        filters.put("pathogenSpecies", pathogenSpecies);
+        filters.put("pathogenSubSpecificTaxa", pathogenSubSpecificTaxa);
+        filters.put("pathogenVirusNames", pathogenVirusNames);
         
-        List<HostPathogen> list = new ArrayList<HostPathogen>();
+        int startingRecord = getStartingRecord(request, pageSize, tableIdHostPathogenList);
+        String sortColumn = getSortColumn(request, tableIdHostPathogenList, listColumnsHostPathogens, 0);
+        boolean sortOrder = getSortOrder(request, tableIdHostPathogenList);
+        boolean export = request.getParameter(TableTagParameters.PARAMETER_EXPORTING) != null;
+        if(export){
+        	partialListValue = false;
+        	request.setAttribute("partialListValue", false);
+        } else {
+        	partialListValue = true;
+        	request.setAttribute("partialListValue", true);
+        }
+        
+       	List<HostPathogen> list = new ArrayList<HostPathogen>();
         try {
-/*        	if(query==null || query.length()==0){ //return empty list if search string is empty
+	    		request.setAttribute("resultSize", hostPathogenManager.getDataCount(filters));
+        		list = hostPathogenManager.getFilteredPagedData(startingRecord, pageSize, sortColumn, sortOrder, filters, export);
         		model.addAttribute(Constants.HOST_PATHOGEN_LIST, list);
-        	} else {*/
-        		int count = hostPathogenManager.getDataCount(filters);
-        		
-        		list = hostPathogenManager.getFilteredPagedData(0, pageSize, getSortColumn(), ascending, filters, export);
-        		model.addAttribute(Constants.HOST_PATHOGEN_LIST, list);
-//        		model.addAttribute(Constants.HOST_PATHOGEN_LIST, hostPathogenManager.search(query));
-//        	}
-        		
-//        		+    		HttpServletRequest request,
-//        		+            HttpServletResponse response) throws Exception {
-//        		         Model model = new ExtendedModelMap();
-//        		-        List<HostPathogen> list = new ArrayList<HostPathogen>();
-//        		+        boolean export = request.getParameter(TableTagParameters.PARAMETER_EXPORTING) != null;
-        		
             
         } catch (SearchException se) {
             model.addAttribute("searchError", se.getMessage());
@@ -84,4 +130,5 @@ public class HostPathogenController extends GenericController {
         }
         return new ModelAndView("hostPathogenList", model.asMap());
     }
+    
 }

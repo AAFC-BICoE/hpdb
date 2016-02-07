@@ -144,7 +144,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
 			if (filterEntity != null)
 				filterCriteria = filterCriteria.createCriteria(filterEntity);
 
-			System.out.print("Creating filter criteria: " + filterAttribute + " " + value);
+//			System.out.print("Creating filter criteria: " + filterAttribute + " " + value);
 			
 			filterCriteria.add(Expression.like(filterAttribute, value));
 
@@ -192,10 +192,11 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
 		Session sess = getSession();
 		Criteria criteria = sess.createCriteria(this.persistentClass);
 		
-		criteria.setFirstResult(start);
 		if(!export){
+			criteria.setFirstResult(start);
 			criteria.setMaxResults(page);
-		}
+		} 
+
 		createSortCriteria(property, ascending, criteria);
 		
 		if (filters.size() > 0) {
