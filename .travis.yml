@@ -9,9 +9,6 @@ jdk:
 services:
   - mysql
   
-before_install:
-  - echo "MAVEN_OPTS='-Xmx512m'" > ~/.mavenrc  
-  
 before_script:
   - mysql -e 'create database hpdbweb;'
   - "echo $JAVA_OPTS"
