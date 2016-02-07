@@ -14,7 +14,7 @@ before_script:
   - "echo $JAVA_OPTS"
   - "echo $MAVEN_OPTS"
   - ulimit -a
-  - free -h
+  - free -m
 
 after_script:
   - ulimit -a
