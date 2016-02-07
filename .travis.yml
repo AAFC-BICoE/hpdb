@@ -25,5 +25,7 @@ after_script:
   - ulimit -a
   - free -m
 
+sudo: required
+
 script: 
   - mvn clean install
