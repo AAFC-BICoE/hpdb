@@ -9,4 +9,4 @@ before_script:
   - mysql -e 'create database hpdbweb;'
 
 sudo: false
-script: mvn clean verify
+script: mvn clean install
