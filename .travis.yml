@@ -13,6 +13,12 @@ before_script:
   - mysql -e 'create database hpdbweb;'
   - "echo $JAVA_OPTS"
   - "echo $MAVEN_OPTS"
+  - ulimit -a
+  - free -h
+
+after_script:
+  - ulimit -a
+  - free -h
 
 sudo: false
 script: mvn clean install
