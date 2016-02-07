@@ -11,8 +11,7 @@ services:
   
 before_script:
   - mysql -e 'create database hpdbweb;'
- - "echo $JAVA_OPTS"
- - "export JAVA_OPTS=-Xmx512m"
+  - "export JAVA_OPTS=-Xmx512m"
  - "echo $JAVA_OPTS"
 
 sudo: false
