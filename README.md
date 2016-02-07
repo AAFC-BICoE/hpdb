@@ -2,6 +2,7 @@
 
 Agriculture and Agri-Food Canada’s (AAFC) internally developed Host Pathogen Database Web Application (hpdb) has been created to give access to the AAFC curated Host-Pathogen Database.  The application currently allows the searching of Host Records, Pathogen Records and Host-Pathogen Records.
 
+
 Required Software
 ------------------
 
@@ -9,6 +10,7 @@ Required Software
     MySQL 5.6
     Maven 3.2.5+
     Tomcat 7
+
 
 Installation
 ------------
@@ -20,6 +22,7 @@ From the command line:
     $ mvn install
     
 If the build was succussful the project tests have run and sample data has been loaded into the mysql database. 
+
     
 Running in Development
 ----------------------
@@ -34,9 +37,8 @@ Importing Data
 
 To import the MS Access database csv files into the mysql database:
 
-    $ cd Import
-    $ mysql -u USERNAME -p PASSWORD hpdbweb < import_script.sql
-    
+    $ mysql -u USERNAME -p PASSWORD hpdbweb < /Importer/import_script.sql
+
 
 Packaging for Deployment
 ------------------------
@@ -44,6 +46,7 @@ Packaging for Deployment
     $ mvn package -Dmaven.test.skip=true 
  
  This will create hpdb.war which you can insert into your container application.
+
 
 Contact
 -------
