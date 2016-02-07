@@ -47,7 +47,13 @@
 			        <button id="button.search" class="btn btn-default btn-sm" type="submit">
 			            <i class="icon-search"></i> <fmt:message key="button.search"/>
 			        </button>						
-				</td>						
+				</td>			
+				<td>
+					&nbsp;&nbsp;&nbsp;
+				</td>				
+				<td>
+			         Use % as a Wildcard			
+				</td>							
 			</tr>
 		</table>
     </form>
