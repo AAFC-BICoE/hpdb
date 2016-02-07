@@ -8,7 +8,9 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import ca.gc.agr.mbb.hostpathogen.web.dao.HostPathogenDao;
+import ca.gc.agr.mbb.hostpathogen.web.model.Host;
 import ca.gc.agr.mbb.hostpathogen.web.model.HostPathogen;
+import ca.gc.agr.mbb.hostpathogen.web.model.Pathogen;
 
 /**
  * This class interacts with Hibernate session to save/delete and
@@ -81,4 +83,30 @@ public class HostPathogenDaoHibernate extends GenericDaoHibernate<HostPathogen, 
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings("unchecked")
+	public List<Pathogen> getPathogenByHost(Long hostId){
+    	
+    	Query q = getSession()
+    				.createQuery("select pathogen from HostPathogen where host = :hostId");
+    	q.setParameter("hostId", hostId);					
+    	
+    	return q.list();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @SuppressWarnings("unchecked")
+    public List<Host> getHostByPathogen(Long pathogenId){
+    	
+    	Query q = getSession()
+    				.createQuery("select host from HostPathogen where pathogen = :pathogenId");
+    	q.setParameter("pathogenId", pathogenId);					
+    	
+    	return q.list();
+    }
+    
 }

@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ca.gc.agr.mbb.hostpathogen.web.dao.HostPathogenDao;
+import ca.gc.agr.mbb.hostpathogen.web.model.Host;
 import ca.gc.agr.mbb.hostpathogen.web.model.HostPathogen;
+import ca.gc.agr.mbb.hostpathogen.web.model.Pathogen;
 import ca.gc.agr.mbb.hostpathogen.web.service.HostPathogenManager;
 
 @Service("hostPathogenManager")
@@ -60,4 +62,20 @@ public class HostPathogenManagerImpl extends GenericManagerImpl<HostPathogen, Lo
         return super.search(searchTerm, HostPathogen.class);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<Pathogen> getPathogenByHost(Long hostId){
+    	return hostPathogenDao.getPathogenByHost(hostId);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+	@Override
+	public List<Host> getHostByPathogen(Long pathogenId) {
+		return hostPathogenDao.getHostByPathogen(pathogenId);
+	}
+    
 }

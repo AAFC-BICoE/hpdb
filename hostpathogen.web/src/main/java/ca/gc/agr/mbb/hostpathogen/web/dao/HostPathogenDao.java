@@ -2,7 +2,9 @@ package ca.gc.agr.mbb.hostpathogen.web.dao;
 
 import java.util.List;
 
+import ca.gc.agr.mbb.hostpathogen.web.model.Host;
 import ca.gc.agr.mbb.hostpathogen.web.model.HostPathogen;
+import ca.gc.agr.mbb.hostpathogen.web.model.Pathogen;
 
 /**
  * HostPathogen Data Access Object (GenericDao) interface.
@@ -33,5 +35,21 @@ public interface HostPathogenDao extends GenericDao<HostPathogen, Long> {
      * @throws Exception the exception
      */
     public List<HostPathogen> getHostPathogenByHostGenus(String genus) throws Exception;
+    
+    /**
+     * Gets the pathogen by host.
+     *
+     * @param hostId the host id
+     * @return the pathogen by host
+     */
+    public List<Pathogen> getPathogenByHost(Long hostId);
+    
+    /**
+     * Gets the host by pathogen.
+     *
+     * @param pathogenId the pathogen id
+     * @return the host by pathogen
+     */
+    public List<Host> getHostByPathogen(Long pathogenId);
 
 }

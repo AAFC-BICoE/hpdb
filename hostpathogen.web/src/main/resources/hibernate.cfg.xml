@@ -6,6 +6,7 @@
 
 <hibernate-configuration>
     <session-factory>
+<!--     	<property name="show_sql">true</property> -->
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.User"/>
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Role"/>
         <mapping class="ca.gc.agr.mbb.hostpathogen.web.model.Host"/>
