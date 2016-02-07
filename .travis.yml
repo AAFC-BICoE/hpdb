@@ -18,7 +18,7 @@ before_script:
 
 after_script:
   - ulimit -a
-  - free -h
+  - free -m
 
 sudo: false
 script: mvn clean install
