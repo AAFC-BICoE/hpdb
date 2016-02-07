@@ -80,6 +80,11 @@ ul.feedbackPanel {
     width: 250px;
 }
 
+#searchCenter {
+    margin-top: -40px;
+    width: 250px;
+}
+
 #search input[type="text"] {
     display: inline-block;
 }

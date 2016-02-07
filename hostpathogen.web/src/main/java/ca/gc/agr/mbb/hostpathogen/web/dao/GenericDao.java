@@ -19,6 +19,31 @@ import java.util.Map;
  */
 public interface GenericDao <T, PK extends Serializable> {
 
+	
+	/**
+	 * Generic method used to get count of objects of a particular type. This
+	 * is the same as lookup up all rows in a table.
+	 *
+	 * @param filters the filters
+	 * @return the data count
+	 */
+	public int getDataCount(Map<String, String> filters);
+	
+	/**
+	 * Generic method used to get paged and filtered objects of a particular type. This
+	 * is the same as lookup up all rows in a table.
+	 *
+	 * @param startingRecord the start
+	 * @param pageSize the page
+	 * @param sortColumn the field
+	 * @param ascending the ascending
+	 * @param filters the filters
+	 * @param export the export
+	 * @return List of populated objects
+	 */
+	public List<T> getFilteredPagedData(int startingRecord, int pageSize, String sortColumn, boolean ascending, Map<String,String> filters, boolean export);
+
+	
     /**
      * Generic method used to get all objects of a particular type. This
      * is the same as lookup up all rows in a table.

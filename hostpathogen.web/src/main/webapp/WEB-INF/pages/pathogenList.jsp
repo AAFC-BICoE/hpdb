@@ -17,19 +17,43 @@
     <h2><fmt:message key="pathogenList.heading"/></h2>
 
     <form method="get" action="${ctx}/pathogens" id="searchForm" class="form-inline">
-    <div id="search" class="text-right">
-        <span class="col-sm-9">
-            <input type="text" size="20" name="q" id="query" value="${param.q}"
-                   placeholder="<fmt:message key="search.enterTerms"/>" class="form-control input-sm">
-        </span>
-        <button id="button.search" class="btn btn-default btn-sm" type="submit">
-            <i class="icon-search"></i> <fmt:message key="button.search"/>
-        </button>
-    </div>
+		<table>
+			<tr>
+				<td>
+					<input type="text" size="20" name="genus" id="genus"
+					value="${param.genus}"	
+					placeholder="<fmt:message key="search.genus"/>"
+					class="form-control input-sm">
+				</td>
+				<td>
+					<input type="text" size="20" name="species" id="species"
+					value="${param.species}"
+					placeholder="<fmt:message key="search.species"/>"
+					class="form-control input-sm">
+				</td>
+				<td>
+					<input type="text" size="20" name="subSpecificTaxa" id="subSpecificTaxa"
+					value="${param.subSpecificTaxa}"
+					placeholder="<fmt:message key="search.subSpecificTaxa"/>"
+					class="form-control input-sm">
+				</td>			
+				<td>
+					<input type="text" size="20" name="virusNames" id="virusNames"
+					value="${param.virusNames}"
+					placeholder="<fmt:message key="search.virusNames"/>"
+					class="form-control input-sm">
+				</td>								
+				<td>
+			        <button id="button.search" class="btn btn-default btn-sm" type="submit">
+			            <i class="icon-search"></i> <fmt:message key="button.search"/>
+			        </button>						
+				</td>						
+			</tr>
+		</table>
     </form>
 
-    <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI=""
-    			   defaultsort="1" id="pathogens" pagesize="25" sort="list"
+    <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
+    			   defaultsort="1" id="pathogenList" pagesize="25" partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
 
 		<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"

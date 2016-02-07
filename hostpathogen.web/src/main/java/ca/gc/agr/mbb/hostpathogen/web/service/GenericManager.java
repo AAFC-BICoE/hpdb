@@ -2,6 +2,7 @@ package ca.gc.agr.mbb.hostpathogen.web.service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Generic Manager that talks to GenericDao to CRUD POJOs.
@@ -16,6 +17,30 @@ import java.util.List;
  */
 public interface GenericManager<T, PK extends Serializable> {
 
+	
+	/**
+	 * Generic method used to get count of objects of a particular type. This
+	 * is the same as lookup up all rows in a table.
+	 *
+	 * @param filters the filters
+	 * @return the data count
+	 */
+	public int getDataCount(Map<String, String> filters);
+	
+	/**
+	 * Generic method used to get paged and filtered objects of a particular type. This
+	 * is the same as lookup up all rows in a table.
+	 *
+	 * @param startRecord the startRecord
+	 * @param pageSize the pageSize
+	 * @param sortColumn the sortColumn
+	 * @param ascending the ascending
+	 * @param filters the filters
+	 * @param export the export
+	 * @return List of populated objects
+	 */
+	List<T> getFilteredPagedData(int startRecord, int pageSize, String sortColumn, boolean ascending, Map<String,String>filters, boolean export);
+		
     /**
      * Generic method used to get all objects of a particular type. This
      * is the same as lookup up all rows in a table.
@@ -66,7 +91,8 @@ public interface GenericManager<T, PK extends Serializable> {
      * @param clazz type of class to search for.
      * @return a list of matched objects
      */
-    List<T> search(String searchTerm, Class clazz);
+    @SuppressWarnings("rawtypes")
+	List<T> search(String searchTerm, Class clazz);
     /**
      * Generic method to regenerate full text index of the persistent class T
      */
