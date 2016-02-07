@@ -12,7 +12,7 @@ services:
 before_script:
   - mysql -e 'create database hpdbweb;'
   - "export JAVA_OPTS=-Xmx512m"
- - "echo $JAVA_OPTS"
+  - "echo $JAVA_OPTS"
 
 sudo: false
 script: mvn clean install
