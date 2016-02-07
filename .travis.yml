@@ -9,6 +9,11 @@ jdk:
 services:
   - mysql
   
+before_install: 
+  - sudo rm /etc/mavenrc
+  - export M2_HOME=/usr/local/maven
+  - export MAVEN_OPTS="-Dmaven.repo.local=$HOME/.m2/repository -Xms256m -Xmx512m"
+    
 before_script:
   - mysql -e 'create database hpdbweb;'
   - "echo $JAVA_OPTS"
@@ -21,4 +26,6 @@ after_script:
   - free -m
 
 sudo: false
-script: mvn clean install
+
+script: 
+  - mvn clean install
