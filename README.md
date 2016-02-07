@@ -1,55 +1,52 @@
-# Host-PathogenDB
+# Host Pathogen Database Web Application 
 
-##Host-Pathogen Project
+Agriculture and Agri-Food Canada’s (AAFC) internally developed Host Pathogen Database Web Application (hpdb) has been created to give access to the AAFC curated Host-Pathogen Database.  The application currently allows the searching of Host Records, Pathogen Records and Host-Pathogen Records.
 
-##Host-Pathogen Database
-This project is been divide in 5 modules:
-1. Nouns: This Class is a POJO Class for all project object
-2. Lucene Indexer : This Module will created a Lucene index from CSV file of Host-Pathogen Database
-3. Lucene searcher: This module will query the indexer to return the data
-4. Rest-Jersey base web Service expose the data from lucene
-5. Java Web apllication user interface to interacted with the web service and display result from the queries
+Required Software
+------------------
 
-##Quick summary
-Agriculture and Agri-Food Canada’s posessing large database called Host-Pathogen DataBase includes a collection database that provide detailed information on relationship, interaction and disease between an host (Plants) and a pathogen (fungal, bacteria, viral or nematodes) from publish scientist paper, books or journal across the global and mainly in North America. This project main goal is to build a search engine for the database.
+    Oracle Java 7+
+    MySQL 5.6
+    Maven 3.2.5+
+    Tomcat 7
 
+Installation
+------------
 
-###Technology stack
-1. Oracle Java 8
-2. Maven 3
-3. Tomcat 7, jetty or grizzly
-4. Eclipse 
-5. Lucene 4.10
+From the command line:
 
-###How to set up the environment
-1. Build Index from CSV
-2. Call WS
-3. created WAR
+    $ git clone https://github.com/AAFC-MBB/hpdb.git
+    $ cd hpdb
+    $ mvn install
+    
+If the build was succussful the project tests have run and sample data has been loaded into the mysql database. 
+    
+Running in Development
+----------------------
 
-###How to build  and deploy the project
-Lucene Index: creating LuceneIndex from CSV file
-1. Download the CSV file from redmine #4750
-2. build the Package  “mvn clean package”
-3. Export the PATH info using maven cache:
+    $ mvn jetty:run -Dmaven.test.skip=true
+    
+The web application should now be running at (http://localhost:8080)
+    
+    
+Importing Data
+--------------
 
-<pre>
-export CLASSPATH=/home/tranthitv/.m2/repository/org/apache/lucene/lucene-queryparser/4.8.1/lucene-queryparser-4.8.1.jar:/home/tranthitv/.m2/repository/ca/gc/agr/mbb/hostpathogen/hostpathogenlucenesearcher/hostpathogenlucenesearcher/1.0-SNAPSHOT/hostpathogenlucenesearcher-1.0-SNAPSHOT.jar:/home/tranthitv/.m2/repository/org/apache/commons/commons-csv/1.0/commons-csv-1.0.jar:/home/tranthitv/work/HostPathogenLuceneIndexer/target/hostPathogenLuceneIndexer-1.0-SNAPSHOT.jar:/home/tranthitv/.m2/repository/org/apache/lucene/lucene-core/4.10.0/lucene-core-4.10.0.jar:/home/tranthitv/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.10.0/lucene-analyzers-common-4.10.0.jar
-</pre>
+To import the MS Access database csv files into the mysql database:
 
-4. Run the code and make sure the build JAR is in your PATH
-<pre>
-java ca.gc.agr.mbb.hostpathogen.hostpathogenluceneloader.Main PATH_TO_CSV_FILES_SAVE DESTINATION_LUCENE_INDEX_DIR
-</pre>
+    $ cd Import
+    $ mysql -u USERNAME -p PASSWORD hpdbweb < import_script.sql
+    
 
-###Lucene Searcher: Main Application to return the search object
-1. Make sur the lucene build index located in the project root directory
-2. Build the project JAR with “mvn clean package”
+Packaging for Deployment
+------------------------
 
-###HPDB Rest-Jersey Web Service: Expose Lucene Data to the Web Application
-1. To build the project “mvn clear install ”
-2. To deploye the Web Service “run the main class with java ca.gc.agr.mbb.hostpathogen.ws.Main”
+    $ mvn package -Dmaven.test.skip=true 
+ 
+ This will create hpdb.war which you can insert into your container application.
 
-###HPDB Web Service App: User Interface
-1. To build the project “mvn clear package ”
-2. To deploye the Web “mvn jetty:run-war”
-3. Try to View the query throw “http:localhost:8080/hpdb/”
+Contact
+-------
+
+    Project Group email: mbb@agr.gc.ca
+    Project Developer: Satpal Bilkhu - Satpal.Bilkhu@agr.gc.ca
