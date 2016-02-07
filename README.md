@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/AAFC-MBB/hpdb.svg?branch=dev)](https://travis-ci.org/AAFC-MBB/hpdb)
-
-# Host Pathogen Database Web Application 
+# Host Pathogen Database Web Application [![Build Status](https://travis-ci.org/AAFC-MBB/hpdb.svg?branch=dev)](https://travis-ci.org/AAFC-MBB/hpdb)
 
 Agriculture and Agri-Food Canada’s (AAFC) internally developed Host Pathogen Database Web Application (hpdb) has been created to give access to the AAFC curated Host-Pathogen Database.  The application currently allows the searching of Host Records, Pathogen Records and Host-Pathogen Records.
 

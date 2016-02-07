@@ -11,8 +11,9 @@ services:
   
 before_script:
   - mysql -e 'create database hpdbweb;'
-  - "export JAVA_OPTS=-Xmx512m"
+  - "export MAVEN_OPTS=-Xmx512m"
   - "echo $JAVA_OPTS"
+  - "echo $MAVEN_OPTS"
 
 sudo: false
 script: mvn clean install
