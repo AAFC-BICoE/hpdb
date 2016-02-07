@@ -10,8 +10,10 @@ services:
   - mysql
   
 before_script:
+  - echo "MAVEN_OPTS='-Xmx512m'" > ~/.mavenrc  
+  
+before_script:
   - mysql -e 'create database hpdbweb;'
-  - echo "MAVEN_OPTS='-Xmx1g -XX:MaxPermSize=512m'" > ~/.mavenrc  
   - "echo $JAVA_OPTS"
   - "echo $MAVEN_OPTS"
 
