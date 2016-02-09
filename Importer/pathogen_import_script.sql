@@ -4,7 +4,7 @@ LOAD DATA INFILE '/path/to/pathogens.csv' INTO TABLE pathogen character set 'utf
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11,@col12,@col13,@col14,@col15) 
 set 
-id=@col1,virusNames=@col3,genus=@col6,species=@col7,subSpecificTaxa=@col8,author=@col9,fungalState=@col10,enName=@col11,frName=@col13,notes=@col15;
+id=@col1,virusNames=@col5,genus=@col6,species=@col7,subSpecificTaxa=@col8,author=@col9,fungalState=@col10,enName=@col11,frName=@col13,notes=@col15;
 
 
 
