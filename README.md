@@ -21,7 +21,7 @@ From the command line:
     $ cd hpdb
     $ mvn install
     
-If the build was succussful the project tests have run and sample data has been loaded into the mysql database. 
+If the build was successful the project tests have run and sample data has been loaded into the mysql database. 
 
     
 Running in Development
