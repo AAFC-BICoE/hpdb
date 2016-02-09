@@ -14,6 +14,10 @@
             <td><h3><i><c:out value="${pathogen.fullTaxonName}"/></i></h3></td>
         </tr>
         <tr>
+            <th>Virus MPLO Names:</th>
+            <td><h3><c:out value="${pathogen.virusNames}"/></h3></td>
+        </tr>         
+        <tr>
             <th><br></th>
             <td><br></td>
         </tr>
@@ -41,11 +45,7 @@
             <th><br></th>
             <td><br></td>
         </tr>                    
-        <tr>
-            <th>Virus MPLO Names:</th>
-            <td><c:out value="${pathogen.virusNames}"/></td>
-        </tr>          
-        <tr>
+		<tr>
             <th><br></th>
             <td><br></td>
         </tr>         

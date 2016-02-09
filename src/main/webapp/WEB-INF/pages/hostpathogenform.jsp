@@ -19,7 +19,9 @@
         </tr>            
         <tr>
             <th>Pathogen:</th>
-            <td><h3><i><a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.fullTaxonName}"/></i></h3></td>
+            <td><h3><i><a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.fullTaxonName}"/></i>
+            		   <a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.virusNames}"/>
+            </h3></td>
         </tr>
         <tr>
             <th><br></th>
