@@ -44,6 +44,7 @@
 							class="form-control input-sm">
 						</td>						
 						<td>
+							&nbsp;&nbsp;
 					        <button id="button.search" class="btn btn-default btn-sm" type="submit">
 					            <i class="icon-search"></i> <fmt:message key="button.search"/>
 					        </button>						
@@ -84,6 +85,7 @@
 				</table>
 
     </form>
+    </br>
 
     <display:table name="hostPathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
                    defaultsort="1" id="hostPathogenList" pagesize="25" partialList="${partialListValue}" sort="external"
@@ -111,7 +113,7 @@
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column escapeXml="true" sortable="false" titleKey="hostPathogen.locations"> 
 				<c:forEach var="location" items="${hostPathogenList.locationList}" varStatus="status">
-					<c:out value=" ${location.interpretation}"/>[<c:out value="${location.country}] "/><c:if test="${!status.last}">,</c:if>  
+					<c:out value=" ${location.interpretation}"/> [<c:out value="${location.country}] "/><c:if test="${!status.last}">,</c:if>  
 				</c:forEach>
 		</display:column>
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>		
