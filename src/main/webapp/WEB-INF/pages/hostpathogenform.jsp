@@ -54,7 +54,7 @@
     <label class="control-label"><fmt:message key="hostPathogen.locations"/>:</label>
     <div class="readonly">
         <c:forEach var="location" items="${hostPathogen.locationList}" varStatus="status">
-            <c:out value="${location.interpretation}"/>&nbsp;-&nbsp;<c:out value="${location.country}"/><c:if test="${!status.last}">&nbsp;,&nbsp;</c:if>
+            <c:out value="${location.interpretation}"/>&nbsp;&nbsp;[<c:out value="${location.country}"/>]<c:if test="${!status.last}">&nbsp;,&nbsp;</c:if>
         </c:forEach>
     </div>
 	</br>

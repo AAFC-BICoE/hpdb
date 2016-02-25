@@ -44,6 +44,7 @@
 					class="form-control input-sm">
 				</td>								
 				<td>
+					&nbsp;&nbsp;
 			        <button id="button.search" class="btn btn-default btn-sm" type="submit">
 			            <i class="icon-search"></i> <fmt:message key="button.search"/>
 			        </button>						
@@ -57,6 +58,7 @@
 			</tr>
 		</table>
     </form>
+    </br>
 
     <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
     			   defaultsort="1" id="pathogenList" pagesize="25" partialList="${partialListValue}" sort="external"
