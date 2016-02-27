@@ -26,6 +26,7 @@
 							class="form-control input-sm">
 						</td>					
 						<td>
+							&nbsp;&nbsp;
 							<input type="text" size="20" name="hostGenus" id="hostGenus"
 							value="${param.hostGenus}"	
 							placeholder="<fmt:message key="search.hostGenus"/>"
@@ -38,26 +39,26 @@
 							class="form-control input-sm">
 						</td>
 						<td>
-							<input type="text" size="20" name="hostSubSpecificTaxa" id="hostSubSpecificTaxa"
+							<input type="text" size="21" name="hostSubSpecificTaxa" id="hostSubSpecificTaxa"
 							value="${param.hostSubSpecificTaxa}"
 							placeholder="<fmt:message key="search.hostSubSpecificTaxa"/>"
 							class="form-control input-sm">
 						</td>
 						<td>
-							&nbsp;&nbsp;&nbsp;
-						</td>					
-						<td>
 							&nbsp;&nbsp;
+							<input type="text" size="18" name="authors" id="authors"
+							value="${param.authors}"	
+							placeholder="<fmt:message key="search.authors"/>"
+							class="form-control input-sm">
+						</td>
+						<td>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					        <button id="button.search" class="btn btn-default btn-sm" type="submit">
 					            <i class="icon-search"></i> <fmt:message key="button.search"/>
-					        </button>						
-						</td>		
-						<td>
-							&nbsp;&nbsp;&nbsp;
-						</td>			
-						<td>
-					         Use % as a Wildcard				
-						</td>											
+					        </button>
+					        &nbsp;&nbsp;
+							Use % as a Wildcard				
+						</td>
 					</tr>
 					<tr>
 						<td>
@@ -67,6 +68,7 @@
 							class="form-control input-sm">
 						</td>	
 						<td>
+							&nbsp;&nbsp;
 							<input type="text" size="20" name="pathogenGenus" id="pathogenGenus"
 							value="${param.pathogenGenus}"	
 							placeholder="<fmt:message key="search.pathogenGenus"/>"
@@ -79,15 +81,22 @@
 							class="form-control input-sm">
 						</td>
 						<td>
-							<input type="text" size="20" name="pathogenSubSpecificTaxa" id="pathogenSubSpecificTaxa"
+							<input type="text" size="21" name="pathogenSubSpecificTaxa" id="pathogenSubSpecificTaxa"
 							value="${param.pathogenSubSpecificTaxa}"
 							placeholder="<fmt:message key="search.pathogenSubSpecificTaxa"/>"
 							class="form-control input-sm">
 						</td>	
 						<td>
-							<input type="text" size="20" name="authors" id="authors"
-							value="${param.authors}"	
-							placeholder="<fmt:message key="search.authors"/>"
+							&nbsp;&nbsp;
+							<input type="text" size="18" name="locationCountry" id="locationCountry"
+							value="${param.locationCountry}"	
+							placeholder="<fmt:message key="search.locationCountry"/>"
+							class="form-control input-sm">
+						</td>	
+						<td>
+							<input type="text" size="20" name="locationInterpretation" id="locationInterpretation"
+							value="${param.locationInterpretation}"	
+							placeholder="<fmt:message key="search.locationInterpretation"/>"
 							class="form-control input-sm">
 						</td>
 					</tr>
@@ -108,7 +117,7 @@
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSpecies" style="width: 10%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
-		<display:column property="hostSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSubSpecificTaxa"
+		<display:column property="hostSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSubSpecificTaxa" style="width: 10%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>      
 		<display:column property="pathogenVirusNames" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenVirusNames"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>
@@ -116,7 +125,7 @@
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSpecies" style="width: 10%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
-		<display:column property="pathogenSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSubSpecificTaxa"
+		<display:column property="pathogenSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSubSpecificTaxa" style="width: 10%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>     
 		<display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 12%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   

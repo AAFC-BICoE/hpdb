@@ -90,7 +90,9 @@ public class HostPathogenController extends GenericController {
     								  @RequestParam(required = false, value = "pathogenSpecies") String pathogenSpecies,    		
     								  @RequestParam(required = false, value = "pathogenSubSpecificTaxa") String pathogenSubSpecificTaxa,
     								  @RequestParam(required = false, value = "pathogenVirusNames") String pathogenVirusNames,	
-    								  @RequestParam(required = false, value = "authors") String authors,	
+    								  @RequestParam(required = false, value = "authors") String authors,
+    								  @RequestParam(required = false, value = "locationInterpretation") String locationInterpretation,
+    								  @RequestParam(required = false, value = "locationCountry") String locationCountry,
     								  HttpServletRequest request,
     								  HttpServletResponse response
     								  ) throws Exception {
@@ -107,6 +109,20 @@ public class HostPathogenController extends GenericController {
         filters.put("pathogenSubSpecificTaxa", pathogenSubSpecificTaxa);
         filters.put("pathogenVirusNames", pathogenVirusNames);
         filters.put("reference.authors", authors);
+        if(locationCountry==null){
+        	//do nothing
+        	//this is a work around for having two location filters in the search
+        }
+        else if (locationCountry.length()>1){
+        	filters.put("locations.country", locationCountry);
+        }
+        if(locationInterpretation==null){
+        	//do nothing
+        	//this is a work around for having two location filters in the search
+        }
+        else if(locationInterpretation.length()>1){
+        	filters.put("locations.interpretation", locationInterpretation);
+        }
         
         int startingRecord = getStartingRecord(request, pageSize, tableIdHostPathogenList);
         String sortColumn = getSortColumn(request, tableIdHostPathogenList, listColumnsHostPathogens, 0);
