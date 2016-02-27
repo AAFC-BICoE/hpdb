@@ -42,7 +42,10 @@
 							value="${param.hostSubSpecificTaxa}"
 							placeholder="<fmt:message key="search.hostSubSpecificTaxa"/>"
 							class="form-control input-sm">
-						</td>						
+						</td>
+						<td>
+							&nbsp;&nbsp;&nbsp;
+						</td>					
 						<td>
 							&nbsp;&nbsp;
 					        <button id="button.search" class="btn btn-default btn-sm" type="submit">
@@ -57,6 +60,12 @@
 						</td>											
 					</tr>
 					<tr>
+						<td>
+							<input type="text" size="20" name="pathogenVirusNames" id="pathogenVirusNames"
+							value="${param.pathogenVirusNames}"	
+							placeholder="<fmt:message key="search.pathogenVirusNames"/>"
+							class="form-control input-sm">
+						</td>	
 						<td>
 							<input type="text" size="20" name="pathogenGenus" id="pathogenGenus"
 							value="${param.pathogenGenus}"	
@@ -76,11 +85,11 @@
 							class="form-control input-sm">
 						</td>	
 						<td>
-							<input type="text" size="20" name="pathogenVirusNames" id="pathogenVirusNames"
-							value="${param.pathogenVirusNames}"	
-							placeholder="<fmt:message key="search.pathogenVirusNames"/>"
+							<input type="text" size="20" name="authors" id="authors"
+							value="${param.authors}"	
+							placeholder="<fmt:message key="search.authors"/>"
 							class="form-control input-sm">
-						</td>												
+						</td>
 					</tr>
 				</table>
 
@@ -101,15 +110,15 @@
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSubSpecificTaxa"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>      
+		<display:column property="pathogenVirusNames" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenVirusNames"
+						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>
 		<display:column property="pathogenGenus" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenGenus" style="width: 10%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSpecies" style="width: 10%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSubSpecificTaxa"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>     
-		<display:column property="pathogenVirusNames" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenVirusNames"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   		
-        <display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 12%"
+		<display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 12%"
 						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
 		<display:column escapeXml="true" sortable="false" titleKey="hostPathogen.locations"> 
 				<c:forEach var="location" items="${hostPathogenList.locationList}" varStatus="status">

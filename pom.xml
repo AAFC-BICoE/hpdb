@@ -88,6 +88,46 @@
         								<ignore></ignore>
         							</action>
         						</pluginExecution>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.codehaus.mojo
+        								</groupId>
+        								<artifactId>
+        									dbunit-maven-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.0-beta-3,)
+        								</versionRange>
+        								<goals>
+        									<goal>operation</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.codehaus.mojo
+        								</groupId>
+        								<artifactId>
+        									build-helper-maven-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.9.1,)
+        								</versionRange>
+        								<goals>
+        									<goal>
+        										reserve-network-port
+        									</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
         					</pluginExecutions>
         				</lifecycleMappingMetadata>
         			</configuration>

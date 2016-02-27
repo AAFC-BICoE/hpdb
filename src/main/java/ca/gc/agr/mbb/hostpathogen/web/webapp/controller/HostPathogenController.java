@@ -48,10 +48,10 @@ public class HostPathogenController extends GenericController {
 									     "hostGenus", 
 									     "hostSpecies",
 									     "hostSubSpecificTaxa",
+									     "pathogenVirusNames",
 									     "pathogenGenus", 
 									     "pathogenSpecies",
 									     "pathogenSubSpecificTaxa",
-									     "pathogenVirusNames",
 									     "reference.authors"
 									     };
 
@@ -90,6 +90,7 @@ public class HostPathogenController extends GenericController {
     								  @RequestParam(required = false, value = "pathogenSpecies") String pathogenSpecies,    		
     								  @RequestParam(required = false, value = "pathogenSubSpecificTaxa") String pathogenSubSpecificTaxa,
     								  @RequestParam(required = false, value = "pathogenVirusNames") String pathogenVirusNames,	
+    								  @RequestParam(required = false, value = "authors") String authors,	
     								  HttpServletRequest request,
     								  HttpServletResponse response
     								  ) throws Exception {
@@ -105,6 +106,7 @@ public class HostPathogenController extends GenericController {
         filters.put("pathogenSpecies", pathogenSpecies);
         filters.put("pathogenSubSpecificTaxa", pathogenSubSpecificTaxa);
         filters.put("pathogenVirusNames", pathogenVirusNames);
+        filters.put("reference.authors", authors);
         
         int startingRecord = getStartingRecord(request, pageSize, tableIdHostPathogenList);
         String sortColumn = getSortColumn(request, tableIdHostPathogenList, listColumnsHostPathogens, 0);
