@@ -90,7 +90,7 @@ public class HostPathogenDaoHibernate extends GenericDaoHibernate<HostPathogen, 
 	public List<Pathogen> getPathogenByHost(Long hostId){
     	
     	Query q = getSession()
-    				.createQuery("select pathogen from HostPathogen where host = :hostId");
+    				.createQuery("select distinct pathogen from HostPathogen where host = :hostId");
     	q.setParameter("hostId", hostId);					
     	
     	return q.list();
@@ -103,7 +103,7 @@ public class HostPathogenDaoHibernate extends GenericDaoHibernate<HostPathogen, 
     public List<Host> getHostByPathogen(Long pathogenId){
     	
     	Query q = getSession()
-    				.createQuery("select host from HostPathogen where pathogen = :pathogenId");
+    				.createQuery("select distinct host from HostPathogen where pathogen = :pathogenId");
     	q.setParameter("pathogenId", pathogenId);					
     	
     	return q.list();
