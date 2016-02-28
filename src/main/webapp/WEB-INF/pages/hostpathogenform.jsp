@@ -6,7 +6,7 @@
 </head>
 
 <div class="col-sm-10">
-    <h2>HostPathogen Information</h2>
+    <h2>Host-Pathogen Information</h2>
 
     <table class="table-striped" cellpadding="5">
         <tr>

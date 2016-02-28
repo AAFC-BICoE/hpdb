@@ -20,13 +20,12 @@
         	<table>
 					<tr>
 						<td>
-							<input type="text" size="20" name="hostFamily" id="hostFamily"
+							<input type="text" size="18" name="hostFamily" id="hostFamily"
 							value="${param.hostFamily}"	
 							placeholder="<fmt:message key="search.hostFamily"/>"
 							class="form-control input-sm">
 						</td>					
 						<td>
-							&nbsp;&nbsp;
 							<input type="text" size="20" name="hostGenus" id="hostGenus"
 							value="${param.hostGenus}"	
 							placeholder="<fmt:message key="search.hostGenus"/>"
@@ -45,8 +44,7 @@
 							class="form-control input-sm">
 						</td>
 						<td>
-							&nbsp;&nbsp;
-							<input type="text" size="18" name="authors" id="authors"
+							<input type="text" size="15" name="authors" id="authors"
 							value="${param.authors}"	
 							placeholder="<fmt:message key="search.authors"/>"
 							class="form-control input-sm">
@@ -56,19 +54,19 @@
 					        <button id="button.search" class="btn btn-default btn-sm" type="submit">
 					            <i class="icon-search"></i> <fmt:message key="button.search"/>
 					        </button>
-					        &nbsp;&nbsp;
+						</td>
+						<td>
 							Use % as a Wildcard				
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type="text" size="20" name="pathogenVirusNames" id="pathogenVirusNames"
+							<input type="text" size="18" name="pathogenVirusNames" id="pathogenVirusNames"
 							value="${param.pathogenVirusNames}"	
 							placeholder="<fmt:message key="search.pathogenVirusNames"/>"
 							class="form-control input-sm">
 						</td>	
 						<td>
-							&nbsp;&nbsp;
 							<input type="text" size="20" name="pathogenGenus" id="pathogenGenus"
 							value="${param.pathogenGenus}"	
 							placeholder="<fmt:message key="search.pathogenGenus"/>"
@@ -87,14 +85,13 @@
 							class="form-control input-sm">
 						</td>	
 						<td>
-							&nbsp;&nbsp;
-							<input type="text" size="18" name="locationCountry" id="locationCountry"
+							<input type="text" size="15" name="locationCountry" id="locationCountry"
 							value="${param.locationCountry}"	
 							placeholder="<fmt:message key="search.locationCountry"/>"
 							class="form-control input-sm">
 						</td>	
 						<td>
-							<input type="text" size="20" name="locationInterpretation" id="locationInterpretation"
+							<input type="text" size="16" name="locationInterpretation" id="locationInterpretation"
 							value="${param.locationInterpretation}"	
 							placeholder="<fmt:message key="search.locationInterpretation"/>"
 							class="form-control input-sm">
