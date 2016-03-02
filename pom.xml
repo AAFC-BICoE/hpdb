@@ -13,8 +13,38 @@
         <artifactId>appfuse-web</artifactId>
         <version>3.5.0</version>
     </parent>
+    
+    <scm>
+		<connection>scm:git:https://github.com/AAFC-MBB/hpdb.git</connection>
+		<developerConnection>scm:git:https://github.com/AAFC-MBB/hpdb.git</developerConnection>
+		<url>https://github.com/AAFC-MBB/hpdb.git</url>
+		<tag>1.0-SNAPSHOT</tag>
+	</scm>
+	
+	<url>https://github.com/AAFC-MBB/hpdb</url>
+	
+	<distributionManagement>
+		<repository>
+			<id>aafc</id>
+			<url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
+		</repository>
+		<snapshotRepository>
+			<id>aafc</id>
+			<url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
+		</snapshotRepository>
+	</distributionManagement>
 
     <repositories>
+ 		<repository>
+			<id>aafc</id>
+			<url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>   
         <repository>
             <id>appfuse-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/appfuse-snapshots</url>
