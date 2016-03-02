@@ -18,9 +18,9 @@ import java.util.Map;
  * specified scope - designed for exposing a Constants class to Tag
  * Libraries.</p>
  *
- * <p>It is designed to be used as follows:
+ * It is designed to be used as follows:
  * <pre>&lt;tag:constants /&gt;</pre>
- * </p>
+ * 
  *
  * <p>Optional values are "className" (fully qualified) and "scope".</p>
  *

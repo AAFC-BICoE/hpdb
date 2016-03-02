@@ -18,14 +18,11 @@ import java.util.Locale;
  * Tag for creating multiple &lt;select&gt; options for displaying a list of
  * country names.
  *
- * <p>
  * <b>NOTE</b> - This tag requires a Java2 (JDK 1.2 or later) platform.
- * </p>
  *
  * @author Jens Fischer, Matt Raible
  * @version $Revision: 1.6 $ $Date: 2006/07/15 11:57:20 $
  *
- * @jsp.tag name="country" bodycontent="empty"
  */
 public class CountryTag extends TagSupport {
     private static final long serialVersionUID = 3905528206810167095L;
@@ -35,25 +32,27 @@ public class CountryTag extends TagSupport {
     private String selected;
 
     /**
-     * @param name The name to set.
+     * Sets the name.
      *
-     * @jsp.attribute required="false" rtexprvalue="true"
+     * @param name The name to set.
      */
-    public void setName(String name) {
+    public void setNßame(String name) {
         this.name = name;
     }
 
     /**
+     * Sets the prompt.
+     *
      * @param prompt The prompt to set.
-     * @jsp.attribute required="false" rtexprvalue="true"
      */
     public void setPrompt(String prompt) {
         this.prompt = prompt;
     }
 
     /**
+     * Sets the default.
+     *
      * @param selected The selected option.
-     * @jsp.attribute required="false" rtexprvalue="true"
      */
     public void setDefault(String selected) {
         this.selected = selected;
@@ -63,9 +62,7 @@ public class CountryTag extends TagSupport {
      * Property used to simply stuff the list of countries into a
      * specified scope.
      *
-     * @param scope
-     *
-     * @jsp.attribute required="false" rtexprvalue="true"
+     * @param scope the new to scope
      */
     public void setToScope(String scope) {
         this.scope = scope;
@@ -75,10 +72,8 @@ public class CountryTag extends TagSupport {
      * Process the start of this tag.
      *
      * @return int status
-     *
-     * @exception JspException if a JSP exception has occurred
-     *
      * @see javax.servlet.jsp.tagext.Tag#doStartTag()
+     * @exception JspException if a JSP exception has occurred
      */
     public int doStartTag() throws JspException {
         ExpressionEvaluator eval = new ExpressionEvaluator(this, pageContext);
@@ -181,7 +176,8 @@ public class CountryTag extends TagSupport {
      * Class to compare LabelValues using their labels with
      * locale-sensitive behaviour.
      */
-    public class LabelValueComparator implements Comparator {
+    @SuppressWarnings("rawtypes")
+	public class LabelValueComparator implements Comparator {
         private Comparator<Object> c;
 
         /**

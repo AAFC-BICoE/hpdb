@@ -25,7 +25,6 @@ import ca.gc.agr.mbb.hostpathogen.web.service.HostManager;
 
 /**
  * Simple class to retrieve a list of hosts from the database.
- * <p/>
  * <p>
  * <a href="HostController.java.html"><i>View Source</i></a>
  * </p>

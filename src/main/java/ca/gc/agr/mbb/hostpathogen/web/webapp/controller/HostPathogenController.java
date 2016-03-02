@@ -25,7 +25,6 @@ import ca.gc.agr.mbb.hostpathogen.web.service.HostPathogenManager;
 
 /**
  * Simple class to retrieve a list of hostPathogens from the database.
- * <p/>
  * <p>
  * <a href="HostPathogenController.java.html"><i>View Source</i></a>
  * </p>
@@ -76,6 +75,9 @@ public class HostPathogenController extends GenericController {
      * @param pathogenSpecies the pathogen species
      * @param pathogenSubSpecificTaxa the pathogen sub specific taxa
      * @param pathogenVirusNames the pathogen virus names
+     * @param authors the authors
+     * @param locationInterpretation the location interpretation
+     * @param locationCountry the location country
      * @param request the request
      * @param response the response
      * @return the model and view

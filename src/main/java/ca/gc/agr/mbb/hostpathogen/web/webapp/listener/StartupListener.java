@@ -28,7 +28,7 @@ import java.util.jar.Manifest;
 /**
  * <p>StartupListener class used to initialize and database settings
  * and populate any application-wide drop-downs.
- * <p/>
+ * 
  * <p>Keep in mind that this listener is executed outside of OpenSessionInViewFilter,
  * so if you're using Hibernate you'll have to explicitly initialize all loaded data at the
  * GenericDao or service level to avoid LazyInitializationException. Hibernate.initialize() works

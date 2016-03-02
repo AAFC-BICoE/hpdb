@@ -14,7 +14,6 @@ import ca.gc.agr.mbb.hostpathogen.web.service.GenericManager;
  * This class serves as the Base class for all other Managers - namely to hold
  * common CRUD methods that they might all use. You should only need to extend
  * this class when your require custom CRUD logic.
- * <p/>
  * <p>To register this class in your Spring context file, use the following XML.
  * <pre>
  *     &lt;bean id="userManager" class="ca.gc.agr.mbb.hostpathogen.web.service.impl.GenericManagerImpl"&gt;
@@ -26,7 +25,6 @@ import ca.gc.agr.mbb.hostpathogen.web.service.GenericManager;
  *         &lt;/constructor-arg&gt;
  *     &lt;/bean&gt;
  * </pre>
- * <p/>
  * <p>If you're using iBATIS instead of Hibernate, use:
  * <pre>
  *     &lt;bean id="userManager" class="ca.gc.agr.mbb.hostpathogen.web.service.impl.GenericManagerImpl"&gt;
@@ -108,7 +106,6 @@ public class GenericManagerImpl<T, PK extends Serializable> implements GenericMa
 
     /**
      * {@inheritDoc}
-     * <p/>
      * Search implementation using Hibernate Search.
      */
     @SuppressWarnings("rawtypes")

@@ -65,7 +65,7 @@ public class HostPathogenDaoHibernate extends GenericDaoHibernate<HostPathogen, 
     
     /**
      * {@inheritDoc}
-     * @throws Exception 
+     * @throws Exception if genus not found
      */
     @SuppressWarnings("unchecked")
 	public List<HostPathogen> getHostPathogenByHostGenus(String genus) throws Exception {

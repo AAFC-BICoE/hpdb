@@ -20,14 +20,12 @@ package ca.gc.agr.mbb.hostpathogen.web.webapp.jsp;
  * Handles escaping of characters that could be interpreted as XML markup.
  * <p>The specification for <code>&lt;c:out&gt;</code> defines the following
  * character conversions to be applied:
- * <table rules="all" frame="border">
- * <tr><th>Character</th><th>Character Entity Code</th></tr>
- * <tr><td>&lt;</td><td>&amp;lt;</td></tr>
- * <tr><td>&gt;</td><td>&amp;gt;</td></tr>
- * <tr><td>&amp;</td><td>&amp;amp;</td></tr>
- * <tr><td>&#039;</td><td>&amp;#039;</td></tr>
- * <tr><td>&#034;</td><td>&amp;#034;</td></tr>
- * </table>
+ * Character - Character Entity Code
+ * &lt;&amp;lt;
+ * &gt;&amp;gt;
+ * &amp;&amp;amp;
+ * &#039;&amp;#039;
+ * &#034;&amp;#034;
  */
 public class EscapeXml {
     

@@ -24,7 +24,8 @@ public class LookupDaoHibernate implements LookupDao {
 
     /**
      * Initialize LookupDaoHibernate with Hibernate SessionFactory.
-     * @param sessionFactory
+     *
+     * @param sessionFactory the session factory
      */
     @Autowired
     public LookupDaoHibernate(final SessionFactory sessionFactory) {

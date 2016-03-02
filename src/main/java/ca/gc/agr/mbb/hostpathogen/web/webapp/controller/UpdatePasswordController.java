@@ -26,10 +26,11 @@ public class UpdatePasswordController extends BaseFormController {
     public static final String RECOVERY_PASSWORD_TEMPLATE = "/updatePassword?username={username}&token={token}";
 
     /**
+     * Request recovery token.
      *
-     * @param username
-     * @param request
-     * @return
+     * @param username the username
+     * @param request the request
+     * @return the string
      */
     @RequestMapping(value = "/requestRecoveryToken*", method = RequestMethod.GET)
     public String requestRecoveryToken(
@@ -47,10 +48,12 @@ public class UpdatePasswordController extends BaseFormController {
     }
 
     /**
+     * Show form.
      *
-     * @param username
-     * @param token
-     * @return
+     * @param username the username
+     * @param token the token
+     * @param request the request
+     * @return the model and view
      */
     @RequestMapping(value = "/updatePassword*", method = RequestMethod.GET)
     public ModelAndView showForm(
@@ -70,13 +73,15 @@ public class UpdatePasswordController extends BaseFormController {
     }
 
     /**
+     * On submit.
      *
-     * @param username
-     * @param token
-     * @param password
-     * @param request
-     * @return
-     * @throws Exception
+     * @param username the username
+     * @param token the token
+     * @param currentPassword the current password
+     * @param password the password
+     * @param request the request
+     * @return the model and view
+     * @throws Exception the exception
      */
     @RequestMapping(value = "/updatePassword*", method = RequestMethod.POST)
     public ModelAndView onSubmit(

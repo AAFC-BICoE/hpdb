@@ -25,7 +25,6 @@ import ca.gc.agr.mbb.hostpathogen.web.service.PathogenManager;
 
 /**
  * Simple class to retrieve a list of pathogens from the database.
- * <p/>
  * <p>
  * <a href="PathogenController.java.html"><i>View Source</i></a>
  * </p>
@@ -56,6 +55,18 @@ public class PathogenController extends GenericController {
 								     "fungalState"
 								     };
 
+    /**
+     * Handle request.
+     *
+     * @param genus the genus
+     * @param species the species
+     * @param subSpecificTaxa the sub specific taxa
+     * @param virusNames the virus names
+     * @param request the request
+     * @param response the response
+     * @return the model and view
+     * @throws Exception the exception
+     */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView handleRequest(@RequestParam(required = false, value = "genus") String genus,
 									  @RequestParam(required = false, value = "species") String species,    		

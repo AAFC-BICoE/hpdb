@@ -58,9 +58,9 @@ public class UserFormController extends BaseFormController {
 
     /**
      * Load user object from db before web data binding in order to keep properties not populated from web post.
-     * 
-     * @param request
-     * @return
+     *
+     * @param request the request
+     * @return the user
      */
     @ModelAttribute("user")
     protected User loadUser(final HttpServletRequest request) {
@@ -71,6 +71,16 @@ public class UserFormController extends BaseFormController {
         return new User();
     }
 
+    /**
+     * On submit.
+     *
+     * @param user the user
+     * @param errors the errors
+     * @param request the request
+     * @param response the response
+     * @return the string
+     * @throws Exception the exception
+     */
     @RequestMapping(method = RequestMethod.POST)
     public String onSubmit(@ModelAttribute("user") final User user, final BindingResult errors, final HttpServletRequest request,
             final HttpServletResponse response)
@@ -180,6 +190,14 @@ public class UserFormController extends BaseFormController {
         return "userform";
     }
 
+    /**
+     * Show form.
+     *
+     * @param request the request
+     * @param response the response
+     * @return the user
+     * @throws Exception the exception
+     */
     @ModelAttribute
     @RequestMapping(method = RequestMethod.GET)
     protected User showForm(final HttpServletRequest request, final HttpServletResponse response)
@@ -215,10 +233,22 @@ public class UserFormController extends BaseFormController {
         }
     }
 
+    /**
+     * Checks if is form submission.
+     *
+     * @param request the request
+     * @return true, if is form submission
+     */
     private boolean isFormSubmission(final HttpServletRequest request) {
         return request.getMethod().equalsIgnoreCase("post");
     }
 
+    /**
+     * Checks if is adds the.
+     *
+     * @param request the request
+     * @return true, if is adds the
+     */
     protected boolean isAdd(final HttpServletRequest request) {
         final String method = request.getParameter("method");
         return (method != null && method.equalsIgnoreCase("add"));

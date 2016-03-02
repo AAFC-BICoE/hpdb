@@ -25,14 +25,12 @@ import java.util.Locale;
 
 
 /**
- * <p>This class is designed to render a <label> tag for labeling your forms and
+ * <p>This class is designed to render a tag for labeling your forms and
  * adds an asterik (*) for required fields.  It was originally written by Erik
  * Hatcher (http://www.ehatchersolutions.com/JavaDevWithAnt/).
- * <p/>
  * <p>It is designed to be used as follows:
  * <pre>&lt;tag:label key="userForm.username"/&gt;</pre>
  *
- * @jsp.tag name="label" bodycontent="empty"
  */
 public class LabelTag extends TagSupport {
     private static final long serialVersionUID = -5310144023136517119L;
@@ -85,7 +83,8 @@ public class LabelTag extends TagSupport {
         }
 
         Errors errors = requestContext.getErrors(formName, false);
-        List fes = null;
+        @SuppressWarnings("rawtypes")
+		List fes = null;
         if (errors != null) {
             fes = errors.getFieldErrors(fieldName);
             //String errorMsg = getErrorMessages(fes);
@@ -145,6 +144,9 @@ public class LabelTag extends TagSupport {
 
     /**
      * Extract the error messages from the given ObjectError list.
+     *
+     * @param msg the msg
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     /*private String getErrorMessages(List fes) throws NoSuchMessageException {
         StringBuffer message = new StringBuffer();
@@ -167,16 +169,18 @@ public class LabelTag extends TagSupport {
     }
 
     /**
-     * @jsp.attribute required="true" rtexprvalue="true"
+     * Sets the key.
+     *
+     * @param key the new key
      */
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
-     * Setter for specifying whether to include colon
+     * Setter for specifying whether to include colon.
      *
-     * @jsp.attribute required="false" rtexprvalue="true"
+     * @param colon the new colon
      */
     public void setColon(boolean colon) {
         this.colon = colon;
@@ -185,7 +189,7 @@ public class LabelTag extends TagSupport {
     /**
      * Setter for assigning a CSS class, default is label.
      *
-     * @jsp.attribute required="false" rtexprvalue="true"
+     * @param styleClass the new style class
      */
     public void setStyleClass(String styleClass) {
         this.styleClass = styleClass;
@@ -195,7 +199,7 @@ public class LabelTag extends TagSupport {
      * Setter for assigning a CSS class when errors occur,
      * defaults to labelError.
      *
-     * @jsp.attribute required="false" rtexprvalue="true"
+     * @param errorClass the new error class
      */
     public void setErrorClass(String errorClass) {
         this.errorClass = errorClass;

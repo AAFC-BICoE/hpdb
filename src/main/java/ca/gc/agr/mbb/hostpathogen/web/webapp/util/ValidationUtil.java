@@ -23,10 +23,12 @@ public class ValidationUtil {
 
     /**
      * Validates that two fields match.
-     * @param bean
-     * @param va
-     * @param field
-     * @param errors
+     *
+     * @param bean the bean
+     * @param va the va
+     * @param field the field
+     * @param errors the errors
+     * @return true, if successful
      */
     public static boolean validateTwoFields(Object bean, ValidatorAction va,
                                             Field field, Errors errors) {

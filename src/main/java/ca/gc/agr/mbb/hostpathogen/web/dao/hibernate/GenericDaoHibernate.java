@@ -38,7 +38,6 @@ import ca.gc.agr.mbb.hostpathogen.web.dao.SearchException;
  * This class serves as the Base class for all other DAOs - namely to hold
  * common CRUD methods that they might all use. You should only need to extend
  * this class when your require custom CRUD logic.
- * <p/>
  * <p>To register this class in your Spring context file, use the following XML.
  * <pre>
  *      &lt;bean id="fooDao" class="ca.gc.agr.mbb.hostpathogen.web.dao.hibernate.GenericDaoHibernate"&gt;

@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Simple class to retrieve a list of users from the database.
- * <p/>
  * <p>
  * <a href="UserController.java.html"><i>View Source</i></a>
  * </p>
@@ -32,6 +31,13 @@ public class UserController {
         this.userManager = userManager;
     }
 
+    /**
+     * Handle request.
+     *
+     * @param query the query
+     * @return the model and view
+     * @throws Exception the exception
+     */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView handleRequest(@RequestParam(required = false, value = "q") String query) throws Exception {
         Model model = new ExtendedModelMap();

@@ -61,9 +61,10 @@ public interface GenericDao <T, PK extends Serializable> {
 
     /**
      * Gets all records that match a search term. "*" will get them all.
+     *
      * @param searchTerm the term to search for
      * @return the matching records
-     * @throws SearchException
+     * @throws SearchException the search exception
      */
     List<T> search(String searchTerm) throws SearchException;
 

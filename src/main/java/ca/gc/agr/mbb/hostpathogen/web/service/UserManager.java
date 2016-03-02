@@ -69,7 +69,7 @@ public interface UserManager extends GenericManager<User, Long> {
     void removeUser(User user);
 
     /**
-     * Removes a user from the database by their userId
+     * Removes a user from the database by their userId.
      *
      * @param userId the user's id
      */
@@ -86,55 +86,57 @@ public interface UserManager extends GenericManager<User, Long> {
      * Builds a recovery password url by replacing placeholders with username and generated recovery token.
      * 
      * UrlTemplate should include two placeholders '{username}' for username and '{token}' for the recovery token.
-     * 
-     * @param user
-     * @param urlTemplateurl
-     *            template including two placeholders '{username}' and '{token}'
-     * @return
+     *
+     * @param user user
+     * @param urlTemplate the url template
+     * @return the string
      */
     String buildRecoveryPasswordUrl(User user, String urlTemplate);
 
     /**
+     * Generate recovery token.
      *
-     * @param user
-     * @return
+     * @param user the user
+     * @return the string
      */
     String generateRecoveryToken(User user);
 
     /**
+     * Checks if is recovery token valid.
      *
-     * @param username
-     * @param token
-     * @return
+     * @param username the username
+     * @param token the token
+     * @return true, if is recovery token valid
      */
     boolean isRecoveryTokenValid(String username, String token);
 
     /**
-     * 
-     * @param user
-     * @param token
-     * @return
+     * Checks if is recovery token valid.
+     *
+     * @param user the user
+     * @param token the token
+     * @return true, if is recovery token valid
      */
     boolean isRecoveryTokenValid(User user, String token);
 
     /**
      * Sends a password recovery email to username.
      *
-     * @param username
-     * @param urlTemplate
-     *            url template including two placeholders '{username}' and '{token}'
+     * @param username the username
+     * @param urlTemplate            url template including two placeholders '{username}' and '{token}'
      */
     void sendPasswordRecoveryEmail(String username, String urlTemplate);
 
     /**
-     * 
-     * @param username
-     * @param currentPassword
-     * @param recoveryToken
-     * @param newPassword
-     * @param applicationUrl
-     * @return
-     * @throws UserExistsException
+     * Update password.
+     *
+     * @param username the username
+     * @param currentPassword the current password
+     * @param recoveryToken the recovery token
+     * @param newPassword the new password
+     * @param applicationUrl the application url
+     * @return the user
+     * @throws UserExistsException the user exists exception
      */
     User updatePassword(String username, String currentPassword, String recoveryToken, String newPassword, String applicationUrl) throws UserExistsException;
 }

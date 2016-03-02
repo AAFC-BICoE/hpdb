@@ -97,9 +97,9 @@ public class BaseFormController implements ServletContextAware {
      * getMessageSourceAccessor() is used because the RequestContext variable
      * is not set in unit tests b/c there's no DispatchServlet Request.
      *
-     * @param msgKey
+     * @param msgKey the msg key
      * @param locale the current locale
-     * @return
+     * @return the text
      */
     public String getText(String msgKey, Locale locale) {
         return messages.getMessage(msgKey, locale);
@@ -109,10 +109,10 @@ public class BaseFormController implements ServletContextAware {
      * Convenient method for getting a i18n key's value with a single
      * string argument.
      *
-     * @param msgKey
-     * @param arg
+     * @param msgKey the msg key
+     * @param arg the arg
      * @param locale the current locale
-     * @return
+     * @return the text
      */
     public String getText(String msgKey, String arg, Locale locale) {
         return getText(msgKey, new Object[] { arg }, locale);
@@ -121,10 +121,10 @@ public class BaseFormController implements ServletContextAware {
     /**
      * Convenience method for getting a i18n key's value with arguments.
      *
-     * @param msgKey
-     * @param args
+     * @param msgKey the msg key
+     * @param args the args
      * @param locale the current locale
-     * @return
+     * @return the text
      */
     public String getText(String msgKey, Object[] args, Locale locale) {
         return messages.getMessage(msgKey, args, locale);
@@ -148,7 +148,8 @@ public class BaseFormController implements ServletContextAware {
     }
 
     /**
-     * Set up a custom property editor for converting form inputs to real objects
+     * Set up a custom property editor for converting form inputs to real objects.
+     *
      * @param request the current request
      * @param binder the data binder
      */
