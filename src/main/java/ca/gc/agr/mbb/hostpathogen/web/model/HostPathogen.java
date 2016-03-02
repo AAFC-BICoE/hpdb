@@ -127,8 +127,6 @@ public class HostPathogen extends BaseObject implements Serializable {
      *
      * @return the reference
      */
-    @Embedded
-    @IndexedEmbedded	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="reference")
 	public Reference getReference() {
@@ -149,8 +147,6 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the hostId
 	 */
-    @Embedded
-    @IndexedEmbedded	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="host")
 	public Host getHost() {
