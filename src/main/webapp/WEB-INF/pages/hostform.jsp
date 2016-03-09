@@ -43,8 +43,8 @@
         </tr>        
     </table>
     
-    </br>
-    </br>
+    <br>
+    <br>
     
     	<h2>Associated Pathogens</h2>
         <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"

@@ -48,41 +48,41 @@
             <td><c:out value="${hostPathogen.notes}"/></td>
         </tr>        
     </table>
-    </br>
+    <br>
     <h2>Location Information</h2>
-	</br>
+	<br>
     <label class="control-label"><fmt:message key="hostPathogen.locations"/>:</label>
     <div class="readonly">
         <c:forEach var="location" items="${hostPathogen.locationList}" varStatus="status">
             <c:out value="${location.interpretation}"/>&nbsp;&nbsp;[<c:out value="${location.country}"/>]<c:if test="${!status.last}">&nbsp;,&nbsp;</c:if>
         </c:forEach>
     </div>
-	</br>
+	<br>
     <h2>Reference Information</h2>
-	</br>
+	<br>
  	<table class="table-striped" cellpadding="5">
         <tr>
-            <th>Year:</th>
+            <th>Year:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.year}"/></td>
         </tr> 	
         <tr>
-            <th>Chapter Article Title:</th>
+            <th>Chapter Article Title:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.chapterArticleTitle}"/></td>
         </tr> 	
         <tr>
-            <th>Authors:</th>
+            <th>Authors:&nbsp;</th>
              <td><c:out value="${hostPathogen.reference.authors}"/></td>
         </tr>        
         <tr>
-            <th>Volume:</th>
+            <th>Volume:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.volume}"/></td>
         </tr>
 		<tr>
-            <th>Pages:</th>
+            <th>Pages:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.pages}"/></td>
         </tr>        
         <tr>
-            <th>Data Source:</th>
+            <th>Data Source:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.data_source}"/></td>
         </tr>        
     </table>

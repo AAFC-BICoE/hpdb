@@ -27,10 +27,10 @@
     </li> --%>
 </ul>
 
-</br>
+<br>
 <strong>About:</strong>
-</br>
-</br>
+<br>
+<br>
 <p>
 The Canadian Host-Pathogen Database is an index of published records of microorganisms, focussed on fungi but also including bacteria, nematodes, viruses and phytoplasma that are either parasitic on living vascular plants in Canada or have been recorded as decaying plant parts that can be identified to host genus.
 </p>
@@ -49,19 +49,19 @@ Conners, I.L. 1967. An annotated index of plant diseases in Canada and fungi rec
 <p>
 Ginns, J. H. 1986. Compendium of Plant Disease and Decay Fungi in Canada 1960-1980. Research Branch, Agriculture Canada. Publ. 1813. 
 </p>
-</br>
+<br>
 <p>
 <strong>
 Contact information: 
 </strong>
-</br>
-</br>
+<br>
+<br>
 General Collection Information: <a href="mailto:Scott.Redhead@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Scott A. Redhead</a>
-</br>
+<br>
 Data Input and  Curation: <a href="mailto:Jennifer.Wilkinson@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Jennifer Wilkinson</a>
-</br>
+<br>
 General Application Information: <a href="mailto:mbb@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">MBB Group</a>
-</br>
+<br>
 Web Application Developer: <a href="mailto:Satpal.Bilkhu@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Satpal Bilkhu</a>
 </p>
 </body>
