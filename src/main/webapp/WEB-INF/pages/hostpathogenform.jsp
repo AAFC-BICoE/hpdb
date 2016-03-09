@@ -85,6 +85,12 @@
             <th>Data Source:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.data_source}"/></td>
         </tr>        
+        <tr>
+        	<th>Google Scholar Search:&nbsp;</th>
+        	<td>
+		        <a href="http://scholar.google.ca/scholar?hl=en&q=${hostPathogen.reference.chapterArticleTitle}&btnG=&as_sdt=1%2C5&as_sdtp=">click here</a>
+           	</td>
+        </tr>
     </table>
     
 </div>
