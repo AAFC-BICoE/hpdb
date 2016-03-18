@@ -6,7 +6,7 @@ Agriculture and Agri-Food Canada’s (AAFC) internally developed Host Pathogen D
 Required Software
 ------------------
 
-    Oracle Java 7+
+    Oracle Java 8
     MySQL 5.6
     Maven 3.2.5+
     Tomcat 7
@@ -29,7 +29,7 @@ Running in Development
 
     $ mvn jetty:run -Dmaven.test.skip=true
     
-The web application should now be running at (http://localhost:8080)
+The web application should now be running at http://localhost:8080
     
     
 Importing Data
