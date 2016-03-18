@@ -44,19 +44,8 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>   
-        <repository>
-            <id>appfuse-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/appfuse-snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+		</repository>
     </repositories>
-
 
     <build>
         <plugins>
@@ -71,6 +60,13 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>dbunit-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+				</configuration>
+			</plugin>
         </plugins>
         <pluginManagement>
         	<plugins>
