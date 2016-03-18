@@ -121,26 +121,26 @@ set
 id=@col1,refSourceId=@col2,authors=@col3,year=@col4,chapterArticleTitle=@col5,volume=@col6,pages=@col7,data_source=@col8;
 
 
-LOAD DATA INFILE '/home/bilkhus/Downloads/hostPathogenCsv/host_pathogens_PHCit22.csv' INTO TABLE hostPathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' 
+LOAD DATA INFILE '/home/bilkhus/Downloads/hostPathogenCsv/host_pathogens_PHCit.csv' INTO TABLE hostPathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11,@col12,@col13,@col14,@col15,@col16,@col17,@col18) 
 set 
-id=@col1,
-host=@col2,
-pathogen=@col3,
+id=@col7,
+host=@col5,
+pathogen=@col6,
 reference=@col4,
-hostFamily=@col5,
-hostGenus=@col6,
-hostSpecies=@col7,
-hostSubSpecificTaxa=@col8,
-pathogenGenus=@col9,
-pathogenSpecies=@col10,
-pathogenSubSpecificTaxa=@col11,
+hostFamily=@col3,
+hostGenus=@col8,
+hostSpecies=@col9,
+hostSubSpecificTaxa=@col10,
+pathogenGenus=@col11,
+pathogenSpecies=@col12,
+pathogenSubSpecificTaxa=@col13,
 pathogenVirusNames=@col14,
 rustState=@col15,
-plantPart=@col16,
-symptom=@col117,
-notes=@col18;
+plantPart=@col17,
+symptom=@col18,
+notes=@col16;
 
 LOAD DATA INFILE '/home/bilkhus/Downloads/hostPathogenCsv/localities.csv' INTO TABLE location character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' 
 IGNORE 1 LINES 
