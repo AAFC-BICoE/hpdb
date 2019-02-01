@@ -32,7 +32,7 @@
 <br>
 <br>
 <p>
-The Canadian Host-Pathogen Database is an index of published records of microorganisms, focussed on fungi but also including bacteria, nematodes, viruses and phytoplasma that are either parasitic on living vascular plants in Canada or have been recorded as decaying plant parts that can be identified to host genus.
+The Canadian Host-Pathogen Database is an index of published records of microorganisms, focused on fungi but also including bacteria, nematodes, viruses and phytoplasma that are either parasitic on living vascular plants in Canada or have been recorded as decaying plant parts that can be identified to host genus.
 </p>
 <p>
 The foundations of the database were two published indices (Conners 1967, Ginns 1986) that were scanned and whose data were merged with the help of special funding by Environment Canada. Additional data covering another decade of literature was added in early versions by Drs. Michael Corlett and Philip Martin (unpublished). Subsequently, additional literature was surveyed with funding by Defence Research and Development Canada via the Chemical, Biological, Radiological-Nuclear (CRBN) Research and Technology Initiative (CRTI). The project is on going.
@@ -56,12 +56,10 @@ Contact information:
 </strong>
 <br>
 <br>
-General Collection Information: <a href="mailto:Scott.Redhead@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Scott A. Redhead</a>
+General Collection Information: <a href="mailto:Scott.Redhead@canada.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Scott A. Redhead</a>
 <br>
-Data Input and  Curation: <a href="mailto:Jennifer.Wilkinson@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Jennifer Wilkinson</a>
+Data Input and  Curation: <a href="mailto:Jennifer.Wilkinson@canada.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Jennifer Wilkinson</a>
 <br>
-General Application Information: <a href="mailto:mbb@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">MBB Group</a>
-<br>
-Web Application Developer: <a href="mailto:Satpal.Bilkhu@agr.gc.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Satpal Bilkhu</a>
+Web Development (Contact email): <a href="mailto:AAFC.BICE-CEIB.AAC@canada.ca?Subject=Canadian%20Host-Pathogen%20Database:" target="_top">Biological Informatics Centre of Excellence</a>
 </p>
 </body>
