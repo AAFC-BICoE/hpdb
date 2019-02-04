@@ -95,6 +95,7 @@ public class HostPathogenController extends GenericController {
     								  @RequestParam(required = false, value = "authors") String authors,
     								  @RequestParam(required = false, value = "locationInterpretation") String locationInterpretation,
     								  @RequestParam(required = false, value = "locationCountry") String locationCountry,
+    								  @RequestParam(required = false, value = "pageSize") Integer pageSizeParam,
     								  HttpServletRequest request,
     								  HttpServletResponse response
     								  ) throws Exception {
@@ -126,7 +127,9 @@ public class HostPathogenController extends GenericController {
         	filters.put("locations.interpretation", locationInterpretation);
         }
         
-        int startingRecord = getStartingRecord(request, pageSize, tableIdHostPathogenList);
+        pageSizeParam = (pageSizeParam!=null && pageSizeParam!=0) ? pageSizeParam : pageSize;
+        
+        int startingRecord = getStartingRecord(request, pageSizeParam, tableIdHostPathogenList);
         String sortColumn = getSortColumn(request, tableIdHostPathogenList, listColumnsHostPathogens, 0);
         boolean sortOrder = getSortOrder(request, tableIdHostPathogenList);
         boolean export = request.getParameter(TableTagParameters.PARAMETER_EXPORTING) != null;
@@ -141,7 +144,7 @@ public class HostPathogenController extends GenericController {
        	List<HostPathogen> list = new ArrayList<HostPathogen>();
         try {
 	    		request.setAttribute("resultSize", hostPathogenManager.getDataCount(filters));
-        		list = hostPathogenManager.getFilteredPagedData(startingRecord, pageSize, sortColumn, sortOrder, filters, export);
+        		list = hostPathogenManager.getFilteredPagedData(startingRecord, pageSizeParam, sortColumn, sortOrder, filters, export);
         		model.addAttribute(Constants.HOST_PATHOGEN_LIST, list);
             
         } catch (SearchException se) {

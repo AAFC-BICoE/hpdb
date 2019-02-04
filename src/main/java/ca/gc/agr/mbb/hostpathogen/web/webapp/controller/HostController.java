@@ -58,6 +58,7 @@ public class HostController extends GenericController {
     public ModelAndView handleRequest(@RequestParam(required = false, value = "genus") String genus,
 			  						  @RequestParam(required = false, value = "species") String species,    		
 			  						  @RequestParam(required = false, value = "subSpecificTaxa") String subSpecificTaxa,
+			  						  @RequestParam(required = false, value = "pageSize") Integer pageSizeParam,
     								  HttpServletRequest request,
     								  HttpServletResponse response
     								  ) throws Exception {
@@ -69,7 +70,9 @@ public class HostController extends GenericController {
         filters.put("species", species);
         filters.put("subSpecificTaxa", subSpecificTaxa);
         
-        int startingRecord = getStartingRecord(request, pageSize, tableIdHostList);
+        pageSizeParam = (pageSizeParam!=null && pageSizeParam!=0) ? pageSizeParam : pageSize;
+        
+        int startingRecord = getStartingRecord(request, pageSizeParam, tableIdHostList);
         String sortColumn = getSortColumn(request, tableIdHostList, listColumnsHosts, 0);
         boolean sortOrder = getSortOrder(request, tableIdHostList);
         boolean export = request.getParameter(TableTagParameters.PARAMETER_EXPORTING) != null;
@@ -85,7 +88,7 @@ public class HostController extends GenericController {
         
         try {
     		request.setAttribute("resultSize", hostManager.getDataCount(filters));
-    		list = hostManager.getFilteredPagedData(startingRecord, pageSize, sortColumn, sortOrder, filters, export);
+    		list = hostManager.getFilteredPagedData(startingRecord, pageSizeParam, sortColumn, sortOrder, filters, export);
     		model.addAttribute(Constants.HOST_LIST, list);
             
         } catch (SearchException se) {
