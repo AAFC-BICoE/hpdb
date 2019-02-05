@@ -50,11 +50,24 @@
 				</td>								
 			</tr>
 		</table>
+		<table>
+			<tr>
+				<td>
+					<label for="pageSize"><fmt:message key="search.pageSize"/></label>
+					<br/>
+					<input type="number" size="16" name="pageSize" id="pageSize" min="1"
+					value="${param.pageSize}"	
+					placeholder="25"
+					class="form-control input-sm">
+				</td>
+			</tr>
+		</table>
     </form>
     <br>
 
     <display:table name="hostList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
-                   defaultsort="1" id="hostList" pagesize="25" partialList="${partialListValue}" sort="external"
+                   defaultsort="1" id="hostList" pagesize="${param.pageSize>0 ? param.pageSize : 25}" 
+                   partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
                    
 		<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"
