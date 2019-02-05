@@ -10,7 +10,6 @@ services:
   - mysql
   
 before_install: 
-  - sudo rm /etc/mavenrc
   - export M2_HOME=/usr/local/maven
   - export MAVEN_OPTS="-Dmaven.repo.local=$HOME/.m2/repository -Xms256m -Xmx512m"
     
