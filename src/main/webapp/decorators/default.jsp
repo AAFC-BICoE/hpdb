@@ -14,6 +14,7 @@
 </head>
 <body<decorator:getProperty property="body.id" writeEntireProperty="true"/><decorator:getProperty property="body.class" writeEntireProperty="true"/>>
     <c:set var="currentMenu" scope="request"><decorator:getProperty property="meta.menu"/></c:set>
+    <c:set var="altlangCode" value='${("fr" eq sessionScope["org.apache.struts2.action.LOCALE"].language) ? "en":"fr"}' />
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="navbar-header">
@@ -26,11 +27,10 @@
         </div>
 
         <%@ include file="/common/menu.jsp" %>
-        <c:if test="${pageContext.request.locale.language ne 'en'}">
-            <div id="switchLocale"><a href="<c:url value='/?locale=en'/>">
-                <fmt:message key="webapp.name"/> in English</a>
-            </div>
-        </c:if>
+        <div id="switchLocale">
+            <fmt:message key="webapp.name"/>&nbsp;
+            <a href="<c:url value='/?locale=${altlangCode}'/>"><fmt:message key="language.toggle"/></a>
+        </div>
     </div>
 
     <div class="container" id="content">
