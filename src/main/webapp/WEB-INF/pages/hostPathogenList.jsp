@@ -57,7 +57,7 @@
 					        </button>
 						</td>
 						<td>
-							Use % as a Wildcard				
+							<fmt:message key="search.tip.wildCard"/>
 						</td>
 					</tr>
 					<tr>
