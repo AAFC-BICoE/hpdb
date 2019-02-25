@@ -16,3 +16,5 @@
 
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <c:set var="datePattern"><fmt:message key="date.format"/></c:set>
+<c:set var="langCode" value='${("fr" eq sessionScope["org.apache.struts2.action.LOCALE"].language) ? "fr":"en"}' />
+<c:set var="altlangCode" value='${("fr" eq sessionScope["org.apache.struts2.action.LOCALE"].language) ? "en":"fr"}' />

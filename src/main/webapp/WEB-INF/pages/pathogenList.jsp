@@ -17,6 +17,7 @@
     <h2><fmt:message key="pathogenList.heading"/></h2>
 
     <form method="get" action="${ctx}/pathogens" id="searchForm" class="form-inline">
+    	<input type="hidden" name="locale" value="${langCode}">
 		<table>
 			<tr>
 				<td>
