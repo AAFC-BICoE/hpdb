@@ -47,7 +47,7 @@
 					&nbsp;&nbsp;&nbsp;
 				</td>			
 				<td>
-			         Use % as a Wildcard				
+			         <fmt:message key="search.tip.wildCard"/>
 				</td>								
 			</tr>
 		</table>
@@ -71,7 +71,7 @@
                    partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
                    
-		<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"
+		<display:column property="id" escapeXml="true" sortable="true" titleKey="host.id" style="width: 3%"
 						url="/hostform?from=list" paramId="id" paramProperty="id" media="html"/>                   
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 18%"
                         url="/hostform?from=list" paramId="id" paramProperty="id"/>
