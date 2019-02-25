@@ -16,6 +16,7 @@
     <h2><fmt:message key="hostList.heading"/></h2>
 
     <form method="get" action="${ctx}/hosts" id="searchForm" class="form-inline">
+    	<input type="hidden" name="locale" value="${langCode}">
 		<table>
 			<tr>
 				<td>
