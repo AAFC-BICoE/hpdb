@@ -8,12 +8,12 @@ id=@col1,refSourceId=@col2,authors=@col3,year=@col4,chapterArticleTitle=@col5,vo
 
 CREATE TABLE `reference` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `authors` varchar(200) DEFAULT NULL,
-  `chapterArticleTitle` varchar(200) DEFAULT NULL,
-  `data_source` varchar(200) DEFAULT NULL,
-  `pages` varchar(200) DEFAULT NULL,
+  `authors` varchar(255) DEFAULT NULL,
+  `chapterArticleTitle` varchar(255) DEFAULT NULL,
+  `data_source` varchar(255) DEFAULT NULL,
+  `pages` varchar(255) DEFAULT NULL,
   `refSourceId` bigint(20) DEFAULT NULL,
-  `volume` varchar(200) DEFAULT NULL,
-  `year` varchar(200) DEFAULT NULL,
+  `volume` varchar(255) DEFAULT NULL,
+  `year` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;

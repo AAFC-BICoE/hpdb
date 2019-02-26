@@ -94,7 +94,7 @@ public class Location extends BaseObject implements Serializable {
 	 *
 	 * @return the interpretation
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getInterpretation() {
 		return interpretation;
@@ -114,7 +114,7 @@ public class Location extends BaseObject implements Serializable {
 	 *
 	 * @return the country
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getCountry() {
 		return country;

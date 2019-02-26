@@ -87,7 +87,7 @@ public class Reference extends BaseObject implements Serializable {
      *
      * @return the author
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getAuthors() {
 		return authors;
@@ -119,7 +119,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the year
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getYear() {
 		return year;
@@ -135,7 +135,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the chapterArticleTitle
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getChapterArticleTitle() {
 		return chapterArticleTitle;
@@ -151,7 +151,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the volume
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getVolume() {
 		return volume;
@@ -167,7 +167,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the pages
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getPages() {
 		return pages;
@@ -183,7 +183,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the data_source
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getData_source() {
 		return data_source;

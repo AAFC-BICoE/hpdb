@@ -189,7 +189,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the rustState
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getRustState() {
 		return rustState;
@@ -209,7 +209,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the hostFamily
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getHostFamily() {
 		return hostFamily;
@@ -229,7 +229,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the plantPart
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getPlantPart() {
 		return plantPart;
@@ -249,7 +249,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the symptom
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getSymptom() {
 		return symptom;
@@ -269,7 +269,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the hostGenus
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getHostGenus() {
 		return hostGenus;
@@ -289,7 +289,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the hostSpecies
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getHostSpecies() {
 		return hostSpecies;
@@ -309,7 +309,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the hostSubSpecificTaxa
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getHostSubSpecificTaxa() {
 		return hostSubSpecificTaxa;
@@ -329,7 +329,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the pathogenGenus
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getPathogenGenus() {
 		return pathogenGenus;
@@ -349,7 +349,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the pathogenSpecies
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getPathogenSpecies() {
 		return pathogenSpecies;
@@ -369,7 +369,7 @@ public class HostPathogen extends BaseObject implements Serializable {
 	 *
 	 * @return the pathogenSubSpecificTaxa
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getPathogenSubSpecificTaxa() {
 		return pathogenSubSpecificTaxa;
@@ -416,7 +416,7 @@ public class HostPathogen extends BaseObject implements Serializable {
      *
      * @return the notes
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getNotes() {
 		return notes;
