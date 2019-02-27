@@ -132,7 +132,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the genus
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getGenus() {
 		return genus;
@@ -152,7 +152,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the species
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getSpecies() {
 		return species;
@@ -172,7 +172,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the sub specific taxa
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getSubSpecificTaxa() {
 		return subSpecificTaxa;
@@ -192,7 +192,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the author
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getAuthor() {
 		return author;
@@ -212,7 +212,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the cultivar
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getCultivar() {
 		return cultivar;
@@ -232,7 +232,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the en name
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getEnName() {
 		return enName;
@@ -243,7 +243,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @param enName the new en name
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public void setEnName(String enName) {
 		this.enName = enName;
@@ -254,7 +254,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the fr name
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getFrName() {
 		return frName;
@@ -265,7 +265,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @param frName the new fr name
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public void setFrName(String frName) {
 		this.frName = frName;
@@ -286,7 +286,7 @@ public class Host extends BaseObject implements Serializable {
      *
      * @return the notes
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getNotes() {
 		return notes;

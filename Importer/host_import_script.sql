@@ -9,16 +9,16 @@ id=@col1,genus=@col4,species=@col5,subSpecificTaxa=@col6,author=@col7,cultivar=@
 
  CREATE TABLE `host` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `author` varchar(200) DEFAULT NULL,
-  `cultivar` varchar(200) DEFAULT NULL,
-  `enName` varchar(200) DEFAULT NULL,
-  `frName` varchar(200) DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `cultivar` varchar(255) DEFAULT NULL,
+  `enName` varchar(255) DEFAULT NULL,
+  `frName` varchar(255) DEFAULT NULL,
   `gbifId` bigint(20) DEFAULT NULL,
-  `genus` varchar(200) DEFAULT NULL,
+  `genus` varchar(255) DEFAULT NULL,
   `higherTaxaId` bigint(20) DEFAULT NULL,
   `idAccepted` bigint(20) DEFAULT NULL,
-  `notes` varchar(200) DEFAULT NULL,
-  `species` varchar(200) DEFAULT NULL,
-  `subSpecificTaxa` varchar(200) DEFAULT NULL,
+  `notes` varchar(255) DEFAULT NULL,
+  `species` varchar(255) DEFAULT NULL,
+  `subSpecificTaxa` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
