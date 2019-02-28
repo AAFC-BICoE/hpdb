@@ -121,27 +121,27 @@
                    class="table table-condensed table-striped table-hover" export="true">
 
 		<display:column property="id" escapeXml="true" sortable="true" titleKey="hostPathogen.id" style="width: 3%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id" media="html"/>                    
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                    
 		<display:column property="hostFamily" escapeXml="true" sortable="true" titleKey="hostPathogen.hostFamily"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostGenus" escapeXml="true" sortable="true" titleKey="hostPathogen.hostGenus" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSpecies" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSubSpecificTaxa" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>      
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>      
 		<display:column property="pathogenVirusNames" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenVirusNames"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="pathogenGenus" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenGenus" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSpecies" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSubSpecificTaxa" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="reference.year" escapeXml="true" sortable="true" titleKey="hostPathogen.year" media="csv xml excel"/>   
 		<display:column property="reference.chapterArticleTitle" escapeXml="true" sortable="true" titleKey="hostPathogen.chapterArticleTitle" media="csv xml excel"/>   											  
 		<display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 12%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="reference.volume" escapeXml="true" sortable="true" titleKey="hostPathogen.volume" media="csv xml excel"/>   
 		<display:column property="reference.pages" escapeXml="true" sortable="true" titleKey="hostPathogen.pages" media="csv xml excel"/>   
 		<display:column property="reference.data_source" escapeXml="true" sortable="true" titleKey="hostPathogen.data_source" media="csv xml excel"/>   						
