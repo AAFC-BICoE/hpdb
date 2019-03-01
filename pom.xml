@@ -183,7 +183,7 @@
         <dao.framework>hibernate</dao.framework>
         <db.name>hpdbweb</db.name>
         <web.framework>spring</web.framework>
-        <copyright.year>2016</copyright.year>
+        <copyright.year>2019</copyright.year>
 
         <!-- Framework/Plugin versions -->
         <appfuse.version>3.5.0</appfuse.version>
