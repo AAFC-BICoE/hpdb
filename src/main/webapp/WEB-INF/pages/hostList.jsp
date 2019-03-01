@@ -72,19 +72,19 @@
                    class="table table-condensed table-striped table-hover" export="true">
                    
 		<display:column property="id" escapeXml="true" sortable="true" titleKey="host.id" style="width: 3%"
-						url="/hostform?from=list" paramId="id" paramProperty="id" media="html"/>                   
+						url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                   
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 18%"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="species" escapeXml="true" sortable="true" titleKey="host.species"  style="width: 23%"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="subSpecificTaxa" escapeXml="true" sortable="true" titleKey="host.subSpecificTaxa"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="cultivar" escapeXml="true" sortable="true" titleKey="host.cultivar"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="enName" escapeXml="true" sortable="true" titleKey="host.enName"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="frName" escapeXml="true" sortable="true" titleKey="host.frName"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>                                                                       
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>                                                                       
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="host.notes" media="csv xml excel"/>
 
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostList.host"/></display:setProperty>

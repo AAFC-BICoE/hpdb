@@ -11,13 +11,13 @@
 
 <ul class="glassList">
     <li>
-        <a href="<c:url value='/hostPathogens'/>"><fmt:message key="hostPathogenList.title"/></a>
+        <a href="<c:url value='/hostPathogens?locale=${langCode}'/>"><fmt:message key="hostPathogenList.title"/></a>
     </li>
     <li>
-        <a href="<c:url value='/hosts'/>"><fmt:message key="hostList.title"/></a>
+        <a href="<c:url value='/hosts?locale=${langCode}'/>"><fmt:message key="hostList.title"/></a>
     </li>
     <li>
-        <a href="<c:url value='/pathogens'/>"><fmt:message key="pathogenList.title"/></a>
+        <a href="<c:url value='/pathogens?locale=${langCode}'/>"><fmt:message key="pathogenList.title"/></a>
     </li>
  <%--    <li>
         <a href="<c:url value='/userform'/>"><fmt:message key="menu.user"/></a>

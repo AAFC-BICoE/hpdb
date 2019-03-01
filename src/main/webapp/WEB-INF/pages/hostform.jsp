@@ -52,21 +52,21 @@
                    class="table table-condensed table-striped table-hover" export="true">
 
 		<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"
-						url="/pathogenform?from=list" paramId="id" paramProperty="id" media="html"/>                             
+						url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                             
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="pathogen.genus" style="width: 18%"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="species" escapeXml="true" sortable="true" titleKey="pathogen.species"  style="width: 23%"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="subSpecificTaxa" escapeXml="true" sortable="true" titleKey="pathogen.subSpecificTaxa"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="virusNames" escapeXml="true" sortable="true" titleKey="pathogen.virusNames"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>                        
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>                        
 		<display:column property="enName" escapeXml="true" sortable="true" titleKey="pathogen.enName"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="frName" escapeXml="true" sortable="true" titleKey="pathogen.frName"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="fungalState" escapeXml="true" sortable="true" titleKey="pathogen.fungalState"
-                        url="/pathogenform?from=list" paramId="id" paramProperty="id"/>
+                        url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="pathogen.notes" media="csv xml excel"/>
 
         <display:setProperty name="paging.banner.item_name"><fmt:message key="pathogenList.pathogen"/></display:setProperty>

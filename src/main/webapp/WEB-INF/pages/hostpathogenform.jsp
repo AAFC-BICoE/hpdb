@@ -11,7 +11,7 @@
     <table class="table-striped" cellpadding="5">
         <tr>
             <th>Host:</th>
-            <td><h3><i><a href="/hostform?id=${hostPathogen.host.id}"/><c:out value="${hostPathogen.host.fullName}"/></i></h3></td>
+            <td><h3><i><a href="/hostform?locale=${langCode}&id=${hostPathogen.host.id}"/><c:out value="${hostPathogen.host.fullName}"/></i></h3></td>
         </tr>
         <tr>
             <th><br></th>
@@ -19,8 +19,8 @@
         </tr>            
         <tr>
             <th>Pathogen:</th>
-            <td><h3><i><a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.fullTaxonName}"/></i>
-            		   <a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.virusNames}"/>
+            <td><h3><i><a href="/pathogenform?locale=${langCode}&id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.fullTaxonName}"/></i>
+            		   <a href="/pathogenform?locale=${langCode}&id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.virusNames}"/>
             </h3></td>
         </tr>
         <tr>
