@@ -10,7 +10,7 @@
 
     <table class="table-striped" cellpadding="5">
         <tr>
-            <th>Host:</th>
+            <th><fmt:message key="hostPathogen.host.fullName"/>:</th>
             <td><h3><i><a href="/hostform?id=${hostPathogen.host.id}"/><c:out value="${hostPathogen.host.fullName}"/></i></h3></td>
         </tr>
         <tr>
@@ -18,7 +18,7 @@
             <td><br></td>
         </tr>            
         <tr>
-            <th>Pathogen:</th>
+            <th><fmt:message key="pathogenList.pathogen"/>:</th>
             <td><h3><i><a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.fullTaxonName}"/></i>
             		   <a href="/pathogenform?id=${hostPathogen.pathogen.id}"/><c:out value="${hostPathogen.pathogen.virusNames}"/>
             </h3></td>
@@ -28,15 +28,15 @@
             <td><br></td>
         </tr>            
         <tr>
-            <th>Plant Part:</th>
+            <th><fmt:message key="hostPathogen.plantPart"/>:</th>
             <td><c:out value="${hostPathogen.plantPart}"/></td>
         </tr>
         <tr>
-            <th>Fungal State:</th>
+            <th><fmt:message key="pathogen.fungalState"/>:</th>
             <td><c:out value="${hostPathogen.rustState}"/></td>
         </tr>        
         <tr>
-            <th>Symptom:</th>
+            <th><fmt:message key="hostPathogen.symptom"/>:</th>
             <td><c:out value="${hostPathogen.symptom}"/></td>
         </tr>
         <tr>
@@ -44,7 +44,7 @@
             <td><br></td>
         </tr>                         
         <tr>
-            <th>Notes:</th>
+            <th><fmt:message key="host.notes"/>:</th>
             <td><c:out value="${hostPathogen.notes}"/></td>
         </tr>        
     </table>
@@ -62,27 +62,27 @@
 	<br>
  	<table class="table-striped" cellpadding="5">
         <tr>
-            <th>Year:&nbsp;</th>
+            <th><fmt:message key="reference.year"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.year}"/></td>
         </tr> 	
         <tr>
-            <th>Chapter Article Title:&nbsp;</th>
+            <th><fmt:message key="reference.chapterArticleTitle"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.chapterArticleTitle}"/></td>
         </tr> 	
         <tr>
-            <th>Authors:&nbsp;</th>
+            <th><fmt:message key="reference.authors"/>:&nbsp;</th>
              <td><c:out value="${hostPathogen.reference.authors}"/></td>
         </tr>        
         <tr>
-            <th>Volume:&nbsp;</th>
+            <th><fmt:message key="reference.volume"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.volume}"/></td>
         </tr>
 		<tr>
-            <th>Pages:&nbsp;</th>
+            <th><fmt:message key="reference.pages"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.pages}"/></td>
         </tr>        
         <tr>
-            <th>Data Source:&nbsp;</th>
+            <th><fmt:message key="reference.data_source"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.data_source}"/></td>
         </tr>        
         <tr>

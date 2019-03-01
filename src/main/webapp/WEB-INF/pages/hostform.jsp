@@ -10,7 +10,7 @@
 
  	<table class="table-striped" cellpadding="5">
         <tr>
-            <th>Host:</th>
+            <th><fmt:message key="hostPathogen.host.fullName"/>:</th>
             <td><h3><i><c:out value="${host.fullName}"/></i></h3></td>
         </tr>
         <tr>
@@ -18,11 +18,11 @@
             <td><br></td>
         </tr>        
         <tr>
-            <th>English Name:</th>
+            <th><fmt:message key="host.enName"/>:</th>
             <td><c:out value="${host.enName}"/></td>
         </tr>
         <tr>
-            <th>French Name:</th>
+            <th><fmt:message key="host.frName"/>:</th>
             <td><c:out value="${host.frName}"/></td>
         </tr>          
         <tr>
@@ -30,7 +30,7 @@
             <td><br></td>
         </tr>            
         <tr>
-            <th>Cultivar:</th>
+            <th><fmt:message key="host.cultivar"/>:</th>
             <td><c:out value="${host.cultivar}"/></td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
             <td><br></td>
         </tr>        
         <tr>
-            <th>Notes:</th>
+            <th><fmt:message key="host.notes"/>:</th>
             <td><c:out value="${host.notes}"/></td>
         </tr>        
     </table>

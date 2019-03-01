@@ -10,7 +10,7 @@
 
  	<table class="table-striped" cellpadding="5">
         <tr>
-            <th>Pathogen:</th>
+            <th><fmt:message key="hostPathogen.pathogen.fullName"/>:</th>
             <td><h3><i><c:out value="${pathogen.fullTaxonName}"/></i></h3></td>
         </tr>
         <tr>
@@ -22,7 +22,7 @@
             <td><br></td>
         </tr>
         <tr>
-            <th>English Name:</th>
+            <th><fmt:message key="pathogen.enName"/>:</th>
             <td><c:out value="${pathogen.enName}"/></td>
         </tr>
         <tr>
@@ -34,7 +34,7 @@
             <td><br></td>
         </tr>          
         <tr>
-            <th>French Name:</th>
+            <th><fmt:message key="pathogen.frName"/>:</th>
             <td><c:out value="${pathogen.frName}"/></td>
         </tr> 
         <tr>
@@ -50,7 +50,7 @@
             <td><br></td>
         </tr>         
         <tr>
-            <th>Fungal State:</th>
+            <th><fmt:message key="pathogen.fungalState"/>:</th>
             <td><c:out value="${pathogen.fungalState}"/></td>
         </tr>
    		<tr>
@@ -59,7 +59,7 @@
         </tr>         
              
         <tr>
-            <th>Notes:</th>
+            <th><fmt:message key="host.notes"/>:</th>
             <td><c:out value="${host.notes}"/></td>
         </tr>                              
     </table>
