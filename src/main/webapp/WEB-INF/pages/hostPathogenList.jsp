@@ -120,8 +120,8 @@
                    partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
 
-		<display:column property="id" escapeXml="true" sortable="true" titleKey="hostPathogen.id" style="width: 3%"
-						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                    
+<%--	<display:column property="id" escapeXml="true" sortable="true" titleKey="hostPathogen.id" style="width: 3%"
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>             --%>
 		<display:column property="hostFamily" escapeXml="true" sortable="true" titleKey="hostPathogen.hostFamily"
 						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostGenus" escapeXml="true" sortable="true" titleKey="hostPathogen.hostGenus" style="width: 10%"
