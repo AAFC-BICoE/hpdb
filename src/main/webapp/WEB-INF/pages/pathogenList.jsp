@@ -78,8 +78,8 @@
     			   partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
 
-		<display:column property="id" escapeXml="true" sortable="true" titleKey="pathogen.id" style="width: 3%"
-						url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                             
+<%--	<display:column property="id" escapeXml="true" sortable="true" titleKey="pathogen.id" style="width: 3%"
+						url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                             --%>
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="pathogen.genus" style="width: 18%"
                         url="/pathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="species" escapeXml="true" sortable="true" titleKey="pathogen.species"  style="width: 23%"

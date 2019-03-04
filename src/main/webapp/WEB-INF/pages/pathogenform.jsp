@@ -72,8 +72,8 @@
                   defaultsort="1" id="hostList" pagesize="25" partialList="false" sort="list"
                   class="table table-condensed table-striped table-hover" export="true">
                   
-		<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"
-						url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                   
+<%--	<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"
+						url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                --%>
 	    <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 18%"
 	                    url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 	    <display:column property="species" escapeXml="true" sortable="true" titleKey="host.species"  style="width: 23%"
