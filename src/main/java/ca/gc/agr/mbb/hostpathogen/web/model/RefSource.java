@@ -4,12 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -18,50 +15,43 @@ import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 
 /**
- * The Class Reference.
+ * The Class RefSource.
  */
 @Entity
-@Table(name = "reference")
+@Table(name = "refSource")
 @Indexed
 @XmlRootElement
-public class Reference extends BaseObject implements Serializable {
+public class RefSource extends BaseObject implements Serializable {
 
 	/* Columns from spreadsheet dump
-	pk_reference_id	fk_ref_source_id	reference_authors	reference_year	
-	chapter_article_title	volume	pages	data_source	verify
+	pk_ref_source_id	journal_abbreviation	journal_title	book_editor	book_author	book_year	
+	book_title	book_publisher	book_publisher_place	book_pages	verify
+
 	 */
 	
 	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1328290516770469911L;
+	private static final long serialVersionUID = 1328290516770469912L;
 
 	/** The id. */
 	private Long id;
 	
-	/** The ref source id. */
-	private RefSource refSource;
+	/** The journal. */
+	private String journal;
 	
-	/** The author. */
-	private String authors;
+	/** The book_title. */
+	private String bookTitle;
 	
-	/** The year. */
-	private String year;
+	/** The book_author. */
+	private String bookAuthor;
 	
-	/** The chapter article title. */
-	private String chapterArticleTitle;
+	/** The book_pages. */
+	private String bookPages;
 	
-	/** The volume. */
-	private String volume;
-	
-	/** The pages. */
-	private String pages;
-	
-	/** The data_source. */
-	private String data_source;
 
     /**
      * Default constructor - creates a new instance with no values set.
      */
-    public Reference() {
+    public RefSource() {
     }
 
     /**
@@ -92,8 +82,8 @@ public class Reference extends BaseObject implements Serializable {
      */
     @Column(length = 255)
     @Field
-	public String getAuthors() {
-		return authors;
+	public String getJournal() {
+		return journal;
 	}
 
 	/**
@@ -101,56 +91,25 @@ public class Reference extends BaseObject implements Serializable {
 	 *
 	 * @param author the new author
 	 */
-	public void setAuthors(String author) {
-		this.authors = author;
+	public void setJournal(String journal) {
+		this.journal = journal;
 	}
 
-	/**
-	 * @return the RefSource
-	 */
-	@OneToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="refSourceId")
-	public RefSource getRefSource() {
-		return refSource;
-	}
-
-	/**
-	 * @param RefSource the RefSource to set
-	 */
-	public void setRefSource(RefSource refSource) {
-		this.refSource = refSource;
-	}
-
-	/**
-	 * @return the year
-	 */
-    @Column(length = 255)
-    @Field
-	public String getYear() {
-		return year;
-	}
-
-	/**
-	 * @param year the year to set
-	 */
-	public void setYear(String year) {
-		this.year = year;
-	}
 
 	/**
 	 * @return the chapterArticleTitle
 	 */
     @Column(length = 255)
     @Field
-	public String getChapterArticleTitle() {
-		return chapterArticleTitle;
+	public String getBookTitle() {
+		return bookTitle;
 	}
 
 	/**
 	 * @param chapterArticleTitle the chapterArticleTitle to set
 	 */
-	public void setChapterArticleTitle(String chapterArticleTitle) {
-		this.chapterArticleTitle = chapterArticleTitle;
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
 	}
 
 	/**
@@ -158,15 +117,15 @@ public class Reference extends BaseObject implements Serializable {
 	 */
     @Column(length = 255)
     @Field
-	public String getVolume() {
-		return volume;
+	public String getBookAuthor() {
+		return bookAuthor;
 	}
 
 	/**
 	 * @param volume the volume to set
 	 */
-	public void setVolume(String volume) {
-		this.volume = volume;
+	public void setBookAuthor(String bookAuthor) {
+		this.bookAuthor = bookAuthor;
 	}
 
 	/**
@@ -174,31 +133,15 @@ public class Reference extends BaseObject implements Serializable {
 	 */
     @Column(length = 255)
     @Field
-	public String getPages() {
-		return pages;
+	public String getBookPages() {
+		return bookPages;
 	}
 
 	/**
 	 * @param pages the pages to set
 	 */
-	public void setPages(String pages) {
-		this.pages = pages;
-	}
-
-	/**
-	 * @return the data_source
-	 */
-    @Column(length = 255)
-    @Field
-	public String getData_source() {
-		return data_source;
-	}
-
-	/**
-	 * @param data_source the data_source to set
-	 */
-	public void setData_source(String data_source) {
-		this.data_source = data_source;
+	public void setBookPages(String bookPages) {
+		this.bookPages = bookPages;
 	}
 
 	/* (non-Javadoc)
