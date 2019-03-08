@@ -45,7 +45,8 @@ public class PathogenController extends GenericController {
 	private String tableIdPathogenList = "pathogenList";
 	
 	/** The list columns pathogen. */
-	String[] listColumnsPathogens = {"id", 
+	String[] listColumnsPathogens = {
+									//"id", 
 								     "genus", 
 								     "species",
 								     "subSpecificTaxa",

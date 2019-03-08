@@ -145,10 +145,10 @@
 		<display:column property="reference.volume" escapeXml="true" sortable="true" titleKey="hostPathogen.volume" media="csv xml excel"/>   
 		<display:column property="reference.pages" escapeXml="true" sortable="true" titleKey="hostPathogen.pages" media="csv xml excel"/>   
 		<display:column property="reference.data_source" escapeXml="true" sortable="true" titleKey="hostPathogen.data_source" media="csv xml excel"/>   						
-		<display:column escapeXml="true" sortable="false" titleKey="hostPathogen.locations"> 
-				<c:forEach var="location" items="${hostPathogenList.locationList}" varStatus="status">
+		<display:column property="locationString" escapeXml="true" sortable="false" titleKey="hostPathogen.locations"> 
+<%--			<c:forEach var="location" items="${hostPathogenList.locationList}" varStatus="status">
 					<c:out value=" ${location.interpretation}"/> [<c:out value="${location.country}] "/><c:if test="${!status.last}">,</c:if>  
-				</c:forEach>
+				</c:forEach> --%>
 		</display:column>
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>		
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostPathogenList.hostPathogen"/></display:setProperty>

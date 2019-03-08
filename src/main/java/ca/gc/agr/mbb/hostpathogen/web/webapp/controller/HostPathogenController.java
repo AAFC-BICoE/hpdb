@@ -42,7 +42,8 @@ public class HostPathogenController extends GenericController {
 	private String tableIdHostPathogenList = "hostPathogenList";
 	
 	/** The list columns regions. */
-	String[] listColumnsHostPathogens = {"id", 
+	String[] listColumnsHostPathogens = {
+										//"id", 
 									     "hostFamily", 
 									     "hostGenus", 
 									     "hostSpecies",
@@ -51,7 +52,8 @@ public class HostPathogenController extends GenericController {
 									     "pathogenGenus", 
 									     "pathogenSpecies",
 									     "pathogenSubSpecificTaxa",
-									     "reference.authors"
+									     "reference.authors",
+									     "locations.interpretation"
 									     };
 
     /**

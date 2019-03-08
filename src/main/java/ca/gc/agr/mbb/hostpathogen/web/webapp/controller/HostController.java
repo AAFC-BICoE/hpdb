@@ -45,7 +45,8 @@ public class HostController extends GenericController {
 	private String tableIdHostList = "hostList";
 	
 	/** The list columns hosts. */
-	String[] listColumnsHosts = {"id", 
+	String[] listColumnsHosts = {
+								//"id", 
 							     "genus", 
 							     "species",
 							     "subSpecificTaxa",
