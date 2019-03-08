@@ -84,6 +84,14 @@
         <tr>
             <th>Data Source:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.data_source}"/></td>
+        </tr>
+        <tr>
+            <th>Journal:&nbsp;</th>
+            <td><c:out value="${hostPathogen.reference.refSource.journal}"/></td>
+        </tr>
+        <tr>
+            <th>Book Title:&nbsp;</th>
+            <td><c:out value="${hostPathogen.reference.refSource.bookTitle}"/></td>
         </tr>        
         <tr>
         	<th>Google Scholar Search:&nbsp;</th>
