@@ -6,11 +6,11 @@
 </head>
 
 <div class="col-sm-10">
-    <h2>Host Information</h2>
+    <h2><fmt:message key="host.hostInfo"/></h2>
 
  	<table class="table-striped" cellpadding="5">
         <tr>
-            <th>Host:</th>
+            <th><fmt:message key="hostPathogen.host.fullName"/>:</th>
             <td><h3><i><c:out value="${host.fullName}"/></i></h3></td>
         </tr>
         <tr>
@@ -18,11 +18,11 @@
             <td><br></td>
         </tr>        
         <tr>
-            <th>English Name:</th>
+            <th><fmt:message key="host.enName"/>:</th>
             <td><c:out value="${host.enName}"/></td>
         </tr>
         <tr>
-            <th>French Name:</th>
+            <th><fmt:message key="host.frName"/>:</th>
             <td><c:out value="${host.frName}"/></td>
         </tr>          
         <tr>
@@ -30,7 +30,7 @@
             <td><br></td>
         </tr>            
         <tr>
-            <th>Cultivar:</th>
+            <th><fmt:message key="host.cultivar"/>:</th>
             <td><c:out value="${host.cultivar}"/></td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
             <td><br></td>
         </tr>        
         <tr>
-            <th>Notes:</th>
+            <th><fmt:message key="host.notes"/>:</th>
             <td><c:out value="${host.notes}"/></td>
         </tr>        
     </table>
@@ -46,7 +46,7 @@
     <br>
     <br>
     
-    	<h2>Associated Pathogens</h2>
+    	<h2><fmt:message key="associatedPathogens"/></h2>
         <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
     			   defaultsort="1" id="pathogenList" pagesize="25" partialList="false" sort="list"
                    class="table table-condensed table-striped table-hover" export="true">
