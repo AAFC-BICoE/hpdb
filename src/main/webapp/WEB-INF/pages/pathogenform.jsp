@@ -6,7 +6,7 @@
 </head>
 
 <div class="col-sm-10">
-    <h2>Pathogen Information</h2>
+    <h2><fmt:message key="pathogenInfo"/></h2>
 
  	<table class="table-striped" cellpadding="5">
         <tr>
@@ -14,7 +14,7 @@
             <td><h3><i><c:out value="${pathogen.fullTaxonName}"/></i></h3></td>
         </tr>
         <tr>
-            <th>Virus MPLO Names:</th>
+            <th><fmt:message key="pathogen.virusMPLO.name"/>:</th>
             <td><h3><c:out value="${pathogen.virusNames}"/></h3></td>
         </tr>         
         <tr>
@@ -26,7 +26,7 @@
             <td><c:out value="${pathogen.enName}"/></td>
         </tr>
         <tr>
-            <th>English Disease Name:</th>
+            <th><fmt:message key="pathogen.enDiseaseName"/>:</th>
             <td><c:out value="${pathogen.enDiseaseName}"/></td>
         </tr>        
         <tr>
@@ -38,7 +38,7 @@
             <td><c:out value="${pathogen.frName}"/></td>
         </tr> 
         <tr>
-            <th>French Disease Name:</th>
+            <th><fmt:message key="pathogen.frDiseaseName"/>:</th>
             <td><c:out value="${pathogen.frDiseaseName}"/></td>
         </tr>   
         <tr>
@@ -67,7 +67,7 @@
     <br>
     <br>
     
-     <h2>Associated Hosts</h2>
+     <h2><fmt:message key="pathogen.associatedHosts"/></h2>
      <display:table name="hostList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
                   defaultsort="1" id="hostList" pagesize="25" partialList="false" sort="list"
                   class="table table-condensed table-striped table-hover" export="true">

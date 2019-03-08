@@ -6,7 +6,7 @@
 </head>
 
 <div class="col-sm-10">
-    <h2>Host Information</h2>
+    <h2><fmt:message key="host.hostInfo"/></h2>
 
  	<table class="table-striped" cellpadding="5">
         <tr>
@@ -46,7 +46,7 @@
     <br>
     <br>
     
-    	<h2>Associated Pathogens</h2>
+    	<h2><fmt:message key="associatedPathogens"/></h2>
         <display:table name="pathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
     			   defaultsort="1" id="pathogenList" pagesize="25" partialList="false" sort="list"
                    class="table table-condensed table-striped table-hover" export="true">

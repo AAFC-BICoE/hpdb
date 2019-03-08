@@ -6,7 +6,7 @@
 </head>
 
 <div class="col-sm-10">
-    <h2>Host-Pathogen Information</h2>
+    <h2><fmt:message key="hostPathogenInfo"/></h2>
 
     <table class="table-striped" cellpadding="5">
         <tr>
@@ -49,7 +49,7 @@
         </tr>        
     </table>
     <br>
-    <h2>Location Information</h2>
+    <h2><fmt:message key="locationInfo"/></h2>
 	<br>
     <label class="control-label"><fmt:message key="hostPathogen.locations"/>:</label>
     <div class="readonly">
@@ -58,7 +58,7 @@
         </c:forEach>
     </div>
 	<br>
-    <h2>Reference Information</h2>
+    <h2><fmt:message key="referenceInfo"/></h2>
 	<br>
  	<table class="table-striped" cellpadding="5">
         <tr>
@@ -86,7 +86,7 @@
             <td><c:out value="${hostPathogen.reference.data_source}"/></td>
         </tr>        
         <tr>
-        	<th>Google Scholar Search:&nbsp;</th>
+        	<th><fmt:message key="googleScholar.searchLabel"/>:&nbsp;</th>
         	<td>
 		        <a href="http://scholar.google.ca/scholar?hl=en&q=${hostPathogen.reference.chapterArticleTitle}&btnG=&as_sdt=1%2C5&as_sdtp=">click here</a>
            	</td>
