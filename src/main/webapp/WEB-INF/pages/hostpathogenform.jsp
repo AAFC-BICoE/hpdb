@@ -86,11 +86,11 @@
             <td><c:out value="${hostPathogen.reference.data_source}"/></td>
         </tr>
         <tr>
-            <th>Journal:&nbsp;</th>
+            <th><fmt:message key="reference.journal"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.refSource.journal}"/></td>
         </tr>
         <tr>
-            <th>Book Title:&nbsp;</th>
+            <th><fmt:message key="reference.bookTitle"/>:&nbsp;</th>
             <td><c:out value="${hostPathogen.reference.refSource.bookTitle}"/></td>
         </tr>        
         <tr>
