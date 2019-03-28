@@ -482,7 +482,9 @@ public class HostPathogen extends BaseObject implements Serializable {
         	Collections.sort(tmpLocations, new InterpretationComparator());
         	
             for (Location location : tmpLocations) {
-                locStr.append(location.getInterpretation()).append(" [").append(location.getCountry()).append("]");
+            	if(location.getCountry()!=null && location.getCountry().length()>0) {
+            		locStr.append(location.getInterpretation()).append(" [").append(location.getCountry()).append("]");
+            	}
                 idx++;
                 if(idx<tmpLocations.size()) {
                 	locStr.append(", ");

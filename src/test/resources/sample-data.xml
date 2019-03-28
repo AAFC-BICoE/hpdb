@@ -248,6 +248,12 @@
             <value description="interpretation">Alabama</value>
             <value description="geographicalAbbreviation">AL</value>         
 		</row>
+		<row>
+            <value description="id">-111</value>
+            <value description="country"></value>
+            <value description="interpretation"></value>
+            <value description="geographicalAbbreviation"></value>         
+		</row>
 	</table>  	
 	<table name="reference">
 		<column>id</column>
@@ -396,5 +402,24 @@
             <value description="hp_id">-3</value>
             <value description="location_id">-2</value>
         </row>
+        
+        <row>
+            <value description="hp_id">-4</value>
+            <value description="location_id">-111</value>
+        </row>
+        <row>
+            <value description="hp_id">-5</value>
+            <value description="location_id">-111</value>
+        </row>
+        <row>
+            <value description="hp_id">-6</value>
+            <value description="location_id">-111</value>
+        </row>
+        <row>
+            <value description="hp_id">-7</value>
+            <value description="location_id">-111</value>
+        </row>
+        
+        
     </table>		
 </dataset>
