@@ -182,3 +182,64 @@ set
 id=@col1,bookAuthor=@col5,bookPages=@col10,bookTitle=@col7,journal=@col3;
 
 SET foreign_key_checks = 1;
+
+
+-- 6. import location table
+
+SET foreign_key_checks = 0;
+
+DROP TABLE IF EXISTS `location`;
+
+CREATE TABLE `location` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `country` varchar(255) DEFAULT NULL,
+  `geographicalAbbreviation` varchar(10) DEFAULT NULL,
+  `interpretation` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
+
+LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/localities.csv' INTO TABLE location character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+IGNORE 1 LINES 
+(@col1,@col2,@col3,@col4,@col5) 
+set 
+id=@col1,geographicalAbbreviation=@col2,interpretation=@col3,country=@col4;
+
+SET foreign_key_checks = 1;
+
+
+
+
+
+-- 7. This file contains the mysql commands to load the hp_locality_links.csv file for the hpdb web application
+
+SET foreign_key_checks = 0;
+
+DROP TABLE IF EXISTS `hp_location_link`;
+
+CREATE TABLE `hp_location_link` (
+  `hp_id` bigint(20) NOT NULL,
+  `location_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`hp_id`,`location_id`),
+  KEY `FK_ldgd0rdaggwh21dfmgj4y32vu` (`location_id`),
+  CONSTRAINT `FK_4f8inb2h4vbt3a8guw9pn0n8f` FOREIGN KEY (`hp_id`) REFERENCES `hostPathogen` (`id`),
+  CONSTRAINT `FK_ldgd0rdaggwh21dfmgj4y32vu` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
+
+LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/hp_locality_links.csv' INTO TABLE hp_location_link character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+IGNORE 1 LINES 
+(@col1,@col2,@col3,@col4) 
+set 
+hp_id=@col2,location_id=@col3;
+
+SET foreign_key_checks = 1;
+
+
+
+
+
+-- 8.  Post process hp_location_link, insert empty location reference for the missing link
+insert into location (id) values (-111);
+commit;
+insert into hp_location_link (hp_id, location_id) select id, -111 from hostPathogen where id not in (select hp_id from hp_location_link);
+commit;
+
