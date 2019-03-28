@@ -2,6 +2,8 @@ package ca.gc.agr.mbb.hostpathogen.web.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -457,6 +459,38 @@ public class HostPathogen extends BaseObject implements Serializable {
         }
 
         return returnLocations;
+    }
+    
+    private class InterpretationComparator implements Comparator<Location> {
+		@Override
+		public int compare(Location o1, Location o2) {
+			return o1.getInterpretation().compareTo(o2.getInterpretation());
+		}
+    }
+    
+    @Transient
+    public String getLocationString() {
+        StringBuilder locStr = new StringBuilder();
+
+        int idx = 0;
+        if (this.locations != null) {
+        	ArrayList<Location> tmpLocations = new ArrayList<Location>();	
+        	for (Location location : locations) {
+        		tmpLocations.add(location);
+        	}
+        	
+        	Collections.sort(tmpLocations, new InterpretationComparator());
+        	
+            for (Location location : tmpLocations) {
+                locStr.append(location.getInterpretation()).append(" [").append(location.getCountry()).append("]");
+                idx++;
+                if(idx<tmpLocations.size()) {
+                	locStr.append(", ");
+                }
+            }
+        }
+
+        return locStr.toString();
     }
     
     /**
