@@ -4,9 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -35,7 +38,7 @@ public class Reference extends BaseObject implements Serializable {
 	private Long id;
 	
 	/** The ref source id. */
-	private Long refSourceId;
+	private RefSource refSource;
 	
 	/** The author. */
 	private String authors;
@@ -87,7 +90,7 @@ public class Reference extends BaseObject implements Serializable {
      *
      * @return the author
      */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getAuthors() {
 		return authors;
@@ -103,23 +106,25 @@ public class Reference extends BaseObject implements Serializable {
 	}
 
 	/**
-	 * @return the refSourceId
+	 * @return the RefSource
 	 */
-	public Long getRefSourceId() {
-		return refSourceId;
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="refSourceId")
+	public RefSource getRefSource() {
+		return refSource;
 	}
 
 	/**
-	 * @param refSourceId the refSourceId to set
+	 * @param RefSource the RefSource to set
 	 */
-	public void setRefSourceId(Long refSourceId) {
-		this.refSourceId = refSourceId;
+	public void setRefSource(RefSource refSource) {
+		this.refSource = refSource;
 	}
 
 	/**
 	 * @return the year
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getYear() {
 		return year;
@@ -135,7 +140,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the chapterArticleTitle
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getChapterArticleTitle() {
 		return chapterArticleTitle;
@@ -151,7 +156,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the volume
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getVolume() {
 		return volume;
@@ -167,7 +172,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the pages
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getPages() {
 		return pages;
@@ -183,7 +188,7 @@ public class Reference extends BaseObject implements Serializable {
 	/**
 	 * @return the data_source
 	 */
-    @Column(length = 200)
+    @Column(length = 255)
     @Field
 	public String getData_source() {
 		return data_source;

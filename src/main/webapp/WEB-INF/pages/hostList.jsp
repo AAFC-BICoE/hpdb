@@ -16,6 +16,7 @@
     <h2><fmt:message key="hostList.heading"/></h2>
 
     <form method="get" action="${ctx}/hosts" id="searchForm" class="form-inline">
+    	<input type="hidden" name="locale" value="${langCode}">
 		<table>
 			<tr>
 				<td>
@@ -46,31 +47,44 @@
 					&nbsp;&nbsp;&nbsp;
 				</td>			
 				<td>
-			         Use % as a Wildcard				
+			         <fmt:message key="search.tip.wildCard"/>
 				</td>								
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<label for="pageSize"><fmt:message key="search.pageSize"/></label>
+					<br/>
+					<input type="number" size="16" name="pageSize" id="pageSize" min="1"
+					value="${param.pageSize}"	
+					placeholder="25"
+					class="form-control input-sm">
+				</td>
 			</tr>
 		</table>
     </form>
     <br>
 
     <display:table name="hostList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
-                   defaultsort="1" id="hostList" pagesize="25" partialList="${partialListValue}" sort="external"
+                   defaultsort="1" id="hostList" pagesize="${param.pageSize>0 ? param.pageSize : 25}" 
+                   partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
                    
-		<display:column property="id" escapeXml="true" sortable="true" titleKey="ID" style="width: 3%"
-						url="/hostform?from=list" paramId="id" paramProperty="id" media="html"/>                   
+<%--	<display:column property="id" escapeXml="true" sortable="true" titleKey="host.id" style="width: 3%"
+						url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>                   --%>
         <display:column property="genus" escapeXml="true" sortable="true" titleKey="host.genus" style="width: 18%"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="species" escapeXml="true" sortable="true" titleKey="host.species"  style="width: 23%"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
         <display:column property="subSpecificTaxa" escapeXml="true" sortable="true" titleKey="host.subSpecificTaxa"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="cultivar" escapeXml="true" sortable="true" titleKey="host.cultivar"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="enName" escapeXml="true" sortable="true" titleKey="host.enName"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="frName" escapeXml="true" sortable="true" titleKey="host.frName"
-                        url="/hostform?from=list" paramId="id" paramProperty="id"/>                                                                       
+                        url="/hostform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>                                                                       
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="host.notes" media="csv xml excel"/>
 
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostList.host"/></display:setProperty>

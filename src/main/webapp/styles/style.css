@@ -204,6 +204,7 @@ span.pagelinks {
     margin-top: -18px;
     padding: 2px 0 2px 0;
     text-align: right;
+    float: right;
     width: 80%;
 }
 

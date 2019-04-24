@@ -1,0 +1,8 @@
+== To generate csv files from MS Access database
+. export table or query to  Excel file
+. open excel file and save as csv file
+. open csv file by notepad++, convert to utf-8
+
+== reload table and data
+Ex::
+mysql -u root hpdbweb < reference_import_script.sql

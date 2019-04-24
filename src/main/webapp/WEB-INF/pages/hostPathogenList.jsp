@@ -17,6 +17,7 @@
 	<h2><fmt:message key="hostPathogenList.heading"/></h2>
 
     <form method="get" action="${ctx}/hostPathogens" id="searchForm" class="form-inline">
+    		<input type="hidden" name="locale" value="${langCode}">
         	<table>
 					<tr>
 						<td>
@@ -56,7 +57,7 @@
 					        </button>
 						</td>
 						<td>
-							Use % as a Wildcard				
+							<fmt:message key="search.tip.wildCard"/>
 						</td>
 					</tr>
 					<tr>
@@ -98,43 +99,56 @@
 						</td>
 					</tr>
 				</table>
+				<table>
+					<tr>
+						<td>
+							<label for="pageSize"><fmt:message key="search.pageSize"/></label>
+							<br/>
+							<input type="number" size="16" name="pageSize" id="pageSize" min="1"
+							value="${param.pageSize}"	
+							placeholder="25"
+							class="form-control input-sm">
+						</td>
+					</tr>
+				</table>
 
     </form>
     <br>
 
     <display:table name="hostPathogenList" cellspacing="0" cellpadding="0" requestURI="" size="resultSize"
-                   defaultsort="1" id="hostPathogenList" pagesize="25" partialList="${partialListValue}" sort="external"
+                   defaultsort="1" id="hostPathogenList" pagesize="${param.pageSize>0 ? param.pageSize : 25}" 
+                   partialList="${partialListValue}" sort="external"
                    class="table table-condensed table-striped table-hover" export="true">
 
-		<display:column property="id" escapeXml="true" sortable="true" titleKey="hostPathogen.id" style="width: 3%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id" media="html"/>                    
+<%--	<display:column property="id" escapeXml="true" sortable="true" titleKey="hostPathogen.id" style="width: 3%"
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id" media="html"/>             --%>
 		<display:column property="hostFamily" escapeXml="true" sortable="true" titleKey="hostPathogen.hostFamily"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostGenus" escapeXml="true" sortable="true" titleKey="hostPathogen.hostGenus" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSpecies" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="hostSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.hostSubSpecificTaxa" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>      
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>      
 		<display:column property="pathogenVirusNames" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenVirusNames"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>
 		<display:column property="pathogenGenus" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenGenus" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSpecies" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSpecies" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="pathogenSubSpecificTaxa" escapeXml="true" sortable="true" titleKey="hostPathogen.pathogenSubSpecificTaxa" style="width: 10%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="reference.year" escapeXml="true" sortable="true" titleKey="hostPathogen.year" media="csv xml excel"/>   
 		<display:column property="reference.chapterArticleTitle" escapeXml="true" sortable="true" titleKey="hostPathogen.chapterArticleTitle" media="csv xml excel"/>   											  
 		<display:column property="reference.authors" escapeXml="true" sortable="true" titleKey="hostPathogen.authors" style="width: 12%"
-						href="/hostpathogenform?from=list" paramId="id" paramProperty="id"/>   
+						href="/hostpathogenform?locale=${langCode}&from=list" paramId="id" paramProperty="id"/>   
 		<display:column property="reference.volume" escapeXml="true" sortable="true" titleKey="hostPathogen.volume" media="csv xml excel"/>   
 		<display:column property="reference.pages" escapeXml="true" sortable="true" titleKey="hostPathogen.pages" media="csv xml excel"/>   
 		<display:column property="reference.data_source" escapeXml="true" sortable="true" titleKey="hostPathogen.data_source" media="csv xml excel"/>   						
-		<display:column escapeXml="true" sortable="false" titleKey="hostPathogen.locations"> 
-				<c:forEach var="location" items="${hostPathogenList.locationList}" varStatus="status">
+		<display:column property="locationString" escapeXml="true" sortable="true" titleKey="hostPathogen.locations"> 
+<%--			<c:forEach var="location" items="${hostPathogenList.locationList}" varStatus="status">
 					<c:out value=" ${location.interpretation}"/> [<c:out value="${location.country}] "/><c:if test="${!status.last}">,</c:if>  
-				</c:forEach>
+				</c:forEach> --%>
 		</display:column>
 		<display:column property="notes" escapeXml="true" sortable="true" titleKey="hostPathogen.notes" media="csv xml excel"/>		
         <display:setProperty name="paging.banner.item_name"><fmt:message key="hostPathogenList.hostPathogen"/></display:setProperty>

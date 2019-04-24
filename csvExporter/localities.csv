@@ -1,0 +1,92 @@
+pk_location_id,geographical_abbreviation,interpretation,country,verify
+1,AB,Alberta,Canada,TRUE
+2,BC,British Columbia,Canada,TRUE
+3,MB,Manitoba,Canada,TRUE
+4,NB,New Brunswick,Canada,TRUE
+5,NF,Newfoundland,Canada,TRUE
+6,NT,Northwest Territories,Canada,TRUE
+7,NS,Nova Scotia,Canada,TRUE
+8,NU,Nunavut,Canada,TRUE
+9,ON,Ontario,Canada,TRUE
+10,PE,Prince Edward Island,Canada,TRUE
+12,SK,Saskatchewan,Canada,TRUE
+14,AL,Alabama,USA,TRUE
+15,AK,Alaska,USA,TRUE
+16,AZ,Arizona,USA,TRUE
+17,AR,Arkansas,USA,TRUE
+18,CA,California,USA,TRUE
+19,CO,Colorado,USA,TRUE
+20,CT,Connecticut,USA,TRUE
+21,DE,Delaware,USA,TRUE
+22,DC,District of Columbia,USA,TRUE
+23,FL,Florida,USA,TRUE
+24,GA,Georgia,USA,TRUE
+25,HI,Hawaii,USA,TRUE
+26,ID,Idaho,USA,TRUE
+27,IL,Illinois,USA,TRUE
+28,IN,Indiana,USA,TRUE
+29,IA,Iowa,USA,TRUE
+30,KS,Kansas,USA,TRUE
+31,KY,Kentucky,USA,TRUE
+32,LA,Louisiana,USA,TRUE
+33,ME,Maine,USA,TRUE
+34,MD,Maryland,USA,TRUE
+35,MA,Massachusetts,USA,TRUE
+36,MI,Michigan,USA,TRUE
+37,MN,Minnesota,USA,TRUE
+38,MS,Mississippi,USA,TRUE
+39,MO,Missouri,USA,TRUE
+40,MT,Montana,USA,TRUE
+41,NE,Nebraska,USA,TRUE
+42,NV,Nevada,USA,TRUE
+43,NH,New Hampshire,USA,TRUE
+44,NJ,New Jersey,USA,TRUE
+45,NM,New Mexico,USA,TRUE
+46,NY,New York,USA,TRUE
+47,NC,North Carolina,USA,TRUE
+48,ND,North Dakota,USA,TRUE
+49,OH,Ohio,USA,TRUE
+50,OK,Oklahoma,USA,TRUE
+51,OR,Oregon,USA,TRUE
+52,PA,Pennsylvania,USA,TRUE
+53,PR,Puerto Rico,Puerto Rico,TRUE
+54,RI,Rhode Island,USA,TRUE
+55,SC,South Carolina,USA,TRUE
+56,SD,South Dakota,USA,TRUE
+57,TN,Tennessee,USA,TRUE
+58,TX,Texas,USA,TRUE
+59,UT,Utah,USA,TRUE
+60,VT,Vermont,USA,TRUE
+61,VI,Virgin Islands,Virgin Islands,TRUE
+62,VA,Virginia,USA,TRUE
+63,WA,Washington,USA,TRUE
+64,WV,West Virginia,USA,TRUE
+65,WI,Wisconsin,USA,TRUE
+66,WY,Wyoming,USA,TRUE
+67,CU,Cuba,Cuba,TRUE
+68,EC,Ecuador,Ecuador,TRUE
+69,GU,Guatemala,Guatemala,TRUE
+70,GR,Grenada,Grenada,TRUE
+71,HA,Haiti,Haiti,TRUE
+72,MQ,Martinique,Martinique,TRUE
+73,NG,New England,USA,TRUE
+74,PN,Pacific Northwest,USA,TRUE
+75,RP,Republic of Panama,Republic of Panama,TRUE
+76,TR,Trinidad,Trinidad,TRUE
+77,SM,Saint-Pierre and Miquelon,Saint-Pierre and Miquelon,TRUE
+78,NA,North America,North America,TRUE
+79,JA,Jamaica,Jamaica,TRUE
+80,EX,Experimental Conditions,Experimental Conditions,TRUE
+81,US,USA,USA,TRUE
+82,CD,Canada,Canada,TRUE
+83,GL,Greenland,Greenland,TRUE
+84,MX,Mexico,Mexico,TRUE
+85,FK,Franklin District of the old NWT,Canada,TRUE
+86,KW,Keewatin District of the old NWT,Canada,TRUE
+87,LB,Labrador,Canada,TRUE
+88,MK,MacKenzie  District of the old NWT,Canada,TRUE
+89,MR,Maritimes,Canada,TRUE
+90,PC,Pacific Coast,North America,TRUE
+91,QC,Quebec,Canada,TRUE
+92,YT,Yukon,Canada,TRUE
+94,??,Questionable,Canada,TRUE

@@ -45,7 +45,8 @@ public class PathogenController extends GenericController {
 	private String tableIdPathogenList = "pathogenList";
 	
 	/** The list columns pathogen. */
-	String[] listColumnsPathogens = {"id", 
+	String[] listColumnsPathogens = {
+									//"id", 
 								     "genus", 
 								     "species",
 								     "subSpecificTaxa",
@@ -72,6 +73,7 @@ public class PathogenController extends GenericController {
 									  @RequestParam(required = false, value = "species") String species,    		
 									  @RequestParam(required = false, value = "subSpecificTaxa") String subSpecificTaxa,
 									  @RequestParam(required = false, value = "virusNames") String virusNames,
+									  @RequestParam(required = false, value = "pageSize") Integer pageSizeParam,
 									  HttpServletRequest request,
 									  HttpServletResponse response
 									  ) throws Exception {
@@ -84,7 +86,9 @@ public class PathogenController extends GenericController {
         filters.put("subSpecificTaxa", subSpecificTaxa);
         filters.put("virusNames", virusNames);
         
-        int startingRecord = getStartingRecord(request, pageSize, tableIdPathogenList);
+        pageSizeParam = (pageSizeParam!=null && pageSizeParam!=0) ? pageSizeParam : pageSize;
+        
+        int startingRecord = getStartingRecord(request, pageSizeParam, tableIdPathogenList);
         String sortColumn = getSortColumn(request, tableIdPathogenList, listColumnsPathogens, 0);
         boolean sortOrder = getSortOrder(request, tableIdPathogenList);
         boolean export = request.getParameter(TableTagParameters.PARAMETER_EXPORTING) != null;
@@ -100,7 +104,7 @@ public class PathogenController extends GenericController {
         
         try {
     		request.setAttribute("resultSize", pathogenManager.getDataCount(filters));
-    		list = pathogenManager.getFilteredPagedData(startingRecord, pageSize, sortColumn, sortOrder, filters, export);
+    		list = pathogenManager.getFilteredPagedData(startingRecord, pageSizeParam, sortColumn, sortOrder, filters, export);
     		model.addAttribute(Constants.PATHOGEN_LIST, list);
     		
         } catch (SearchException se) {
