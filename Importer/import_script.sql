@@ -20,17 +20,13 @@ CREATE TABLE `host` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/hosts.csv' INTO TABLE host character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/hosts.csv' INTO TABLE host character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11,@col12,@col13) 
 set 
 id=@col1,genus=@col4,species=@col5,subSpecificTaxa=@col6,author=@col7,cultivar=@col8,enName=@col9,frName=@col10,notes=@col11;
 
 SET foreign_key_checks = 1;
-
-
-
-
 
 -- 2. This section contains the mysql commands to load the host_pathogenss.csv file for the hpdb web application
 
@@ -64,7 +60,7 @@ CREATE TABLE `hostPathogen` (
   CONSTRAINT `FK_qoayr2ic5o45djhs4383bad29` FOREIGN KEY (`host`) REFERENCES `host` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/SBML_PHCit.csv' INTO TABLE hostPathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/SBML_PHCit.csv' INTO TABLE hostPathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11,@col12,@col13,@col14,@col15,@col16,@col17,@col18) 
 set 
@@ -86,10 +82,6 @@ symptom=@col18,
 notes=@col16;
 
 SET foreign_key_checks = 1;
-
-
-
-
 
 -- 3. This section contains the mysql commands to load the pathogens.csv file for the hpdb web application
 
@@ -118,17 +110,13 @@ CREATE TABLE `pathogen` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/pathogens.csv' INTO TABLE pathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/pathogens.csv' INTO TABLE pathogen character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11,@col12,@col13,@col14,@col15,@col16,@col17,@col18,@col19,@col20) 
 set 
 id=@col1,virusNames=@col5,genus=@col6,species=@col7,subSpecificTaxa=@col8,author=@col9,fungalState=@col10,enName=@col11,frName=@col13,notes=@col15;
 
 SET foreign_key_checks = 1;
-
-
-
-
 
 -- 4. This section contains the mysql commands to load the hosts.csv file for the hpdb web application
 
@@ -148,17 +136,13 @@ CREATE TABLE `reference` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/references.csv' INTO TABLE reference character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/references.csv' INTO TABLE reference character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9) 
 set 
 id=@col1,refSourceId=@col2,authors=@col3,year=@col4,chapterArticleTitle=@col5,volume=@col6,pages=@col7,data_source=@col8;
 
 SET foreign_key_checks = 1;
-
-
-
-
 
 -- 5. This section contains the mysql commands to load the refSource.csv file for the hpdb web application
 
@@ -175,14 +159,13 @@ CREATE TABLE `refSource` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/ref_sources.csv' INTO TABLE refSource character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/ref_sources.csv' INTO TABLE refSource character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9,@col10,@col11) 
 set 
 id=@col1,bookAuthor=@col5,bookPages=@col10,bookTitle=@col7,journal=@col3;
 
 SET foreign_key_checks = 1;
-
 
 -- 6. import location table
 
@@ -198,17 +181,13 @@ CREATE TABLE `location` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/localities.csv' INTO TABLE location character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/localities.csv' INTO TABLE location character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5) 
 set 
 id=@col1,geographicalAbbreviation=@col2,interpretation=@col3,country=@col4;
 
 SET foreign_key_checks = 1;
-
-
-
-
 
 -- 7. This file contains the mysql commands to load the hp_locality_links.csv file for the hpdb web application
 
@@ -225,17 +204,13 @@ CREATE TABLE `hp_location_link` (
   CONSTRAINT `FK_ldgd0rdaggwh21dfmgj4y32vu` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
 
-LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/hp_locality_links.csv' INTO TABLE hp_location_link character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '../csvExporter/hp_locality_links.csv' INTO TABLE hp_location_link character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4) 
 set 
 hp_id=@col2,location_id=@col3;
 
 SET foreign_key_checks = 1;
-
-
-
-
 
 -- 8.  Post process hp_location_link, insert empty location reference for the missing link
 insert into location (id) values (-111);
