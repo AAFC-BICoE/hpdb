@@ -5,7 +5,7 @@
     <groupId>ca.gc.agr.mbb.hostpathogen.web</groupId>
     <artifactId>hostpathogen.web</artifactId>
     <packaging>war</packaging>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
     <name>Host-Pathogen Database</name>
 
     <parent>
@@ -189,7 +189,7 @@
         <appfuse.version>3.5.0</appfuse.version>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <log4j2.version>2.15.0</log4j2.version>
+        <log4j2.version>2.16.0</log4j2.version>
     </properties>
 
     <profiles>
