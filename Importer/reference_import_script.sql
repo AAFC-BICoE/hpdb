@@ -18,7 +18,7 @@ CREATE TABLE `reference` (
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 
-LOAD DATA INFILE '../csvExporter/references.csv' INTO TABLE reference character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/references.csv' INTO TABLE reference character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4,@col5,@col6,@col7,@col8,@col9) 
 set 

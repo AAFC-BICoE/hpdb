@@ -5,7 +5,7 @@
     <groupId>ca.gc.agr.mbb.hostpathogen.web</groupId>
     <artifactId>hostpathogen.web</artifactId>
     <packaging>war</packaging>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.5-SNAPSHOT</version>
     <name>Host-Pathogen Database</name>
 
     <parent>
