@@ -13,7 +13,7 @@ CREATE TABLE `hp_location_link` (
   CONSTRAINT `FK_ldgd0rdaggwh21dfmgj4y32vu` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 ;
 
-LOAD DATA INFILE '../csvExporter/hp_locality_links.csv' INTO TABLE hp_location_link character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
+LOAD DATA INFILE '/home/xilu/unpack/hpdb/csvExporter/hp_locality_links.csv' INTO TABLE hp_location_link character set 'utf8' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' 
 IGNORE 1 LINES 
 (@col1,@col2,@col3,@col4) 
 set 
