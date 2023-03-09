@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
+      - ./hpdb.sql:/hpdb.sql
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    networks:
+      - my-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  app:
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+      
+networks:
+  my-network:
+    driver: bridge
