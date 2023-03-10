@@ -28,6 +28,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    environment:
+      - ENV_JDBC_URL=jdbc:mysql://db:3306/hpdbweb?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true
+      - ENV_JDBC_USERNAME=root
+      - ENV_JDBC_PASSWORD=
     networks:
       - my-network
       
