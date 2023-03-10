@@ -4,8 +4,8 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/init:/docker-entrypoint-initdb.d
+      - hpdb-data:/var/lib/mysql
+      - ./mysql-dump:/docker-entrypoint-initdb.d/:ro
     ports:
       - "3306:3306"
     environment:
@@ -38,3 +38,6 @@ services:
 networks:
   my-network:
     driver: bridge
+
+volumes:
+  hpdb-data:
