@@ -4,13 +4,13 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - ./data:/var/lib/mysql
-      - ./initdb:/docker-entrypoint-initdb.d
-      - ./hpdb.sql:/hpdb.sql
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
+    environment:
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     networks:
       - my-network
     healthcheck:
