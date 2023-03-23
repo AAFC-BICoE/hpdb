@@ -46,7 +46,23 @@ Packaging for Deployment
     $ mvn package -Dmaven.test.skip=true 
  
  This will create hpdb.war which you can insert into your container application.
+ 
+Docker Deployment
+-----------------
 
+Docker compose can be used to spin up this app and its required mysql 5.7 database. Here are the steps necessary to do this:
+
+    1. Ensure that a db dump of hpdb is in the mysql-dump folder with the following lines prepended to the dump:
+        $ CREATE DATABASE hpdbweb
+        $ USE hpdbweb
+    2. Build the defined services in Docker compose
+        $ sudo docker compose build
+    3. Run the built services
+        $ docker compose up
+
+This should result in the database container spinning up and importing the slightly modified mysql dump and the app container running the app. Once ready,
+it can be accessed at http://localhost:8080
+ 
 
 Contact
 -------
