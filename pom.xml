@@ -49,6 +49,14 @@
 
     <build>
         <plugins>
+			<plugin>
+				<groupId>de.juplo</groupId>
+				<artifactId>hibernate4-maven-plugin</artifactId>
+				<configuration>
+					<type>NONE</type>
+					<scanDependencies>none</scanDependencies>
+				</configuration>
+			</plugin>
             <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
