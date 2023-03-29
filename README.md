@@ -50,22 +50,18 @@ Packaging for Deployment
 Docker Deployment
 -----------------
 
-Docker compose can be used to spin up this app and its required mysql 5.7 database. Here are the steps necessary to do this:
+Docker compose can be used to spin up this app and its required mysql 5.6 database. Here are the steps necessary to do this:
 
-    1. Ensure that a db dump of hpdb is in the mysql-dump folder with the following lines prepended to the dump:
-        $ CREATE DATABASE hpdbweb
-        $ USE hpdbweb
-    2. Build the defined services in Docker compose
-        $ sudo docker compose build
-    3. Run the built services
+    1. Spin up the both the db and app containers
         $ docker compose up
+    2. Attach to the db container and manually load the hpdb.sql dump found within
+        $ mysql -u root hpdbweb < hpdb.sql
 
-This should result in the database container spinning up and importing the slightly modified mysql dump and the app container running the app. Once ready,
-it can be accessed at http://localhost:8080
+Once these steps are complete, the site can be accessed at http://localhost:8080.
  
 
 Contact
 -------
 
     Project Group email: mbb@agr.gc.ca
-    Project Developer: Satpal Bilkhu - Satpal.Bilkhu@agr.gc.ca
+    Project Developers: Satpal Bilkhu - Satpal.Bilkhu@agr.gc.ca, Karim Tahan - Karim.Tahan@agr.gc.ca

@@ -2,26 +2,21 @@ version: '3'
 
 services:
   db:
-    image: mysql:5.7
+    image: centos/mysql-56-centos7
     volumes:
-      - hpdb-data:/var/lib/mysql:delegated
-      - ./mysql-dump:/docker-entrypoint-initdb.d/:ro
+      - hpdb-data:/var/lib/mysql
+      - ./mysql-dump:/opt/app-root/src
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_USER=root
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_USER=hpdb_user
+      - MYSQL_PASSWORD=hpdbwebaafc1
+      - MYSQL_DATABASE=hpdbweb
     networks:
       - my-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
   app:
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     restart: on-failure
     build:
       context: .

@@ -26,18 +26,18 @@
 	<distributionManagement>
 		<repository>
 			<id>aafc</id>
-			<url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
+			<url>http://archiva.biodiversity.agr.gc.ca/repository/aafc</url>
 		</repository>
 		<snapshotRepository>
 			<id>aafc</id>
-			<url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
+			<url>http://archiva.biodiversity.agr.gc.ca/repository/aafc</url>
 		</snapshotRepository>
 	</distributionManagement>
 
     <repositories>
  		<repository>
 			<id>aafc</id>
-			<url>http://archiva.biodiversity.agr.gc.ca/archiva/repository/aafc</url>
+			<url>http://archiva.biodiversity.agr.gc.ca/repository/aafc</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -53,7 +53,6 @@
 				<groupId>de.juplo</groupId>
 				<artifactId>hibernate4-maven-plugin</artifactId>
 				<configuration>
-					<type>NONE</type>
 					<scanDependencies>none</scanDependencies>
 				</configuration>
 			</plugin>
