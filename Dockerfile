@@ -1,18 +1,17 @@
-FROM openjdk:8
-
-# Install Java and Maven
-RUN apt-get update && \
-    apt-get install -y maven && \
-    rm -rf /var/lib/apt/lists/*
+FROM maven:3.6.3-jdk-8
 
 WORKDIR /project
 
+ADD pom.xml /project
+
 ADD . /project
 
-# Build the project using Maven with Java 8
 RUN mvn clean package -Dmaven.test.skip=true
 
-CMD ["bash", "-c", "mvn jetty:run"]
+FROM tomcat:8.5.88-jre8-temurin-focal
 
-# Expose the default Jetty port
+COPY --from=0 /project/target/hostpathogen.web-*.war /usr/local/tomcat/webapps/ROOT.war
+
 EXPOSE 8080
+
+ENTRYPOINT ["catalina.sh", "run"]
