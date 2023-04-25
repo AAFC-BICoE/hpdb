@@ -4,6 +4,8 @@ WORKDIR /project
 
 ADD pom.xml /project
 
+RUN mkdir /project/src
+
 ADD src /project/src
 
 RUN mvn clean package -Dmaven.test.skip=true
