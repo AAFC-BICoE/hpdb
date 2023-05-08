@@ -46,10 +46,30 @@ Packaging for Deployment
     $ mvn package -Dmaven.test.skip=true 
  
  This will create hpdb.war which you can insert into your container application.
+ 
+Docker Deployment
+-----------------
 
+Docker compose can be used to spin up this app and its required mysql 5.6 database. Here are the steps necessary to do this:
+
+    1. Spin up the both the db and app containers
+        $ docker compose up
+    2. Attach to the db container and manually load the hpdb.sql dump found within
+        $ mysql -u root hpdbweb < hpdb.sql
+
+Once these steps are complete, the site can be accessed at http://localhost:8080.
+
+NOTE: the jdbc info has been hardcoded to fit the services in the docker-compose.yml. To run this in an IDE, it will need to be reverted to prior settings found at: 
+
+https://github.com/AAFC-BICoE/hpdb/blob/62bdd41f711657e3880e5e5717430cadc4142abd/src/main/resources/jdbc.properties 
+
+and 
+
+https://github.com/AAFC-BICoE/hpdb/blob/62bdd41f711657e3880e5e5717430cadc4142abd/src/main/resources/applicationContext-resources.xml
+ 
 
 Contact
 -------
 
     Project Group email: mbb@agr.gc.ca
-    Project Developer: Satpal Bilkhu - Satpal.Bilkhu@agr.gc.ca
+    Project Developers: Karim Tahan - Karim.Tahan@agr.gc.ca,  Satpal Bilkhu - Satpal.Bilkhu@agr.gc.ca

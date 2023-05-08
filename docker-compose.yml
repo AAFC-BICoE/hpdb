@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  db:
+    image: centos/mysql-56-centos7
+    volumes:
+      - hpdb-data:/var/lib/mysql
+      - ./mysql-dump:/opt/app-root/src
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_USER=hpdb_user
+      - MYSQL_PASSWORD=hpdbwebaafc1
+      - MYSQL_DATABASE=hpdbweb
+    networks:
+      - my-network
+  app:
+    depends_on:
+      - db
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+      
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  hpdb-data:
