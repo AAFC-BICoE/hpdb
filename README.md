@@ -44,8 +44,6 @@ The application container uses the following environment variables:
 
 # 🚀 Build & Deploy
 
-The application is built directly inside OpenShift using a Dockerfile defined in the BuildConfig.
-
 ## 1. Rebuild and push the image (if you changed source code/dockerfile)
 ```bash
 # From anywhere on your local machine
@@ -119,7 +117,7 @@ oc logs -f deployment/hpdb-app
   * Delete the old pod
   * Restart the database deployment using `oc rollout restart deployment/hpdb-db`
 
-### To cleanly restart the database
+## To cleanly restart the database
 * Login to SQL in the hpdb-db pod:
   ```bash
   mysql -u hpdb_user -phpdbwebaafc1 hpdbweb 
