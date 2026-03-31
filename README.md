@@ -1,5 +1,4 @@
 # HPDB OpenShift Deployment Guide
-# HPDB OpenShift Deployment Guide
 
 <p align="left">
   <img src="https://img.shields.io/badge/Platform-OpenShift-red?logo=red-hat-openshift" alt="OpenShift">
@@ -93,6 +92,7 @@ If you already had HPDB deployed on your cluster and are updating it, you will n
 
     oc scale deployment/hpdb-app --replicas=1
     ```
+* Give it fifteen or more seconds. The hpdb-app deployment takes awhile to kick in.
 ## 5. Upload database data:
 
 ```bash
@@ -106,23 +106,28 @@ oc exec -n aafc-labs-can-dev deployment/hpdb-db -- \
   # should show a bunch of tables like app_user, host, hostPathogen... user_role
 ```
 
-# EXECUTING DATABASE COMMANDS
+# TROUBLESHOOTING
 
-### Logging in to the database within the pod:
+## Monitoring Application Logs
 
 ```bash
-# mysql -u username -p databasename
-$ mysql -u hpdb_user -phpdbwebaafc1 hpdbweb 
-# ... assuming this username, password, and database name (defined in .yml file)
+oc logs -f deployment/hpdb-app
 ```
+## If "Application is not available", yet both pods are running
+* Give it fifteen or more seconds. The hpdb-app deployment takes awhile to kick in.
+* The hpdb-mysql-pvc may still be attached to an old database pod, preventing new one from attaching. This is likely to happen after a rollout restart. To fix:
+  * Delete the old pod
+  * Restart the database deployment using `oc rollout restart deployment/hpdb-db`
 
-### Cleanly restart the database
-"Have you tried turning it off and on again?"
+### To cleanly restart the database
+* Login to SQL in the hpdb-db pod:
+  ```bash
+  mysql -u hpdb_user -phpdbwebaafc1 hpdbweb 
+  ```
 
-* Drop the database.
+* Drop the database:
   ```bash
   # Within hpdb-db pod
-
   DROP DATABASE IF EXISTS hpdbweb;
 
   # if it's not dropping (ie process hangs):
@@ -159,20 +164,6 @@ $ mysql -u hpdb_user -phpdbwebaafc1 hpdbweb
     # check if a table actually has data
     SELECT COUNT(*) FROM <table name>; # ie SELECT COUNT(*) FROM reference;
     ```
-
-# TROUBLESHOOTING
-
-## 6. Monitoring Application Logs
-
-```bash
-oc logs -f deployment/hpdb-app
-```
-## "Application is not available", yet both pods are running
-The hpdb-mysql-pvc may still be attached to an old database pod, preventing new one from attaching. This is likely to happen after a rollout restart. 
-
-To fix:
-* Delete the old pod
-* Restart the database deployment
 
 ## Restoring the application to a version that "WORKED EARLIER"
 * Revert on GitLab to a branch you KNOW worked earlier:
