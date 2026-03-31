@@ -85,6 +85,8 @@ public class StartupListener implements ServletContextListener {
             }
             log.debug("Populating drop-downs...");
         }
+    // try catch for debugging
+    try {
 
         setupContext(context);
 

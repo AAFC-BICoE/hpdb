@@ -68,6 +68,18 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.4.28.v20200408</version>
 			</plugin>
+
+			<!-- Explicitly disable legacy AppFuse packaged resources -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<!-- Explicitly disable legacy AppFuse packaged resources. should no longer expect src/packaged directory -->
+					<webResources combine.self="override"/>
+				</configuration>
+			</plugin>
+
         </plugins>
         <pluginManagement>
         	<plugins>

@@ -1,0 +1,18 @@
+unused/
+csv-importing-unused/
+
+.gitignore
+Dockerfile
+
+# Kubernetes resources (shouldn't be needed in image)
+*.yml
+*.yaml
+
+# built artifacts from Maven
+target/
+src/test/**
+
+# ai-generated modernization that we're not using
+hpdb2/
+hpdb2.zip
+

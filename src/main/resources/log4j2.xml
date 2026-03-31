@@ -7,6 +7,13 @@
     </Appenders>
 
     <Loggers>
+        <!-- Hibernate Search -->
+        <Logger name="org.hibernate.search" level="debug"/>
+        <!-- Lucene filesystem + locking -->
+        <Logger name="org.apache.lucene" level="debug"/>
+        <!-- Show how Hibernate resolves config & builds SessionFactory -->
+        <Logger name="org.hibernate.cfg" level="debug"/>
+
         <Logger name="net.sf.ehcache" level="error"/>
         <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
         <Logger name="org.springframework.security" level="error"/>

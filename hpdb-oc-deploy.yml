@@ -1,0 +1,205 @@
+apiVersion: v1
+kind: List
+items:
+# =========================================================================
+#  DATABASE (MySQL) RESOURCES
+# =========================================================================
+
+# 1. Secret for MySQL credentials.
+- apiVersion: v1
+  kind: Secret
+  metadata:
+    name: hpdb-mysql-credentials
+  stringData:
+    MARIADB_ROOT_PASSWORD: "rootpassword"
+    MARIADB_USER: "hpdb_user"
+    MARIADB_PASSWORD: "hpdbwebaafc1"
+    MARIADB_DATABASE: "hpdbweb"
+
+    # application runtime (mysql-compatible)
+    MYSQL_USER: "hpdb_user"
+    MYSQL_PASSWORD: "hpdbwebaafc1"
+    MYSQL_DATABASE: "hpdbweb"
+
+# 2. Persistent Volume Claim (PVC) for MySQL data.
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: hpdb-mysql-pvc
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi # Adjust storage size as needed
+
+# 3. Deployment for the MySQL database.
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: hpdb-db
+    labels:
+      app: hpdb
+      tier: database
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: hpdb
+        tier: database
+    template:
+      metadata:
+        labels:
+          app: hpdb
+          tier: database
+      spec:
+        containers:
+        - name: mysql
+          # image: centos/mysql-56-centos7
+          image: mariadb:10.5
+          ports:
+          - containerPort: 3306
+          envFrom:
+          - secretRef:
+              name: hpdb-mysql-credentials
+          volumeMounts:
+          - name: mysql-data
+            mountPath: /var/lib/mysql
+          # Mounts SQL scripts into a standard entrypoint directory for initialization
+          # - name: mysql-init-scripts-vol
+          #   mountPath: /docker-entrypoint-initdb.d
+            # not used by centos mysql image, but used by mariadb 10.5
+        volumes:
+        - name: mysql-data
+          persistentVolumeClaim:
+            claimName: hpdb-mysql-pvc
+        # - name: mysql-init-scripts-vol
+        #   configMap:
+        #     name: hpdb-mysql-init-scripts
+
+# 4. Service to expose the MySQL database internally.
+#    The application will connect to this service using the hostname 'hpdb-db'.
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: hpdb-db
+    labels:
+      app: hpdb
+      tier: database
+  spec:
+    ports:
+    - name: 3306-tcp
+      port: 3306
+      targetPort: 3306
+    selector:
+      app: hpdb
+      tier: database
+
+# =========================================================================
+#  HPDB APPLICATION RESOURCES
+# =========================================================================
+
+# 5. Deployment for the 'hpdb' application.
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: hpdb-app
+    labels:
+      app: hpdb
+      tier: frontend
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: hpdb
+        tier: frontend
+    template:
+      metadata:
+        labels:
+          app: hpdb
+          tier: frontend
+      spec:
+        enableServiceLinks: false
+        imagePullSecrets:
+        - name: aafc-labs-can-bicoe-robot-pull-secret # FIND A SECRET THAT WORKS
+        # ^HELM TEMPLATE THIS
+        containers:
+        - name: hpdb
+          image: quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb:latest
+          # image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8080
+          env:
+          # debuggers
+          - name: JAVA_TOOL_OPTIONS
+            value: >
+              -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
+              -Dorg.apache.commons.logging.simplelog.showdatetime=true
+              -Dorg.apache.commons.logging.simplelog.log.org.springframework.beans=DEBUG
+              -Dorg.apache.commons.logging.simplelog.log.org.springframework.context=DEBUG
+              -Dorg.apache.commons.logging.simplelog.log.org.springframework.jdbc=DEBUG
+              -Dorg.apache.commons.logging.simplelog.log.com.mysql=DEBUG
+              -Dorg.apache.commons.logging.simplelog.log.org.mariadb=DEBUG
+              -Djava.util.logging.ConsoleHandler.level=FINE
+              -Dorg.apache.tomcat.dbcp.dbcp2.level=FINE
+              -Dorg.apache.tomcat.jdbc.pool.level=FINE
+              -Dorg.apache.naming.level=FINE
+              -Dcom.mysql.jdbc.level=FINE
+              -Dspring.main.fail-on-bean-creation-error=true
+
+          - name: jdbc.url
+            value: "jdbc:mariadb://hpdb-db:3306/hpdbweb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true"
+  
+          # Reference the same secret for DB credentials
+          - name: MYSQL_USER
+            valueFrom:
+              secretKeyRef:
+                name: hpdb-mysql-credentials
+                key: MYSQL_USER
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: hpdb-mysql-credentials
+                key: MYSQL_PASSWORD
+          - name: MYSQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: hpdb-mysql-credentials
+                key: MYSQL_DATABASE
+
+# 8. Service to expose the 'hpdb' application internally.
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: hpdb-app-service
+    labels:
+      app: hpdb
+      tier: frontend
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      targetPort: 8080
+    selector:
+      app: hpdb
+      tier: frontend
+
+# 9. Route to expose the 'hpdb' application to the outside world.
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  # add happroxy router annotation thing
+  metadata:
+    name: hpdb-route
+    labels:
+      app: hpdb
+      tier: frontend
+  spec:
+    to:
+      kind: Service
+      name: hpdb-app-service
+    port:
+      targetPort: 8080-tcp
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
