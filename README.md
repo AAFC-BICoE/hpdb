@@ -71,7 +71,7 @@ rsync -hlPrtvz --chmod=Dg+s </path/to/>hpdb/hpdb-oc-deploy.yml <username>@inter-
   ```bash
   oc apply -f hpdb-oc-deploy.yml
   ```
-## 4. Restart deployment
+## 4. Restart deployments
 
 If you already had HPDB deployed on your cluster and are updating it, you will need to restart the deployments.
 * Scale them down to zero:
@@ -168,12 +168,7 @@ oc logs -f deployment/hpdb-app
 ## Restoring the application to a version that "WORKED EARLIER"
 * Revert on GitLab to a branch you KNOW worked earlier:
   * Create a backup copy of your project directory on your local machine, just in case!
-  * On GitLab:
-    * Go to the branch you're using
-    * Click "History"
-    * Click the title of a commit you know worked
-    * Go to options -> revert
-    * Choose the branch you want to revert to and click "revert"
+  * Revert your branch on GitHub or GitLab to a commit you KNOW worked earlier.
   * Use `git pull` to pull the old commit to your local branch.
 * Rebuild and re-push the image to Quay.
 * Use rsync or another tool to move the right .yml file back to the GPSC.
