@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y mysql-client && rm -rf /var/lib/apt/lis
 
 COPY Importer /usr/local/tomcat/Importer
 
-RUN chmod +x /usr/local/tomcat/Importer/*.sh
+RUN chmod +x /usr/local/tomcat/Importer/*
 
 # Create app-specific writable directory
 RUN mkdir -p /var/lib/hpdb-search-index && \

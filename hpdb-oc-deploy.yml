@@ -4,8 +4,6 @@ items:
 # =========================================================================
 #  DATABASE (MySQL) RESOURCES
 # =========================================================================
-
-# 1. Secret for MySQL credentials.
 - apiVersion: v1
   kind: Secret
   metadata:
@@ -20,6 +18,8 @@ items:
     MYSQL_USER: "hpdb_user"
     MYSQL_PASSWORD: "hpdbwebaafc1"
     MYSQL_DATABASE: "hpdbweb"
+# 1. Secret for MySQL credentials.
+# moved to its own file
 
 # 2. Persistent Volume Claim (PVC) for MySQL data.
 - apiVersion: v1
@@ -55,7 +55,6 @@ items:
       spec:
         containers:
         - name: mysql
-          # image: centos/mysql-56-centos7
           image: mariadb:10.5
           ports:
           - containerPort: 3306
@@ -65,17 +64,10 @@ items:
           volumeMounts:
           - name: mysql-data
             mountPath: /var/lib/mysql
-          # Mounts SQL scripts into a standard entrypoint directory for initialization
-          # - name: mysql-init-scripts-vol
-          #   mountPath: /docker-entrypoint-initdb.d
-            # not used by centos mysql image, but used by mariadb 10.5
         volumes:
         - name: mysql-data
           persistentVolumeClaim:
             claimName: hpdb-mysql-pvc
-        # - name: mysql-init-scripts-vol
-        #   configMap:
-        #     name: hpdb-mysql-init-scripts
 
 # 4. Service to expose the MySQL database internally.
 #    The application will connect to this service using the hostname 'hpdb-db'.
@@ -121,7 +113,7 @@ items:
       spec:
         enableServiceLinks: false
         imagePullSecrets:
-        - name: aafc-labs-can-bicoe-robot-pull-secret # FIND A SECRET THAT WORKS
+        - name: aafc-labs-can-bicoe-robot-pull-secret
         # ^HELM TEMPLATE THIS
         containers:
         - name: hpdb
@@ -148,8 +140,15 @@ items:
               -Dcom.mysql.jdbc.level=FINE
               -Dspring.main.fail-on-bean-creation-error=true
 
+          # jdbc properties
           - name: jdbc.url
             value: "jdbc:mariadb://hpdb-db:3306/hpdbweb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true"
+          # - name: CATALINA_OPTS
+          #   value: >
+          #     -Djdbc.url=jdbc:mariadb://hpdb-db:3306/hpdbweb?useUnicode=true&characterEncoding=UTF-8
+          #     -Djdbc.username=hpdb_user
+          #     -Djdbc.password=hpdbwebaafc1
+
   
           # Reference the same secret for DB credentials
           - name: MYSQL_USER
@@ -188,12 +187,13 @@ items:
 # 9. Route to expose the 'hpdb' application to the outside world.
 - apiVersion: route.openshift.io/v1
   kind: Route
-  # add happroxy router annotation thing
   metadata:
     name: hpdb-route
     labels:
       app: hpdb
       tier: frontend
+  annotations:
+    haproxy.router.openshift.io/rate-limit-connections: 'true'
   spec:
     to:
       kind: Service

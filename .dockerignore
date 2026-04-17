@@ -16,3 +16,4 @@ src/test/**
 hpdb2/
 hpdb2.zip
 
+.git/*

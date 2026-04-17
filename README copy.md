@@ -50,31 +50,27 @@ The application is built using its `Dockerfile` via Docker or Podman, pushed to 
 ## 1. Rebuild and push the image (if you changed source code/dockerfile)
 ```bash
 # From anywhere on your local machine
-sudo podman login <image-repo-name> --tls-verify=false
+sudo podman login quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb --tls-verify=false
 
 # From directory containing dockerfile on your local machine
-sudo podman build -t <image-repo-name>:<tag> . 
+sudo podman build -t quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb:latest . 
 
-sudo <image-repo-name>:<tag> --tls-verify=false
+sudo podman push quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb:latest --tls-verify=false
 ```
-AAFC repo used: quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb:latest 
 
-## 2. Move each .yml file to the GPSC 
+## 2. Move .yml file to the GPSC 
 Use [Rsync](https://001gc.sharepoint.com/sites/94783/SitePages/rsync.aspx) or another tool.
 
 Example rsync command:
 ```bash
 rsync -hlPrtvz --chmod=Dg+s </path/to/>hpdb/hpdb-oc-deploy.yml <username>@inter-aafc-ubuntu2404.science.gc.ca:<path/to/somewhere/in/the/GPSC>/hpdb/hpdb-oc-deploy.yml
-# do the same with hpdb-secret.yml if you externalize the secret file
 ```
 
 ## 3. Apply Kubernetes objects
 * If you haven't already, log in to OpenShift in your GPSC terminal.
-* From directory in the GPSC where you moved your .yml files:
+* From directory in the GPSC where you moved the hpdb-oc-deploy.yml file:
   ```bash
   oc apply -f hpdb-oc-deploy.yml
-
-  # do the same with hpdb-secret.yml if you externalize the secret file
   ```
 ## 4. Restart deployment
 
@@ -102,10 +98,10 @@ If you already had HPDB deployed on your cluster and are updating it, you will n
 
 ```bash
 # from the GPSC
-oc exec -i -n <openshift-namespace> deployment/hpdb-db -- mysql -u hpdb_user -phpdbwebaafc1 hpdbweb < mysql-dump/hpdb.sql
+oc exec -i -n aafc-labs-can-dev deployment/hpdb-db -- mysql -u hpdb_user -phpdbwebaafc1 hpdbweb   < mysql-dump/hpdb.sql
 
 # check if it worked
-oc exec -n <openshift-namespace> deployment/hpdb-db -- \
+oc exec -n aafc-labs-can-dev deployment/hpdb-db -- \
   mysql -u hpdb_user -phpdbwebaafc1 hpdbweb \
   -e "SHOW TABLES;"
   # should show a bunch of tables like app_user, host, hostPathogen... user_role
@@ -151,7 +147,7 @@ oc logs -f deployment/hpdb-app
 
 * From the HPDB directory in the GPSC, upload the sql file into the database:
   ```bash
-  oc exec -i -n <openshift-namespace> deployment/hpdb-db -- mysql -u hpdb_user -phpdbwebaafc1 hpdbweb < mysql-dump/hpdb.sql
+  oc exec -i -n aafc-labs-can-dev deployment/hpdb-db -- mysql -u hpdb_user -phpdbwebaafc1 hpdbweb   < mysql-dump/hpdb.sql
   ```
 
 * Check if it worked:
@@ -180,7 +176,6 @@ oc logs -f deployment/hpdb-app
     * Go to options -> revert
     * Choose the branch you want to revert to and click "revert"
   * Use `git pull` to pull the old commit to your local branch.
-* ^A similar process should exist for GitHub.
 * Rebuild and re-push the image to Quay.
 * Use rsync or another tool to move the right .yml file back to the GPSC.
   * Use `cat <filename>` in the GPSC and inspect the file(s) to make sure you're using your updated file(s) and not old versions.

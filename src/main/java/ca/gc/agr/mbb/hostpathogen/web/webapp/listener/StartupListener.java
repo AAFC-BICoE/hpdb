@@ -85,10 +85,14 @@ public class StartupListener implements ServletContextListener {
             }
             log.debug("Populating drop-downs...");
         }
-    // try catch for debugging
-    try {
 
-        setupContext(context);
+        // setupContext(context);
+        try {
+            setupContext(context);
+        } catch (Throwable t) {
+            log.error("StartupListener failed during setupContext()", t);
+        }
+
 
         // Determine version number for CSS and JS Assets
         String appVersion = null;
@@ -123,7 +127,7 @@ public class StartupListener implements ServletContextListener {
      *
      * @param context The servlet context
      */
-    public static void setupContext(ServletContext context) {
+    public static void setupContext(ServletContext context) { //lline 126
         ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
         LookupManager mgr = (LookupManager) ctx.getBean("lookupManager");
 
@@ -133,7 +137,15 @@ public class StartupListener implements ServletContextListener {
 
         // Any manager extending GenericManager will do:
         GenericManager manager = (GenericManager) ctx.getBean("userManager");
-        doReindexing(manager);
+
+        //doReindexing(manager);
+        try {
+            doReindexing(manager);
+        } catch (Exception e) {
+            log.error("Reindexing failed during startup", e);
+            // DO NOT kill startup
+        }
+        
         log.debug("Full text search reindexing complete [OK]");
     }
 
