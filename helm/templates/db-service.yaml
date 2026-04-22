@@ -1,0 +1,17 @@
+# 4. Service to expose the MySQL database internally.
+#    The application will connect to this service using the hostname 'hpdb-db'.
+apiVersion: v1
+kind: Service
+metadata:
+  name: hpdb-db
+  labels:
+    app: hpdb
+    tier: database
+spec:
+  ports:
+  - name: 3306-tcp
+    port: 3306
+    targetPort: 3306
+  selector:
+    app: hpdb
+    tier: database

@@ -19,13 +19,21 @@ This repository contains the Kubernetes/OpenShift manifests required to deploy t
 - **Storage:** Persistent Volume Claim (PVC) for database data.
 - **Build System:** Build using Dockerfile, push to Quay repo.
 
+Required Software
+------------------
+
+    Oracle Java 8
+    MySQL 5.6
+    Maven 3.2.5+
+    Tomcat 7
+    Java 8
+
 ## Component Details
 
 ### 1. Database Layer (MySQL)
 *   **Secret (`hpdb-mysql-credentials`):** Stores the database username, password, and database name.
 *   **PVC (`hpdb-mysql-pvc`):** Requests 1Gi of persistent storage to ensure database data survives pod restarts.
-
-*   **Deployment (`hpdb-db`):** Runs the `centos/mysql-56-centos7` image.
+*   **Deployment (`hpdb-db`):** Runs the `mariadb:10.5` image.
 *   **Service (`hpdb-db`):** Internal load balancer that allows the app to communicate with the DB via the hostname `hpdb-db`.
 
 ### 2. Application Layer (HPDB)
@@ -34,7 +42,7 @@ This repository contains the Kubernetes/OpenShift manifests required to deploy t
 *   **Route (`hpdb-route`):** Provides a public URL to access the application from a web browser.
 
 ## Environment Variables
-The application container uses the following environment variables:
+The app deployment container uses the following environment variables:
 
 | Variable | Source | Description |
 |----------|--------|-------------|
@@ -47,38 +55,41 @@ The application container uses the following environment variables:
 
 The application is built using its `Dockerfile` via Docker or Podman, pushed to a container image repo such as Quay, 
 
-## 1. Rebuild and push the image (if you changed source code/dockerfile)
+## 1. Clone the git repo
+```bash
+git clone https://github.com/AAFC-BICoE/hpdb.git
+```
+
+## 2. (Re)build and push the image (anytime you change source code/dockerfile)
 ```bash
 # From anywhere on your local machine
 sudo podman login <image-repo-name> --tls-verify=false
 
 # From directory containing dockerfile on your local machine
 sudo podman build -t <image-repo-name>:<tag> . 
+# --no-cache flag can ensure build changes update if they don't seem to be updating
 
 sudo <image-repo-name>:<tag> --tls-verify=false
 ```
-AAFC repo used: quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb:latest 
 
-## 2. Move each .yml file to the GPSC 
-Use [Rsync](https://001gc.sharepoint.com/sites/94783/SitePages/rsync.aspx) or another tool.
+## 3. Change values.yaml
+Update the values.yaml file to fit your image repository, secrets, etc.
 
-Example rsync command:
-```bash
-rsync -hlPrtvz --chmod=Dg+s </path/to/>hpdb/hpdb-oc-deploy.yml <username>@inter-aafc-ubuntu2404.science.gc.ca:<path/to/somewhere/in/the/GPSC>/hpdb/hpdb-oc-deploy.yml
-# do the same with hpdb-secret.yml if you externalize the secret file
-```
-
-## 3. Apply Kubernetes objects
-* If you haven't already, log in to OpenShift in your GPSC terminal.
-* From directory in the GPSC where you moved your .yml files:
+## 4. Install (or upgrade) Helm deployment.
+* Move the `helm` directory to somewhere that can access your OpenShift cluster.
+* If you haven't already, log in to OpenShift in your terminal.
+* From directory where you moved your helm chart:
   ```bash
-  oc apply -f hpdb-oc-deploy.yml
+  # from helm directory
+  helm upgrade --install <release-name> . # installs if not existing, upgrades if exists
 
-  # do the same with hpdb-secret.yml if you externalize the secret file
+  # Or to override default values in values.yaml with custom values in another values.*.yaml file
+  helm upgrade --install <release-name> -f <filename> .
+  
   ```
-## 4. Restart deployments
+## 5. Restart deployments
 
-If you already had HPDB deployed on your cluster and are updating it, you will need to restart the deployments.
+If you already had HPDB deployed on your cluster and are updating it, you may want to restart the deployments to ensure changes take effect.
 * Scale them down to zero:
     ```bash
     oc scale deployment/hpdb-db --replicas=0
@@ -98,20 +109,23 @@ If you already had HPDB deployed on your cluster and are updating it, you will n
     oc scale deployment/hpdb-app --replicas=1
     ```
 * Give it fifteen or more seconds. The hpdb-app deployment takes awhile to kick in.
-## 5. Upload database data:
+## 6. Upload database data:
+Pages that use database data (ie anything besides homepage) will fail until data is uploaded.
 
+Values for mysql credentials can be found in your `helm/values.yaml` file (templated into your secret file).
 ```bash
-# from the GPSC
-oc exec -i -n <openshift-namespace> deployment/hpdb-db -- mysql -u hpdb_user -phpdbwebaafc1 hpdbweb < mysql-dump/hpdb.sql
+# from a terminal logged into your OpenShift cluster, from hpdb directory
+oc exec -i -n <openshift-namespace> deployment/hpdb-db -- mysql -u <username> -p<password> <database-name> < mysql-dump/hpdb.sql
 
 # check if it worked
 oc exec -n <openshift-namespace> deployment/hpdb-db -- \
-  mysql -u hpdb_user -phpdbwebaafc1 hpdbweb \
+  mysql -u <username> -p<password> <database-name> \
   -e "SHOW TABLES;"
   # should show a bunch of tables like app_user, host, hostPathogen... user_role
 ```
 
 # TROUBLESHOOTING
+* Consider that app was switched from mysql5 to mariadb 10.5. Bugs could result from incomplete conversion.
 
 ## Monitoring Application Logs
 
@@ -124,10 +138,26 @@ oc logs -f deployment/hpdb-app
   * Delete the old pod
   * Restart the database deployment using `oc rollout restart deployment/hpdb-db`
 
+## Application code isn't updating when I rebuild and push the image
+For changes that affect Maven, you may need to rebuild the .war file:
+```bash
+# From project root
+
+  # you may need to pin to java8:
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+  mvn clean
+  mvn package -DskipTests
+```
+
+## If homepage works but other pages say "Data Access Failure"
+* You may not have uploaded the database correctly. Try cleanly restarting the database.
+  * If the command that uploads the hpdb.sql file takes less than a second, it may be silently failing. Make sure you include the -i flag to use standard input.
+
 ## To cleanly restart the database
 * Login to SQL in the hpdb-db pod:
   ```bash
-  mysql -u hpdb_user -phpdbwebaafc1 hpdbweb 
+  mysql -u <username> -p<password> <database-name>
   ```
 
 * Drop the database:
@@ -149,9 +179,9 @@ oc logs -f deployment/hpdb-app
   CREATE DATABASE hpdbweb;
   ```
 
-* From the HPDB directory in the GPSC, upload the sql file into the database:
+* From the HPDB directory a terminal logged into your OpenShift cluster, upload the sql file into the database:
   ```bash
-  oc exec -i -n <openshift-namespace> deployment/hpdb-db -- mysql -u hpdb_user -phpdbwebaafc1 hpdbweb < mysql-dump/hpdb.sql
+  oc exec -i -n <openshift-namespace> deployment/hpdb-db -- mysql -u <username> -p<password> <database-name> < mysql-dump/hpdb.sql
   ```
 
 * Check if it worked:
@@ -161,7 +191,7 @@ oc logs -f deployment/hpdb-app
     exit
 
     # log in again
-    mysql -u hpdb_user -phpdbwebaafc1 hpdbweb 
+    mysql -u <username> -p<password> <database-name> 
 
     # check if tables are there by listing all tables
     SHOW TABLES;
@@ -177,9 +207,7 @@ oc logs -f deployment/hpdb-app
   * Use `git pull` to pull the old commit to your local branch.
 * ^A similar process should exist for GitHub.
 * Rebuild and re-push the image to Quay.
-* Use rsync or another tool to move the right .yml file back to the GPSC.
-  * Use `cat <filename>` in the GPSC and inspect the file(s) to make sure you're using your updated file(s) and not old versions.
-* Apply your updated .yml or .yaml file(s) with `oc apply -f <filename>`
+* Apply your updated helm chart with `helm upgrade --install <release-name> .`
 * Use `oc rollout restart` on both deployments.
   * If they have a hard time restarting, scale them down to 0 and back up to 1:
     ```bash

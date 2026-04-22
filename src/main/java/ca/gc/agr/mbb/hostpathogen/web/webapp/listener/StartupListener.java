@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
+import java.util.Collections;
 
 /**
  * <p>StartupListener class used to initialize and database settings
@@ -127,31 +128,43 @@ public class StartupListener implements ServletContextListener {
      *
      * @param context The servlet context
      */
-    public static void setupContext(ServletContext context) { //lline 126
-        ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
-        LookupManager mgr = (LookupManager) ctx.getBean("lookupManager");
+    // public static void setupContext(ServletContext context) {
+    //     ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
+    //     LookupManager mgr = (LookupManager) ctx.getBean("lookupManager");
 
-        // get list of possible roles
-        context.setAttribute(Constants.AVAILABLE_ROLES, mgr.getAllRoles());
-        log.debug("Drop-down initialization complete [OK]");
+    //     // get list of possible roles
+    //     context.setAttribute(Constants.AVAILABLE_ROLES, mgr.getAllRoles());
+    //     log.debug("Drop-down initialization complete [OK]");
 
-        // Any manager extending GenericManager will do:
-        GenericManager manager = (GenericManager) ctx.getBean("userManager");
+    //     // Any manager extending GenericManager will do:
+    //     GenericManager manager = (GenericManager) ctx.getBean("userManager");
 
-        //doReindexing(manager);
-        try {
-            doReindexing(manager);
-        } catch (Exception e) {
-            log.error("Reindexing failed during startup", e);
-            // DO NOT kill startup
-        }
+    //     //doReindexing(manager);
+    //     try {
+    //         doReindexing(manager);
+    //     } catch (Exception e) {
+    //         log.error("Reindexing failed during startup", e);
+    //         // DO NOT kill startup
+    //     }
         
-        log.debug("Full text search reindexing complete [OK]");
-    }
+    //     log.debug("Full text search reindexing complete [OK]");
+    // }
 
-    private static void doReindexing(GenericManager manager) {
-        manager.reindexAll(false);
-    }
+    // private static void doReindexing(GenericManager manager) {
+    //     manager.reindexAll(false);
+    // }
+
+public static void setupContext(ServletContext context) {
+
+    log.info("StartupListener.setupContext(): skipping DB initialization at startup");
+
+    // set a safe default instead
+    context.setAttribute(Constants.AVAILABLE_ROLES, Collections.emptyList());
+
+    // DO NOT touch LookupManager
+    // DO NOT touch userManager
+    // DO NOT do reindexing here
+}
 
     /**
      * Shutdown servlet context (currently a no-op method).

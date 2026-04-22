@@ -1,0 +1,11 @@
+# 2. Persistent Volume Claim (PVC) for MySQL data.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hpdb-mysql-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi # Adjust storage size as needed

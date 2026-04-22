@@ -1,0 +1,35 @@
+# 3. Deployment for the MySQL database.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpdb-db
+  labels:
+    app: hpdb
+    tier: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpdb
+      tier: database
+  template:
+    metadata:
+      labels:
+        app: hpdb
+        tier: database
+    spec:
+      containers:
+      - name: mysql
+        image: mariadb:10.5
+        ports:
+        - containerPort: 3306
+        envFrom:
+        - secretRef:
+            name: {{ .Values.mysql.secretName }}
+        volumeMounts:
+        - name: mysql-data
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-data
+        persistentVolumeClaim:
+          claimName: hpdb-mysql-pvc

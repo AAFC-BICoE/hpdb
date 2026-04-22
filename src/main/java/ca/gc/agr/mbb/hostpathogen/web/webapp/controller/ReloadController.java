@@ -39,7 +39,8 @@ public class ReloadController {
             log.debug("Entering 'execute' method");
         }
 
-        StartupListener.setupContext(request.getSession().getServletContext());
+        // on OpenShift, this requires a database connection possibly before database pod is ready
+        // StartupListener.setupContext(request.getSession().getServletContext());
 
         String referer = request.getHeader("Referer");
 

@@ -1,0 +1,17 @@
+# Fill in these values with the appropriate values for your deployment.
+
+# app-deployment.yaml
+app:
+  deployment:
+    imageRepo: 'asdf' # Replace with your own repo name
+    imageTag: 'latest'
+    imagePullSecret: 'asdf' # Replace with your own secret name
+
+# secret.yaml
+mysql:
+  secretName: hpdb-mysql-credentials
+
+  rootPassword: password # Replace with your own root password
+  user: hpdb_user
+  password: password # Replace with your own password
+  database: hpdbweb

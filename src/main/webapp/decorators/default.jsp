@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="/common/taglibs.jsp"%>
 <!DOCTYPE html>
+<%@ include file="/common/taglibs.jsp"%>
 <html lang="en">
 <head>
+    
     <meta http-equiv="Cache-Control" content="no-store"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -12,6 +12,12 @@
     <title><decorator:title/> | <fmt:message key="webapp.name"/></title>
     <t:assets type="css"/>
     <decorator:head/>
+
+    <style>
+    /* #content {
+    margin-top: 50px;
+    } */
+    </style>
 </head>
 <body<decorator:getProperty property="body.id" writeEntireProperty="true"/><decorator:getProperty property="body.class" writeEntireProperty="true"/>>
     <c:set var="currentMenu" scope="request"><decorator:getProperty property="meta.menu"/></c:set>
@@ -25,13 +31,9 @@
             </button>
             <a class="navbar-brand" href="<c:url value='/'/>"><fmt:message key="webapp.name"/></a>
         </div>
-
         <%@ include file="/common/menu.jsp" %>
     </div>
-
-    <!-- Warning Banner -->
-    <%@ include file="/common/warningBanner.jsp" %>
-
+    <jsp:include page="/common/warningBanner.jsp" />
     <div class="container" id="content">
         <%@ include file="/common/messages.jsp" %>
         <div class="row">

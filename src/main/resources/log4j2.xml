@@ -28,7 +28,7 @@
         <Logger name="org.dbunit" level="warn"/>
         <Logger name="org.hibernate" level="warn"/>
         <!-- Uncomment if you want to see Hibernate's SQL -->
-        <!--<Logger name="org.hibernate.SQL" level="debug"/>-->
+        <Logger name="org.hibernate.SQL" level="debug"/>
         <Logger name="org.springframework" level="warn"/>
         <Logger name="ca.gc.agr.mbb.hostpathogen.web" level="debug"/>
         <Logger name="ca.gc.agr.mbb.hostpathogen.web.tool" level="info"/>

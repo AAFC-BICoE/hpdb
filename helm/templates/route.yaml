@@ -1,0 +1,19 @@
+# 7. Route to expose the 'hpdb' application to the outside world.
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hpdb-route
+  labels:
+    app: hpdb
+    tier: frontend
+  annotations:
+    haproxy.router.openshift.io/rate-limit-connections: 'true'
+spec:
+  to:
+    kind: Service
+    name: hpdb-app-service
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

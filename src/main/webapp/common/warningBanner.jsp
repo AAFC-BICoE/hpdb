@@ -1,6 +1,6 @@
-
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!-- Warning Banner -->
+ <!-- /home/erikanvik/aafc-k8-on-hpc/deployments/hpdb/src/main/webapp/common/warningBanner.jsp -->
     <section class="alert alert-warning">
         <h2>Warning / Avertissement</h2>
 

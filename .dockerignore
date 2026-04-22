@@ -1,19 +1,24 @@
+# Unused
 unused/
 csv-importing-unused/
+MockPages/
+*.zip
 
+# Git stuff
 .gitignore
-Dockerfile
+.git/
+
+# Documentation
+*.md
+*.txt
 
 # Kubernetes resources (shouldn't be needed in image)
 *.yml
 *.yaml
+helm/**
+helm/values.aafc.yaml
 
 # built artifacts from Maven
 target/
 src/test/**
 
-# ai-generated modernization that we're not using
-hpdb2/
-hpdb2.zip
-
-.git/*
