@@ -3,8 +3,6 @@ package ca.gc.agr.mbb.hostpathogen.web.webapp.listener;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import ca.gc.agr.mbb.hostpathogen.web.Constants;
-import ca.gc.agr.mbb.hostpathogen.web.service.GenericManager;
-import ca.gc.agr.mbb.hostpathogen.web.service.LookupManager;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -24,6 +22,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
+import java.util.Collections;
 
 /**
  * <p>StartupListener class used to initialize and database settings
@@ -86,7 +85,13 @@ public class StartupListener implements ServletContextListener {
             log.debug("Populating drop-downs...");
         }
 
-        setupContext(context);
+        // setupContext(context);
+        try {
+            setupContext(context);
+        } catch (Throwable t) {
+            log.error("StartupListener failed during setupContext()", t);
+        }
+
 
         // Determine version number for CSS and JS Assets
         String appVersion = null;
@@ -122,21 +127,11 @@ public class StartupListener implements ServletContextListener {
      * @param context The servlet context
      */
     public static void setupContext(ServletContext context) {
-        ApplicationContext ctx = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
-        LookupManager mgr = (LookupManager) ctx.getBean("lookupManager");
 
-        // get list of possible roles
-        context.setAttribute(Constants.AVAILABLE_ROLES, mgr.getAllRoles());
-        log.debug("Drop-down initialization complete [OK]");
+        log.info("StartupListener.setupContext(): skipping DB initialization at startup");
 
-        // Any manager extending GenericManager will do:
-        GenericManager manager = (GenericManager) ctx.getBean("userManager");
-        doReindexing(manager);
-        log.debug("Full text search reindexing complete [OK]");
-    }
-
-    private static void doReindexing(GenericManager manager) {
-        manager.reindexAll(false);
+        // set a safe default
+        context.setAttribute(Constants.AVAILABLE_ROLES, Collections.emptyList());
     }
 
     /**

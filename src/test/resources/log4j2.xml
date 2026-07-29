@@ -14,7 +14,7 @@
         <Logger name="org.apache.velocity" level="fatal"/>
         <Logger name="org.hibernate" level="warn"/>
         <!-- Uncomment if you want to see Hibernate's SQL -->
-        <!--<Logger name="org.hibernate.SQL" level="debug"/>-->
+        <Logger name="org.hibernate.SQL" level="debug"/>
         <Logger name="org.springframework" level="warn"/>
         <Logger name="ca.gc.agr.mbb.hostpathogen.web" level="debug"/>
 

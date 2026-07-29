@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpdb-app
+  labels:
+    app: hpdb
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpdb
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: hpdb
+        tier: frontend
+    spec:
+      enableServiceLinks: false
+      {{- with .Values.app.deployment.imagePullSecret }}
+      imagePullSecrets:
+        - name: {{ . }}
+      {{- end }}
+      containers:
+      - name: hpdb
+        image: {{ .Values.app.deployment.imageRepo }}:{{ .Values.app.deployment.imageTag }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

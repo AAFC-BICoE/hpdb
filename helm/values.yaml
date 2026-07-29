@@ -1,0 +1,14 @@
+app:
+  deployment:
+    imageRepo: 'quay-quay-openshift-operators.apps.edcm-science-ocp-ops1.science.gc.ca/aafc-labs-can/hpdb'
+    imageTag: '1.6'
+    imagePullSecret: 'aafc-labs-can-bicoe-robot-pull-secret'
+
+db:
+  deployment:
+    imageRepo: 'mariadb'
+    imageTag: '10.5'
+  secret:
+    user: hpdb_user
+    password: hpdbwebaafc1
+    database: hpdbweb

@@ -1,0 +1,23 @@
+# Unused
+csvExporter/
+Importer/
+MockPages/
+*.zip
+
+# Git stuff
+.gitignore
+.git/
+
+# Documentation
+*.md
+*.txt
+
+# Kubernetes resources (shouldn't be needed in image)
+*.yml
+*.yaml
+helm/**
+
+# built artifacts from Maven
+target/
+src/test/**
+

@@ -104,23 +104,27 @@
     </filter>
 
     <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>localeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
         <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
-    <filter-mapping>
-        <filter-name>encodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
     <!--<filter-mapping>
         <filter-name>lazyLoadingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>-->
-    <filter-mapping>
-        <filter-name>localeFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+
     <!--filter-mapping>
         <filter-name>gzipFilter</filter-name>
         <url-pattern>/*</url-pattern>

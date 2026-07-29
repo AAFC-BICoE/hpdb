@@ -27,7 +27,6 @@
 
         <%@ include file="/common/menu.jsp" %>
     </div>
-
     <div class="container" id="content">
         <%@ include file="/common/messages.jsp" %>
         <div class="row">
