@@ -1,4 +1,3 @@
-# 7. Route to expose the 'hpdb' application to the outside world.
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:

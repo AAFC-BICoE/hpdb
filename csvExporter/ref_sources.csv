@@ -1,0 +1,487 @@
+pk_ref_source_id,journal_abbreviation,journal_title,book_editor,book_author,book_year,book_title,book_publisher,book_publisher_place,book_pages,verify
+1,Acta Hortic.,Acta Horticulturae,,,,,,,,TRUE
+2,Amer. J. Bot.,American Journal of Botany,,,,,,,,TRUE
+3,Amer. Potato J.,American Potato Journal,,,,,,,,TRUE
+4,Ann. Appl. Biol.,Annals of Applied Biology,,,,,,,,TRUE
+5,Ann. Appl. Nematol.,Annals of Applied Nematology,,,,,,,,TRUE
+6,Ann. Bot. Fenn.,,,,,,,,,TRUE
+7,Ann. Bot. Soc. 'Vanamo',,,,,,,,,TRUE
+8,Ann. Entomol. Soc. Amer.,Annals of the Entomological Society of America,,,,,,,,TRUE
+9,Ann. Mycol.,Annales Mycologici,,,,,,,,TRUE
+10,Ann. Phytopathol. Soc. Japan,,,,,,,,,TRUE
+11,Ann. Rev. Phytopathol.,,,,,,,,,TRUE
+12,Ann. Soc. Ent. Quebec,,,,,,,,,TRUE
+13,Annales Assoc. Can.-Française Avance. Sci.,,,,,,,,,TRUE
+15,Appl. Env. Microbiol.,Applied and Environmental Microbiology,,,,,,,,TRUE
+16,Appl. Microbiol.,Applied Microbiology,,,,,,,,TRUE
+17,Arch. Microbiol.,Archives of Microbiology,,,,,,,,TRUE
+18,Beih. Sydowia,,,,,,,,,TRUE
+19,Beihefte Nova Hedwigia,,,,,,,,,TRUE
+20,Ber. Deut. bot. Ges.,,,,,,,,,TRUE
+21,Biblio. Mycol.,Bibliotheca Mycologica,,,,,,,,TRUE
+22,Bol. Soc. Argent. Bot.,,,,,,,,,TRUE
+23,Bot. Gaz.,,,,,,,,,TRUE
+24,Bot. J. Linnean Soc.,,,,,,,,,TRUE
+25,Bot. Notiser,,,,,,,,,TRUE
+26,Bot. Rev.,The Botanical Review,,,,,,,,TRUE
+27,"Brit. Mycol. Soc., Trans.","British Mycological Society, Transactions",,,,,,,,TRUE
+28,Bull. Res. Council Israel,,,,,,,,,TRUE
+29,Bull. Soc. Linnéenne Lyon,,,,,,,,,TRUE
+30,Bull. Soc. Mycol. France,,,,,,,,,TRUE
+31,Bull. Torrey Bot. Club,,,,,,,,,TRUE
+32,Can. Phytopath. Soc. Proc.,,,,,,,,,TRUE
+34,Can. Record of Sci.,,,,,,,,,TRUE
+35,Canad. Ent.,The Canadian Entomologist,,,,,,,,TRUE
+38,Canad. Field-Naturalist,Canadian Field-Naturalist,,,,,,,,TRUE
+39,Canad. Insect Pest Review,The Canadian insect pest review,,,,,,,,TRUE
+40,Canad. J. Agr. Sci.,,,,,,,,,TRUE
+41,Can. J. Bot.,Botany,,,,,,,,TRUE
+42,Canad. J. Chem.,,,,,,,,,TRUE
+43,Canad. J. Forest Res.,Canadian Journal of Forest Research,,,,,,,,TRUE
+44,Canad. J. Genet. Cytol.,,,,,,,,,TRUE
+45,Canad. J. Microbiol.,Canadian Journal of Microbiology,,,,,,,,TRUE
+46,Canad. J. Pl. Pathol.,Canadian Journal of Plant Pathology,,,,,,,,TRUE
+48,Canad. J. Pl. Sci.,Canadian Journal of Plant Science,,,,,,,,TRUE
+49,Canad. J. Res.,,,,,,,,,TRUE
+50,"Canad. J. Res., C,",,,,,,,,,TRUE
+51,"Canad. J. Res., D,",,,,,,,,,TRUE
+52,Canad. J. Zool.,,,,,,,,,TRUE
+53,Canad. Pl. Dis. Surv.,Canadian Plant Disease Survey,,,,,,,,FALSE
+83,Canadian Plant Virology Newsletter,,,,,,,,,TRUE
+85,Ceska Mykol.,,,,,,,,,TRUE
+86,Mycol. Paper,Mycological Papers,,,,,,,,TRUE
+107,Crop Protection,,,,,,,,,TRUE
+108,Crop Science,,,,,,,,,TRUE
+109,"Cryptogamie, Mycologie",,,,,,,,,TRUE
+110,Det. Kgl. Danske Videnskabernes Selskab. Biol. Medd.,,,,,,,,,TRUE
+111,"Die Ustilagineen Finnlands, Vol.",,,,,,,,,TRUE
+112,Empire J. Exp. Agr.,,,,,,,,,TRUE
+113,Euphytica,Euphytica,,,,,,,,TRUE
+114,Eur. J. For. Path.,,,,,,,,,TRUE
+115,Europ. Potato J.,,,,,,,,,TRUE
+116,"Folia Geobot. Phytotax., Praha",,,,,,,,,TRUE
+117,Forest Sci.,,,,,,,,,TRUE
+118,Forest. Chron.,,,,,,,,,TRUE
+119,Fôret Conservation,,,,,,,,,TRUE
+120,Friesia,,,,,,,,,TRUE
+245,Hedwigia,,,,,,,,,TRUE
+246,HortScience,HortScience,,,,,,,,TRUE
+247,Indian J. Agr. Sci.,,,,,,,,,TRUE
+248,Int. J. Mycol. Lichenol.,,,,,,,,,TRUE
+249,Int. J. Syst. Bacteriol.,International Journal of Systematic Bacteriology,,,,,,,,TRUE
+250,Intervirology,,,,,,,,,TRUE
+251,Iowa State Coll. J. Sci.,,,,,,,,,TRUE
+252,J. Amer. Chem. Soc.,,,,,,,,,TRUE
+253,J. Amer. Soc. Hort. Sci.,,,,,,,,,TRUE
+254,J. Appl. Bact.,,,,,,,,,TRUE
+255,J. Arnold Arboretum,,,,,,,,,TRUE
+256,J. Bacteriol.,Journal of Bacteriology,,,,,,,,TRUE
+257,J. Biol. Chem.,,,,,,,,,TRUE
+258,J. Ecol.,Journal of Ecology,,,,,,,,TRUE
+260,J. Econ. Entomol.,,,,,,,,,TRUE
+261,J. Elisha Mitchell Sci. Soc.,,,,,,,,,TRUE
+262,J. Gen. Microbiol.,,,,,,,,,TRUE
+263,J. Gen. Virol.,,,,,,,,,TRUE
+264,J. Mycol.,,,,,,,,,TRUE
+265,J. Nematology,Journal of Nematology,,,,,,,,TRUE
+267,J. Phytopathology,,,,,,,,,TRUE
+268,J. Wash. Acad. Sci.,,,,,,,,,TRUE
+269,"Kans. Acad. Sci., Trans.",,,,,,,,,TRUE
+270,Karstenia,,,,,,,,,TRUE
+271,Le Journal d'Agriculture,,,,,,,,,TRUE
+272,Lloydia,,,,,,,,,TRUE
+273,Madroño,,,,,,,,,TRUE
+274,Medd. Grínland,,,,,,,,,TRUE
+275,Mem. New York Bot. Gard.,,,,,,,,,TRUE
+276,Michigan Bot.,,,,,,,,,TRUE
+277,Microscopica Acta,,,,,,,,,TRUE
+278,Mitteilungen Bot. Staatssammlung Munchen,,,,,,,,,TRUE
+279,Mushroom,,,,,,,,,TRUE
+280,Mycol. Res.,Mycological Research,,,,,,,,TRUE
+281,Mycologia,Mycologia,,,,,,,,FALSE
+282,Mycologia Memoir,,,,,,,,,TRUE
+283,Mycologia Memoir No.,,,,,,,,,TRUE
+284,Mycopath. Mycol. appl.,,,,,,,,,TRUE
+285,Mycopathologia,,,,,,,,,TRUE
+286,Mycotaxon,Mycotaxon,,,,,,,,TRUE
+287,N. Amer. Flora,,,,,,,,,TRUE
+288,N. Y. Hort. Soc. Proc.,,,,,,,,,TRUE
+289,N. Zealand J. Bot.,,,,,,,,,TRUE
+290,N.Z. J. Sci.,,,,,,,,,TRUE
+291,N.Z. J. Sci. Technol.,New Zealand Journal of Science and Technology,,,,,,,,TRUE
+292,"N.Z. J. Sci. Technol., A,",,,,,,,,,TRUE
+293,Naturalist (London),,,,,,,,,TRUE
+294,Naturaliste Canad.,,,,,,,,,TRUE
+295,Nature,Nature,,,,,,,,TRUE
+299,Nematologica,,,,,,,,,TRUE
+300,New Phytol.,,,,,,,,,TRUE
+301,Nord. J. Bot.,,,,,,,,,TRUE
+302,Norweg. J. Bot.,,,,,,,,,TRUE
+303,Nova Hedwigia,,,,,,,,,TRUE
+304,NRG Bulletin NRG 88-05,,,,,,,,,TRUE
+305,NRG Bulletin NRG 90-1,,,,,,,,,TRUE
+306,NRG News NRG 91-04,,,,,,,,,TRUE
+307,Nytt Mag. Bot.,,,,,,,,,TRUE
+308,Opera Bot.,,,,,,,,,TRUE
+309,Persoonia,,,,,,,,,TRUE
+311,Phytopath. Z.,Phytopathologische Zeitschrift,,,,,,,,TRUE
+312,Phytopathology,,,,,,,,,TRUE
+313,Phytoprotection,,,,,,,,,TRUE
+314,Plant & Soil,,,,,,,,,TRUE
+315,Plant Dis. Reptr.,Plant Disease Reporter,,,,,,,,TRUE
+316,Plant Dis. Reptr. Suppl.,Plant Disease Reporter Supplement,,,,,,,,TRUE
+317,Plant Dis.,Plant Disease,,,,,,,,TRUE
+318,Plant Path.,,,,,,,,,TRUE
+319,Plant World,,,,,,,,,TRUE
+320,"Plant, Cell & Environment",,,,,,,,,TRUE
+321,Potato Research,,,,,,,,,TRUE
+322,Proc. Amer. Phytopath. Soc.,,,,,,,,,TRUE
+323,Proc. Can. Phytopath. Soc.,,,,,,,,,TRUE
+324,Proc. Canad. Inst. NS,,,,,,,,,TRUE
+327,Proc. Entomol. Soc. Ont.,,,,,,,,,TRUE
+329,Proc. Fifth Pacific Sci. Congr.,,,,,,,,,TRUE
+330,Proc. Helminthol. Soc. Wash.,,,,,,,,,TRUE
+331,Proc. Nova Scotian Inst. Sci.,,,,,,,,,TRUE
+336,Proc. Wash. State Hort. Assn.,,,,,,,,,TRUE
+337,Proc. West Washington Hort. Assn.,,,,,,,,,TRUE
+339,"Que. Soc. Protect. Plants, Rept.",Report of the Quebec Society for the Protection of Plants,,,,,,,,TRUE
+340,R. C. Accad. Lincei,,,,,,,,,TRUE
+341,Rep. Kevo Subarctic Res. Sta.,,,,,,,,,TRUE
+346,Rept. Tottori Mycol. Inst.,,,,,,,,,TRUE
+347,Rhodora,,,,,,,,,TRUE
+348,"Roy. Soc. Canada, Trans., Ser 3,",,,,,,,,,TRUE
+349,Scand. J. For. Res.,,,,,,,,,TRUE
+350,Sci. Agr.,,,,,,,,,TRUE
+351,Science,,,,,,,,,TRUE
+352,Soil Biol. Biochem.,Soil Biology & Biochemistry,,,,,,,,TRUE
+353,Soil Sci.,Soil Science,,,,,,,,TRUE
+354,Studia Botanica Cechica,,,,,,,,,TRUE
+355,Studies in Forest Pathology,,,,,,,,,TRUE
+356,Studies in Mycol.,Studies in Mycology,,,,,,,,TRUE
+357,Svensk Bot. Tidskr.,Svensk Botanisk Tidskrift,,,,,,,,TRUE
+358,Sydowia,,,,,,,,,TRUE
+359,Syesis,,,,,,,,,TRUE
+360,Sylloge Fungorum,,,,,,,,,TRUE
+361,Symb. Bot. Upsal.,,,,,,,,,TRUE
+362,The Bryologist,,,,,,,,,TRUE
+363,Tobacco Science,,,,,,,,,TRUE
+364,Trail & Landscape,,,,,,,,,TRUE
+365,Trans. Brit. Mycol. Soc.,Transactions of the British Mycological Society,,,,,,,,TRUE
+366,Trans. Mycol. Soc. Japan,,,,,,,,,TRUE
+367,Trans. Roy. Canad. Inst.,Transactions Royal Canadian Institute,,,,,,,,TRUE
+368,Virology,,,,,,,,,TRUE
+369,Wash. State Coll. Res. Studies,,,,,,,,,TRUE
+370,"Willdenowia, Beih.","
+Willdenowia. Beiheft",,,,,,,,TRUE
+371,Windahlia,,,,,,,,,TRUE
+372,Woody Points,,,,,,,,,TRUE
+373,Z. Pflanzenkr.,Zeitschrift für Pflanzenkrankheiten und Pflanzenschutz,,,,,,,,TRUE
+374,,,,"Hildebrand, E.M.",1951,Virus diseases and other disorders with viruslike symptoms of stone fruits in North America. U.S.D.A. Agr. Handbook 10,U.S. Gov. Printing Office,"Washington, D.C",,TRUE
+375,"Forest Insect and Disease Survey, Ann. Rept.","Forest Insect & Disease Survey, Ann. Rept.  Canada Dept. Agr., Ottawa.",,,,,,,,TRUE
+383,,,,Anon,1960,Index of plant diseases in the United States. U.S.D.A. Agr. Handbook 165,U.S. Gov. Printing Offlce,"Washington, D.C.",,TRUE
+385,,,,Anon,1961,"Research Report, 1959-1960",Canada Dept. Agr. Res. Sta.,"Winnepeg, Man.",,TRUE
+386,,,,Anon,1961,Noms français des maladies des plantes au Canada (avec equivalents anglais). Min. de l'Agric. Prov. Qué. Publ. 263,,,,TRUE
+408,,,,Anon,1981,Forest Insect and Disease Conditions in Canada 1980,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,43pp.,TRUE
+409,,,,Anon,1981,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1980","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,1,TRUE
+410,,,,Anon,1982,Forest Insect and Disease Conditions in Canada 1981,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,46pp.,TRUE
+411,,,,Anon,1982,FAO Plant Protection Bulletin,,,23,TRUE
+412,,,,Anon,1982,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1981","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,100pp.,TRUE
+413,,,,Anon,1983,Forest Insect and Disease Conditions in Canada 1982,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,58pp.,TRUE
+414,,,,Anon,1983,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1982","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,1,TRUE
+415,,,,Anon,1984,Forest Insect and Disease Conditions in Canada 1983,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,73pp.,TRUE
+416,,,,Anon,1984,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1983","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,1,TRUE
+417,,,,Anon,1984,A survey for tomato foot and root rot in the British Columbia greenhouse industry,M.B. Research and Development Ltd.,"Saanichton, BC",5pp.,TRUE
+418,,,,Anon,1985,Forest Insect and Disease Conditions in Canada 1984,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,76pp.,TRUE
+419,,,,Anon,1986,Forest Insect and Disease Conditions in Canada 1985,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,107pp.,TRUE
+420,,,,Anon,1986,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1984-1985","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,1,TRUE
+421,,,,Anon,1987,Forest Insect and Disease Conditions in Canada 1986,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,128pp.,TRUE
+422,,,,Anon,1988,Forest Insect and Disease Conditions in Canada 1987,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,92pp.,TRUE
+423,,,,Anon,1989,Forest Insect and Disease Conditions in Canada 1988,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,105pp.,TRUE
+424,,,,Anon,1991,Blue Jay,,,117,TRUE
+425,,,,Anon,1991,USA Federal Register,,,,TRUE
+426,,,,"Moody, B.H.",1992,Forest Insect and Disease Conditions in Canada 1989,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,117pp.,TRUE
+427,,,,"Moody, B.H.",1993,Forest Insect and Disease Conditions in Canada 1990,"Forest Insect and Disease Survey, Canadian Forestry Service",Ottawa,115pp.,TRUE
+428,,,,Anon,1988,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1986","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,1,TRUE
+429,,,,Anon,1989,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1987-1988","Plant Protection Division, Plant Health Directorate, Agriculture Canada",Ottawa,1,TRUE
+430,,,,Anon,1991,"Summary of Plant Quarantine Pest and Disease Situations in Canada, 1989",Agriculture Canada,Ottawa,1,TRUE
+434,,,,"Arthur, J.C.",1907-1931,North American Flora,,,,TRUE
+435,,,,"Arthur, J.C.",1934,Manual of the rusts in the United States and Canada,Purdue Res. Foundation,"Lafayette, Ind.",,TRUE
+436,,,,"Von Arx, J.A.",1957,"Koninkl. Ned. Akad. Wetenschapp, Afd. Natuurk. Sect II,",,,1-153,TRUE
+438,,,,"Bagnall, R.H., Larson, R.H., Walker, J.C.",1956,Univ. Wis. Agr. Expt. Sta. Res. Bull.,,,,TRUE
+439,,,,"Baranyay, J.A.",1968,Canada Dept. Forestry & Rural Devel. Publ. 1238.  Ottawa.,,,,TRUE
+442,,,,"Barr, M.E.",1959,"Inst. Bot. Univ. Montréal, Contrib.",,,,TRUE
+443,,,,"Barr, M.E.",1972,Contrib. Univ. Mich. Herb.,,,523-638,TRUE
+444,,,,"Barr, M.E.",1978,The Diaporthales in North America.  Mycol. Soc. Amer. Memoir No. 7.,Cramer,"Lehre, Germany",232pp.,TRUE
+445,,,,"Basham, J.T., Morawski, Z.J.R.",1964,"Cull studies, the defects and associated basidiomycete fungi in the heartwood of living trees in the forests of Ontario",Queen's Printer,Ottawa,69pp.,TRUE
+446,,,,"Bassett, I.J.",1958,"A survey of the European buckthorn and common barberry in southern Manitoba, 1957","Bot. Plant Path. Div., Canada Dept. Agr.",Ottawa,,TRUE
+447,,,,"Bier, J.E., Salisbury, P., Waldie, R.",1948,"Canada Dept. Agr., Ottawa. Tech. Bull. 66 (Publ. 804).",,,,TRUE
+448,,,,"Bier, J.E., Salisbury, P.J., Waldie, R.A.",1948,Canada Dept. Agr. Tech. Bull. 66 (Publ. 804),,,,TRUE
+449,,,,"Bier, J.E., Foster, R.E., Salisbury, P.J.",1946,Canada Dept. Agr. Tech. Bull. 58 (Publ. 783).,,,,TRUE
+450,,,,"Biggs, W.D., Jansons, V.",1985,"Results of forest insect and disease surveys in the North Central Region of Ontario, 1984. Misc. Rep. 18",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",30 pp.,TRUE
+451,,,,"Biggs, W.D., Sagan, R.J., Brodersen, H.",1987,"Results of forest insect and disease surveys in the Central Region of Ontario, 1986. Misc. Rep. 53",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",29 pp.,TRUE
+452,,,,"Biggs, W.D., Sagan, R.J., Brodersen, H.",1988,"Results of forest insect and disease surveys in the Central Region of Ontario, 1987. Misc. Rep. 75",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",32 pp.,TRUE
+453,,,,"Biggs, W.D., Sagan, R.J., Broderson, H.",1989,"Results of forest insect and disease surveys in the Central Region of Ontario, 1988. Misc. Rep. 85",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",31 pp.,TRUE
+454,,,,"Bisby, G.R., Buller, A.H.R., Dearness, J.",1929,Fungi of Manitoba,Longmans Green,London,,TRUE
+455,,,,"Bisby, G.R., et al.",1938,The fungi of Manitoba and Saskatchewan,Nat. Res. Council of Canada,"Ottawa, Ontario",,TRUE
+461,,,,"Blenis, P., Hiratsuka, Y., Mallett, K.",1987,Agriculture & Forestry Bulletin,,,4-5,TRUE
+462,,,,"Bloomberg, W.J.",1968,"Canad. Dept. Forest. & Rural Development, Bimonthly Research Notes",,,8,TRUE
+464,,,,"Brisson, J.D., Pauze, J.F., Lavoie, V.",1974,"Aspects mycologiques et histopathologiques du dépérissement des tiges de Vaccinium angustifolium Aiton.  Cahier no. 13.  Faculté sci. agr. et alimen., Univ. Laval, Ste-Foy, Qué.",,,,TRUE
+465,,,,"Brodersen, H., Evans, H.J.",1985,"Results of forest insect and disease surveys in the Southwestern Region of Ontario, 1984. Misc. Rep. 23",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",25 pp.,TRUE
+466,,,,"Brodersen, H., Biggs, W.D.",1987,"Results of forest insect and disease surveys in the Southwestern Region of Ontario, 1986. Misc. Rep. 54",CFS Great Lakes Forestry Centre,,27 pp.,TRUE
+467,,,,"Brodersen, H., Biggs, W.D.",1988,"Results of forest insect and disease surveys in the Southwestern Region of Ontario, 1987. Misc. Rep. 80",CFS Great Lakes Forestry Centre,,25 pp.,TRUE
+468,,,,"Broderson, H., Biggs, W.D.",1989,"Results of forest insect and disease surveys in the Southwestern Region of Ontario, 1988. Misc. Rep. 88",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",26 pp.,TRUE
+470,,,,"Brown, A.M.",1956,A check list of plant rusts in Canada. Publ. 976,Canada Dept. Agr.,,,TRUE
+471,,,,"Caesar, L., Dustan, G.G.",1937,Ont. Dept. Agr. Bull.,,,,TRUE
+472,,,,"Callan, B.E.",1990,Pest Leaflet 56,Forestry Canada,"Victoria, British Columbia",4pp.,TRUE
+474,,,,"Carew, G.C.",1986,Reference list of diseases of forest trees and shrubs in Newfoundland and Labrador. Report N-X-240,CFS Newfoundland Forestry Centre,,161 pp.,TRUE
+475,,,,"Cerezke, H.F., Emond, F.J.",1989,"Forest insect and disease conditions in Alberta, Saskatchewan, Manitoba, and the Northwest Territories in 1987. Report NOR-X-300",CFS Northern Forestry Centre,,25 pp.,TRUE
+476,,,,"Chupp, C.",1953,A monograph of the fungus genus Cercospora,Privately published,"Ithaca, NY",,TRUE
+477,,,,"Clarke, L.J., Carew, G.C.",1983,Forest Insect and Disease Conditions Newfoundland & Labrador 1982. Report N-X-214,CFS Newfoundland Forestry Centre,,21 pp.,TRUE
+478,,,,"Clarke, L.J., Carew, G.C.",1984,Forest insect and disease conditions in Newfoundland and Labrador in 1983. Information Report N-X-223,CFS Newfoundland Forestry Centre,,28 pp.,TRUE
+479,,,,"Clarke, L.J., Carew, G.C.",1986,Forest insect and disease conditions in Newfoundland and Labrador in 1985. Report N-X-241,CFS Newfoundland Forestry Centre,,33 pp.,TRUE
+480,,,,"Clarke, L.J., Carew, G.C.",1987,Forest insect and disease conditions in Newfoundland and Labrador in 1986. Report N-X-259,CFS Newfoundland Forestry Centre,,36 pp.,TRUE
+481,,,,"Clarke, L.J., Carew, G.C.",1988,Forest insect and disease conditions in Newfoundland and Labrador in 1987. Report N-X-265,CFS Newfoundland Forestry Centre,,37 pp.,TRUE
+482,,,,"Clarke, L.J., Carew, G.C.",1989,Forest insect and disease conditions in Newfoundland and Labrador in 1988. Report N-X-268,CFS Newfoundland Forestry Centre,,38 pp.,TRUE
+483,,,,"Coates-Milne, D.",1989,FAO Plant Protection Bulletin,,,130-131,TRUE
+484,,,,"Conners, I.L.",1967,An Annotated Index of Plant Diseases in Canada. Can. Dept. Agr. Publ. 1251,,,1-381,TRUE
+485,,,,"Conners, I.L., Eardley, E.A.",1931,"Prevalence of plant diseases in the Dominion of Canada, 1930.  Ann. Rept., 10th",,Ottawa,,TRUE
+486,,,,"Conners, I.L.",1967,"An Annotated Index of Plant Diseases in Canada. Research Branch , Canada Department of Agriculture, Publication 1251.",,,,TRUE
+487,,,,"Conners, I.L.",1931,"Prevalence of plant diseases in the Dominion of Canada, 1929.  Ann. Rept., 9th, Ottawa.",,,,TRUE
+488,,,,"Constable, D.C.",1985,"Results of forest insect and disease surveys in the Northwestern Region of Ontario, 1984. Misc. Rep. 17",CFS Great Lakes Forestry Centre,,29 pp.,TRUE
+489,,,,"Constable, D.C., Czerwinski, E.J.",1987,"Results of forest insect and disease surveys in the Northwestern Region of Ontario, 1986. Misc. Rep. 48",CFS Great Lakes Forestry Centre,,36 pp.,TRUE
+508,,,,"Craigie, J.H.",1957,Canada Dept. Agr. Publ. 666 (revised),,,,TRUE
+509,,,,"Crowell, I.H., Lavallée, E.",1942,Check list of diseases of economic plants in Canada,Canada Dept. Agr.,"Ottawa, Ont.",,TRUE
+510,,,,"Dance, B.W., Lynn, D.F., Jansons, V.",1964,Canada Dept. Forest. BiMonthly Prog. Rept.,,,2-3,TRUE
+511,,,,"Darker, G.D.",1932,The Hypodermataceae of conifers,Arnold Arboretum,"Jamaica Plains, Mass.",,TRUE
+512,,,,"Davidson, J.",1980,"Alfalfa Production in the Peace River Region, NRG Bull. Rev. Ed.",,,I 1-6,TRUE
+513,,,,"Davis, C.N., Myren, D.T.",1990,Index of hosts and associated fungi identified by the Forest Insect and Disease Survey in Ontario from 1967 to 1987.  II. conifers other than pines. Report O-X-406,CFS Great Lakes Forestry Centre,,109 pp.,TRUE
+514,Canad. Horticult. Home Mag.,Canadian Horticulture & Home Magazine,,,,,,,,TRUE
+515,,,,"Davis, M.B., Hill, H.",1941,Canada Dept. Agr. Tech. Bull. 32 (Publ. 714).,,,,TRUE
+516,,,,"De Hoog, G.S., Hermandies-Nijhof, E.J.",1977,Studies in Mycol. 15.,,"Baarn, Netherlands",,TRUE
+518,,,,"Dennis, R.W.G.",1978,British Ascomycetes,Cramer,Vaduz,,TRUE
+519,,,,"Diehl, W.W.",1950,Balansia and the Balansiae in America.  USDA Monogr. 4.,,,,TRUE
+520,,,,"Dore, W.G.",1969,"Research Branch, Agriculture Canada Publication 1393",,,84pp.,TRUE
+521,Tree Planters' Notes,Tree Planters' Notes,,,,,,,,TRUE
+522,,,,"Drayton, F.L.",1923,"Survey of the prevalence of common plant diseases in the Dominion of Canada, 1922. Ann. Rept. 3rd",,Ottawa,,TRUE
+523,,,,"Drayton, F.L.",1924,"Survey of the prevalence of common plant diseases in the Dominion of Canada, 1923. Ann. Rept. 4th",,Ottawa,,TRUE
+524,,,,"Drayton, F.L.",1926,"A summary of the prevalence of plant diseases in the Dominion of Canada, 1925. Canada Dept. of Agr. Bull. NS 71",,,,TRUE
+525,,,,"Duran, R., Fischer, G.W.",1961,The genus Tilletia,Wash. State Univ.,"Pullman, Wash.",,TRUE
+526,,,,"Dutilly, A., Lepage, E.",1958,Contribution a la flore des Iles et du Versant Oriental de la Baie James,The Catholic University of America,Washington,1-199,TRUE
+527,,,,"Eaves, C.A., Hill, H.",1940,Canada Dept. Agr. Tech. Bull. 28 (Publ. 694).,,,,TRUE
+528,Greenhouse-Garden-Grass,Greenhouse-Garden-Grass,,,,,,,,TRUE
+532,,,,"Ellis, J.B., Everhart, B.",1892,The North American Pyrenomycetes,Publ. by the authors,"Newfield, New Jersey",,TRUE
+535,,,,"Emond, F.J., Cerezke, H.F.",1989,"Forest insect and disease conditions in Alberta, Saskatchewan, Manitoba, and the Northwest Territories in 1988 and predictions for 1989",CFS Northern Forestry Centre Information Report NOR-X-3,,29 pp.,TRUE
+536,,,,"Eriksson, J., Ryvarden, L.",1975,"The Corticiaceae of North Europe, Vol. 3.",Fungiflora,Oslo,,TRUE
+538,Recherches agronomiques,Recherches agronomiques,,,,,,,,TRUE
+539,,,,"Evans, D., Lowe, D.P., Hunt, R.S.",1978,Report BC-X-169,Canadian Forestry Service,Victoria,,TRUE
+541,,,,"Evans, H.J., Melbourne, S.",1989,"Results of forest insect and disease surveys in the North Central Region of Ontario, 1988. Misc. Rep. 83",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",1-34 + Appendic,TRUE
+542,,,,"Evans, H.J., Sajan, R.J., Brodersen, H.",1985,"Results of forest insect and disease surveys in the Central Region of Ontario, 1984. Misc. Rep. 22",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",35 pp.,TRUE
+543,,,,"Faull, J.H.",1932,Taxonomy and geographical distribution of the genus Milesia,Arnold Arboretum,"Jamaica Plains, Mass.",,TRUE
+544,,,,"Faull, J.H.",1938,Taxonomy and geographical distribution of the genus Uredinopsis,Arnold Arboretum,"Jamaica Plains, Mass.",,TRUE
+545,,,,"Fiddick, R.L., Van Sickle, G.A.",1982,"Forest insect and disease conditions British Columbia & Yukon, 1981",CFS Pacific Forestry Centre Information Report BC-X-2,,26 pp.,TRUE
+546,,,,"Fischer, G.W.",1953,Manual of the North American smut fungi,Ronald Press,New York,,TRUE
+549,,,,"Fyles, F.",1920,"Canada Exp. Farms Bull., 2nd ser.",,,,TRUE
+550,,,,"Gams, W.",1971,Cephalosporium-artige Schimmelpilze,G. Fischer,Stuttgart,,TRUE
+552,,,,"Gilbert, P.F.",1975,A preliminary study of fungi associated with diseases of wild rice in Manitoba. M.Sc. Thesis,University of Manitoba,,258pp.,TRUE
+553,,,,"Gilbertson, R.L.",1965,"Papers Michigan Acad. Sci., Arts, Letters",,,161-184,TRUE
+563,,,,"Greaney, F.J.",1934,Canada Dept. Agr. Bull. NS,,,,TRUE
+564,,,,"Gremmen, J., Parmelee, J.A.",1973,Report NOR-X-44,Canadian Forestry Service,Edmonton,,TRUE
+565,,,,"Groves, J.W.",1957,List of fungi isolated from seeds under the seedborne disease project. MS.,,,,TRUE
+566,,,,"Groves, J.W.",1962,Edible and poisonous mushrooms of Canada,Canada Dept. Agr.,,,TRUE
+568,,,,"Güssow, H.T.",1912,Canada Dept. Agr. Farmers' Circ.,,,,TRUE
+569,,,,"Güssow, H.T.",1921,"Division of Botany interim report for the year ending March 31, 1921",,,,TRUE
+570,,,,"Güssow, H.T.",1935,"Progress report of the Dominion Botanist, 1931 to 1934 inclusive",Canada Dept. Agr.,"Ottawa, Ont.",,TRUE
+571,,,,"Güssow, H.T., Conners, I.L.",1927,Canada Dept. Agr. Bull. NS,,,,TRUE
+572,,,,"Hahn, G.G.",1935,U.S. Dept. Agr. Circ.,,,,TRUE
+574,,,,"Harrison, K.A.",1929,Rept. Dominion Botanist for the year 1928,Canada Dept. Agr.,"Ottawa, Ont.",,TRUE
+575,,,,"Harwood, P.M.",1892,Mich. Agr. Exp. Sta. Bull.,,,,TRUE
+576,,,,"Heald, F.D.",1926,Manual of plant diseases,McGraw Hill,New York,,TRUE
+577,,,,"Hesler, L.R., Smith, A.H.",1965,North American species of Crepidotus,Hafner,New York,,TRUE
+578,,,,"Hewitt, C.G.",1912,"Canada Dept. Agr. Bull., 2nd ser.,",,,,TRUE
+579,,,,"Hildebrand, A.A.",1953,"Que. Soc. Protect. Plants, Proc.",,,10-17,TRUE
+580,,,,"Hildebrand, A.A., Mckeen, W.E.",1950,"Amer. Soc. Sugar Beet Technologists, Proc.",,,515-518,TRUE
+581,,,,"Hiratsuka, Y.",1981,Western gall rust infections of nursery origin on jack pine in Manitoba,CFS Northern Forest Research Centre Forest Management Note No. 5,,2pp.,TRUE
+582,,,,"Hiratsuka, Y.",1987,Forest tree diseases of the prairie provinces,CFS Northern Forestry Centre Information Report NOR-X-2,,142 pp.,TRUE
+583,,,,"Hiratsuka, Y., Powell, J.M.",1976,Tech. Report  4.,Canadian Forestry Service,Ottawa,,TRUE
+585,,,,"Hiratsuka, Y., Powell, J.M., Van Sickle, G.A.",1988,Impact of pine stem rusts in Alberta and the Northwest Territories,CFS Northern Forestry Centre Information Report NOR-X-2,,9 pp.,TRUE
+586,,,,"Hiruki, C., Chen, M.H.",1984,"Proc. 7th Int. Union of Forestry Res. Orgs. Conference on Mycoplasma Diseases, July 10-12, 1984, p.7.  Agric.-Forestry Center, U. of Alberta, Edmonton",,,7,TRUE
+587,,,,"Hildebrand, E.M., Berkeley, G.H., Cation, D.",1942,"Mich. Agr. Exp. Stat. Misc. Publ., unnumbered.",,,,TRUE
+588,,,,"Hopkins, J.",1985,"Pest Leaflet FPL 25, Pacific Forest Research Centre",Canadian Forestry Service,"Victoria, BC",4pp.,TRUE
+589,,,,"Horner, R.M.",1953,Report of the Symposium on Birch Dieback,"Can. Dept. Agr., Sci. Service, Forest Biology Div.","Ottawa, On",182pp.,TRUE
+593,,,"Kendrick, B.","Hughes, S.J.",1971,Taxonomy of Fungi Imperfecti,,,,TRUE
+627,,,,"Hunter, A.W.S.",1955,Prog. Rept. Horticult. Div.,Canada Dept. Agr.,,,TRUE
+628,,,,"Hunter, A.W.S., Davis, M.B.",1943,"Amer. Soc. Horticult. Sci., Proc.",,,467-468,TRUE
+629,,,,"Ingram, W.A.",1985,"Results of forest insect and disease surveys in the Eastern Region of Ontario, 1984. Misc. Rep. 24",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",36pp.,TRUE
+630,,,,"Ives, W.G.H.",1972,Report NOR-X-12,Canadian Forestry Service,Edmonton,,TRUE
+631,,,,"Jarvis, W.R.",1977,"Canada Dept. Agric., Ottawa. Monograph No. 15.",,,,TRUE
+632,,,,"Johnson, T.",1954,Rept. 7.,Lab. Plant Pathol.,"Winnipeg, Man.",,TRUE
+633,,,,"Johnson, T.",1961,Canada Dept. Agr. Publ.,,,,TRUE
+634,,,,"Jones, C.G., Czerwinski, E.J.",1988,"Results of forest insect and disease surveys in the Northwestern Region of Ontario, 1987. Misc. Rep. 77",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",1-49 + Appendic,TRUE
+635,,,,"Jones, C.G., Czerwinski, E.J.",1989,"Results of forest insect and disease surveys in the Northwestern Region of Ontario, 1988. Misc. Rep. 87",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",49 pp.,TRUE
+636,,,,"Jones, W.",1957,Check list of plant diseases in the coastal areas of British Columbia,Lab. Plant Pathol.,"Saanichton, B.C.",,TRUE
+637,,,,"Keizer, A.",1988,"Results of forest insect and disease surveys in the Eastern Region of Ontario, 1987. Misc. Rep. 81",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",47 pp.,TRUE
+638,,,,"Keizer, A.",1989,"Results of forest insect and disease surveys in the Eastern Region of Ontario, 1988. Misc. Rep. 89",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",40 pp.,TRUE
+639,Forage Notes,Forage Notes,,,,,,,,TRUE
+640,,,,"Koch, L.W., Berkeley, G.H.",1950,Canada Dept. Agr. Farmers' Bull. 85 (Publ. 667),,,,TRUE
+641,,,,"Kohlmeyer, J., Kohlmeyer, E.",1979,Marine mycology,Academic Press,New York,,TRUE
+644,,,,"Kuijt, J.",1953,Canad. Dept. Agric. Div. For. Biol. Bimonthly Progress Rept.,,,4,TRUE
+645,,,,"Kuijt, J.",1954,Canad. Dept. Agric. Div. For. Biol. Bimonthly Progress Rept.,,,2,TRUE
+646,,,,"Kuijt, J.",1963,Nat. Museum Canada Bull.,,,134-148,TRUE
+647,,,,"Kunkel, L.O.",1933,Boyce Thompson Inst. Contrib.,,,19-28,TRUE
+648,,,,"Laberge, C.",1990,"P.E.I. Department of Agriculture, Miscellaneous Publication",,,1,TRUE
+649,,,,"Lachance, D.",1990,Forest insects and diseases in the Gaspé/Lower St. Lawrence region 1936-1987. Report LAU-X-93E,CFS Laurentian Forestry Centre,,215 pp.,TRUE
+650,,,"Stewart, G.G., Russell, I.","Lachance, M.A.",1981,Advances in Yeast Research,Pergammon Press,Toronto,607-613,TRUE
+651,,,,"Lavallée, A.",1986,Balsam fir decay in central and northeastern Quebec,CFS Laurentian Forestry Centre Information Report LAU-X-7,,21 pp.,TRUE
+652,,,,"Lavallée, A.",1990,Hypoxylon canker of aspen,CFS Quebec Region Information Leaflet LFC 21,,5pp.,TRUE
+653,,,,"Lawrence, J.J., Hiratsuka, Y.",1972,Report NOR-X-20,Canadian Forestry Service,Edmonton,,TRUE
+654,,,,"Lawrence, J.J., Hiratsuka, Y.",1972,Report NOR-X-21,Canadian Forestry Service,Edmonton,,TRUE
+655,,,,"Lawrence, J.J., Hiratsuka, Y.",1972,Report NOR-X-22,Canadian Forestry Service,Edmonton,,TRUE
+656,,,,"Lawrence, J.J., Hiratsuka, Y.",1972,Report NOR-X-28,Canadian Forestry Service,Edmonton,,TRUE
+657,,,,"Lawrence, J.J., Hiratsuka, Y.",1972,Report NOR-X-27,Canadian Forestry Service,Edmonton,,TRUE
+658,,,,"Lebeau, J.B., Cormack, M.W.",1961,Recent Advances in Botany,Univ. Toronto,"Toronto, Ont.",,TRUE
+659,,,,"Lind, J.",1910,Vid.-Selsk. Skrift. I. Math-Nat. Kl.,,,1-25,TRUE
+660,,,,"Linder, D.H.",1947,"Fungi. In Part II, Nat. Museum Canada Bull.",,,234-297,TRUE
+661,,,,"Lindsay, D.R.",1952,"Survey of common barberry (Berberis vulgaris L.) in southwestern Ontario, 1951","Div. Bot. Pathology, Canada Dept. Agr.",,1-11,TRUE
+662,Canada Agr.,Canada Agriculture,,,,,,,,TRUE
+663,,,,"Lowe, D.P.",1977,Report BC-X-32,Canadian Forestry Service,Victoria,,TRUE
+665,,,,"MacLeod, D.J.",1962,Canada Dept. Agr. Publ.,,,,TRUE
+666,,,,"MacLeod, L.S., Jones, C.G., Keizer, A.J.",1985,"Results of forest insect and disease surveys in the Northern Region of Ontario, 1984. Misc. Rep. 19",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",51 pp.,TRUE
+667,,,,"MacLeod, L.S., Jansens, V., Payne, S.",1989,"Results of forest insect and disease surveys in the Northern Region of Ontario, 1988. Misc. Rep. 82",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",38 pp.,TRUE
+668,,,,"MacLeod, L.S., Jansons, V., Keizer, A.J.",1987,"Results of forest insect and disease surveys in the Northern Region of Ontario, 1986. Misc. Rep. 50",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",46 pp.,TRUE
+669,,,,"MacRae, R.",1941,"Occurrence of some Polyporaceae in Canada listed or suggested by Dr. L. O. Overholts, MS.",,,,TRUE
+670,,,,"Magasi, L.P.",1966,Report M-X-7,Canadian Forestry Service,Fredericton,,TRUE
+671,,,,"Magasi, L.P.",1986,Forest pest conditions in the Maritimes in 1986. Report M-X-159,CFS Maritimes Information,,85 pp.,TRUE
+672,,,,"Magasi, L.P.",1987,Forest pest conditions in the Maritimes in 1986. Report M-X-161,CFS Maritimes,,67 pp.,TRUE
+673,,,,"Magasi, L.P., Manley, J.M.",1975,Report M-X-52,Canadian Forestry Service,Fredricton,,TRUE
+674,,,,"Magasi, L.P., Harrison, K.J.",1990,Forestry Canada - Maritimes Region Technical Note 2,,,7 pp.,TRUE
+675,,,,"Mains, E.B.",1933,"Mich. Acad. Sci., Arts Lett., Papers",,,298-351,TRUE
+680,,,,"McArthur, L.E.",1966,Report A-X-4,Canadian Forestry Service,Edmonton,,TRUE
+681,,,,"McCallum, A.W.",1928,Canada Dept. Agr. Bull. NS,,,,TRUE
+682,,,,"McCurry, J.B., Hicks, A.J.",1929,"Prevalence of plant diseases in the Dominion of Canada, 1925. Ann. Rept. 5th, Ottawa.",,,,TRUE
+683,,,,"McCurry, J.B., Hicks, A.J.",1930,"Prevalence of plant diseases in the Dominion of Canada, 1926. Ann. Rept. 6th, Ottawa.",,,,TRUE
+684,,,,"McDonald, J., Maclatchy, I.A., Sheidow, N.W., et a",1991,"Ontario Ministry of Agriculture and Food, Factsheet Agdex 181/630",,,2pp.,TRUE
+685,,,,"McQueen, D.A.R.",1981,A Survey of the Diseases of Wild Rice in Manitoba. M.Sc. Thesis,University of Manitoba,,90pp.,TRUE
+686,,,,"Miller, J.H.",1961,A Monograph of the World Species of Hypoxylon,Univ. Georgia,"Athens, Ga.",,TRUE
+688,Univ. Kans. Sci. Bull.,The University of Kansas science bulletin,,,,,,,,TRUE
+689,,,,"Moody, B.H., Cerezke, H.F.",1983,"Forest insect and disease conditions in Alberta, Saskatchewan, Manitoba, and the Northwest Territories in 1982 and predictions for 1983",CFS Northern Forestry Centre Information Report NOR-X-2,,19 pp.,TRUE
+690,,,,"Moody, B.H., Cerezke, H.F.",1985,"Forest insect and disease conditions in Alberta, Saskatchewan, Manitoba, and the Northwest Territories in 1984 and predictions for 1985",Canadian Forestry Service Northern Forestry Centre Information Report NOR-X-2,,21 pp.,TRUE
+691,,,,"Moody, B.H., Cerezke, H.F.",1986,"Forest insect and disease conditions in Alberta, Saskatchewan, Manitoba, and the Northwest Territories in 1985 and predictions for 1986. Report NOR-X-276",CFS Northern Forestry Centre,,22 pp.,TRUE
+692,,,,"Morrison, D.J., Wallis, G.W., Weir, L.C.",1988,Control of Armillaria and Phellinus root diseases : 20-year results from the Skimikin stump removal experiment,CFS Pacific Forestry Centre Information Report BC-X-302,,16pp.,TRUE
+693,,,,"Morrison, D.J., Larock, M.D., Waters, A.J.",1986,Stump infection by Fomes annosus in spaced stands in the Prince Rupert Forest Region of British Columbia,CFS Pacific Forestry Centre Information Report BC-X-2,,12 pp.,TRUE
+694,,,"Güssow, H.T.","Mounce, I.",1927,Report of the Dominion Botanist for the year 1926,Can. Dept. Agr.,Ottawa,20-24,TRUE
+695,,,"Güssow, H.T.","Mounce, I.",1929,Report of the Dominion Botanist for the year 1927,Can. Dept. Agr.,Ottawa,41-44,TRUE
+696,,,,"Mounce, I.",1929,Canada Dept. Agr. Bull. NS,,,,TRUE
+697,,,"Güssow, H.T.","Mounce, I.",1930,Report of the Dominion Botanist for the year 1928,Can. Dept. Agr.,Ottawa,40-44,TRUE
+698,,,"Güssow, H.T.",,1931,Report of the Dominion Botanist for the year 1929,Can. Dept. Agr.,Ottawa,,TRUE
+699,,,"Güssow, H.T.","Mounce, I., Macrae, R., Nobles, M.K.",1938,Progress Report of the Dominion Botanist for the years 1935 to 1937 inclusive,Can. Dept. Agr.,Ottawa,71,TRUE
+700,,,,"Mulligan, G.A.",1952,Survey of common barberry (Berberis vulgaris L.) and the European buckthorn (Rhamnus cathartica L.) in eastern Ontario,Div. Bot. Plant Pathology,"Ottawa, On",1-16,TRUE
+701,,,,"Murphy, P.A.",1916,Canada Dept. Agr. Circ.,,,,TRUE
+703,,,,"Murphy, P.A.",1921,Canada Dept. Agr. Bull. 2nd ser.,,,,TRUE
+704,,,,"Myren, D.T., Davis, C.N.",1989,Index of Hosts and Associated Fungi Identified by the Forest Insect and Disease Survey in Ontario from 1967 to 1987.  I. The Pines. Report O-X-395,CFS Great Lakes Forestry Centre,,83 pp.,TRUE
+705,,,,"Nag Raj, T.R., Kendrick, W.B.",1975,A monograph of Chalara and allied genera,Wilfrid Laurier University Press,Ont.,,TRUE
+706,,,,"Ohenoja, E.",1972,The Musk-ox.  No. 10.,,,67,TRUE
+708,,,,"Ostaff, D.P., Newell, W.R.",1986,Early infection of larch populations by the European larch canker Lachnellula willkommii. Report M-X-157,CFS Maritimes Information,,5 pp.,TRUE
+709,,,,"Ouellette, G.B.",1962,Canada Dept. Forest. BiMonthly Prog. Rept.,,,1,TRUE
+710,,,,"Parmelee, J.A.",1960,Publ. 1080,Canada Dept. Agr.,Ottawa,,TRUE
+712,,,,"Muller, F., et al.",1963,"Axel Heiberg Island Research Reports, Preliminary Report 1961-1962",McGill University,Montreal,173-181,TRUE
+740,,,,"Parmelee, J.A.",1983,Agr. Canada Res. Br. Contr. 1983-9E,,Ottawa,87pp.,TRUE
+741,,,,"Parmelee, J.A.",1984,Agr. Canada Res. Br. Techn. Bull. 1984-11E,,Ottawa,32pp.,TRUE
+747,,,,"Pilley, P.G., Trieselmann, R.A.",1968,A synoptic catalogue of cryptogams deposited in the Ontario region herbarium. I. Ascomycetes and Deuteromycetes. Report O-X-80,Canadian Forestry Service,Sault Ste. Marie,185pp.,TRUE
+748,,,,"Pilley, P.G., Trieselmann, R.A.",1969,Report O-X-108,Canadian Forestry Service,Sault Ste Marie,,TRUE
+764,,,,"Pomerleau, R.",1942,Liste annotée des maladies parasitaires des arbres observees dans le Québec. TF-650,"Qué. Min. Terres et Forêts, Bureau de Pathologie Forestière",,,TRUE
+766,,,,"Pomerleau, R.",1980,Flore des champignons au Québec et régions limitrophes,Les Editions la Presse,Montréal,,TRUE
+768,,,,"Rankin, W.H., Fraser, W.P.",1921,"Survey of the prevalence of common plant diseases in the Dominion of Canada, 1920. Ann. Rept. 1st",,Ottawa,,TRUE
+769,,,,"Rankin, W.H., Fraser, W.P.",1922,"Survey of the prevalence of common plant diseases in the Dominion of Canada, 1921. Ann. Rept. 2nd",,Ottawa,,TRUE
+776,,,,"Robinson, D.B., Larson, R.H., Walker, J.C.",1957,Univ. Wis. Agr. Exp. Sta. Res. Bull.,,,,TRUE
+778,,,,"Rostrup, E.",1906,Rept. Second Norweg. Arctic Expedition in the 'Fram',,,1-10,TRUE
+779,,,,"Russell, K.C.",1934,Canada Dept. Agr. Bull.,,NS,,TRUE
+780,,,,"Ryvarden, L.",1976,The Polyporaceae of North Europe. Vol. 1,Fungiflora,Oslo,214pp.,TRUE
+781,,,,"Sajan, R.J., Smith, B.E.",1985,"Results of forest insect and disease surveys in the Algonquin Region of Ontario, 1984. Misc. Rep. 21",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",47 pp.,TRUE
+782,,,,"Sajan, R.J., Smith, B.E.",1987,"Results of forest insect and disease surveys in the Algonquin Region of Ontario, 1986. Misc. Rep. 52",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",54 pp.,TRUE
+783,,,,"Sajan, R.J., Smith, B.E.",1988,"Results of forest insect and disease surveys in the Algonquin Region of Ontario, 1987. Misc. Rep. 74",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",60 pp.,TRUE
+807,,,,"Scoggan, H.J.",1957,"Flora of Manitoba. Nat. Museum Canada Bull. 140, Biol. Ser. 47",,,,TRUE
+808,,,,"Seaver, F.J.",1951,The North American cupfungi (inoperculates),Author,New York,,TRUE
+809,,,,"Shaw, C.G.",1958,Host fungus index for the Pacific Northwest. I. Hosts. Wash. Agr. Exp. Sta. Circ.,,,,TRUE
+810,,,,"Sherwood, M.A.",1980,Occasional Papers Farlow Herbarium No. 15,Harvard Univ.,"Cambridge, Mass.",,TRUE
+811,,,,"Shields, J.K., Clermont, L.P.",1968,"Canad. Dept. Forest. & Rural Development, Bimonthly Research Notes",,,9,TRUE
+821,,,,"Simmonds, P.M.",1928,Canada Dept. Agr. Bull. NS,,,,TRUE
+822,,,,"Singh, P.",1969,Report N-X-31.,Canadian Forestry Service,St. John's,,TRUE
+823,,,,"Singh, P.",1974,Report N-X-123,Canadian Forestry Service,St. John's.,,TRUE
+824,,,,"Singh, P., Carew, G.C.",1973,Report N-X-87,Canad. Forestry Service,St. John's,,TRUE
+826,,,,"Sluggett, L.J.",1972,"Pest Leaflet 53, Pacific Forest Research Centre",Canadian Forestry Service,"Victoria, BC",5pp.,TRUE
+827,,,,"Smith, K.M.",1957,"A textbook of plant virus diseases, 2nd Edition",Churchill,London,652pp.,TRUE
+828,,,,"Sprague, R.",1950,Diseases of cereals and grasses of North America,Ronald Press,New York,,TRUE
+829,,,"Stennson, B.","Stace-Smith, R.",1989,Report of the Committee on Horticultural Research. 67th Annual Meeting of the Canadian Horticultural Council,,Ottawa,134,TRUE
+830,,,,"Stakman, E.C., Levine, M.N.",1922,Minn. Agr. Exp. Sta. Tech. Bull.,,,,TRUE
+831,Farmers' Bull.,U.S. Dept. Agr. Farmers' Bulletin,,,,,,,,TRUE
+832,,,,"Stolk, A.C., Samson, R.",1972,"Centraalbureau voor Schimmelcultures, Baarn, Netherlands, Studies in Mycol. 2.",,,,TRUE
+833,,,,"Sutherland, J.R.",1981,Canadian Forestry Service Research Notes,,,8-9,TRUE
+835,,,,"Sutton, B.C.",1980,The Coelomycetes,Commonw. Mycol. Inst.,"Kew, Surrey, England",,TRUE
+836,,,,"Thompson, H.S.",1954,Canada Dept. Agr. Publ.,,,,TRUE
+838,,,,"Thomson, M.J., Constable, D.C., Evans, H.J., et al",1985,"A review of important forest insect and disease problems in the Atikokan District of Ontario, 1950-1980. Misc. Rep. 29",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",1-100 + Appendi,TRUE
+840,,,,"Thomson, M.J., Macleod, L.S., Evans, H.J., et al.",1986,"A Review of Important forest insect and disease problems in the Geraldton District of Ontario, 1950-1980. Misc. Rep. 46",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",1-102 + Appendi,TRUE
+841,,,,"Thomson, M.J., Macleod, L.S., Evans, H.J., et al.",1988,"A review of important forest insect and disease problems in the Ignace District of Ontario, 1950-1980. Misc. Rep. 64",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",89 + Appendices,TRUE
+842,,,,"Thomson, M.J., Macleod, L.S., Evans, H.J., et al.",1988,"A review of important forest insect and disease problems in the Kenora District of Ontario, 1950-1980. Misc. Rep. 63",CFS Great Lakes Forestry Centre,"Sault Ste. Marie, Ontario",90 + Appendices,TRUE
+845,,,,"Toms, H.N.W.",1964,Plant diseases of southern British Columbia -- A host index,Canad. Plant Dis. Surv.,Ottawa,,TRUE
+847,,,,"Trieselmann, R.A., Naphan, P.",1970,Report O-X-136,Canadian Forestry Service,Sault Ste Marie,,TRUE
+848,,,,"Trieselmann, R.A., Bricault, F.A., Barnes, C.A.",1974,A synoptic catalogue of crytogams deposited in the Ontario region herbarium IV. Supplement 2.  Report O-X-206.,Canadian Forest Service,Sault Ste. Marie,,TRUE
+850,,,,,1933,"World's Grain Exhib. Conf., Proc.",Canadian Society of Technical Agriculturalists,Ottawa,,TRUE
+851,,,"Kendrick, B.",,1979,The Whole Fungus,Nat. Museums of Canada,Ottawa,,TRUE
+852,,,,"Walker, J.C.",1952,Diseases of vegetable crops,McGraw-Hill,New York,,TRUE
+855,,,,"Wehmeyer, L.E.",1950,"Fungi of New Brunswick, Nova Scotia and Prince Edward Island",Nat. Res. Council Canada,"Ottawa, Ont.",,TRUE
+856,,,,"Wehmeyer, L.E.",1961,A world monograph of the genus Pleospora and its segregates,Univ. Michigan,"Ann Arbor, Mich.",,TRUE
+864,,,,"Welsh, J.N., Green, G.J.",1958,"X Int. Congr. Genetics, Proc.",Southam Printing Co.,Montreal,311,TRUE
+865,,,,"Welsh, J.N., et al.",1953,Canada Dept. Agr. Publ.,,,,TRUE
+870,Syllogeus,National Museum of Natural Sciences,,,,,,,,TRUE
+871,,,,"Wood, C.",1986,Distribution maps of common tree diseases in British Columbia,CFS Pacific Forestry Centre Information Report BC-X-2,,68 pp.,TRUE
+872,,,,"Wood, C.S., Van Sickle, G.A., Shore, T.L.",1984,Forest insect and disease conditions British Columbia & Yukon 1983,CFS Pacific Forestry Centre Information Report BC-X-2,,27 pp.,TRUE
+873,,,,"Wood, C.S., Van Sickle, G.A.",1986,Forest insect and disease conditions British Columbia and Yukon 1985,CFS Pacific Forestry Centre Information Report BC-X-2,,32 pp.,TRUE
+874,,,,"Wood, C.S., Van Sickle, G.A.",1987,Forest insect and disease conditions British Columbia and Yukon 1986,CFS Pacific Forestry Centre Information Report BC-X-2,,35 pp.,TRUE
+875,,,,"Wood, C.S., Van Sickle, G.A.",1989,"Forest Insect and disease conditions British Columbia & Yukon, 1988",CFS Pacific Forestry Centre Information Report BC-X-306,,33pp.,TRUE
+876,,,,"Wood, C.S., Van Sickle, G.A.",1992,Forest Insect and Disease conditions British Columbia and Yukon - 1992,CFS Pacific Forestry Centre Information Report BC-X-340,,39pp.,TRUE
+877,,,,"Wood, C.S., Van Sickle, G.A., Humble, L.M.",1987,"Forest insect and disease conditions British Columbia & Yukon, 1987",CFS Pacific Forestry Centre Information Report BC-X-296,,40pp.,TRUE
+878,,,,"Ziller, W.G.",1957,"Fungi of British Columbia deposited in the herbarium of the Forest Biology Laboratory, Victoria, B.C., Canada",,,,TRUE
+879,,,,"Ziller, W.G.",1958,"Fungi of British Columbia deposited in the herbarium of the Forest Biology Laboratory, Victoria, B.C. Additions and corrections.",,,,TRUE
+880,,,,"Ziller, W.G.",1959,"Fungi of British Columbia deposited in the herbarium of the Forest Biology Laboratory, Victoria, B.C. Additions for the year 1958.",,,,TRUE
+881,,,,"Ziller, W.G.",1962,"Fungi of British Columbia deposited in the herbarium of the Forest Biology Laboratory, Victoria, B.C. Additions since 1958. MS.",,,,TRUE
+882,,,,"Ziller, W.G.",1974,The Tree Rusts of Western Canada.  Publ. 1329,Can. Forestry Service,Victoria,,TRUE
+884,Canadian Forestry Service Great Lakes Forestry Centre Miscellaneous Report,,,,,,,,,TRUE
+886,,,,"Bérubé, J.A., Dessureault, M.",1989,"Proc. Seventh International Conference on Root and Butt Rots, Vernon and Victoria, British Columbia, Canada, August 9-16, 1988",,,623-631 pp,TRUE
+887,,,,"Dearness, J.",1923,"Report of the Canadian Arctic Expedition, 1913-1918, Vol 4, Botany; Part C, Fungi",,Ottawa,24pp.,TRUE
+888,,,,"Güssow, H.T.",1913,"Report of the Dominion Botanist for the year ending March 31, 1912",,,,TRUE
+889,,,,"Güssow, H.T.",1917,"Report from the Division of Botany for the fiscal year ending March 31, 1916",,,,TRUE
+890,,,,"Hiratsuka, Y., Cerezke, H.F., Moody, B.H., Petty,",1982,"Forest insect and disease conditions in Alberta, Saskatchewan, Manitoba, and the Northwest Territories in 1981 and predictions for 1982. Report NOR-X-239",CFS Northern Forestry Centre,,11 pp.,TRUE
+891,,,,"Howse, G.M., Gross, H.L., Syme, P.D., Myren, D.T.,",1982,"Forest insect and disease conditions in Ontario, 1981. Report O-X-339",CFS Great Lakes Forestry Centre,,49 pp.,TRUE
+892,,,,"Howse, G.M., Syme, P.D., Gross, H.L., Myren, D.T.,",1983,"Forest insect and disease conditions in Ontario, 1982. Report O-X-350",CFS Great Lakes Forestry Centre,,41pp.,TRUE
+893,,,,"Kallio, P.",1980,Subarctic Res. Paper 30,"Centre for Northern Studies and Research, McGill University",Montreal,,TRUE
+894,,,,"Martin, W.",1989,"Proc. Seventh International Conference on Root and Butt Rots, Vernon and Victoria, British Columbia, Canada, August 9-16, 1988",,,590-591 pp,TRUE
+895,,,,,1931,Report on the prevalence of plant diseases in the Dominion of Canada for the years 1927 and 1928,,Ottawa,,TRUE
+897,,,,"Merler, H., Schulting, P.J., Van Der Kamp, B.J.",1989,"Proc. Seventh International Conference on Root and Butt Rots, Vernon and Victoria, British Columbia, Canada, August 9-16, 1988",,,550-562 pp,TRUE
+898,,,,"Welsh, M.F., Keane, F.W.L., May, J.",1964,"Proceedings 5th European Symposium on Fruit Tree Virus Diseases, Bologna, 19",,,74-76,TRUE
+899,,,"Morrison, D.J.",,1989,"Proc. Seventh International Conference on Root and Butt Rots, Vernon and Victoria, British Columbia, Canada, August 9-16, 1988",,,,TRUE
+903,--,,,,,,,,,TRUE
+904,9999 Reference LOST in original dbase,,,,,,,,,TRUE
+905,North Magazine,"North Magazine. Dept. of Indian Affairs & Northern Development, Ottawa, Ont.",,,,,,,,TRUE
+906,Fungi Canad.,"Fungi Canadenses,  Res. Br., Agric. Can., Ottawa",,,,,,,,TRUE
+920,CMI Descriptions of Pathogenic Fungi And Bacteria,"Commonw. Mycol. Inst., England, Descriptions of Pathogenic Fungi & Bacteria",,,,,,,,TRUE
+921,,,"Laflamme, G., Bérubé, J.A., Hamelin, R.C.",,1998,"Foliage, shoot and stem diseases of trees: proceedings of the IUFRO WP 7.02.02 Meeting, Quebec City, May 25-31, 1997","Canadian Forest Service, Natural Resources Canada",Sainte-Foy,272pp.,TRUE
+922,Mikol. Fitopat.,Mikologiia i Fitopatologiia,,,,,,,,TRUE
+928,Fungal Diversity,Fungal Diversity an international journal of mycology,,,,,,,,TRUE
+929,,,"Hall, J.P.",,1996,Forest Insect and Disease Conditions in Canada 1994,"Natural Resources Canada, Canadian Forest Service",Ottawa,112pp.,TRUE
+930,,,"Hall, J.P., Bowers, W.W., Hirvonen, H.",,1998,Forest Insect and Disease Conditions in Canada 1995,Natural Resources Canada Canadian Forest Service,Ottawa,72pp.,TRUE
+931,,,"Hall, J.P.",,1994,Forest Insect and Disease Conditions in Canada 1992,"Natural Resources Canada, Canadian Forest Service",Ottawa,120pp.,TRUE
+932,,,"Hall, J.P.",,1995,Forest Insect and Disease Conditions in Canada 1993,"Natural Resources Canada, Canadian Forest Service",Ottawa,133pp.,TRUE
+933,,,"Moody, B.H.",,1993,Forest Insect and Disease Conditions in Canada 1991,Minister of Supply and Services Canada 1993,Ottawa,99pp.,TRUE
+934,,,,"Abbott, S.P., Currah, R.S.",1989,The Larger Cup Fungi and Other Ascomycetes of Alberta An Annotated List,University of Alberta Devonian Botanic Garden,Edmonton,96pp.,TRUE
+937,Indian phytopath.,Indian Phytopathology,,,,,,,,TRUE
+938,,,,"Jacobs, K., Wingfield, M.J.,",2001,"Leptographium species. Tree pathogens, insect associates, and agents of blue-stain",The American Phytopathological Society,"St. Paul, MN",207pp.,TRUE
+940,,,,Anon,2007,PRD2007-03. Proposed Registration Decision. Chondrostereum purpureum strain PFC2139. Cp-PFC2139 Chontrol Paste,"Pest Management Regulatory Agency, Health Canada",Ottawa,34pp.,TRUE
+941,,,,"Zundel, G.L.",1953,The Ustilaginales of the World,"Dept. Bot., Pennsylvania State College, School of Agriculture, Contr. No. 176",,410pp.,TRUE
+942,,,,"Smith, J.D., Jackson, N., Woolhouse, A.R.",1989,Fungal diseases of amenity turf grasses. 3rd ed.,E. & F. N. Spon,London & New York,401pp.,TRUE
+943,,,,"Gross, H.L.",1985,The impact of insects and diseases on the forests of Ontario. Information report O-X-366 Great Lakes Forest Research Centre,"Canadian Forestry Service, Government of Canada",Sault Ste. Marie,98pp.,TRUE
+944,,,"Hall, J.P., Moody, B.",,1994,Forest depletions caused by insects and diseases in Canada 1982-1987. Forest Insect and Diseases Survey Information Report ST-X-8,"Canadian Forest Service, Natural Resources Canada",Ottawa,14pp.,TRUE
+945,,,"Kondo, E.S., Hiratsuka, Y., Denyer, W.B.G.",,1982,"Proceedings of the Dutch Elm Disease symposium and workshop. October 5-9, 1981. Winnipeg, Manitoba","Canadian Forstry Service, Environment Canada & Department of Natural Resources, Province of Manitoba",Winnipeg,517pp.,TRUE
+946,Harvard Pap. Bot.,Harvard Papers in Botany,,,,,,,,TRUE
+947,Mycol. Balc.,Mycologia Balcanica,,,,,,,,TRUE
+948,Mycoscience,Mycoscience,,,,,,,,TRUE
+949,North Am. Fungi,North American Fungi,,,,,,,,TRUE

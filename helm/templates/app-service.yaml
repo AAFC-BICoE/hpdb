@@ -1,4 +1,3 @@
-# 6. Service to expose the 'hpdb' application internally.
 apiVersion: v1
 kind: Service
 metadata:

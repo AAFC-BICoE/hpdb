@@ -1,6 +1,6 @@
 # Unused
-unused/
-csv-importing-unused/
+csvExporter/
+Importer/
 MockPages/
 *.zip
 
@@ -16,7 +16,6 @@ MockPages/
 *.yml
 *.yaml
 helm/**
-helm/values.aafc.yaml
 
 # built artifacts from Maven
 target/

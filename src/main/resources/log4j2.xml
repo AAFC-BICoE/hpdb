@@ -8,11 +8,11 @@
 
     <Loggers>
         <!-- Hibernate Search -->
-        <Logger name="org.hibernate.search" level="debug"/>
+        <Logger name="org.hibernate.search" level="error"/>
         <!-- Lucene filesystem + locking -->
-        <Logger name="org.apache.lucene" level="debug"/>
+        <Logger name="org.apache.lucene" level="error"/>
         <!-- Show how Hibernate resolves config & builds SessionFactory -->
-        <Logger name="org.hibernate.cfg" level="debug"/>
+        <Logger name="org.hibernate.cfg" level="error"/>
 
         <Logger name="net.sf.ehcache" level="error"/>
         <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
@@ -28,7 +28,7 @@
         <Logger name="org.dbunit" level="warn"/>
         <Logger name="org.hibernate" level="warn"/>
         <!-- Uncomment if you want to see Hibernate's SQL -->
-        <Logger name="org.hibernate.SQL" level="debug"/>
+        <Logger name="org.hibernate.SQL" level="error"/>
         <Logger name="org.springframework" level="warn"/>
         <Logger name="ca.gc.agr.mbb.hostpathogen.web" level="debug"/>
         <Logger name="ca.gc.agr.mbb.hostpathogen.web.tool" level="info"/>

@@ -1,4 +1,3 @@
-# 3. Deployment for the MySQL database.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,12 +19,12 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mariadb:10.5
+        image: {{ .Values.db.deployment.imageRepo }}:{{ .Values.db.deployment.imageTag }}
         ports:
         - containerPort: 3306
         envFrom:
         - secretRef:
-            name: {{ .Values.mysql.secretName }}
+            name: hpdb-mysql-credentials
         volumeMounts:
         - name: mysql-data
           mountPath: /var/lib/mysql

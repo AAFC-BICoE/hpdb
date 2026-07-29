@@ -2,7 +2,8 @@ version: '3'
 
 services:
   db:
-    image: centos/mysql-56-centos7
+    container_name: hpdb-db
+    image: mariadb:10.5
     volumes:
       - hpdb-data:/var/lib/mysql
       - ./mysql-dump:/opt/app-root/src
@@ -12,9 +13,12 @@ services:
       - MYSQL_USER=hpdb_user
       - MYSQL_PASSWORD=hpdbwebaafc1
       - MYSQL_DATABASE=hpdbweb
+      - MYSQL_ROOT_PASSWORD=rootpass1
     networks:
       - my-network
   app:
+    container_name: hpdb
+    image: hpdb:latest
     depends_on:
       - db
     restart: on-failure

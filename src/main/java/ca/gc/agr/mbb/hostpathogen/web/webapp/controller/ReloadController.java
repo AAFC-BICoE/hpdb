@@ -2,7 +2,6 @@ package ca.gc.agr.mbb.hostpathogen.web.webapp.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import ca.gc.agr.mbb.hostpathogen.web.webapp.listener.StartupListener;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,9 +37,6 @@ public class ReloadController {
         if (log.isDebugEnabled()) {
             log.debug("Entering 'execute' method");
         }
-
-        // on OpenShift, this requires a database connection possibly before database pod is ready
-        // StartupListener.setupContext(request.getSession().getServletContext());
 
         String referer = request.getHeader("Referer");
 

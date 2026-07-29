@@ -20,5 +20,3 @@ target/
 .setting/
 .xml~
 /.settings/
-
-helm/values.aafc.yaml

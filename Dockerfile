@@ -1,4 +1,4 @@
-FROM docker.io/library/maven:3.6.3-jdk-8 AS builder
+FROM maven:3.6.3-jdk-8 AS builder
 WORKDIR /project
 
 # 1) Copy only pom.xml first
@@ -15,7 +15,7 @@ RUN mvn -B package -Dmaven.test.skip=true
 
 
 # Stage 2-- Create the runtime image with Tomcat
-FROM docker.io/library/tomcat:8.5.88-jre8-temurin-focal
+FROM tomcat:8.5.88-jre8-temurin-focal
 # Clean out the default files and copy over the ROOT war:
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=0 /project/target/hostpathogen.web-*.war /usr/local/tomcat/webapps/ROOT.war

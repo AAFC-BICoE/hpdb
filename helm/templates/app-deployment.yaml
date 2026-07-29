@@ -1,4 +1,3 @@
-# 5. Deployment for the 'hpdb' application.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,37 +28,3 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        env:
-        # debuggers
-        - name: JAVA_TOOL_OPTIONS
-          value: >
-            -Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.SimpleLog
-            -Dorg.apache.commons.logging.simplelog.showdatetime=true
-            -Dorg.apache.commons.logging.simplelog.log.org.springframework.beans=DEBUG
-            -Dorg.apache.commons.logging.simplelog.log.org.springframework.context=DEBUG
-            -Dorg.apache.commons.logging.simplelog.log.org.springframework.jdbc=DEBUG
-            -Dorg.apache.commons.logging.simplelog.log.com.mysql=DEBUG
-            -Dorg.apache.commons.logging.simplelog.log.org.mariadb=DEBUG
-            -Djava.util.logging.ConsoleHandler.level=FINE
-            -Dorg.apache.tomcat.dbcp.dbcp2.level=FINE
-            -Dorg.apache.tomcat.jdbc.pool.level=FINE
-            -Dorg.apache.naming.level=FINE
-            -Dcom.mysql.jdbc.level=FINE
-            -Dspring.main.fail-on-bean-creation-error=true
-
-        # Reference the same secret for DB credentials
-        - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: {{ .Values.mysql.secretName }}
-              key: MYSQL_USER
-        - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: {{ .Values.mysql.secretName }}
-              key: MYSQL_PASSWORD
-        - name: MYSQL_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: {{ .Values.mysql.secretName }}
-              key: MYSQL_DATABASE

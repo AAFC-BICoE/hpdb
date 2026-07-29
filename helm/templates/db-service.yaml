@@ -1,5 +1,3 @@
-# 4. Service to expose the MySQL database internally.
-#    The application will connect to this service using the hostname 'hpdb-db'.
 apiVersion: v1
 kind: Service
 metadata:
